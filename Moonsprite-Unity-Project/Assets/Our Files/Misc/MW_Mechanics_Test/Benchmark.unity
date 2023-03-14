@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 1618777378}
-  toolbar: {fileID: 0}
+  toolbar: {fileID: 30972529}
 --- !u!114 &1422514549
 MonoBehaviour:
   m_ObjectHideFlags: 0

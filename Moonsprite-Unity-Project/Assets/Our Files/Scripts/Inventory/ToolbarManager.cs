@@ -9,6 +9,7 @@ public class ToolbarManager : MonoBehaviour
 
     public GameObject slotPrefab;
     public Inventory playerInventory;
+
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     public List<InventorySlots> inventorySlots = new List<InventorySlots>();
 
@@ -51,13 +52,12 @@ public class ToolbarManager : MonoBehaviour
 
         }
 
-
-       // for (int x = 0; x < inventory.Count; x++)
-        //{
+            // for (int x = 0; x < inventory.Count; x++)
+            //{
 
             inventorySlots[0].DrawSlot(inventory[selectedSlot]);
 
-        //}
+            //}
 
 
     }
@@ -79,26 +79,32 @@ public class ToolbarManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (inventorySlots.Count > 0)
         {
-            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
 
-            if (selectedSlot >= inventoryItems.Count - 1)
-                selectedSlot = 0;
-            else
-                selectedSlot += 1;
-            
+
+                if (selectedSlot >= inventoryItems.Count - 1)
+                    selectedSlot = 0;
+                else
+                    selectedSlot += 1;
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+
+                if (selectedSlot <= 0)
+                    selectedSlot = inventoryItems.Count - 1;
+                else
+                    selectedSlot -= 1;
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
+        else
         {
-            
-
-            if (selectedSlot <= 0)
-                selectedSlot = inventoryItems.Count - 1;
-            else
-                selectedSlot -= 1;
+            selectedSlot = 0;
         }
 
     }
@@ -106,13 +112,17 @@ public class ToolbarManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        
 
-        
 
-            inventoryItems = FindObjectOfType<Inventory>().GetListOfItems();
-            //playerInventory.GetComponent<Inventory>;
+
+
+        //inventoryItems = FindObjectOfType<Inventory>().GetListOfItems();
+        inventoryItems = playerInventory.GetListOfItems();
+        //playerInventory.GetComponent<Inventory>;
+        if (inventoryItems.Count > 0)
+        {
             DrawnInventory(inventoryItems);
+        }
         
 
         
