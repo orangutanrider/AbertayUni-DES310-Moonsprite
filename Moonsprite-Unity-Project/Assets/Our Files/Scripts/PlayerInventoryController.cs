@@ -6,6 +6,7 @@ public class PlayerInventoryController : MonoBehaviour
 {
     [Header("Required References")]
     public GameObject inventoryPanel;
+    public GameObject toolbar;
 
     // Start is called before the first frame update
     void Start()
