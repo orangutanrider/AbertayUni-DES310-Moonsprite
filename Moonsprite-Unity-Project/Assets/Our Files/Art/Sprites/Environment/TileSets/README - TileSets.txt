@@ -9,10 +9,17 @@ Exit the window and apply the changes.
 
 Set the PPU to 64 (if the file is following the standard tile size).
 
-Finally, add the file to the "TilePaletteAtlas".
+Next, add the file to the "TilePaletteAtlas".
 Do this by clicking on that file (it's in this folder)
 Then in the inspector there is a "Objects for Packing" list of items
 At the bottom of that list, click the plus and then select the asset you're adding.
+
+Finally, you can now add it to a tile palette
+Either add it to an existing one (by simply dragging it into that window) or create a new tile palette
+To create a new tile palette, right click and then Create>2D>TilePalette>Rectangular
+BUT WAIT
+These tile files should be created in
+
 
 Why is this needed? As in, why do we need a sprite atlas?
 Answer: 
