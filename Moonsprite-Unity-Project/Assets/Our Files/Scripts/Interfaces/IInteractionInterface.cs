@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IInteractionInterface
 {
-    public void Interaction(CustomTag tag = null);
+    public PlayerInteractionController InteractionEvent(CustomTag tag = null);
+    public void ExitInteraction();
 }
