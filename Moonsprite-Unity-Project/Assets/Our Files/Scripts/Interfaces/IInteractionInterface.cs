@@ -5,5 +5,5 @@ using UnityEngine;
 public interface IInteractionInterface
 {
     public PlayerInteractionController InteractionEvent(CustomTag tag = null);
-    public void ExitInteraction();
+    public void FinishInteraction();
 }

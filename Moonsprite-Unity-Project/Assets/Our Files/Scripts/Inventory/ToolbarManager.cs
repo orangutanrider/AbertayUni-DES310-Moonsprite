@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ToolbarManager : MonoBehaviour
 {
+    // this isn't up to date with maceij's branch
+
     //https://www.youtube.com/watch?v=DUDmsFmKw8E&list=PL4PNgDjMajPN51E5WzEi7cXzJ16BCHZXl&index=14 
     //this should give me sme ideas how to continue
 

@@ -14,15 +14,34 @@ public class PlayerInteractionController : MonoBehaviour
     [Space]
     public LayerMask interactableMask;
 
-    bool interacting;
+    int interactingWithXScripts = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(interactionKey) == true)
+        if(Input.GetKeyDown(interactionKey) == true )
         {
-
+            TryInteract();
         }
+    }
+
+    void TryInteract()
+    {
+        if(interactingWithXScripts > 0)
+        {
+            return;
+        }
+
+        IInteractionInterface[] interactionInterfaces = RayCastForInterface();
+        foreach (IInteractionInterface interactionInterface in interactionInterfaces)
+        {
+            interactionInterface.InteractionEvent();
+        }
+    }
+
+    public void ExitInteraction()
+    {
+        interactingWithXScripts = interactingWithXScripts - 1;
     }
 
     IInteractionInterface[] RayCastForInterface()
