@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ToolbarManager : MonoBehaviour
 {
-    // this isn't up to date with maceij's branch
-
     //https://www.youtube.com/watch?v=DUDmsFmKw8E&list=PL4PNgDjMajPN51E5WzEi7cXzJ16BCHZXl&index=14 
     //this should give me sme ideas how to continue
 
@@ -54,12 +52,12 @@ public class ToolbarManager : MonoBehaviour
 
         }
 
-            // for (int x = 0; x < inventory.Count; x++)
-            //{
+        // for (int x = 0; x < inventory.Count; x++)
+        //{
 
-            inventorySlots[0].DrawSlot(inventory[selectedSlot]);
+        inventorySlots[0].DrawSlot(inventory[selectedSlot]);
 
-            //}
+        //}
 
 
     }
@@ -113,22 +111,12 @@ public class ToolbarManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
-
-
-
-        //inventoryItems = FindObjectOfType<Inventory>().GetListOfItems();
-        inventoryItems = playerInventory.GetListOfItems();
+        inventoryItems = FindObjectOfType<Inventory>().GetListOfItems();
+        //inventoryItems = playerInventory.GetListOfItems();
         //playerInventory.GetComponent<Inventory>;
         if (inventoryItems.Count > 0)
         {
             DrawnInventory(inventoryItems);
         }
-        
-
-        
-
     }
-
 }
