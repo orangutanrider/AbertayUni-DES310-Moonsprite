@@ -7,27 +7,65 @@ public class ToolbarManager : MonoBehaviour
     //https://www.youtube.com/watch?v=DUDmsFmKw8E&list=PL4PNgDjMajPN51E5WzEi7cXzJ16BCHZXl&index=14 
     //this should give me sme ideas how to continue
 
+    [Header("Required References")]
     public GameObject slotPrefab;
     public Inventory playerInventory;
 
+    [Header("DO NOT EDIT")]
+    [Header("For Viewing Purposes Only")]
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     public List<InventorySlots> inventorySlots = new List<InventorySlots>();
-
+    [Space]
     public int selectedSlot = 0;
+    public InventoryItem activeItem { get; private set; }
 
+    [HideInInspector] public static ToolbarManager Instance = null;
 
+    #region Execution
     private void OnEnable()
     {
 
-        Inventory.OnInventoryChange += DrawnInventory;
+        Inventory.OnInventoryChange += DrawInventory;
 
     }
 
     private void OnDisable()
     {
 
-        Inventory.OnInventoryChange -= DrawnInventory;
+        Inventory.OnInventoryChange -= DrawInventory;
 
+    }
+
+    private void Update()
+    {
+        ItemSelectInput();
+    }
+
+    private void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogError("There should only be one toolbar manager per scene");
+        }
+    }
+
+    #endregion
+
+    [Tooltip("Call this whenever the inventory is updated")]
+    public void UpdateInventoryStatus()
+    {
+        //inventoryItems = playerInventory.GetListOfItems();
+        //playerInventory.GetComponent<Inventory>;
+
+        inventoryItems = playerInventory.GetListOfItems();
+        if (inventoryItems.Count > 0)
+        {
+            DrawInventory(inventoryItems);
+        }
     }
 
     void ResetInventory()
@@ -39,7 +77,7 @@ public class ToolbarManager : MonoBehaviour
         inventorySlots = new List<InventorySlots>(1);
     }
 
-    void DrawnInventory(List<InventoryItem> inventory)
+    void DrawInventory(List<InventoryItem> inventory)
     {
 
 
@@ -77,7 +115,7 @@ public class ToolbarManager : MonoBehaviour
 
     }
 
-    private void Update()
+    void ItemSelectInput()
     {
         if (inventorySlots.Count > 0)
         {
@@ -105,18 +143,6 @@ public class ToolbarManager : MonoBehaviour
         else
         {
             selectedSlot = 0;
-        }
-
-    }
-
-    private void FixedUpdate()
-    {
-        inventoryItems = FindObjectOfType<Inventory>().GetListOfItems();
-        //inventoryItems = playerInventory.GetListOfItems();
-        //playerInventory.GetComponent<Inventory>;
-        if (inventoryItems.Count > 0)
-        {
-            DrawnInventory(inventoryItems);
         }
     }
 }
