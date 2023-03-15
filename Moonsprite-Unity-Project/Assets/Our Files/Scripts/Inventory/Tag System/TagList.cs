@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TagList : MonoBehaviour
+[System.Serializable]
+public class TagList
 {
-
-    private List<CustomTag> tags;
-
-    public List<CustomTag> All => tags;
+    public List<CustomTag> tags;
 
     public bool HasTag(CustomTag passedTag)
     {

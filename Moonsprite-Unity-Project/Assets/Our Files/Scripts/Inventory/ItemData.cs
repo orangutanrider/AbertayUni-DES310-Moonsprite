@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     // Start is called before the first frame update
-    public string name;
+    public TagList tagList;
     public Sprite icon;
    
 }

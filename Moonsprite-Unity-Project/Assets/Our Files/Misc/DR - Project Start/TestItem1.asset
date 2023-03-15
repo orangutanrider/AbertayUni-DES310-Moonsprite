@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eb674a13ed63c4ab6e473f75afa110, type: 3}
   m_Name: TestItem1
   m_EditorClassIdentifier: 
-  name: commuters
+  tagList:
+    tags:
+    - {fileID: 11400000, guid: 9118b8d91b76a344c988ce66a3531038, type: 2}
   icon: {fileID: 21300000, guid: 8f7f73210af848a459566d0e0cd82b08, type: 3}
