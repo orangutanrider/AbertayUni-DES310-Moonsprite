@@ -35,12 +35,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 targetPos;
     private Vector3 currentPos;
 
-
     Vector2 velocity = Vector2.zero;
+    const float xDeccelerateFactor = 1;
+
     float xInput;
     float yInput;
-
-    const float xDeccelerateFactor = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -235,5 +234,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2D.velocity = Vector2.SmoothDamp(rb2D.velocity, new Vector2(rb2D.velocity.x, 0), ref velocity, pivotTime);
         }
+    }
+
+    public Vector2 GetFacingDirection()
+    {
+        return new Vector2(xInput, yInput);
     }
 }
