@@ -72,7 +72,7 @@ public class PositionalYSorter : MonoBehaviour
     {
         foreach(SpriteRendererWithOffset spriteRendererWithOffset in spriteRenderers)
         {
-            spriteRendererWithOffset.spriteRenderer.sortingOrder = CalculateSortingOrder(newSortingOrder) + spriteRendererWithOffset.offset;
+            spriteRendererWithOffset.spriteRenderer.sortingOrder = newSortingOrder + spriteRendererWithOffset.offset;
         }
     }
 }
