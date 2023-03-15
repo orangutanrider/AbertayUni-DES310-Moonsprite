@@ -18,11 +18,19 @@ Finally, you can now add it to a tile palette
 Either add it to an existing one (by simply dragging it into that window) or create a new tile palette
 To create a new tile palette, right click and then Create>2D>TilePalette>Rectangular
 BUT WAIT
-These tile files should be created in
+These tile palette files should be created in the "TileSetFiles" folder
+That folder is contained at the start of the art folder directory
+AND WAIT AGAIN
+When you go to import the files to a tilepalette, it will prompt you to choose where to store the tile files
+When it asks you to do this, store them in the "Tile Files" folder, which is contained in the "TileSetFiles" folder
 
-
+========
 Why is this needed? As in, why do we need a sprite atlas?
 Answer: 
 	The sprite atlas solves the issue of seam flickering.
 	https://www.youtube.com/watch?v=Wf98KrAyB2I
 	This is where, when moving around, you'll sometimes get lines flashing it where tiles meet.
+
+Folder structure?
+	The folder structure is based on file types.
+	It is consistent and logical, which is what matters when you're collaborating.
