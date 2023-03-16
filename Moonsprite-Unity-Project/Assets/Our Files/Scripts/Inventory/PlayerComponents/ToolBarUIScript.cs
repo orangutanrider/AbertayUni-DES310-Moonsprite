@@ -33,11 +33,6 @@ public class ToolBarUIScript : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        ItemSelectInput();
-    }
-
     private void Start()
     {
         if (Instance == null)
