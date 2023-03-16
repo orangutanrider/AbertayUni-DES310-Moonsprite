@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5162127853215272874}
   - component: {fileID: 5162127853215272875}
+  - component: {fileID: 7478695862986061833}
   m_Layer: 0
   m_Name: InventoryGameObject
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5162127853215272875
 MonoBehaviour:
@@ -44,4 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ca5b341e70ab64b98fa3d91b1dfd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolbarManager: {fileID: 0}
   inventory: []
+--- !u!114 &7478695862986061833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162127853215272872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03a6942d102da54d91c9b289a68d50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolBarUIObject: {fileID: 0}
