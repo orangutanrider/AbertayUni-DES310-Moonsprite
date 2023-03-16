@@ -14,7 +14,6 @@ public class ToolbarManager : MonoBehaviour
     [Header("DO NOT EDIT - For Viewing Purposes Only")]
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     public List<InventorySlots> inventorySlots = new List<InventorySlots>();
-    [Space]
     public int selectedSlot = 0;
 
     [HideInInspector] public static ToolbarManager Instance = null;
