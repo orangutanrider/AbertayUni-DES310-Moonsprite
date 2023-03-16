@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6866626214796438043}
   - component: {fileID: 6866626214796438040}
   m_Layer: 5
-  m_Name: InventoryUI
+  m_Name: OldInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   playerInventory: {fileID: 0}
   inventoryItems: []
   inventorySlots: []
+  slotNumber: 6
 --- !u!1001 &6428734770897293663
 PrefabInstance:
   m_ObjectHideFlags: 0
