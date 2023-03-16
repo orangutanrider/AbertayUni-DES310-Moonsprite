@@ -10,6 +10,12 @@ public class PlayerInventoryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        OpenCloseInventoryInput();
+        ItemSelectInput();
+    }
+
+    void OpenCloseInventoryInput()
+    {
         if (Input.GetKeyDown(KeyCode.I))
         {
             if (toolBarUIObject.activeInHierarchy)
@@ -22,6 +28,18 @@ public class PlayerInventoryController : MonoBehaviour
                 toolBarUIObject.SetActive(true);
 
             }
+        }
+    }
+
+    void ItemSelectInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ToolBarUIScript.Instance.ShiftSelectedSlot(-1);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ToolBarUIScript.Instance.ShiftSelectedSlot(1);
         }
     }
 }

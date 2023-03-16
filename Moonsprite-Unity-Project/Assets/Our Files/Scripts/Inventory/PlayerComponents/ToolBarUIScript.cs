@@ -12,9 +12,9 @@ public class ToolBarUIScript : MonoBehaviour
     public Inventory playerInventory;
 
     [Header("DO NOT EDIT - For Viewing Purposes Only")]
-    List<InventoryItem> inventoryItems = new List<InventoryItem>();
-    public List<InventorySlots> inventorySlots = new List<InventorySlots>();
-    public int selectedSlot = 0;
+    [SerializeField] List<InventoryItem> inventoryItems = new List<InventoryItem>();
+    [SerializeField] List<InventorySlots> inventorySlots = new List<InventorySlots>();
+    [SerializeField] int selectedSlot = 0;
 
     [HideInInspector] public static ToolBarUIScript Instance = null;
 
@@ -112,34 +112,28 @@ public class ToolBarUIScript : MonoBehaviour
 
     }
 
-    void ItemSelectInput()
+    public bool ShiftSelectedSlot(int moveSelectionBy)
     {
-        if (inventorySlots.Count > 0)
+        if (inventorySlots.Count == 0)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
+            return false;
+        }
 
-
-                if (selectedSlot >= inventoryItems.Count - 1)
-                    selectedSlot = 0;
-                else
-                    selectedSlot += 1;
-
-            }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-
-
-                if (selectedSlot <= 0)
-                    selectedSlot = inventoryItems.Count - 1;
-                else
-                    selectedSlot -= 1;
-            }
+        int newSlotIndex = selectedSlot + moveSelectionBy;
+        if (newSlotIndex >= inventoryItems.Count - 1)
+        {
+            selectedSlot = 0;
+            return true;
+        }
+        else if (selectedSlot <= 0)
+        {
+            selectedSlot = inventoryItems.Count - 1;
+            return true;
         }
         else
         {
-            selectedSlot = 0;
+            selectedSlot = newSlotIndex;
+            return true;
         }
     }
 

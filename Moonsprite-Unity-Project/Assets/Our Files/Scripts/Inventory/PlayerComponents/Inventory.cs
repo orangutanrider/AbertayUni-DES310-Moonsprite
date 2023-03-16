@@ -6,7 +6,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [Header("Required References")]
-    public ToolBarUIScript toolbarManager;
+    public ToolBarUIScript toolBarUIScript;
 
     [Header("Item List")]
     public List<InventoryItem> inventory = new List<InventoryItem>();
@@ -18,14 +18,14 @@ public class Inventory : MonoBehaviour
     {
         SamplePickupItem.OnItemCollected += Add;
 
-        toolbarManager.UpdateInventoryVisualDisplay();
+        toolBarUIScript.UpdateInventoryVisualDisplay();
     }
 
     private void OnDisable()
     {
         SamplePickupItem.OnItemCollected -= Add;
 
-        toolbarManager.UpdateInventoryVisualDisplay();
+        toolBarUIScript.UpdateInventoryVisualDisplay();
     }
 
     public void Add(ItemData itemData)
@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
             OnInventoryChange?.Invoke(inventory);
         }
 
-        toolbarManager.UpdateInventoryVisualDisplay();
+        toolBarUIScript.UpdateInventoryVisualDisplay();
     }
 
 
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
             OnInventoryChange?.Invoke(inventory);
         }
 
-        toolbarManager.UpdateInventoryVisualDisplay();
+        toolBarUIScript.UpdateInventoryVisualDisplay();
     }
 
     public List<InventoryItem> GetListOfItems()
