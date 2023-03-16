@@ -630,6 +630,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6446592780286620786, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
+      propertyPath: toolbar
+      value: 
+      objectReference: {fileID: 4139295187337967180}
+    - target: {fileID: 6446592780286620786, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
+      propertyPath: inventoryPanel
+      value: 
+      objectReference: {fileID: 4139295187337967180}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
@@ -746,6 +754,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b4e69b3f9c91b5499ffb767d111f24a, type: 3}
+--- !u!1 &4139295187337967180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1298155802709203213, guid: 9b4e69b3f9c91b5499ffb767d111f24a, type: 3}
+  m_PrefabInstance: {fileID: 3130638193542262593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4139295187337967181 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1298155802709203212, guid: 9b4e69b3f9c91b5499ffb767d111f24a, type: 3}
@@ -756,7 +769,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5729811815383031499, guid: 9b4e69b3f9c91b5499ffb767d111f24a, type: 3}
   m_PrefabInstance: {fileID: 3130638193542262593}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4139295187337967180}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8cbac343cd06a044a7e9c089dde3050, type: 3}
