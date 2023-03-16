@@ -16,22 +16,20 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable()
     {
-        toolbarManager.UpdateInventoryVisualDisplay();
-
         SamplePickupItem.OnItemCollected += Add;
+
+        toolbarManager.UpdateInventoryVisualDisplay();
     }
 
     private void OnDisable()
     {
-        toolbarManager.UpdateInventoryVisualDisplay();
-
         SamplePickupItem.OnItemCollected -= Add;
+
+        toolbarManager.UpdateInventoryVisualDisplay();
     }
 
     public void Add(ItemData itemData)
     {
-        toolbarManager.UpdateInventoryVisualDisplay();
-
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
 
@@ -49,13 +47,13 @@ public class Inventory : MonoBehaviour
             //Debug.Log($"Added {itemData.name} to the inventory");
             OnInventoryChange?.Invoke(inventory);
         }
+
+        toolbarManager.UpdateInventoryVisualDisplay();
     }
 
 
     public void Remove(ItemData itemData)
     {
-        toolbarManager.UpdateInventoryVisualDisplay();
-
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
 
@@ -67,6 +65,8 @@ public class Inventory : MonoBehaviour
             }
             OnInventoryChange?.Invoke(inventory);
         }
+
+        toolbarManager.UpdateInventoryVisualDisplay();
     }
 
     public List<InventoryItem> GetListOfItems()
