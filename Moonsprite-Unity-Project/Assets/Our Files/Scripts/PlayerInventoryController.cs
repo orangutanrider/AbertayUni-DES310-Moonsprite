@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerInventoryController : MonoBehaviour
 {
     [Header("Required References")]
-    public GameObject inventoryPanel;
-    public GameObject toolbar;
+    public GameObject toolBarUIObject;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +18,14 @@ public class PlayerInventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (inventoryPanel.activeInHierarchy)
+            if (toolBarUIObject.activeInHierarchy)
             {
 
-                inventoryPanel.SetActive(false);
+                toolBarUIObject.SetActive(false);
             }
             else
             {
-                inventoryPanel.SetActive(true);
+                toolBarUIObject.SetActive(true);
 
             }
         }
