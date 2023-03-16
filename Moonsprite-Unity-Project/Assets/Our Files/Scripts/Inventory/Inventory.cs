@@ -6,7 +6,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [Header("Required References")]
-    public ToolbarManager toolbarManager;
+    public ToolBarUIScript toolbarManager;
 
     [Header("Item List")]
     public List<InventoryItem> inventory = new List<InventoryItem>();
