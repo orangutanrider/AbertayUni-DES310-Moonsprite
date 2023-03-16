@@ -503,6 +503,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1672413713335408976}
     m_Modifications:
+    - target: {fileID: 1870123567885135946, guid: 878119cebeb7d244c8226d032b63426e, type: 3}
+      propertyPath: slotParentObject
+      value: 
+      objectReference: {fileID: 1196752730522660342}
     - target: {fileID: 5162127853215272872, guid: 878119cebeb7d244c8226d032b63426e, type: 3}
       propertyPath: m_Name
       value: InventoryGameObject

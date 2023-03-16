@@ -91,7 +91,7 @@ public class ToolBarUIScript : MonoBehaviour
 
         GameObject newSlot = Instantiate(slotPrefab, slotParentObject.transform);
 
-        newSlot.transform.SetParent(transform, false);
+        newSlot.transform.SetParent(slotParentObject.transform, false);
 
         InventorySlots newSlotComponent = newSlot.GetComponent<InventorySlots>();
 

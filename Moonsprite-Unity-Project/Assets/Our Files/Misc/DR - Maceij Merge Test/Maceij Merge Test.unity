@@ -249,6 +249,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 09916ea53af12a2419fc284b7294b690, type: 3}
+--- !u!1 &347690248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1196752730522660342, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
+  m_PrefabInstance: {fileID: 1886994886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &450725680
 GameObject:
   m_ObjectHideFlags: 0
@@ -17377,6 +17382,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1989294125361587955, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
+      propertyPath: slotParentObject
+      value: 
+      objectReference: {fileID: 347690248}
     - target: {fileID: 2748013089874434299, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
