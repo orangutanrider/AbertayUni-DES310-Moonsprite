@@ -35,8 +35,8 @@ public class PlayerInteractionController : MonoBehaviour
 
         TagList tagList = ToolBarUIScript.Instance.GetTagListOfActiveItem();
 
-        IInteractionInterface[] interactionInterfaces = RayCastForInterface();
-        foreach (IInteractionInterface interactionInterface in interactionInterfaces)
+        IInteractable[] interactionInterfaces = RayCastForInterface();
+        foreach (IInteractable interactionInterface in interactionInterfaces)
         {
             interactionInterface.InteractionEvent(this, tagList);
         }
@@ -47,7 +47,7 @@ public class PlayerInteractionController : MonoBehaviour
         interactingWithXScripts = interactingWithXScripts - 1;
     }
 
-    IInteractionInterface[] RayCastForInterface()
+    IInteractable[] RayCastForInterface()
     {
         RaycastHit2D[] circleCastHits = Physics2D.CircleCastAll(transform.position + originOffset, interactionRange, Vector2.zero, 0, interactableMask);
         if(circleCastHits.Length == 0)
@@ -57,18 +57,18 @@ public class PlayerInteractionController : MonoBehaviour
 
         if(circleCastHits.Length == 1)
         {
-            return circleCastHits[0].collider.gameObject.GetComponents<IInteractionInterface>();
+            return circleCastHits[0].collider.gameObject.GetComponents<IInteractable>();
         }
         else
         {
             RaycastHit2D playerDirectionCastHit = Physics2D.Raycast(transform.position + originOffset, playerMovement.GetFacingDirection(), interactionRange, interactableMask);
             if(playerDirectionCastHit == true)
             {
-                return playerDirectionCastHit.collider.gameObject.GetComponents<IInteractionInterface>();
+                return playerDirectionCastHit.collider.gameObject.GetComponents<IInteractable>();
             }
             else
             {
-                return circleCastHits[0].collider.gameObject.GetComponents<IInteractionInterface>();
+                return circleCastHits[0].collider.gameObject.GetComponents<IInteractable>();
             }
         }
     }
