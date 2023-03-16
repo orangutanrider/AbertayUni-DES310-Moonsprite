@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
 
     public int slotNumber = 6;
 
+    #region Execution
     private void OnEnable()
     {
         
@@ -26,6 +27,20 @@ public class InventoryManager : MonoBehaviour
         Inventory.OnInventoryChange -= DrawnInventory;
 
     }
+
+    private void FixedUpdate()
+    {
+
+        if (Time.frameCount % 60 == 0)
+        {
+
+            inventoryItems = FindObjectOfType<Inventory>().GetListOfItems();
+            //playerInventory.GetComponent<Inventory>;
+            DrawnInventory(inventoryItems);
+        }
+    }
+    #endregion
+
 
     void ResetInventory()
     {
@@ -74,20 +89,5 @@ public class InventoryManager : MonoBehaviour
         inventorySlots.Add(newSlotComponent);
 
     }
-
-
-    private void FixedUpdate()
-    {
-        
-        if (Time.frameCount % 60 == 0)
-        {
-
-            inventoryItems = FindObjectOfType<Inventory>().GetListOfItems();
-            //playerInventory.GetComponent<Inventory>;
-            DrawnInventory(inventoryItems);
-        }
-    }
-
-
 }
 
