@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericCollectibleItem : MonoBehaviour, ICollectible, IInteractionInterface
+public class GenericCollectibleItem : Collectible, IInteractionInterface
 {
     [Header("Parameters")]
     public ItemData sampleItemData;
@@ -20,7 +20,7 @@ public class GenericCollectibleItem : MonoBehaviour, ICollectible, IInteractionI
     //========
     void IInteractionInterface.InteractionEvent(PlayerInteractionController playerInteractionController, TagList tagList)
     {
-
+        Collect();
     }
 
     void IInteractionInterface.FinishInteraction()
@@ -28,7 +28,7 @@ public class GenericCollectibleItem : MonoBehaviour, ICollectible, IInteractionI
 
     }
 
-    void ICollectible.Collect()
+    public override void Collect()
     {
         Destroy(gameObject);
         OnItemCollected?.Invoke(sampleItemData);
