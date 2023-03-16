@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("This script is deprecated, replaced by toolbar manager")]
 public class InventoryManager : MonoBehaviour
 {
     public GameObject slotPrefab;
