@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5162127853215272874}
   - component: {fileID: 5162127853215272875}
   - component: {fileID: 7478695862986061833}
+  - component: {fileID: 1870123567885135946}
   m_Layer: 0
   m_Name: InventoryGameObject
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ca5b341e70ab64b98fa3d91b1dfd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolbarManager: {fileID: 0}
+  toolBarUIScript: {fileID: 1870123567885135946}
   inventory: []
 --- !u!114 &7478695862986061833
 MonoBehaviour:
@@ -60,3 +61,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolBarUIObject: {fileID: 0}
+--- !u!114 &1870123567885135946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162127853215272872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3792affed79e04d80cabc0eb046057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPrefab: {fileID: 1321297851243859919, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+  playerInventory: {fileID: 5162127853215272875}
+  inventoryItems: []
+  inventorySlots: []
+  selectedSlot: 0

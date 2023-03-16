@@ -9,6 +9,7 @@ public class ToolBarUIScript : MonoBehaviour
 
     [Header("Required References")]
     public GameObject slotPrefab;
+    public GameObject slotParentObject;
     public Inventory playerInventory;
 
     [Header("DO NOT EDIT - For Viewing Purposes Only")]
@@ -35,14 +36,7 @@ public class ToolBarUIScript : MonoBehaviour
 
     private void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Debug.LogError("There should only be one toolbar manager per scene");
-        }
+        Instance = this;
     }
 
     #endregion
@@ -62,7 +56,7 @@ public class ToolBarUIScript : MonoBehaviour
 
     void ResetInventory()
     {
-        foreach (Transform childTransform in transform)
+        foreach (Transform childTransform in slotParentObject.transform)
         {
             Destroy(childTransform.gameObject);
         }
@@ -95,7 +89,7 @@ public class ToolBarUIScript : MonoBehaviour
     void CreateInventorySlot()
     {
 
-        GameObject newSlot = Instantiate(slotPrefab);
+        GameObject newSlot = Instantiate(slotPrefab, slotParentObject.transform);
 
         newSlot.transform.SetParent(transform, false);
 

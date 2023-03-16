@@ -17309,6 +17309,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1196752730522660342, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1672413713335408976, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -17372,6 +17376,10 @@ PrefabInstance:
     - target: {fileID: 1672413713752001831, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748013089874434299, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -147,11 +147,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 4339019779615691369}
   interactionKey: 103
-  interactionRange: 1
-  originOffset: {x: 0, y: 0, z: 0}
+  interactionRange: 2
+  originOffset: {x: 0, y: 0.48, z: 0}
   interactableMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  enableGizmos: 0
 --- !u!1 &4339019780498585484
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1298155802709203212}
   - component: {fileID: 1298155802709203209}
   - component: {fileID: 1298155802709203210}
-  - component: {fileID: 6034179121824892733}
   m_Layer: 5
   m_Name: ToolBarUI
   m_TagString: Untagged
@@ -78,23 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6034179121824892733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298155802709203213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3792affed79e04d80cabc0eb046057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 1321297851243859919, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
-  playerInventory: {fileID: 0}
-  inventoryItems: []
-  inventorySlots: []
-  selectedSlot: 0
 --- !u!1001 &3182115285599617665
 PrefabInstance:
   m_ObjectHideFlags: 0
