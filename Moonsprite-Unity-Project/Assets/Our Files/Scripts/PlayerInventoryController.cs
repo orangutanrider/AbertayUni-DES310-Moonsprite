@@ -20,6 +20,7 @@ public class PlayerInventoryController : MonoBehaviour
         {
             if (toolBarUIObject.activeInHierarchy)
             {
+
                 toolBarUIObject.SetActive(false);
             }
             else
@@ -34,11 +35,11 @@ public class PlayerInventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            ToolbarManager.Instance.ShiftSelectedSlot(-1);
+            ToolBarUIScript.Instance.ShiftSelectedSlot(-1);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ToolbarManager.Instance.ShiftSelectedSlot(1);
+            ToolBarUIScript.Instance.ShiftSelectedSlot(1);
         }
     }
 }

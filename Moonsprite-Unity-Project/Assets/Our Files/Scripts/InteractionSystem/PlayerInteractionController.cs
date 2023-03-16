@@ -43,7 +43,7 @@ public class PlayerInteractionController : MonoBehaviour
             return;
         }
 
-        TagList activeItemTags = ToolbarManager.Instance.GetTagListOfActiveItem();
+        TagList activeItemTags = ToolBarUIScript.Instance.GetTagListOfActiveItem();
 
         IInteractable[] interactionInterfaces = RayCastForInterface();
         foreach (IInteractable interactionInterface in interactionInterfaces)

@@ -5,44 +5,31 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [Header("Required References")]
+    public ToolBarUIScript toolBarUIScript;
+
     [Header("Item List")]
-    public List<ItemData> inventory = new List<ItemData>();
+    public List<InventoryItem> inventory = new List<InventoryItem>();
 
-    [HideInInspector] public static Inventory Instance = null;
+    private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
+    public static event Action<List<InventoryItem>> OnInventoryChange;
 
-    private void Start()
+    private void OnEnable()
     {
-        Instance = this;
+        GenericCollectibleItem.OnItemCollected += Add;
+
+        toolBarUIScript.UpdateInventoryVisualDisplay();
     }
 
-    public void PickUpItem(ItemData itemData)
+    private void OnDisable()
     {
-        inventory.Add(itemData);
+        GenericCollectibleItem.OnItemCollected -= Add;
+
+        toolBarUIScript.UpdateInventoryVisualDisplay();
     }
 
-    //private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
-    //public static event Action<List<InventoryItem>> OnInventoryChange;
-
-    /*
-private void OnEnable()
-{
-    GenericCollectibleItem.OnItemCollected += Add;
-
-    toolBarUIScript.UpdateInventoryVisualDisplay();
-}
-
-private void OnDisable()
-{
-    GenericCollectibleItem.OnItemCollected -= Add;
-
-    toolBarUIScript.UpdateInventoryVisualDisplay();
-}
-*/
-
-    /*
     public void Add(ItemData itemData)
     {
-
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
             item.AddToStack();
@@ -56,18 +43,17 @@ private void OnDisable()
             OnInventoryChange?.Invoke(inventory);
         }
 
-
-        inventory.Add(new InventoryItem(itemData));
-
         toolBarUIScript.UpdateInventoryVisualDisplay();
     }
+
+
     public void Remove(ItemData itemData)
     {
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
 
             item.RemoveFromStack();
-            if (item.stacksize == 0)
+            if(item.stacksize == 0)
             {
                 inventory.Remove(item);
                 itemDictionary.Remove(itemData);
@@ -77,5 +63,11 @@ private void OnDisable()
 
         toolBarUIScript.UpdateInventoryVisualDisplay();
     }
-    */
+
+    public List<InventoryItem> GetListOfItems()
+    {
+
+        return inventory;
+    }
+
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Obsolete("This script is deprecated, replaced by toolbar manager")]
 public class InventoryManager : MonoBehaviour
 {
-    /*
     public GameObject slotPrefab;
     public Inventory playerInventory;
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
@@ -90,6 +89,5 @@ public class InventoryManager : MonoBehaviour
         inventorySlots.Add(newSlotComponent);
 
     }
-    */
 }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GenericCollectibleItem : MonoBehaviour, IInteractable
 {
     [Header("Parameters")]
-    public ItemData itemData;
+    public ItemData sampleItemData;
     public int interactionPriotiry = 1;
 
     //========
@@ -27,8 +27,7 @@ public class GenericCollectibleItem : MonoBehaviour, IInteractable
 
     void Collect()
     {
-        Inventory.Instance.PickUpItem(itemData);
-
         Destroy(gameObject);
+        OnItemCollected?.Invoke(sampleItemData);
     }
 }
