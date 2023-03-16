@@ -5,26 +5,34 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [Header("Required References")]
+    public ToolbarManager toolbarManager;
 
-    public static event Action<List<InventoryItem>> OnInventoryChange;
-
+    [Header("Item List")]
     public List<InventoryItem> inventory = new List<InventoryItem>();
-    private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
 
+    private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
+    public static event Action<List<InventoryItem>> OnInventoryChange;
 
     private void OnEnable()
     {
+        toolbarManager.UpdateInventoryVisualDisplay();
+
         SamplePickupItem.OnItemCollected += Add;
     }
 
     private void OnDisable()
     {
+        toolbarManager.UpdateInventoryVisualDisplay();
+
         SamplePickupItem.OnItemCollected -= Add;
     }
 
     public void Add(ItemData itemData)
     {
-        if(itemDictionary.TryGetValue(itemData, out InventoryItem item))
+        toolbarManager.UpdateInventoryVisualDisplay();
+
+        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
 
             item.AddToStack();
@@ -46,6 +54,8 @@ public class Inventory : MonoBehaviour
 
     public void Remove(ItemData itemData)
     {
+        toolbarManager.UpdateInventoryVisualDisplay();
+
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
 
