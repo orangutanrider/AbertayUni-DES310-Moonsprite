@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class CollectibleItem : Collectible
 {
+    public ItemData sampleItemData;
+
+    public static event HandleItemPickup OnItemCollected;
+    public delegate void HandleItemPickup(ItemData itemData);
+
     public override void Collect()
     {
-        Debug.Log("Item Collected");
+        Destroy(gameObject);
+        OnItemCollected?.Invoke(sampleItemData);
     }
-    
-
-   
 }
