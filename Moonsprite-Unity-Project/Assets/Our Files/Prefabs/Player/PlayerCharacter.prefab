@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 4339019779615691368}
   - component: {fileID: 4339019779615691370}
   - component: {fileID: 4339019779615691369}
-  - component: {fileID: 7230034476328390599}
   - component: {fileID: 3134911668382450938}
+  - component: {fileID: 989528950106796098}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -117,18 +117,6 @@ MonoBehaviour:
   deccelerationPower: 2
   maxMoveSpeed: 6
   maxBoostedSpeed: 25
---- !u!114 &7230034476328390599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4339019779615691351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f48ee8e514756549ba9f72de3616db9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &3134911668382450938
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -145,6 +133,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00706926, y: 0.14978582}
   m_Size: {x: 0.6219236, y: 0.68106925}
   m_Direction: 0
+--- !u!114 &989528950106796098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339019779615691351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2294a00d8d7881947bc6c36fa2503a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 4339019779615691369}
+  interactionKey: 103
+  interactionRange: 1
+  originOffset: {x: 0, y: 0, z: 0}
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4339019780498585484
 GameObject:
   m_ObjectHideFlags: 0

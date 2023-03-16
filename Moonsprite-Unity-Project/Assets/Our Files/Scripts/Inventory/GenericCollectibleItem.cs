@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))] // needs a collider to be detected by interaction raycasts
 public class GenericCollectibleItem : MonoBehaviour, IInteractable
 {
     [Header("Parameters")]

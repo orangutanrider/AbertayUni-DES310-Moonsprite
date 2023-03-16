@@ -16,14 +16,14 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable()
     {
-        SamplePickupItem.OnItemCollected += Add;
+        GenericCollectibleItem.OnItemCollected += Add;
 
         toolBarUIScript.UpdateInventoryVisualDisplay();
     }
 
     private void OnDisable()
     {
-        SamplePickupItem.OnItemCollected -= Add;
+        GenericCollectibleItem.OnItemCollected -= Add;
 
         toolBarUIScript.UpdateInventoryVisualDisplay();
     }

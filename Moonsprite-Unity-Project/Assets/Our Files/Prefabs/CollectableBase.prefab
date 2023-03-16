@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8347040166524537832}
   - component: {fileID: 1515629194484575725}
   - component: {fileID: -8296515926360022526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CollectableBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,3 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sampleItemData: {fileID: 11400000, guid: 0cc8df0080c65434792c602cca292ad9, type: 2}
+  interactionPriotiry: 1
