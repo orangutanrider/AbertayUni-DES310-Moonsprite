@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericCollectibleItem : MonoBehaviour, ICollectible, IInteractionInterface
+public class GenericCollectibleItem : MonoBehaviour, IInteractable
 {
     [Header("Parameters")]
     public ItemData sampleItemData;
@@ -11,24 +11,20 @@ public class GenericCollectibleItem : MonoBehaviour, ICollectible, IInteractionI
     //========
     public static event HandleItemPickup OnItemCollected;
     public delegate void HandleItemPickup(ItemData itemData);
-    int IInteractionInterface.InteractionPriority 
+    int IInteractable.InteractionPriority 
     {
         get { return interactionPriotiry; } 
         set { interactionPriotiry = value; }
     }
 
     //========
-    void IInteractionInterface.InteractionEvent(PlayerInteractionController playerInteractionController, TagList tagList)
+    void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList tagList)
     {
-
+        playerInteractionController.ExitInteraction();
+        Collect();
     }
 
-    void IInteractionInterface.FinishInteraction()
-    {
-
-    }
-
-    void ICollectible.Collect()
+    void Collect()
     {
         Destroy(gameObject);
         OnItemCollected?.Invoke(sampleItemData);
