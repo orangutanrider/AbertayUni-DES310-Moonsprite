@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 0}
+  toolbar: {fileID: 0}
 --- !u!114 &7230034476328390599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,8 +157,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011044681, y: 0.2650724}
-  m_Size: {x: 0.56626797, y: 0.91164243}
+  m_Offset: {x: -0.00706926, y: 0.14978582}
+  m_Size: {x: 0.6219236, y: 0.68106925}
   m_Direction: 0
 --- !u!1 &4339019780498585484
 GameObject:
@@ -289,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4339019780916809793}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.05, z: 0}
+  m_LocalPosition: {x: -0.023, y: -0.069, z: 0}
   m_LocalScale: {x: 0.7, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
