@@ -29,13 +29,16 @@ public class PlayerInteractionController : MonoBehaviour
     {
         if(interactingWithXScripts > 0)
         {
+            Debug.Log("Interaction Attempted, but player is still interacting with " + interactingWithXScripts + " script(s)");
             return;
         }
+
+        TagList tagList = ToolbarManager.Instance.GetTagListOfActiveItem();
 
         IInteractionInterface[] interactionInterfaces = RayCastForInterface();
         foreach (IInteractionInterface interactionInterface in interactionInterfaces)
         {
-            interactionInterface.InteractionEvent();
+            interactionInterface.InteractionEvent(tagList);
         }
     }
 

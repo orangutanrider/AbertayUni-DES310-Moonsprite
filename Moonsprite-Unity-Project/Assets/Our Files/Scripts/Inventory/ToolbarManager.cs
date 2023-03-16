@@ -17,7 +17,6 @@ public class ToolbarManager : MonoBehaviour
     public List<InventorySlots> inventorySlots = new List<InventorySlots>();
     [Space]
     public int selectedSlot = 0;
-    public InventoryItem activeItem { get; private set; }
 
     [HideInInspector] public static ToolbarManager Instance = null;
 
@@ -144,5 +143,15 @@ public class ToolbarManager : MonoBehaviour
         {
             selectedSlot = 0;
         }
+    }
+
+    public TagList GetTagListOfActiveItem()
+    {
+        if (inventoryItems.Count == 0)
+        {
+            return null;
+        }
+
+        return inventoryItems[selectedSlot].itemData.tagList;
     }
 }
