@@ -17169,6 +17169,10 @@ PrefabInstance:
       value: PlayerAndSupportingObjects
       objectReference: {fileID: 0}
     - target: {fileID: 1672413713434161110, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672413713434161110, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.23
       objectReference: {fileID: 0}
