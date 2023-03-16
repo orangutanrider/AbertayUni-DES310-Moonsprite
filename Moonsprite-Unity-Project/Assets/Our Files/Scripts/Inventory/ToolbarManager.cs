@@ -56,7 +56,7 @@ public class ToolbarManager : MonoBehaviour
     #endregion
 
     [Tooltip("Call this whenever the inventory is updated")]
-    public void UpdateInventoryStatus()
+    public void UpdateInventoryVisualDisplay()
     {
         //inventoryItems = playerInventory.GetListOfItems();
         //playerInventory.GetComponent<Inventory>;
