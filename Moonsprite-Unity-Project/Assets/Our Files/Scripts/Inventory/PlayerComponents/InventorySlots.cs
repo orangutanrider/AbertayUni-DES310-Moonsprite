@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class InventorySlots : MonoBehaviour
 {
+    /*
     public Image icon;
     public TextMeshProUGUI labelText;
     public TextMeshProUGUI stackSizeText;
@@ -42,4 +43,5 @@ public class InventorySlots : MonoBehaviour
         labelText.color = Color.green;
         stackSizeText.color = Color.green;
     }
+    */
 }

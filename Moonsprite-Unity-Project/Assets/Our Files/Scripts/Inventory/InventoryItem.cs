@@ -2,28 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-[Serializable]
-public class InventoryItem
+public class InventoryItem : MonoBehaviour
 {
-
-    public ItemData itemData;
-    public int stacksize;
-
-    public InventoryItem(ItemData item)
-    {
-        itemData = item;
-        AddToStack();
-    }
-
-    public void AddToStack()
-    {
-        stacksize++;
-    }
-
-    public void RemoveFromStack()
-    {
-        stacksize--;
-    }
-
+    public Image icon;
+    public int positionOnToolbar;
 }
