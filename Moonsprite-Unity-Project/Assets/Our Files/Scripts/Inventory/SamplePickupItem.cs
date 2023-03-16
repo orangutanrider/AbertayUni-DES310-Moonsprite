@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("ForTestingPurposes")]
 public class SamplePickupItem : Collectible
 {
     public static event HandleItemPickup OnItemCollected;
