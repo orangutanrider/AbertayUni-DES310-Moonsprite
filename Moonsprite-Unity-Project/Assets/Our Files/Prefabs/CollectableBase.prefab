@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7785971621810636956}
   - component: {fileID: 8347040166524537832}
   - component: {fileID: 1515629194484575725}
-  - component: {fileID: 5787187221588220961}
+  - component: {fileID: -8296515926360022526}
   m_Layer: 0
   m_Name: CollectableBase
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5787187221588220961
+--- !u!114 &-8296515926360022526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7014324061131137799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ae5eced769e5e45b202be91da46088, type: 3}
+  m_Script: {fileID: 11500000, guid: d03d5aef4db61ea49819c8b139ffc4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleItemData: {fileID: 0}
+  sampleItemData: {fileID: 11400000, guid: 0cc8df0080c65434792c602cca292ad9, type: 2}

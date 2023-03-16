@@ -33,12 +33,12 @@ public class PlayerInteractionController : MonoBehaviour
             return;
         }
 
-        TagList tagList = ToolbarManager.Instance.GetTagListOfActiveItem();
+        TagList tagList = ToolBarUIScript.Instance.GetTagListOfActiveItem();
 
         IInteractionInterface[] interactionInterfaces = RayCastForInterface();
         foreach (IInteractionInterface interactionInterface in interactionInterfaces)
         {
-            interactionInterface.InteractionEvent(tagList);
+            interactionInterface.InteractionEvent(this, tagList);
         }
     }
 
