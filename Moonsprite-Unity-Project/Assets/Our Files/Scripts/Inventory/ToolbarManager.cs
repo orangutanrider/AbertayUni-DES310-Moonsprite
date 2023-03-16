@@ -11,8 +11,7 @@ public class ToolbarManager : MonoBehaviour
     public GameObject slotPrefab;
     public Inventory playerInventory;
 
-    [Header("DO NOT EDIT")]
-    [Header("For Viewing Purposes Only")]
+    [Header("DO NOT EDIT - For Viewing Purposes Only")]
     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     public List<InventorySlots> inventorySlots = new List<InventorySlots>();
     [Space]
