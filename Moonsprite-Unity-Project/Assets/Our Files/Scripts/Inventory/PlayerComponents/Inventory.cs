@@ -5,69 +5,66 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    // Attribution: Maceij Wolski + Dominic Rooney
+
     [Header("Required References")]
     public ToolBarUIScript toolBarUIScript;
 
     [Header("Item List")]
-    public List<InventoryItem> inventory = new List<InventoryItem>();
+    public List<InventoryItem> itemList = new List<InventoryItem>();
 
     private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
     public static event Action<List<InventoryItem>> OnInventoryChange;
+
+    public static Inventory instance = null;
+
+    private void Start()
+    {
+        instance = this;
+    }
 
     private void OnEnable()
     {
         GenericCollectibleItem.OnItemCollected += Add;
 
-        toolBarUIScript.UpdateInventoryVisualDisplay();
+        toolBarUIScript.UpdateSlots();
     }
 
     private void OnDisable()
     {
         GenericCollectibleItem.OnItemCollected -= Add;
 
-        toolBarUIScript.UpdateInventoryVisualDisplay();
+        toolBarUIScript.UpdateSlots();
     }
 
     public void Add(ItemData itemData)
     {
-        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
-        {
-            item.AddToStack();
-            OnInventoryChange?.Invoke(inventory);
-        }
-        else
-        {
-            InventoryItem newItem = new InventoryItem(itemData);
-            inventory.Add(newItem);
-            itemDictionary.Add(itemData, newItem);
-            OnInventoryChange?.Invoke(inventory);
-        }
+        InventoryItem newItem = new InventoryItem(itemData);
+        itemList.Add(newItem);
+        itemDictionary.Add(itemData, newItem);
 
-        toolBarUIScript.UpdateInventoryVisualDisplay();
+        toolBarUIScript.UpdateSlots();
     }
 
 
-    public void Remove(ItemData itemData)
+    public void Remove(InventoryItem inventoryItem)
     {
-        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
+        if(itemList.Count == 0)
         {
-
-            item.RemoveFromStack();
-            if(item.stacksize == 0)
-            {
-                inventory.Remove(item);
-                itemDictionary.Remove(itemData);
-            }
-            OnInventoryChange?.Invoke(inventory);
+            return;
         }
 
-        toolBarUIScript.UpdateInventoryVisualDisplay();
+        bool contains = false;
+        if(itemList.Contains(inventoryItem) == true)
+        {
+            itemList.Remove(inventoryItem);
+            contains = true;
+        }
+
+        if (contains == true && itemDictionary.TryGetValue(inventoryItem.itemData, out InventoryItem item))
+        {
+            itemList.Remove(item);
+            itemDictionary.Remove(inventoryItem.itemData);
+        }
     }
-
-    public List<InventoryItem> GetListOfItems()
-    {
-
-        return inventory;
-    }
-
 }

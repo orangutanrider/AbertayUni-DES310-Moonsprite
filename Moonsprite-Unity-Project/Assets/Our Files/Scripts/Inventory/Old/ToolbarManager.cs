@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Obsolete("Replaced by ToolBarUIScript")]
 public class ToolbarManager : MonoBehaviour
 {
+    /*
     //https://www.youtube.com/watch?v=DUDmsFmKw8E&list=PL4PNgDjMajPN51E5WzEi7cXzJ16BCHZXl&index=14 
     //this should give me sme ideas how to continue
 
@@ -153,4 +154,5 @@ public class ToolbarManager : MonoBehaviour
 
         return inventoryItems[selectedSlot].itemData.tagList;
     }
+    */
 }
