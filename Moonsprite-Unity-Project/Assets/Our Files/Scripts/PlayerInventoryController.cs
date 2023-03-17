@@ -4,31 +4,9 @@ using UnityEngine;
 
 public class PlayerInventoryController : MonoBehaviour
 {
-    [Header("Required References")]
-    public GameObject toolBarUIObject;
-
-    // Update is called once per frame
     void Update()
     {
-        OpenCloseInventoryInput();
         ItemSelectInput();
-    }
-
-    void OpenCloseInventoryInput()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (toolBarUIObject.activeInHierarchy)
-            {
-
-                toolBarUIObject.SetActive(false);
-            }
-            else
-            {
-                toolBarUIObject.SetActive(true);
-
-            }
-        }
     }
 
     void ItemSelectInput()

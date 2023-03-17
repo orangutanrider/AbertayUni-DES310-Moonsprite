@@ -9,8 +9,6 @@ public class ToolBarUIScript : MonoBehaviour
     // Attribution: Maceij Wolski + Dominic Rooney
 
     [Header("Required References")]
-    public Inventory playerInventory;
-    [Space]
     public GameObject slotParentObject;
     public ToolbarSlotScript[] toolbarSlots; [Tooltip("Slots should be inserted into list like this: [0 1 2 3 4], with 0 being the slot furthest to the left, and 4 being the slot furthest to the right")]
 

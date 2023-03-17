@@ -7,10 +7,6 @@ public class Inventory : MonoBehaviour
 {
     // Attribution: Maceij Wolski + Dominic Rooney
 
-    [Header("Required References")]
-    public ToolBarUIScript toolBarUIScript;
-
-    [Header("Item List")]
     public List<InventoryItem> itemList = new List<InventoryItem>();
 
     private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
@@ -29,14 +25,14 @@ public class Inventory : MonoBehaviour
     {
         GenericCollectibleItem.OnItemCollected += Add;
 
-        toolBarUIScript.UpdateSlots();
+        ToolBarUIScript.Instance.UpdateSlots();
     }
 
     private void OnDisable()
     {
         GenericCollectibleItem.OnItemCollected -= Add;
 
-        toolBarUIScript.UpdateSlots();
+        ToolBarUIScript.Instance.UpdateSlots();
     }
 
     public void Add(ItemData itemData)
@@ -45,7 +41,7 @@ public class Inventory : MonoBehaviour
         itemList.Add(newItem);
         itemDictionary.Add(itemData, newItem);
 
-        toolBarUIScript.UpdateSlots();
+        ToolBarUIScript.Instance.UpdateSlots(); 
     }
 
 
@@ -68,5 +64,7 @@ public class Inventory : MonoBehaviour
             itemList.Remove(item);
             itemDictionary.Remove(inventoryItem.itemData);
         }
+
+        ToolBarUIScript.Instance.UpdateSlots();
     }
 }

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69eb674a13ed63c4ab6e473f75afa110, type: 3}
-  m_Name: TestItemData3
+  m_Name: TestItem5
   m_EditorClassIdentifier: 
   tagList:
-    tags: []
-  icon: {fileID: 21300000, guid: 772d8b6ec12d43a439de9fac6ffc1d49, type: 3}
+    tags:
+    - {fileID: 11400000, guid: 9118b8d91b76a344c988ce66a3531038, type: 2}
+  icon: {fileID: 21300000, guid: a1606cb5f364a8447b5fbe12557f62f1, type: 3}
