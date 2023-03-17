@@ -20,6 +20,8 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        GenericCollectibleItem.OnItemCollected += Add;
+
         instance = this;
     }
 
