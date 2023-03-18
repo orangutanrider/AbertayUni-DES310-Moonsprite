@@ -118,6 +118,7 @@ public class ToolBarUIScript : MonoBehaviour
             }
         }
 
+        // calculate the surrounding indexes of the selected item
         List<int> indexList = new List<int>();
         int totalLoopIterations = 0;
         for (int loop = hiddenSlotsLeft; loop <= 4 - hiddenSlotsRight; loop++)
@@ -126,8 +127,11 @@ public class ToolBarUIScript : MonoBehaviour
             indexList.Add(currentItemIndex);
             totalLoopIterations++;
         }
+
+        // loop the indexes
         List<int> loopedIndexList = loopListOfIndex(indexList, Inventory.instance.itemList.Count - 1);
 
+        // display the items
         totalLoopIterations = 0;
         for (int loop = hiddenSlotsLeft; loop <= 4 - hiddenSlotsRight; loop++)
         {

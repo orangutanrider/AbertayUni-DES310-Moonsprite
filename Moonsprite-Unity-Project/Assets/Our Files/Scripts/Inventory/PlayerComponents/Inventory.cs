@@ -74,11 +74,9 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        bool contains = false;
         if(itemList.Contains(inventoryItem) == true)
         {
             itemList.Remove(inventoryItem);
-            contains = true;
         }
 
         /*
