@@ -9,23 +9,34 @@ public class Inventory : MonoBehaviour
 
     public List<InventoryItem> itemList = new List<InventoryItem>();
 
-    private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
+    //private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
     public static event Action<List<InventoryItem>> OnInventoryChange;
 
     public static Inventory instance = null;
 
+    bool firstOnEnable = true;
+
+    bool newItemFlipFlop = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         GenericCollectibleItem.OnItemCollected += Add;
-
-        instance = this;
     }
 
     private void OnEnable()
     {
-        GenericCollectibleItem.OnItemCollected += Add;
+        if (firstOnEnable == false)
+        {
+            GenericCollectibleItem.OnItemCollected += Add;
 
-        ToolBarUIScript.Instance.UpdateSlots();
+            ToolBarUIScript.Instance.UpdateSlots();
+        }
+        firstOnEnable = true;
     }
 
     private void OnDisable()
@@ -38,8 +49,19 @@ public class Inventory : MonoBehaviour
     public void Add(ItemData itemData)
     {
         InventoryItem newItem = new InventoryItem(itemData);
-        itemList.Add(newItem);
-        itemDictionary.Add(itemData, newItem);
+
+        newItemFlipFlop = !newItemFlipFlop;
+        if (newItemFlipFlop == false)
+        {
+            itemList.Add(newItem);
+        }
+        else
+        {
+            itemList.Insert(0, newItem);
+            ToolBarUIScript.Instance.ShiftSelectedSlot(1);
+        }
+
+        //itemDictionary.Add(itemData, newItem);
 
         ToolBarUIScript.Instance.UpdateSlots(); 
     }
@@ -59,11 +81,13 @@ public class Inventory : MonoBehaviour
             contains = true;
         }
 
-        if (contains == true && itemDictionary.TryGetValue(inventoryItem.itemData, out InventoryItem item))
+        /*
+        if (contains == true /*&& itemDictionary.TryGetValue(inventoryItem.itemData, out InventoryItem item))
         {
             itemList.Remove(item);
             itemDictionary.Remove(inventoryItem.itemData);
         }
+        */
 
         ToolBarUIScript.Instance.UpdateSlots();
     }

@@ -46,6 +46,12 @@ public class PlayerInteractionController : MonoBehaviour
         TagList activeItemTags = ToolBarUIScript.Instance.GetTagListOfSelectedItem();
 
         IInteractable[] interactionInterfaces = RayCastForInterface();
+
+        if(interactionInterfaces == null)
+        {
+            return;
+        }
+
         foreach (IInteractable interactionInterface in interactionInterfaces)
         {
             interactionInterface.InteractionEvent(this, activeItemTags);

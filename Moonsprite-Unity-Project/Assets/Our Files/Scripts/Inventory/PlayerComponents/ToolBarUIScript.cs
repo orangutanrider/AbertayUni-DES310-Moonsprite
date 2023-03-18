@@ -17,15 +17,26 @@ public class ToolBarUIScript : MonoBehaviour
 
     [HideInInspector] public static ToolBarUIScript Instance = null;
 
+    bool firstOnEnable = true;
+
     #region Execution
     private void OnEnable()
     {
-        UpdateSlots();
+        if (firstOnEnable == false)
+        {
+            UpdateSlots();
+        }
+        firstOnEnable = false;
     }
 
     private void OnDisable()
     {
         UpdateSlots();
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     private void Start()
@@ -35,8 +46,6 @@ public class ToolBarUIScript : MonoBehaviour
             Debug.LogError("There must be 5 toolbarSlots");
         }
 
-        Instance = this;
-
         UpdateSlots();
     }
 
@@ -45,38 +54,42 @@ public class ToolBarUIScript : MonoBehaviour
     #region Public Functions
     public bool ShiftSelectedSlot(int moveSelectionBy)
     {
-        if (toolbarSlots.Length == 0)
+        if (toolbarSlots.Length <= 1)
         {
+            UpdateSlots();
             return false;
         }
 
         int newSelectedIndex = selectedItem + moveSelectionBy;
-        if (newSelectedIndex >= Inventory.instance.itemList.Count - 1)
+        if (newSelectedIndex > Inventory.instance.itemList.Count - 1)
         {
             selectedItem = 0;
+            UpdateSlots();
             return true;
         }
-        else if (selectedItem <= 0)
+        else if (newSelectedIndex < 0)
         {
             selectedItem = Inventory.instance.itemList.Count - 1;
+            UpdateSlots();
             return true;
         }
         else
         {
             selectedItem = newSelectedIndex;
+            UpdateSlots();
             return true;
         }
     }
 
     public void UpdateSlots()
     {
-        if(Inventory.instance.itemList.Count == 0)
+        #region 1 or less item
+        if (Inventory.instance.itemList.Count == 0)
         {
             // if there are no items, then hide all slots
             HideAllSlots(false);
             return;
         }
-
         if (Inventory.instance.itemList.Count == 1)
         {
             // if there is only one item then don't do anything other than display that one item
@@ -84,55 +97,80 @@ public class ToolBarUIScript : MonoBehaviour
             toolbarSlots[2].ShowItemInSlot(Inventory.instance.itemList[selectedItem]);
             return;
         }
+        #endregion
 
-        // display selected item in the middle item slot
-        toolbarSlots[2].ShowItemInSlot(Inventory.instance.itemList[selectedItem]);
-
-        int numOfItemsShown = 1;
-        int numOfNegativeLoops = 0;
-        int numOfPositiveLoops = 0;
-
-        // loop through the item slots on the left
-        for (int slotIndex = 2; slotIndex > 0; slotIndex--)
+        // calculate the bounds of the current toolbar
+        int hiddenSlotsRight = 2;
+        int shownSlotsRight = 0;
+        int hiddenSlotsLeft = 2;
+        int shownSlotsLeft = 0;
+        for (int loop = 1; loop < Inventory.instance.itemList.Count; loop++)
         {
-            if (numOfItemsShown >= Inventory.instance.itemList.Count)
+            if (loop % 2 != 0 && hiddenSlotsRight != 0) // if num is odd
             {
-                // if there aren't anymore items to display, then hide the slot and skip
-                toolbarSlots[slotIndex].Active = false;
-                continue;
+                hiddenSlotsRight--;
+                shownSlotsRight++;
             }
-
-            int loopAppendedSlotIndex = slotIndex;
-            if (slotIndex + selectedItem < 0)
+            if (loop % 2 == 0 && hiddenSlotsLeft != 0) // if num is even
             {
-                loopAppendedSlotIndex = Inventory.instance.itemList.Count - 1 - numOfNegativeLoops;
-                numOfNegativeLoops++;
+                hiddenSlotsLeft--;
+                shownSlotsLeft++;
             }
-
-            toolbarSlots[slotIndex].ShowItemInSlot(Inventory.instance.itemList[selectedItem - loopAppendedSlotIndex]);
-            numOfItemsShown++;
         }
 
-        // loop through the item slots on the right
-        for (int slotIndex = 2; slotIndex < 4; slotIndex++)
+        List<int> indexList = new List<int>();
+        int totalLoopIterations = 0;
+        for (int loop = hiddenSlotsLeft; loop <= 4 - hiddenSlotsRight; loop++)
         {
-            if (numOfItemsShown >= Inventory.instance.itemList.Count)
-            {
-                // if there aren't anymore items to display, then hide the slot and skip
-                toolbarSlots[slotIndex].Active = false;
-                continue;
-            }
-
-            int loopAppendedSlotIndex = slotIndex;
-            if (slotIndex + selectedItem > Inventory.instance.itemList.Count - 1)
-            {
-                loopAppendedSlotIndex = 0 + numOfPositiveLoops;
-                numOfPositiveLoops++;
-            }
-
-            toolbarSlots[slotIndex].ShowItemInSlot(Inventory.instance.itemList[selectedItem + loopAppendedSlotIndex]);
-            numOfItemsShown++;
+            int currentItemIndex = (selectedItem - shownSlotsLeft) + totalLoopIterations;
+            indexList.Add(currentItemIndex);
+            totalLoopIterations++;
         }
+        List<int> loopedIndexList = loopListOfIndex(indexList, Inventory.instance.itemList.Count - 1);
+
+        totalLoopIterations = 0;
+        for (int loop = hiddenSlotsLeft; loop <= 4 - hiddenSlotsRight; loop++)
+        {
+            toolbarSlots[loop].ShowItemInSlot(Inventory.instance.itemList[loopedIndexList[totalLoopIterations]]);
+            totalLoopIterations++; 
+        }
+    }
+
+    [Tooltip("Indexes must be given in order (e.g. -3, -2, -1, 0, 1, 2, 3, ect.)")]
+    List<int> loopListOfIndex(List<int> indexList, int maxIndex) 
+    {
+        List<int> valid = new List<int>();
+        List<int> invalidNegatives = new List<int>();
+        List<int> invalidPositives = new List<int>();
+        foreach (int index in indexList)
+        {
+            if(index < 0)
+            {
+                invalidNegatives.Add(index);
+            }
+            else if(index > maxIndex)
+            {
+                invalidPositives.Add(index);
+            }
+            else
+            {
+                valid.Add(index);
+            }
+        }
+
+        invalidNegatives.Reverse();
+
+        foreach(int negativeIndex in invalidNegatives)
+        {
+            valid.Insert(0, negativeIndex + maxIndex + 1);
+        }
+
+        foreach(int positiveIndex in invalidPositives)
+        {
+            valid.Add(positiveIndex - (maxIndex + 1));
+        }
+
+        return valid;
     }
 
     public void HideAllSlots(bool otherThanCenter = false)
@@ -158,4 +196,67 @@ public class ToolBarUIScript : MonoBehaviour
         return Inventory.instance.itemList[selectedItem].itemData.tagList;
     }
     #endregion
+
+    [System.Obsolete()]
+    public void OldUpdateSlots()
+    {
+        #region 1 or less item
+        if (Inventory.instance.itemList.Count == 0)
+        {
+            // if there are no items, then hide all slots
+            HideAllSlots(false);
+            return;
+        }
+        if (Inventory.instance.itemList.Count == 1)
+        {
+            // if there is only one item then don't do anything other than display that one item
+            HideAllSlots(true);
+            toolbarSlots[2].ShowItemInSlot(Inventory.instance.itemList[selectedItem]);
+            return;
+        }
+        #endregion
+
+        // display selected item in the middle item slot
+        toolbarSlots[2].ShowItemInSlot(Inventory.instance.itemList[selectedItem]);
+
+        int evenLoop = 0;
+        int oddLoop = 0;
+        for (int loop = 0; loop < 4; loop++)
+        {
+            if (loop >= Inventory.instance.itemList.Count - 1)
+            {
+                Debug.Log("skip");
+                continue;
+            }
+
+            if (loop % 2 == 0) // if num is even
+            {
+                evenLoop++;
+
+                int loopedItemSelect = selectedItem + evenLoop;
+                if (loopedItemSelect > Inventory.instance.itemList.Count - 1)
+                {
+                    loopedItemSelect = loopedItemSelect - (Inventory.instance.itemList.Count - 1);
+                }
+
+                Debug.Log("even " + loopedItemSelect);
+
+                toolbarSlots[2 + evenLoop].ShowItemInSlot(Inventory.instance.itemList[loopedItemSelect]);
+            }
+            else // if num is odd
+            {
+                oddLoop++;
+
+                int loopedItemSelect = selectedItem - oddLoop;
+                if (loopedItemSelect < 0)
+                {
+                    loopedItemSelect = Inventory.instance.itemList.Count + loopedItemSelect;
+                }
+
+                Debug.Log("odd " + loopedItemSelect);
+
+                toolbarSlots[2 - oddLoop].ShowItemInSlot(Inventory.instance.itemList[loopedItemSelect]);
+            }
+        }
+    }
 }
