@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TimelineEventsMaster : MonoBehaviour
 {
-    [Header("Do not give event entries the same trigger time")]
     public float masterTimer = 0;
     public List<TimelineEvent> timelineEvents;
 
@@ -30,30 +29,9 @@ public class TimelineEventsMaster : MonoBehaviour
         WaitForNextEvent();
     }
 
-    TimelineEvent FindNextEvent()
-    {
-        if(timelineEvents.Count == 0)
-        {
-            return null;
-        }
-
-        float soonestTime = float.MaxValue;
-        TimelineEvent soonestEvent = timelineEvents[0];
-        foreach(TimelineEvent timelineEvent in timelineEvents)
-        {
-            if(timelineEvent.triggerTimeSeconds < soonestTime && timelineEvent.passed == false)
-            {
-                soonestTime = timelineEvent.triggerTimeSeconds;
-                soonestEvent = timelineEvent;
-            }
-        }
-
-        return soonestEvent;
-    }
-
     void WaitForNextEvent()
     {
-        if(nextTimelineEvent == null)
+        if (nextTimelineEvent == null)
         {
             nextTimelineEvent = FindNextEvent();
             return;
@@ -65,7 +43,7 @@ public class TimelineEventsMaster : MonoBehaviour
             return;
         }
 
-        if(masterTimer >= nextTimelineEvent.triggerTimeSeconds)
+        if (masterTimer >= nextTimelineEvent.triggerTimeSeconds)
         {
             TriggerEvent(nextTimelineEvent);
         }
@@ -82,7 +60,7 @@ public class TimelineEventsMaster : MonoBehaviour
         }
 
         bool loadSuccesful = LoadEventInterfaces(timelineEvent);
-        if(loadSuccesful == false)
+        if (loadSuccesful == false)
         {
             nextTimelineEvent = FindNextEvent();
             return;
@@ -94,9 +72,30 @@ public class TimelineEventsMaster : MonoBehaviour
         }
     }
 
+    TimelineEvent FindNextEvent()
+    {
+        if (timelineEvents.Count == 0)
+        {
+            return null;
+        }
+
+        float soonestTime = float.MaxValue;
+        TimelineEvent soonestEvent = timelineEvents[0];
+        foreach (TimelineEvent timelineEvent in timelineEvents)
+        {
+            if (timelineEvent.triggerTimeSeconds < soonestTime && timelineEvent.passed == false)
+            {
+                soonestTime = timelineEvent.triggerTimeSeconds;
+                soonestEvent = timelineEvent;
+            }
+        }
+
+        return soonestEvent;
+    }
+
     bool LoadEventInterfaces(TimelineEvent timelineEvent)
     {
-        if(timelineEvent.interfacesLoaded == true)
+        if (timelineEvent.interfacesLoaded == true)
         {
             return true;
         }
