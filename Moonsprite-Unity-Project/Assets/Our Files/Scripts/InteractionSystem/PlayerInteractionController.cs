@@ -8,7 +8,6 @@ public class PlayerInteractionController : MonoBehaviour
 
     [Header("Required References")]
     public PlayerMovement playerMovement;
-    public GameObject playerCameraObject;
 
     [Header ("Parameters")]
     [Space]
