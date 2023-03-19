@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8072194684685428936}
   - component: {fileID: 8910783858470112506}
+  - component: {fileID: 6357279312328255952}
   m_Layer: 0
   m_Name: bush1
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8910783858470112506
 SpriteRenderer:
@@ -84,3 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6357279312328255952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2855232551189854226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderers:
+  - spriteRenderer: {fileID: 8910783858470112506}
+    offset: 0
+  movable: 0
+  sortingPointOffset: 0.04
+  displayGizmos: 0
+  setSortingOrderButton: 0
