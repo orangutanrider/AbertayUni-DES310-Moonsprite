@@ -40,10 +40,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4339019779615691368}
-  - component: {fileID: 4339019779615691370}
+  - component: {fileID: 9221072612859598388}
   - component: {fileID: 4339019779615691369}
-  - component: {fileID: 3134911668382450938}
   - component: {fileID: 989528950106796098}
+  - component: {fileID: 3134911668382450938}
+  - component: {fileID: 4339019779615691370}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -68,6 +69,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9221072612859598388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339019779615691351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb95ae8c4286124d9553865c5133c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 4339019779615691369}
+  interactionController: {fileID: 989528950106796098}
+  inventoryController: {fileID: 0}
+  playerState: 0
+--- !u!114 &4339019779615691369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339019779615691351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31227772354f65b46a3a307d90547673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  rb2D: {fileID: 4339019779615691370}
+  anim: {fileID: 4339019780498585487}
+  spriteRenderer: {fileID: 4339019780498585486}
+  leftKey: 97
+  auxLeftKey: 276
+  rightKey: 100
+  auxRightKey: 275
+  downKey: 115
+  auxDownKey: 274
+  upKey: 119
+  auxUpKey: 273
+  moveSpeed: 0.35
+  pivotTime: 0.1
+  deccelerationPower: 2
+  maxMoveSpeed: 6
+  maxBoostedSpeed: 25
+--- !u!114 &989528950106796098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339019779615691351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2294a00d8d7881947bc6c36fa2503a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  playerMovement: {fileID: 4339019779615691369}
+  interactionKey: 103
+  interactionRange: 2
+  originOffset: {x: 0, y: 0.48, z: 0}
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  enableGizmos: 0
+--- !u!70 &3134911668382450938
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339019779615691351}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00706926, y: 0.14978582}
+  m_Size: {x: 0.6219236, y: 0.68106925}
+  m_Direction: 0
 --- !u!50 &4339019779615691370
 Rigidbody2D:
   serializedVersion: 4
@@ -89,70 +172,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &4339019779615691369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4339019779615691351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31227772354f65b46a3a307d90547673, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb2D: {fileID: 4339019779615691370}
-  anim: {fileID: 4339019780498585487}
-  spriteRenderer: {fileID: 4339019780498585486}
-  leftKey: 97
-  auxLeftKey: 276
-  rightKey: 100
-  auxRightKey: 275
-  downKey: 115
-  auxDownKey: 274
-  upKey: 119
-  auxUpKey: 273
-  moveSpeed: 0.35
-  pivotTime: 0.1
-  deccelerationPower: 2
-  maxMoveSpeed: 6
-  maxBoostedSpeed: 25
---- !u!70 &3134911668382450938
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4339019779615691351}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00706926, y: 0.14978582}
-  m_Size: {x: 0.6219236, y: 0.68106925}
-  m_Direction: 0
---- !u!114 &989528950106796098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4339019779615691351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2294a00d8d7881947bc6c36fa2503a67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 4339019779615691369}
-  interactionKey: 103
-  interactionRange: 2
-  originOffset: {x: 0, y: 0.48, z: 0}
-  interactableMask:
-    serializedVersion: 2
-    m_Bits: 64
-  enableGizmos: 0
 --- !u!1 &4339019780498585484
 GameObject:
   m_ObjectHideFlags: 0
