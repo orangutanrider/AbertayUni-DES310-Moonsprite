@@ -66,9 +66,14 @@ public class PlayerMovement : MonoBehaviour
             MovePlayer();
         }
 
-        FlipSpriteBasedOn(xInput);
-        anim.SetFloat("xInput", xInput);
-        anim.SetFloat("yInput", yInput);
+        AnimatorUpdate(new Vector2(xInput, yInput));
+    }
+
+    public void AnimatorUpdate(Vector2 inputVector)
+    {
+        FlipSpriteBasedOn(inputVector.x);
+        anim.SetFloat("xInput", inputVector.x);
+        anim.SetFloat("yInput", inputVector.y);
     }
 
     void FlipSpriteBasedOn(float number)

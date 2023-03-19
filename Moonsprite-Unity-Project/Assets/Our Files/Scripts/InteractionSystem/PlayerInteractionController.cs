@@ -8,6 +8,7 @@ public class PlayerInteractionController : MonoBehaviour
 
     [Header("Required References")]
     public PlayerMovement playerMovement;
+    public GameObject playerCameraObject;
 
     [Header ("Parameters")]
     [Space]
@@ -57,13 +58,29 @@ public class PlayerInteractionController : MonoBehaviour
 
         foreach (IInteractable interactionInterface in interactionInterfaces)
         {
-            interactionInterface.InteractionEvent(this, activeItemTags);
+            InteractWith(interactionInterface, activeItemTags);
         }
     }
 
     public void ExitInteraction()
     {
-        interactingWithXScripts = interactingWithXScripts - 1;
+        interactingWithXScripts--;
+
+        if(interactingWithXScripts <= 0)
+        {
+            PlayerStateMachine.instance.StateUpdate(PlayerStateMachine.PlayerState.NoState);
+        }
+    }
+
+    void InteractWith(IInteractable interactable, TagList tags)
+    {
+        interactable.InteractionEvent(this, tags);
+
+        bool stateUpdate = PlayerStateMachine.instance.StateUpdate(PlayerStateMachine.PlayerState.Interacting);
+        if (stateUpdate == true)
+        {
+            interactingWithXScripts++;
+        }
     }
 
     IInteractable[] RayCastForInterface()
