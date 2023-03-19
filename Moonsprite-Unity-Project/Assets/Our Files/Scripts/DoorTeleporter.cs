@@ -27,6 +27,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     {
         yield return new WaitForSeconds(PlayerScreenTransitioner.instance.doorTransitionTime * (1 / 3));
         TeleportPlayerToDestinationObject();
+        yield break;
     }
 
     void TeleportPlayerToDestinationObject()
