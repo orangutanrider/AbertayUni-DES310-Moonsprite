@@ -9,12 +9,12 @@ public class ImageFader : MonoBehaviour
     public Image image;
 
     bool fadeDirection = false; // false = fading out; true = fading in
-    float fadeTimer = 0;
-    float fadeTime = 0;
+    float fadeTimer = -1;
+    float fadeTime = -1;
 
     void Update()
     {
-        if(fadeTimer > 0 && fadeTimer <= fadeTime)
+        if(fadeTimer >= 0 && fadeTimer <= fadeTime)
         {
             Fade();
         }
@@ -24,11 +24,11 @@ public class ImageFader : MonoBehaviour
     {
         if(fadeDirection == true)
         {
-            fadeTimer = fadeTimer - Time.deltaTime;
+            fadeTimer = fadeTimer + Time.deltaTime;
         }
         if(fadeDirection == false)
         {
-            fadeTimer = fadeTimer + Time.deltaTime;
+            fadeTimer = fadeTimer - Time.deltaTime;
         }
 
         float newAlpha = Mathf.Lerp(0, 1, fadeTimer / fadeTime);

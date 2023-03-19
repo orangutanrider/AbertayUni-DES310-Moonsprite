@@ -19,20 +19,25 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
     {
         player = playerInteractionController;
-        PlayerScreenTransitioner.instance.DoorTransition();
-        WaitForFadeThenTeleport();
+        StartCoroutine(PlayerScreenTransitioner.instance.DoorTransition(PlayerScreenTransitioner.instance.doorTransitionTime));
+        StartCoroutine(WaitForFadeThenTeleport(PlayerScreenTransitioner.instance.doorTransitionTime));
     }
 
-    IEnumerator WaitForFadeThenTeleport()
+    IEnumerator WaitForFadeThenTeleport(float _doorTransitionTime)
     {
-        yield return new WaitForSeconds(PlayerScreenTransitioner.instance.doorTransitionTime * (1 / 3));
+        // these number values have to be declared with a f otherwise it breaks
+
+        yield return new WaitForSeconds(_doorTransitionTime * (1f / 3f));
+        player.playerMovement.AnimatorUpdate(exitDirection);
+        yield return new WaitForEndOfFrame();
+        player.playerMovement.AnimatorUpdate(Vector2.zero);
         TeleportPlayerToDestinationObject();
-        yield break;
+        yield return new WaitForSeconds(_doorTransitionTime * (1f / 3f));
+        player.ExitInteraction();
     }
 
     void TeleportPlayerToDestinationObject()
     {
-        player.playerMovement.AnimatorUpdate(exitDirection);
         player.gameObject.transform.position = DestinationObject.transform.position;
     }
 }

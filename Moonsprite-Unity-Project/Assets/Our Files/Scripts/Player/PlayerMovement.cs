@@ -60,13 +60,14 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // deccelerate();
+
+        DampBackTo0v();
+
         if (active == true)
         {
-            DampBackTo0v();
             MovePlayer();
+            AnimatorUpdate(new Vector2(xInput, yInput));
         }
-
-        AnimatorUpdate(new Vector2(xInput, yInput));
     }
 
     public void AnimatorUpdate(Vector2 inputVector)
@@ -90,6 +91,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void GetPlayerInput()
     {
+        if(active == false)
+        {
+            xInput = 0;
+            yInput = 0;
+            return;
+        }
+
         if (Input.GetKey(leftKey) == true || Input.GetKey(auxLeftKey) == true)
         {
             xInput = -1;

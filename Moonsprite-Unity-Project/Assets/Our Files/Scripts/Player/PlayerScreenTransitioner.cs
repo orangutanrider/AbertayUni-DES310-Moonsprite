@@ -14,14 +14,20 @@ public class PlayerScreenTransitioner : MonoBehaviour
 
     void Awake()
     {
+        if(instance != null)
+        {
+            Debug.LogError("Error, two instances of PlayerScreenTransitioner in the scene");
+        }
+
         instance = this;
     }
 
-    public IEnumerator DoorTransition()
+    public IEnumerator DoorTransition(float _doorTransitionTime)
     {
-        doorTransitionImageFader.FadeIn(doorTransitionTime * (1 / 3));
-        yield return new WaitForSeconds(doorTransitionTime * (2 / 3));
-        doorTransitionImageFader.FadeOut(doorTransitionTime * (1 / 3));
-        yield break;
+        // these number values have to be declared with a f otherwise it breaks
+
+        doorTransitionImageFader.FadeIn(_doorTransitionTime * (1f / 3f)); 
+        yield return new WaitForSeconds(_doorTransitionTime * (2f / 3f));
+        doorTransitionImageFader.FadeOut(_doorTransitionTime * (1f / 3f));
     }
 }

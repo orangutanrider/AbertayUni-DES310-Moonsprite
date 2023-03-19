@@ -64,7 +64,7 @@ public class PlayerInteractionController : MonoBehaviour
     public void ExitInteraction()
     {
         interactingWithXScripts--;
-
+        Debug.Log(interactingWithXScripts);
         if(interactingWithXScripts <= 0)
         {
             PlayerStateMachine.instance.StateUpdate(PlayerStateMachine.PlayerState.NoState);
