@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     //Attribution: Maciej Wolski
 
+    public bool active = true;
+
     [Header("Required References")]
     public Rigidbody2D rb2D;
     public Animator anim;
@@ -58,8 +60,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // deccelerate();
-        DampBackTo0v();
-        MovePlayer();
+        if (active == true)
+        {
+            DampBackTo0v();
+            MovePlayer();
+        }
 
         FlipSpriteBasedOn(xInput);
         anim.SetFloat("xInput", xInput);

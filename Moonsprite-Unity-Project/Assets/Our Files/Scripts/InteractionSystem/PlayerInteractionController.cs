@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerInteractionController : MonoBehaviour
 {
+    public bool active = true;
+
     [Header("Required References")]
     public PlayerMovement playerMovement;
 
     [Header ("Parameters")]
+    [Space]
     public KeyCode interactionKey;
     public float interactionRange;
     public Vector3 originOffset;
@@ -21,7 +24,7 @@ public class PlayerInteractionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(interactionKey) == true )
+        if(Input.GetKeyDown(interactionKey) == true && active == true)
         {
             TryInteract();
         }

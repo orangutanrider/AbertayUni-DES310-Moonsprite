@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerInventoryController : MonoBehaviour
 {
+    public bool active = true;
+
     void Update()
     {
-        ItemSelectInput();
+        if (active == true)
+        {
+            ItemSelectInput();
+        }
     }
 
     void ItemSelectInput()
