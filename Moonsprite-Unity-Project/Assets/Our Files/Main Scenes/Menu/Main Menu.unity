@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3add42c237e4b64995afbff85cd3d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Our Files/Main Scenes/MainOutdoors
+  sceneName: Our Files/Misc/DR - Environment Test/EnvironmentTest
   useSceneIndexInstead: 0
   sceneIndex: 0
 --- !u!122 &1467151537
