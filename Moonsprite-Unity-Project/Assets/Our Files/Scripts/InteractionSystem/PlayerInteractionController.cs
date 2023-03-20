@@ -64,7 +64,6 @@ public class PlayerInteractionController : MonoBehaviour
     public void ExitInteraction()
     {
         interactingWithXScripts--;
-        Debug.Log(interactingWithXScripts);
         if(interactingWithXScripts <= 0)
         {
             PlayerStateMachine.instance.StateUpdate(PlayerStateMachine.PlayerState.NoState);
@@ -73,13 +72,12 @@ public class PlayerInteractionController : MonoBehaviour
 
     void InteractWith(IInteractable interactable, TagList tags)
     {
-        interactable.InteractionEvent(this, tags);
-
         bool stateUpdate = PlayerStateMachine.instance.StateUpdate(PlayerStateMachine.PlayerState.Interacting);
         if (stateUpdate == true)
         {
             interactingWithXScripts++;
         }
+        interactable.InteractionEvent(this, tags);
     }
 
     IInteractable[] RayCastForInterface()
