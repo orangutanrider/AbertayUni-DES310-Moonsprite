@@ -25,7 +25,12 @@ public class DevestationTracker : MonoBehaviour
     public List<DevestationEventEntry> devestationEventEntries = new List<DevestationEventEntry>();
 
     [HideInInspector] public static DevestationTracker instance;
+    private void Awake()
+    {
+        instance = this;
+    }
 
+    #region public functions
     public DevestationEventEntry GetDevestationEventByName(string name)
     {
         int numFound = 0;
@@ -61,4 +66,5 @@ public class DevestationTracker : MonoBehaviour
     {
         devestationEvent.wasPrevented = true;
     }
+    #endregion
 }
