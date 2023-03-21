@@ -200,7 +200,7 @@ public class ToolBarUIScript : MonoBehaviour
         return Inventory.instance.itemList[selectedItem].itemData.tagList;
     }
 
-    public bool TriggerItemActionOfSelectedItem()
+    public bool TriggerItemActionOfSelectedItem(PlayerInventoryController playerInventoryController)
     {
         if (Inventory.instance.itemList.Count == 0)
         {
@@ -240,7 +240,7 @@ public class ToolBarUIScript : MonoBehaviour
         // Trigger the item's actions
         foreach(IItemAction itemAction in Inventory.instance.itemList[selectedItem].itemActions)
         {
-            itemAction.TriggerItemAction();
+            itemAction.TriggerItemAction(playerInventoryController);
         }
         return true;
     }

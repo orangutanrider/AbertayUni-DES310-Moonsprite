@@ -40,7 +40,7 @@ public class PlayerInventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(itemActionKey) && itemActionsCheckedIn <= 0)
         {
-            bool triggerSuccess = ToolBarUIScript.Instance.TriggerItemActionOfSelectedItem();
+            bool triggerSuccess = ToolBarUIScript.Instance.TriggerItemActionOfSelectedItem(this);
             if(triggerSuccess == true)
             {
                 itemActionsCheckedIn++;

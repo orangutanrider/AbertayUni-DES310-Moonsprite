@@ -580,6 +580,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5162127853215272875, guid: 878119cebeb7d244c8226d032b63426e, type: 3}
+      propertyPath: itemActionContainerSceneObject
+      value: 
+      objectReference: {fileID: 6258433320497108146}
     - target: {fileID: 7478695862986061833, guid: 878119cebeb7d244c8226d032b63426e, type: 3}
       propertyPath: toolBarUIObject
       value: 
@@ -1065,5 +1069,10 @@ Transform:
 --- !u!4 &5562959975128147478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7363748740618599751, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
+  m_PrefabInstance: {fileID: 3099269194256456529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6258433320497108146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068203574823309283, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
   m_PrefabInstance: {fileID: 3099269194256456529}
   m_PrefabAsset: {fileID: 0}

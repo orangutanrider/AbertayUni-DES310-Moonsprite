@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IItemAction
 {
-    public void TriggerItemAction();
+    public void TriggerItemAction(PlayerInventoryController playerInventoryController);
 }

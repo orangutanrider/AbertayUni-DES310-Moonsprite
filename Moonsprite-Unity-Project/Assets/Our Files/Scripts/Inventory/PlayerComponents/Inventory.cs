@@ -107,12 +107,15 @@ public class Inventory : MonoBehaviour
 
         if (inventoryItem.itemData.itemActionPrefab ?? null)
         {
+        }
+        else
+        {
             inventoryItem.itemActionsFailLoaded = true;
             Debug.Log("No itemAction Prefab");
             return false;
         }
 
-        GameObject instantiatedItemActionObject = Instantiate(itemActionContainerSceneObject, itemActionContainerSceneObject.transform.position, itemActionContainerSceneObject.transform.rotation, itemActionContainerSceneObject.transform);
+        GameObject instantiatedItemActionObject = Instantiate(inventoryItem.itemData.itemActionPrefab, itemActionContainerSceneObject.transform.position, itemActionContainerSceneObject.transform.rotation, itemActionContainerSceneObject.transform);
         inventoryItem.itemActions = instantiatedItemActionObject.GetComponents<IItemAction>();
         inventoryItem.itemActionsLoaded = true;
 
