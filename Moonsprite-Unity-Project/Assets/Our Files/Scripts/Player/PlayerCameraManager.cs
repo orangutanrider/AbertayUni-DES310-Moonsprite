@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class PlayerCameraManager : MonoBehaviour
 {
-    public CinemachineConfiner2D cinemachineConfiner2D = null;
+    public CinemachineConfiner cinemachineConfiner = null;
 
     [HideInInspector] public static PlayerCameraManager instance = null;
 
@@ -22,11 +22,11 @@ public class PlayerCameraManager : MonoBehaviour
             return;
         }
 
-        cinemachineConfiner2D.m_BoundingShape2D = collider2D;
+        cinemachineConfiner.m_BoundingShape2D = collider2D;
     }
 
     public void FreeCameraFromConfiner()
     {
-        cinemachineConfiner2D.m_BoundingShape2D = null;
+        cinemachineConfiner.m_BoundingShape2D = null;
     }
 }
