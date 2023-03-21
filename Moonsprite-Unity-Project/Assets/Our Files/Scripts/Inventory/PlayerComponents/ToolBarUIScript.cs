@@ -233,7 +233,7 @@ public class ToolBarUIScript : MonoBehaviour
 
         if (Inventory.instance.itemList[selectedItem].itemActions.Length == 0)
         {
-            Debug.Log("Item action list has no actions in it");
+            Debug.Log("action list has no actions in it");
             return false;
         }
 

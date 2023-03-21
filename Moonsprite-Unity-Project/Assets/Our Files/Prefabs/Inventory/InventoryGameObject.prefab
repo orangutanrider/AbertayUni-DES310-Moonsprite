@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ca5b341e70ab64b98fa3d91b1dfd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolBarUIScript: {fileID: 1870123567885135946}
-  inventory: []
+  itemList: []
 --- !u!114 &7478695862986061833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03a6942d102da54d91c9b289a68d50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolBarUIObject: {fileID: 0}
+  active: 1
+  itemActionKey: 0
 --- !u!114 &1870123567885135946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3792affed79e04d80cabc0eb046057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 1321297851243859919, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
-  playerInventory: {fileID: 5162127853215272875}
-  inventoryItems: []
-  inventorySlots: []
-  selectedSlot: 0
+  slotParentObject: {fileID: 0}
+  toolbarSlots: []
+  selectedItem: 0
