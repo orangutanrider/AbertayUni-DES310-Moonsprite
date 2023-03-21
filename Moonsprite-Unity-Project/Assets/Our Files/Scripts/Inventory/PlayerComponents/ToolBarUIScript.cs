@@ -129,7 +129,7 @@ public class ToolBarUIScript : MonoBehaviour
         }
 
         // loop the indexes
-        List<int> loopedIndexList = loopListOfIndex(indexList, Inventory.instance.itemList.Count - 1);
+        List<int> loopedIndexList = LoopListOfIndex(indexList, Inventory.instance.itemList.Count - 1);
 
         // display the items
         totalLoopIterations = 0;
@@ -141,7 +141,7 @@ public class ToolBarUIScript : MonoBehaviour
     }
 
     [Tooltip("Indexes must be given in order (e.g. -3, -2, -1, 0, 1, 2, 3, ect.)")]
-    List<int> loopListOfIndex(List<int> indexList, int maxIndex) 
+    List<int> LoopListOfIndex(List<int> indexList, int maxIndex) 
     {
         List<int> valid = new List<int>();
         List<int> invalidNegatives = new List<int>();
@@ -198,6 +198,51 @@ public class ToolBarUIScript : MonoBehaviour
         }
 
         return Inventory.instance.itemList[selectedItem].itemData.tagList;
+    }
+
+    public bool TriggerItemActionOfSelectedItem()
+    {
+        if (Inventory.instance.itemList.Count == 0)
+        {
+            Debug.Log("No items to trigger");
+            return false;
+        }
+
+        bool loadSuccess = false;
+        if(Inventory.instance.itemList[selectedItem].itemActionsLoaded == false)
+        {
+            Debug.Log("Loading selected item's actions");
+            loadSuccess = Inventory.instance.LoadItemsActions(Inventory.instance.itemList[selectedItem]);
+        }
+        else
+        {
+            loadSuccess = true;
+        }
+
+        if(loadSuccess == false)
+        {
+            Debug.Log("Failed to load selected item's actions");
+            return false;
+        }
+
+        if(Inventory.instance.itemList[selectedItem].itemActions == null)
+        {
+            Debug.Log("Item has no list of actions to trigger");
+            return false;
+        }
+
+        if (Inventory.instance.itemList[selectedItem].itemActions.Length == 0)
+        {
+            Debug.Log("Item action list has no actions in it");
+            return false;
+        }
+
+        // Trigger the item's actions
+        foreach(IItemAction itemAction in Inventory.instance.itemList[selectedItem].itemActions)
+        {
+            itemAction.TriggerItemAction();
+        }
+        return true;
     }
     #endregion
 }

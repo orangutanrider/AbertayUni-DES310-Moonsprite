@@ -66,7 +66,6 @@ public class Inventory : MonoBehaviour
         ToolBarUIScript.Instance.UpdateSlots(); 
     }
 
-
     public void Remove(InventoryItem inventoryItem)
     {
         if(itemList.Count == 0)
@@ -88,5 +87,37 @@ public class Inventory : MonoBehaviour
         */
 
         ToolBarUIScript.Instance.UpdateSlots();
+    }
+
+    public bool LoadItemsActions(InventoryItem inventoryItem)
+    {
+        if (inventoryItem.itemActionsLoaded == true)
+        {
+            Debug.Log("Item's actions are already loaded");
+            return false;
+        }
+
+        if (inventoryItem.objectToGetItemActionsFrom ?? null)
+        {
+            Debug.Log("No GameObject to load the item actions from");
+            return false;
+        }
+
+        inventoryItem.itemActions = inventoryItem.objectToGetItemActionsFrom.GetComponents<IItemAction>();
+        inventoryItem.itemActionsLoaded = true;
+
+        if (inventoryItem.itemActions == null)
+        {
+            Debug.Log("itemActions list is null, no interfaced components to get from GameObject");
+            return false;
+        }
+
+        if (inventoryItem.itemActions.Length == 0)
+        {
+            Debug.Log("itemActions list's length is 0, no interfaced components to get from GameObject");
+            return false;
+        }
+
+        return true;
     }
 }
