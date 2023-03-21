@@ -7,7 +7,7 @@ public class PlayerCameraManager : MonoBehaviour
 {
     public CinemachineConfiner2D cinemachineConfiner2D = null;
 
-    [HideInInspector] public PlayerCameraManager instance = null;
+    [HideInInspector] public static PlayerCameraManager instance = null;
 
     void Awake()
     {
