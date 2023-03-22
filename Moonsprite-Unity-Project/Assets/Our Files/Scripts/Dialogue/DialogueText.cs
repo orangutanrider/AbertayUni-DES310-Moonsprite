@@ -80,14 +80,13 @@ public class DialogueText : MonoBehaviour
         sprite.gameObject.GetComponent<SpriteRenderer>().sprite = AllSprites[curSrpite];
 
         if (isPlayer)
-        {
-            sprite.transform.position = Pos1.transform.position;
+        {           
+            sprite.transform.position = Pos1.transform.position;                     
 
         }
         else
-        {
-            sprite.transform.position = Pos2.transform.position;
-
+        {           
+            sprite.transform.position = Pos2.transform.position;           
         }
 
         dialogueUI.SetActive(true);
@@ -111,13 +110,15 @@ public class DialogueText : MonoBehaviour
 
         if (isPlayer)
         {
+            Pos2.SetActive(false);
             sprite.transform.position = Pos1.transform.position;
-           
+            Pos1.SetActive(true);
         }
         else
         {
+            Pos1.SetActive(false);
             sprite.transform.position = Pos2.transform.position;
-           
+            Pos2.SetActive(true);
         }
     }
 }
