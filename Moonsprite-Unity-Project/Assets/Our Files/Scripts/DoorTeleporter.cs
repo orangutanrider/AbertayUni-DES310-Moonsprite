@@ -7,7 +7,12 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     public GameObject DestinationObject;
     public Vector2 exitDirection;
     [Space]
+    public bool destinationHasCameraCollider = false;
+    public Collider2D cameraCollider = null;
+    [Space]
     [SerializeField] int interactionPriority = 0;
+
+
     int IInteractable.InteractionPriority 
     {
         get { return interactionPriority; }
@@ -39,5 +44,14 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     void TeleportPlayerToDestinationObject()
     {
         player.gameObject.transform.position = DestinationObject.transform.position;
+
+        if(destinationHasCameraCollider == true)
+        {
+            PlayerCameraManager.instance.ConfineCameraWith(cameraCollider);
+        }
+        else
+        {
+            PlayerCameraManager.instance.FreeCameraFromConfiner();
+        }
     }
 }
