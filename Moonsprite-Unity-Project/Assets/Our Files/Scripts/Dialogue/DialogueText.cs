@@ -8,6 +8,7 @@ using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 using System.Threading;
 
+[System.Obsolete("Replaced by DialogueManager, DR: This was done for the sake of naming conventions")]
 public class DialogueText : MonoBehaviour
 {
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName = "Dialogue State")]
+[System.Obsolete("Replaced by DialogueObject, DR: This was done for the sake of naming conventions")]
 public class DialogueState : ScriptableObject
 {
 

@@ -10,8 +10,6 @@ public class PlayerInteractionController : MonoBehaviour
     public PlayerMovement playerMovement;
 
     [Header ("Parameters")]
-    [Space]
-    public KeyCode interactionKey;
     public float interactionRange;
     public Vector3 originOffset;
     [Space]
@@ -19,6 +17,7 @@ public class PlayerInteractionController : MonoBehaviour
     [Space]
     public bool enableGizmos = false;
 
+    public const KeyCode interactionKey = KeyCode.G;
     int interactingWithXScripts = 0;
 
     // Update is called once per frame
