@@ -136,6 +136,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   enableGizmos: 0
+  printData: 0
 --- !u!70 &3134911668382450938
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -424,7 +425,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1581178967840378465}
-  - component: {fileID: 1026410506839519869}
   m_Layer: 0
   m_Name: DialogueEventsScriptsContainer
   m_TagString: Untagged
@@ -447,19 +447,6 @@ Transform:
   m_Father: {fileID: 4339019779615691368}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1026410506839519869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8004384641415538573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa0ecebcf882224dbac7aa5ab58823b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testTag: {fileID: 11400000, guid: 9118b8d91b76a344c988ce66a3531038, type: 2}
 --- !u!1 &9068203574823309283
 GameObject:
   m_ObjectHideFlags: 0
