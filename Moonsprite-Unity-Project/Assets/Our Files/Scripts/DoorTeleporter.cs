@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Collider2D))]
 public class DoorTeleporter : MonoBehaviour, IInteractable
 {
     public GameObject DestinationObject;
@@ -39,7 +39,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
         player.playerMovement.AnimatorUpdate(Vector2.zero);
         TeleportPlayerToDestinationObject();
         yield return new WaitForSeconds(_doorTransitionTime * (1f / 3f));
-        player.ExitInteraction();
+        player.ExitInteraction(); 
     }
 
     void TeleportPlayerToDestinationObject()

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Collider2D))]
 public class InteractableDialogueGiver : MonoBehaviour, IInteractable
 {
-    public DialogueObject startDialogueObject;
+    public DialogueObject startingDialogueObject;
     [Space]
     [SerializeField] int interactionPriority = 0;
 
@@ -17,7 +17,7 @@ public class InteractableDialogueGiver : MonoBehaviour, IInteractable
 
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
     {
-        DialogueManager.instance.StartNewDialogue(startDialogueObject, gameObject);
+        DialogueManager.instance.StartNewDialogue(startingDialogueObject, gameObject);
         playerInteractionController.ExitInteraction();
     }
 }
