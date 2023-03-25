@@ -16,6 +16,7 @@ public class PlayerInteractionController : MonoBehaviour
     public LayerMask interactableMask;
     [Space]
     public bool enableGizmos = false;
+    public bool printData = false;
 
     public const KeyCode interactionKey = KeyCode.G;
     int interactingWithXScripts = 0;
@@ -67,6 +68,11 @@ public class PlayerInteractionController : MonoBehaviour
         {
             PlayerStateMachine.instance.StateUpdate(PlayerStateMachine.PlayerState.NoState);
         }
+
+        if(printData == true)
+        {
+            Debug.Log("Call recieved to exit interaction, current number of active interactions is " + interactingWithXScripts);
+        }
     }
 
     void InteractWith(IInteractable interactable, TagList tags)
@@ -77,6 +83,11 @@ public class PlayerInteractionController : MonoBehaviour
             interactingWithXScripts++;
         }
         interactable.InteractionEvent(this, tags);
+
+        if (printData == true)
+        {
+            Debug.Log("Interacting with a new script, current number of scripts being interacted with is " + interactingWithXScripts);
+        }
     }
 
     IInteractable[] RayCastForInterface()

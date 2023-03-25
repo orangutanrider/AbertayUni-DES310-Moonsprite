@@ -17,7 +17,6 @@ public class InteractableDialogueGiver : MonoBehaviour, IInteractable
 
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
     {
-        DialogueManager.instance.StartNewDialogue(startingDialogueObject, gameObject);
-        playerInteractionController.ExitInteraction();
+        DialogueManager.instance.StartNewDialogue(startingDialogueObject, gameObject, playerInteractionController);
     }
 }

@@ -5,7 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DialogueObject", menuName = "Dialogue/DialogueObject")]
 public class DialogueObject : ScriptableObject
 {
+    // Attribution: Vasco F + Dominic R
+
     [Header("(add multiple for when the player has reply options)")]
+    [Header("(leave empty to exit the dialogue)")]
     public DialogueObject[] nextDialogueObjects = null;
 
     [Header("Dialogue Event Settings")]

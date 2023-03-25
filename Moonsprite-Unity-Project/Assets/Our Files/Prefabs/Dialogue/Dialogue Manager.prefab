@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4928826904885112295}
-  - component: {fileID: 4928826904885112294}
+  - component: {fileID: 7555542789626547739}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -30,9 +30,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4928826904885112294
+--- !u!114 &7555542789626547739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,19 +41,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4928826904885112293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8246c24dd22d2f49872a743bfa95335, type: 3}
+  m_Script: {fileID: 11500000, guid: e0adc79f48b5d424bb82a727d623edd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
-  startingState: {fileID: 11400000, guid: 7ab19a9505d738b40b321919572f0bc4, type: 2}
-  isPlayer: 0
-  sprite: {fileID: 0}
-  dialogueUI: {fileID: 0}
-  Pos1: {fileID: 0}
-  Pos2: {fileID: 0}
-  AllSprites:
-  - {fileID: 0}
-  - {fileID: 1687579840, guid: 0c0f35a2800784f4391dddc840ee8a8b, type: 3}
-  - {fileID: 1515607162, guid: c71f5ed15d2034d4f90d25dced8812a1, type: 3}
-  curSrpite: 0
-  isTalking: 0
+  playerDialogueEventsContainer: {fileID: 0}
+  dialogueCanvas: {fileID: 0}
+  playerDialogueUIObject: {fileID: 0}
+  playerDialogueTextBox: {fileID: 0}
+  playerAvatarImagerDisplay: {fileID: 0}
+  otherDialogueUIObject: {fileID: 0}
+  otherNameTextBox: {fileID: 0}
+  otherDialogueTextBox: {fileID: 0}
+  otherAvatarImageDisplay: {fileID: 0}

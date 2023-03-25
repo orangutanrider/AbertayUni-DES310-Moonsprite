@@ -8,11 +8,11 @@ public class DialogueEventTestScript : MonoBehaviour, IDialogueEvent
 
     void IDialogueEvent.DialogueEvent(TagList tagList)
     {
-        Debug.Log("Dialogue event succesfully triggered");
+        Debug.Log("testScript: Dialogue event succesfully triggered");
 
         if (tagList.HasTag(testTag) == true)
         {
-            Debug.Log("Tag list successfully passed");
+            Debug.Log("testScript: Tag list successfully passed");
         }
     }
 }

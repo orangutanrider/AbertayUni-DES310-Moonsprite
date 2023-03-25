@@ -6,6 +6,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    // Attribution: Vasco F + Dominic R
+
     [Header("Required References")]
     public GameObject playerDialogueEventsContainer;
     [Space]
@@ -20,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text otherDialogueTextBox;
     public Image otherAvatarImageDisplay;
 
+    PlayerInteractionController playerInteractor = null;
+    bool wasTriggeredViaInteraction = false;
     bool isTalking = false;
     DialogueObject curDialogueObject = null;
     GameObject curDialogueGiver = null;
@@ -41,21 +45,27 @@ public class DialogueManager : MonoBehaviour
         DialogueSystemInputs();
     }
 
+    void Start()
+    {
+        isTalking = true;
+        CloseDialogue();
+    }
+
     void DialogueSystemInputs()
     {
-        if (curDialogueObject == null)
+        if(isTalking == false)
         {
             return;
         }
 
         // generic next dialogue input
-        if (Input.GetMouseButtonUp(0) == true || Input.GetKeyUp(PlayerInteractionController.interactionKey) == true)
+        if (Input.GetMouseButtonUp(0) == true || Input.GetKeyDown(PlayerInteractionController.interactionKey) == true)
         {
             NextDialogueObject();
         }
 
         // reply input
-        for (int index = 0; index < curDialogueObject.nextDialogueObjects.Length; index++)
+        for (int index = 0; index + ((int)KeyCode.Alpha1) < ((int)KeyCode.Alpha9); index++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + index))
             {
@@ -64,7 +74,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartNewDialogue(DialogueObject dialogueObject = null, GameObject dialogueGiver = null)
+    public void StartNewDialogue(DialogueObject dialogueObject, GameObject dialogueGiver = null, PlayerInteractionController playerInteractionController = null)
     {
         if(dialogueObject == null)
         {
@@ -72,8 +82,18 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        if(playerInteractionController != null)
+        {
+            playerInteractor = playerInteractionController;
+            wasTriggeredViaInteraction = true;
+        }
+
         curDialogueGiver = dialogueGiver;
         curDialogueObject = dialogueObject;
+
+        Time.timeScale = 0;
+        isTalking = true;
+        dialogueCanvas.SetActive(true);
 
         ActivateDialogue(dialogueObject);
     }
@@ -86,13 +106,9 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        TriggerDialogueEvents(dialogueObject);
-
-        Time.timeScale = 0;
-        isTalking = true;
         curDialogueObject = dialogueObject;
-        dialogueCanvas.SetActive(true);
 
+        TriggerDialogueEvents(dialogueObject);
         UpdateDialogueDisplayElements(dialogueObject);
     }
 
@@ -119,6 +135,9 @@ public class DialogueManager : MonoBehaviour
     bool LoadAndExecuteDialogueEventsOnObject(GameObject eventsHolder, DialogueObject dialogueObject)
     {
         if(eventsHolder ?? null)
+        {
+        }
+        else
         {
             Debug.Log("eventsHolderObject was null, " + eventsHolder);
             return false;
@@ -152,7 +171,23 @@ public class DialogueManager : MonoBehaviour
         isTalking = false;
         curDialogueObject = null;
         dialogueCanvas.SetActive(false);
-        //dialogueGiver = null;
+        curDialogueGiver = null;
+
+        if (wasTriggeredViaInteraction == false)
+        {
+            return;
+        }
+
+        wasTriggeredViaInteraction = false;
+
+        if (playerInteractor == null)
+        {
+            Debug.LogWarning("dialogue triggered via interaction, but playerInteractionController is null");
+        }
+        else
+        {
+            playerInteractor.ExitInteraction();
+        }
     }
 
     void UpdateDialogueDisplayElements(DialogueObject dialogueObject)
@@ -191,12 +226,26 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if(curDialogueObject.nextDialogueObjects.Length - 1 < inputIndex)
+        if(curDialogueObject.nextDialogueObjects == null)
+        {
+            CloseDialogue();
+            return;
+        }
+
+        if (curDialogueObject.nextDialogueObjects.Length == 0)
+        {
+            CloseDialogue();
+            return;
+        }
+
+        int clampedInputIndex = Mathf.Clamp(inputIndex, 0, curDialogueObject.nextDialogueObjects.Length - 1);
+
+        if (curDialogueObject.nextDialogueObjects.Length - 1 < clampedInputIndex)
         {
             ActivateDialogue(curDialogueObject.nextDialogueObjects[0]);
         }
 
-        ActivateDialogue(curDialogueObject.nextDialogueObjects[inputIndex]);
+        ActivateDialogue(curDialogueObject.nextDialogueObjects[clampedInputIndex]);
     }
 
     /*

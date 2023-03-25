@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
-  m_Name: TestDialogue3
+  m_Name: TestDialogueReply3
   m_EditorClassIdentifier: 
-  nextDialogueObjects:
-  - {fileID: 11400000, guid: 7df77d9513f8d7c42aa73394903547c2, type: 2}
-  - {fileID: 11400000, guid: bf06818ab6b6e0f42922add60b8afa53, type: 2}
-  - {fileID: 11400000, guid: 1b99aaa3ed897314c9b3b98b1b7bdaef, type: 2}
+  nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:
     tags: []
-  dialogueSpeaker: {fileID: 11400000, guid: 09a1d6aab06b3f34c8baebde2008fd3f, type: 2}
-  dialogueText: 'BAAA
+  dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
+  dialogueText: '3
 
-
-    use alphanumeric keys to reply (1, 2, 3)'
+'

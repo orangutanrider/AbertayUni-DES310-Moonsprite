@@ -67,6 +67,7 @@ Transform:
   - {fileID: 4339019780967519793}
   - {fileID: 7363748740618599751}
   - {fileID: 2043657437161006445}
+  - {fileID: 1581178967840378465}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,7 +130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   playerMovement: {fileID: 4339019779615691369}
-  interactionKey: 103
   interactionRange: 2
   originOffset: {x: 0, y: 0.48, z: 0}
   interactableMask:
@@ -415,6 +415,51 @@ MonoBehaviour:
   sortingPointOffset: -0.09
   displayGizmos: 0
   setSortingOrderButton: 0
+--- !u!1 &8004384641415538573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581178967840378465}
+  - component: {fileID: 1026410506839519869}
+  m_Layer: 0
+  m_Name: DialogueEventsScriptsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1581178967840378465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004384641415538573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4339019779615691368}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026410506839519869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004384641415538573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa0ecebcf882224dbac7aa5ab58823b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testTag: {fileID: 11400000, guid: 9118b8d91b76a344c988ce66a3531038, type: 2}
 --- !u!1 &9068203574823309283
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2043657437161006445}
   m_Layer: 0
-  m_Name: ItemActionScriptContainer
+  m_Name: ItemActionScriptsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
