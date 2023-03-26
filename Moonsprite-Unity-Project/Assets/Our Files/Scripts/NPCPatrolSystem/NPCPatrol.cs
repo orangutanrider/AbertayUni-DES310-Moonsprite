@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Yeh, kind of silly to rename it
+// But these little details distract me, it's easier for me to just do it than ignore it
+[System.Obsolete("Replaced by NPCPatrolScript, DR: This was done for the sake of naming conventions")]
 public class NPCPatrol : MonoBehaviour
 {
     public Transform[] waypoints;
