@@ -13,9 +13,9 @@ public class NPCWaypoint
     public float waitTime = 1;
     public float randomWaitTimePlus = 0;
 
-    public NPCWaypoint(Transform _waypointLocation, bool _exitWaypoint, float _wayPointRadius, float _waitTime, float _randomWaitTimePlus)
+    public NPCWaypoint(Transform _waypointTransform, bool _exitWaypoint, float _wayPointRadius, float _waitTime, float _randomWaitTimePlus)
     {
-        waypointLocation = _waypointLocation;
+        waypointTransform = _waypointTransform;
         exitWaypoint = _exitWaypoint;
         wayPointRadius = _wayPointRadius;
         waitTime = _waitTime;
