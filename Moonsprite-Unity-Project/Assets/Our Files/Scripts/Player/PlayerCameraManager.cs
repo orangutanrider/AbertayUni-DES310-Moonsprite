@@ -14,7 +14,7 @@ public class PlayerCameraManager : MonoBehaviour
         instance = this;
     }
 
-    public void ConfineCameraWith(Collider2D collider2D)
+    public void ConfineCameraWith(Collider2D collider2D, float damping = 0)
     {
         if(collider2D == null)
         {
@@ -23,10 +23,12 @@ public class PlayerCameraManager : MonoBehaviour
         }
 
         cinemachineConfiner.m_BoundingShape2D = collider2D;
+        cinemachineConfiner.m_Damping = damping;
     }
 
     public void FreeCameraFromConfiner()
     {
         cinemachineConfiner.m_BoundingShape2D = null;
+        cinemachineConfiner.m_Damping = 0;
     }
 }

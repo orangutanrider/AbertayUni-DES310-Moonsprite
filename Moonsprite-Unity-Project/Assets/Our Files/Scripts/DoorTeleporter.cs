@@ -10,6 +10,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     [Space]
     public bool destinationHasCameraCollider = false;
     public Collider2D cameraCollider = null;
+    public float cameraColliderDamping = 0.05f;
     [Space]
     [SerializeField] int interactionPriority = 0;
 
@@ -48,7 +49,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
 
         if(destinationHasCameraCollider == true)
         {
-            PlayerCameraManager.instance.ConfineCameraWith(cameraCollider);
+            PlayerCameraManager.instance.ConfineCameraWith(cameraCollider, cameraColliderDamping);
         }
         else
         {
