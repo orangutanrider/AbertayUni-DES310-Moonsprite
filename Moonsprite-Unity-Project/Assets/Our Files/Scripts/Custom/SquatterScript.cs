@@ -9,6 +9,9 @@ public class SquatterScript : MonoBehaviour
 
     public void DebrisCollision()
     {
+        DevestationTracker.DevestationEventEntry squatterInjuredEvent = DevestationTracker.instance.GetDevestationEventByName("Squatter Injured");
+        DevestationTracker.instance.ConfirmDevestationEventHappened(squatterInjuredEvent);
+
         Instantiate(debrisPilesPrefab, transform.position, transform.rotation);
         squatterAnimator.SetBool("DebrisCollision", true);
     }

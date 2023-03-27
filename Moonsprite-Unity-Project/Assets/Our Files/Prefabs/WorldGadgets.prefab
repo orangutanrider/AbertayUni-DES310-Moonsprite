@@ -202,7 +202,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae40ddd4151663844a403673749bfb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devestationEventEntries: []
+  devestationEventEntries:
+  - name: Squatter Injured
+    description: If the debris collides with the squatter it'll happen. If the player
+      convinces the squatter to leave, it will be prevented.
+    hasHappened: 0
+    wasPrevented: 0
 --- !u!1 &8566909220655351874
 GameObject:
   m_ObjectHideFlags: 0
