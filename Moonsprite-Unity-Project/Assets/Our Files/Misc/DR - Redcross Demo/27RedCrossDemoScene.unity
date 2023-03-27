@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 434981034}
   - component: {fileID: 434981033}
   m_Layer: 6
-  m_Name: Circle (1)
+  m_Name: DemoItem2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434981032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.53, y: -10.85, z: 0}
+  m_LocalPosition: {x: 9.03, y: -5.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8245,7 +8245,7 @@ GameObject:
   - component: {fileID: 771438801}
   - component: {fileID: 771438800}
   m_Layer: 6
-  m_Name: Circle (3)
+  m_Name: DemoItem4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8341,7 +8341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771438799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.99, y: -10.12, z: 0}
+  m_LocalPosition: {x: 20.35, y: 0.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8361,7 +8361,7 @@ GameObject:
   - component: {fileID: 798597291}
   - component: {fileID: 798597290}
   m_Layer: 6
-  m_Name: Circle
+  m_Name: DemoItem1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8457,7 +8457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798597289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.09, y: -11.83, z: 0}
+  m_LocalPosition: {x: 29.04, y: 8.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10038,7 +10038,7 @@ GameObject:
   - component: {fileID: 968773683}
   - component: {fileID: 968773682}
   m_Layer: 6
-  m_Name: Circle (2)
+  m_Name: DemoItem3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10134,7 +10134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968773681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.63, y: -9.14, z: 0}
+  m_LocalPosition: {x: 17.42, y: -5.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73945,7 +73945,7 @@ GameObject:
   - component: {fileID: 1716130055}
   - component: {fileID: 1716130054}
   m_Layer: 6
-  m_Name: Circle (4)
+  m_Name: DemoItem5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74041,7 +74041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716130053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.01, y: -9.08, z: 0}
+  m_LocalPosition: {x: 23.58, y: 7.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
