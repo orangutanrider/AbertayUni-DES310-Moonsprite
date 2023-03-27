@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
 {
     // Attribution: Vasco F + Dominic R
 
+    public float dialogueInputCooldown = 0.5f;
+
     [Header("Required References")]
     public GameObject playerDialogueEventsContainer;
     [Space]
@@ -27,6 +29,8 @@ public class DialogueManager : MonoBehaviour
     bool isTalking = false;
     DialogueObject curDialogueObject = null;
     GameObject curDialogueGiver = null;
+
+    float dialogueCooldownTimer = 0;
 
     [HideInInspector] public static DialogueManager instance = null;
 
@@ -58,6 +62,12 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        dialogueCooldownTimer = dialogueCooldownTimer + Time.unscaledDeltaTime;
+        if(dialogueCooldownTimer < dialogueInputCooldown)
+        {
+            return;
+        }
+
         // generic next dialogue input
         if (Input.GetMouseButtonUp(0) == true || Input.GetKeyDown(PlayerInteractionController.interactionKey) == true)
         {
@@ -65,6 +75,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // reply input
+        // this just checks each alphanumeric key for if they were pressed
         for (int index = 0; index + ((int)KeyCode.Alpha1) < ((int)KeyCode.Alpha9); index++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + index))
@@ -95,6 +106,8 @@ public class DialogueManager : MonoBehaviour
         isTalking = true;
         dialogueCanvas.SetActive(true);
 
+        dialogueCooldownTimer = 0;
+
         ActivateDialogue(dialogueObject);
     }
 
@@ -105,6 +118,8 @@ public class DialogueManager : MonoBehaviour
             CloseDialogue();
             return;
         }
+
+        dialogueCooldownTimer = 0;
 
         curDialogueObject = dialogueObject;
 
