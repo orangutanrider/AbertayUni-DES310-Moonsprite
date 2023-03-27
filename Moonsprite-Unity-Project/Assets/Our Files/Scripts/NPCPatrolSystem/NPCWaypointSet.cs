@@ -6,6 +6,11 @@ using UnityEngine;
 public class NPCWaypointSet 
 {
     public string setName = "unnamed set";
+    public bool active = false;
+    [Space]
+    public bool startFollowingNewSetOnExit = false;
+    public int newSetIndex = -1;
+    [Space]
     public int startingWaypointIndex = 0;
     public List<NPCWaypoint> waypoints = null;
 

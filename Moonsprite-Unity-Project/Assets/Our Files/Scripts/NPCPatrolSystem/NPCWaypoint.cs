@@ -13,6 +13,8 @@ public class NPCWaypoint
     public float waitTime = 1;
     public float randomWaitTimePlus = 0;
 
+    [HideInInspector] public bool waitedAt = false;
+
     public NPCWaypoint(Transform _waypointTransform, bool _exitWaypoint, float _wayPointRadius, float _waitTime, float _randomWaitTimePlus)
     {
         waypointTransform = _waypointTransform;
