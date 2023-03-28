@@ -13,22 +13,22 @@ public class NPCPatrolScript : MonoBehaviour
     [Header("Tools (multi-edit and get all waypoints from parent object)")]
     public int indexSelection = 0;
     [Space]
-    public bool clearIndexButton = false;
+    public bool clearIndexBUTTON = false;
     [Space]
     public Transform transformToGetWaypointsFrom = null;
-    public bool getWaypointsButton = false;
+    public bool getWaypointsBUTTON = false;
     [Space]
     public float setAllRadiusTo = 0.25f;
-    public bool setRadiusButton = false;
+    public bool setRadiusBUTTON = false;
     [Space]
     public float setAllWaitTimeTo = 1;
-    public bool setWaitTimeButton = false;
+    public bool setWaitTimeBUTTON = false;
     [Space]
     public float setAllRandomWaitTimeTo = 0;
-    public bool setRandomWaitTimeButton = false;
+    public bool setRandomWaitTimeBUTTON = false;
 
     [Header("(by default NPCs will follow the first waypointSet in the list)")]
-    public NPCPatrolState patrolState = NPCPatrolState.NotFollowingAnyWaypointSet;
+    public NPCPatrolState patrolState = NPCPatrolState.FollowingWaypointSet;
     public List<NPCWaypointSet> waypointSets = new List<NPCWaypointSet>();
 
     IMover mover;
@@ -63,19 +63,69 @@ public class NPCPatrolScript : MonoBehaviour
         Patrol();
     }
 
-    #region Tool
+    #region Tools
+    // this is called whenever the component is interacted with via the inspector
+    // it runs during edit mode
+    // i use it as a hack to quickly make tools
     void OnValidate()
     {
-        
+        ClearSelectedIndex();
+
+        GetWaypointsFromTransform();
+
+        MultiEditSetRadius();
+        MultiEditSetWaitTime();
+        MultiEditSetRandomWaitTime();
+    }
+
+    void ClearSelectedIndex()
+    {
+        if (clearIndexBUTTON == false)
+        {
+            return;
+        }
+        clearIndexBUTTON = false;
+
+        #region index validation
+        IndexSelectValidate indexValidation = ValidateIndexSelection();
+        int indexToWriteTo = indexSelection;
+
+        if (indexValidation == IndexSelectValidate.InvalidNegativeIndex)
+        {
+            Debug.LogError("Will not write to a negative index");
+            return;
+        }
+
+        if (indexValidation == IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray)
+        {
+            Debug.Log("Creating a new list entry, because index is greater than list bounds");
+            waypointSets.Add(new NPCWaypointSet("new set", 0, new List<NPCWaypoint>()));
+            indexToWriteTo = waypointSets.Count - 1;
+        }
+        #endregion
+
+        if (waypointSets[indexSelection].waypoints == null)
+        {
+            Debug.Log("No waypoints to clear");
+            return;
+        }
+
+        if (waypointSets[indexSelection].waypoints.Count == 0)
+        {
+            Debug.Log("No waypoints to clear");
+            return;
+        }
+
+        waypointSets[indexSelection].waypoints.Clear();
     }
 
     void GetWaypointsFromTransform()
     {
-        if(getWaypointsButton == false)
+        if(getWaypointsBUTTON == false)
         {
             return;
         }
-        getWaypointsButton = false;
+        getWaypointsBUTTON = false;
 
         if(transformToGetWaypointsFrom == null)
         {
@@ -83,6 +133,7 @@ public class NPCPatrolScript : MonoBehaviour
             return;
         }
 
+        #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();
         int indexToWriteTo = indexSelection;
 
@@ -98,8 +149,126 @@ public class NPCPatrolScript : MonoBehaviour
             waypointSets.Add(new NPCWaypointSet("new set", 0, new List<NPCWaypoint>()));
             indexToWriteTo = waypointSets.Count - 1;
         }
+        #endregion
+
+        waypointSets[indexSelection].waypoints.Clear();
 
         Transform[] childObjects = transformToGetWaypointsFrom.GetComponentsInChildren<Transform>();
+        foreach(Transform child in childObjects)
+        {
+            if(child == transformToGetWaypointsFrom)
+            {
+                continue;
+            }
+
+            NPCWaypoint newWaypoint = new NPCWaypoint(child, false, 0.25f, 1, 0);
+            waypointSets[indexToWriteTo].waypoints.Add(newWaypoint);
+        }
+    }
+
+    void MultiEditSetRadius()
+    {
+        if (setRadiusBUTTON == false)
+        {
+            return;
+        }
+        setRadiusBUTTON = false;
+
+        #region index validation
+        IndexSelectValidate indexValidation = ValidateIndexSelection();
+        if (indexValidation == IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray || indexValidation == IndexSelectValidate.InvalidNegativeIndex)
+        {
+            Debug.LogError("Selected index is outside the bounds of the list");
+            return;
+        }
+        #endregion
+
+        if (waypointSets[indexSelection].waypoints == null)
+        {
+            Debug.Log("No waypoints to write to");
+            return;
+        }
+
+        if (waypointSets[indexSelection].waypoints.Count == 0)
+        {
+            Debug.Log("No waypoints to write to");
+            return;
+        }
+
+        foreach(NPCWaypoint waypoint in waypointSets[indexSelection].waypoints)
+        {
+            waypoint.wayPointRadius = setAllRadiusTo;
+        }
+    }
+
+    void MultiEditSetWaitTime()
+    {
+        if (setWaitTimeBUTTON == false)
+        {
+            return;
+        }
+        setWaitTimeBUTTON = false;
+
+        #region index validation
+        IndexSelectValidate indexValidation = ValidateIndexSelection();
+        if (indexValidation == IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray || indexValidation == IndexSelectValidate.InvalidNegativeIndex)
+        {
+            Debug.LogError("Selected index is outside the bounds of the list");
+            return;
+        }
+        #endregion
+
+        if (waypointSets[indexSelection].waypoints == null)
+        {
+            Debug.Log("No waypoints to write to");
+            return;
+        }
+
+        if (waypointSets[indexSelection].waypoints.Count == 0)
+        {
+            Debug.Log("No waypoints to write to");
+            return;
+        }
+
+        foreach (NPCWaypoint waypoint in waypointSets[indexSelection].waypoints)
+        {
+            waypoint.waitTime = setAllWaitTimeTo;
+        }
+    }
+
+    void MultiEditSetRandomWaitTime()
+    {
+        if (setRandomWaitTimeBUTTON == false)
+        {
+            return;
+        }
+        setRandomWaitTimeBUTTON = false;
+
+        #region index validation
+        IndexSelectValidate indexValidation = ValidateIndexSelection();
+        if (indexValidation == IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray || indexValidation == IndexSelectValidate.InvalidNegativeIndex)
+        {
+            Debug.LogError("Selected index is outside the bounds of the list");
+            return;
+        }
+        #endregion
+
+        if (waypointSets[indexSelection].waypoints == null)
+        {
+            Debug.Log("No waypoints to write to");
+            return;
+        }
+
+        if (waypointSets[indexSelection].waypoints.Count == 0)
+        {
+            Debug.Log("No waypoints to write to");
+            return;
+        }
+
+        foreach (NPCWaypoint waypoint in waypointSets[indexSelection].waypoints)
+        {
+            waypoint.randomWaitTimePlus = setAllRandomWaitTimeTo;
+        }
     }
 
     IndexSelectValidate ValidateIndexSelection()
@@ -124,15 +293,13 @@ public class NPCPatrolScript : MonoBehaviour
     #region Core
     void Patrol() // happens every frame on fixed update
     {
-        if (patrolState == NPCPatrolState.FollowingWaypointSet)
-        {
-            MoveTowardsCurrentWaypoint();
-        }
-        else
+        if (patrolState == NPCPatrolState.WaitingAtWaypoint || patrolState == NPCPatrolState.NotFollowingAnyWaypointSet)
         {
             StopMoving();
+            return;
         }
 
+        MoveTowardsCurrentWaypoint();
         bool hasArrivedAtCurrentWaypoint = CheckIfInRangeOfCurrentWaypoint();
 
         if(hasArrivedAtCurrentWaypoint == true)
@@ -143,6 +310,8 @@ public class NPCPatrolScript : MonoBehaviour
 
     void NextWaypoint()
     {
+        Debug.Log("NextWaypoint Called");
+
         if(CurrentWaypoint().waitTime > 0 && CurrentWaypoint().waitedAt == false)
         {
             CurrentWaypoint().waitedAt = true;
@@ -151,14 +320,15 @@ public class NPCPatrolScript : MonoBehaviour
         }
         CurrentWaypoint().waitedAt = false;
 
-        currentWaypointIndex++;
-
         if(CurrentWaypoint().exitWaypoint == true)
         {
             ExitCurrentWaypointSet();
+            return;
         }
 
-        if(currentWaypointIndex > CurrentSet().waypoints.Count - 1)
+        currentWaypointIndex++;
+
+        if (currentWaypointIndex > CurrentSet().waypoints.Count - 1)
         {
             currentWaypointIndex = 0;
         }
@@ -167,14 +337,15 @@ public class NPCPatrolScript : MonoBehaviour
     IEnumerator WaitAtCurrentWaypoint(float waitTime)
     {
         patrolState = NPCPatrolState.WaitingAtWaypoint;
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(1f * waitTime);
+        patrolState = NPCPatrolState.FollowingWaypointSet;
         NextWaypoint();
         yield break;
     }
 
     bool CheckIfInRangeOfCurrentWaypoint()
     {
-        float distance = Vector3.Distance(transform.position, CurrentWaypoint().wa.position);
+        float distance = Vector3.Distance(transform.position, CurrentWaypoint().waypointTransform.position);
         if (distance <= CurrentWaypoint().wayPointRadius)
         {
             return true;
@@ -210,6 +381,9 @@ public class NPCPatrolScript : MonoBehaviour
         CurrentSet().active = false;
         currentSetIndex = newSetIndex;
         CurrentSet().active = true;
+
+        currentWaypointIndex = CurrentSet().startingWaypointIndex;
+
         return true;
     }
 
@@ -231,6 +405,9 @@ public class NPCPatrolScript : MonoBehaviour
         CurrentSet().active = false;
         currentSetIndex = newSetIndex;
         CurrentSet().active = true;
+
+        currentWaypointIndex = CurrentSet().startingWaypointIndex;
+
         return true;
     }
 
@@ -291,7 +468,7 @@ public class NPCPatrolScript : MonoBehaviour
     #region Misc data functions
     Vector3 TowardsCurrentWaypoint()
     {
-        return (transform.position - CurrentWaypoint().waypointTransform.position).normalized;
+        return (CurrentWaypoint().waypointTransform.position - transform.position).normalized;
     }
 
     NPCWaypointSet CurrentSet()
