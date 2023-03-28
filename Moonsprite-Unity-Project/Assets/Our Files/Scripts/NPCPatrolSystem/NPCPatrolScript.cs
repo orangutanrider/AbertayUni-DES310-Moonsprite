@@ -315,7 +315,14 @@ public class NPCPatrolScript : MonoBehaviour
         if(CurrentWaypoint().waitTime > 0 && CurrentWaypoint().waitedAt == false)
         {
             CurrentWaypoint().waitedAt = true;
-            StartCoroutine(WaitAtCurrentWaypoint(CurrentWaypoint().waitTime));
+
+            float randomWaitTimePlus = 0;
+            if(CurrentWaypoint().randomWaitTimePlus > 0)
+            {
+                randomWaitTimePlus = Random.Range(0, CurrentWaypoint().randomWaitTimePlus);
+            }
+
+            StartCoroutine(WaitAtCurrentWaypoint(CurrentWaypoint().waitTime + randomWaitTimePlus));
             return;
         }
         CurrentWaypoint().waitedAt = false;
