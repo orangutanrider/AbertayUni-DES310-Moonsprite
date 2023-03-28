@@ -18,9 +18,6 @@ public class NPCPatrolScript : MonoBehaviour
     public Transform transformToGetWaypointsFrom = null;
     public bool getWaypointsBUTTON = false;
     [Space]
-    public float setAllRadiusTo = 0.25f;
-    public bool setRadiusBUTTON = false;
-    [Space]
     public float setAllWaitTimeTo = 1;
     public bool setWaitTimeBUTTON = false;
     [Space]
@@ -73,7 +70,6 @@ public class NPCPatrolScript : MonoBehaviour
 
         GetWaypointsFromTransform();
 
-        MultiEditSetRadius();
         MultiEditSetWaitTime();
         MultiEditSetRandomWaitTime();
     }
@@ -161,43 +157,8 @@ public class NPCPatrolScript : MonoBehaviour
                 continue;
             }
 
-            NPCWaypoint newWaypoint = new NPCWaypoint(child, false, 0.25f, 1, 0);
+            NPCWaypoint newWaypoint = new NPCWaypoint(child, false, 1, 0);
             waypointSets[indexToWriteTo].waypoints.Add(newWaypoint);
-        }
-    }
-
-    void MultiEditSetRadius()
-    {
-        if (setRadiusBUTTON == false)
-        {
-            return;
-        }
-        setRadiusBUTTON = false;
-
-        #region index validation
-        IndexSelectValidate indexValidation = ValidateIndexSelection();
-        if (indexValidation == IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray || indexValidation == IndexSelectValidate.InvalidNegativeIndex)
-        {
-            Debug.LogError("Selected index is outside the bounds of the list");
-            return;
-        }
-        #endregion
-
-        if (waypointSets[indexSelection].waypoints == null)
-        {
-            Debug.Log("No waypoints to write to");
-            return;
-        }
-
-        if (waypointSets[indexSelection].waypoints.Count == 0)
-        {
-            Debug.Log("No waypoints to write to");
-            return;
-        }
-
-        foreach(NPCWaypoint waypoint in waypointSets[indexSelection].waypoints)
-        {
-            waypoint.wayPointRadius = setAllRadiusTo;
         }
     }
 
@@ -310,8 +271,6 @@ public class NPCPatrolScript : MonoBehaviour
 
     void NextWaypoint()
     {
-        Debug.Log("NextWaypoint Called");
-
         bool isNpcToWait = CheckIfNPCIsToWaitAtCurrentWaypoint();
         if(isNpcToWait == true)
         {
@@ -374,7 +333,7 @@ public class NPCPatrolScript : MonoBehaviour
     bool CheckIfInRangeOfCurrentWaypoint()
     {
         float distance = Vector3.Distance(transform.position, CurrentWaypoint().waypointTransform.position);
-        if (distance <= CurrentWaypoint().wayPointRadius)
+        if (distance <= NPCWaypoint.wayPointRadius)
         {
             return true;
         }
@@ -426,6 +385,7 @@ public class NPCPatrolScript : MonoBehaviour
         int newSetIndex = GetSetIndex(newWaypointSet);
         if (newSetIndex < 0) // if it isn't in this script's list of sets (then add it)
         {
+            Debug.Log("Adding the new set to the list");
             waypointSets.Add(newWaypointSet);
             newSetIndex = waypointSets.Count - 1;
         }
