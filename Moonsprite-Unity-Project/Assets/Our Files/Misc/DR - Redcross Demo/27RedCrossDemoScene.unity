@@ -8070,18 +8070,124 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationsEnabled: 0
-  patrolState: 2
+  indexSelection: 1
+  clearIndexBUTTON: 0
+  transformToGetWaypointsFrom: {fileID: 1395697292}
+  getWaypointsBUTTON: 0
+  setAllRadiusTo: 0.25
+  setRadiusBUTTON: 0
+  setAllWaitTimeTo: 1
+  setWaitTimeBUTTON: 0
+  setAllRandomWaitTimeTo: 0
+  setRandomWaitTimeBUTTON: 0
+  patrolState: 0
   waypointSets:
   - setName: testSet1
+    active: 1
+    startFollowingNewSetOnExit: 1
+    newSetIndex: 1
+    startingWaypointIndex: 0
+    waypoints:
+    - waypointTransform: {fileID: 734577596}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 610947531}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 960433742}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 1709539157}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 859276104}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 1372160033}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 945593167}
+      exitWaypoint: 1
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+  - setName: testSet2
     active: 0
     startFollowingNewSetOnExit: 0
     newSetIndex: 0
     startingWaypointIndex: 0
     waypoints:
-    - waypoint: {fileID: 0}
+    - waypointTransform: {fileID: 1425464668}
       exitWaypoint: 0
-      wayPointRadius: 0
-      waitTime: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 725112982}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 1388783636}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 902185215}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+  - setName: testSet3
+    active: 0
+    startFollowingNewSetOnExit: 0
+    newSetIndex: 0
+    startingWaypointIndex: 0
+    waypoints:
+    - waypointTransform: {fileID: 1425464668}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 725112982}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 1388783636}
+      exitWaypoint: 0
+      wayPointRadius: 0.25
+      waitTime: 1
+      randomWaitTimePlus: 0
+      waitedAt: 0
+    - waypointTransform: {fileID: 902185215}
+      exitWaypoint: 1
+      wayPointRadius: 0.25
+      waitTime: 1
       randomWaitTimePlus: 0
       waitedAt: 0
 --- !u!114 &605368771
@@ -8109,7 +8215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505803aea7b0f9044aa96616ea6adf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 0.02
 --- !u!212 &605368773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74750,6 +74856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1395697292}
+  - component: {fileID: 1395697293}
   m_Layer: 0
   m_Name: TestWaypointSet2
   m_TagString: Untagged
@@ -74776,6 +74883,26 @@ Transform:
   m_Father: {fileID: 809099529}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395697293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395697291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6115755ac58df41908aa4bda1d86c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayingGizmos: 1
+  radiusDisplay: 0.25
+  setWaypointsToChildObjectsBUTTON: 1
+  waypoints:
+  - {fileID: 1425464668}
+  - {fileID: 725112982}
+  - {fileID: 1388783636}
+  - {fileID: 902185215}
 --- !u!1 &1425464667
 GameObject:
   m_ObjectHideFlags: 0
@@ -74969,6 +75096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1696142922}
+  - component: {fileID: 1696142923}
   m_Layer: 0
   m_Name: TestWaypointSet1
   m_TagString: Untagged
@@ -74998,6 +75126,29 @@ Transform:
   m_Father: {fileID: 809099529}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1696142923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696142921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6115755ac58df41908aa4bda1d86c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayingGizmos: 1
+  radiusDisplay: 0.25
+  setWaypointsToChildObjectsBUTTON: 1
+  waypoints:
+  - {fileID: 734577596}
+  - {fileID: 610947531}
+  - {fileID: 960433742}
+  - {fileID: 1709539157}
+  - {fileID: 859276104}
+  - {fileID: 1372160033}
+  - {fileID: 945593167}
 --- !u!1 &1709539156
 GameObject:
   m_ObjectHideFlags: 0
