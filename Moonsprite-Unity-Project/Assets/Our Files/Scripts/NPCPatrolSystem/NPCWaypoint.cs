@@ -7,6 +7,7 @@ public class NPCWaypoint
 {
     // Attribution: Vasco F + Dominic R
 
+    [Tooltip("for doors")] public bool teleportToNextWaypoint = false;
     public Transform waypointTransform;
     [Tooltip("if an Npc reaches an exit waypoint, it'll terminate the waypoint set")] public bool exitWaypoint = false;
     [Space]

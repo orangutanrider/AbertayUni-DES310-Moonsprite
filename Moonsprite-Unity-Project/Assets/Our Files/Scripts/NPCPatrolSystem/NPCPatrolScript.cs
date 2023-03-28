@@ -312,25 +312,22 @@ public class NPCPatrolScript : MonoBehaviour
     {
         Debug.Log("NextWaypoint Called");
 
-        if(CurrentWaypoint().waitTime > 0 && CurrentWaypoint().waitedAt == false)
+        bool isNpcToWait = CheckIfNPCIsToWaitAtCurrentWaypoint();
+        if(isNpcToWait == true)
         {
-            CurrentWaypoint().waitedAt = true;
-
-            float randomWaitTimePlus = 0;
-            if(CurrentWaypoint().randomWaitTimePlus > 0)
-            {
-                randomWaitTimePlus = Random.Range(0, CurrentWaypoint().randomWaitTimePlus);
-            }
-
-            StartCoroutine(WaitAtCurrentWaypoint(CurrentWaypoint().waitTime + randomWaitTimePlus));
             return;
         }
-        CurrentWaypoint().waitedAt = false;
 
-        if(CurrentWaypoint().exitWaypoint == true)
+        if (CurrentWaypoint().exitWaypoint == true)
         {
             ExitCurrentWaypointSet();
             return;
+        }
+
+        bool isToTeleport = false;
+        if(CurrentWaypoint().teleportToNextWaypoint == true)
+        {
+            isToTeleport = true;
         }
 
         currentWaypointIndex++;
@@ -339,6 +336,30 @@ public class NPCPatrolScript : MonoBehaviour
         {
             currentWaypointIndex = 0;
         }
+
+        if(isToTeleport == true)
+        {
+            transform.position = CurrentWaypoint().waypointTransform.position;
+        }
+    }
+
+    bool CheckIfNPCIsToWaitAtCurrentWaypoint()
+    {
+        if (CurrentWaypoint().waitTime > 0 && CurrentWaypoint().waitedAt == false)
+        {
+            CurrentWaypoint().waitedAt = true;
+
+            float randomWaitTimePlus = 0;
+            if (CurrentWaypoint().randomWaitTimePlus > 0)
+            {
+                randomWaitTimePlus = Random.Range(0, CurrentWaypoint().randomWaitTimePlus);
+            }
+
+            StartCoroutine(WaitAtCurrentWaypoint(CurrentWaypoint().waitTime + randomWaitTimePlus));
+            return true;
+        }
+        CurrentWaypoint().waitedAt = false;
+        return false;
     }
 
     IEnumerator WaitAtCurrentWaypoint(float waitTime)
