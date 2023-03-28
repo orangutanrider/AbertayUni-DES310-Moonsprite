@@ -3,15 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(IMover))]
+[RequireComponent(typeof(INPCMoveAnimator))]
 public class NPCPatrolScript : MonoBehaviour
 {
     // Attribution: Vasco F + Dominic R
+
+    public bool animationsEnabled = false;
+
+    [Header("Tools (multi-edit and get all waypoints from parent object)")]
+    public int indexSelection = 0;
+    [Space]
+    public bool clearIndexButton = false;
+    [Space]
+    public Transform transformToGetWaypointsFrom = null;
+    public bool getWaypointsButton = false;
+    [Space]
+    public float setAllRadiusTo = 0.25f;
+    public bool setRadiusButton = false;
+    [Space]
+    public float setAllWaitTimeTo = 1;
+    public bool setWaitTimeButton = false;
+    [Space]
+    public float setAllRandomWaitTimeTo = 0;
+    public bool setRandomWaitTimeButton = false;
 
     [Header("(by default NPCs will follow the first waypointSet in the list)")]
     public NPCPatrolState patrolState = NPCPatrolState.NotFollowingAnyWaypointSet;
     public List<NPCWaypointSet> waypointSets = new List<NPCWaypointSet>();
 
     IMover mover;
+    INPCMoveAnimator moveAnimator;
 
     int currentSetIndex = 0;
     int currentWaypointIndex = 0;
@@ -23,16 +44,82 @@ public class NPCPatrolScript : MonoBehaviour
         NotFollowingAnyWaypointSet
     }
 
+    enum IndexSelectValidate
+    {
+        InvalidNegativeIndex,
+        PositiveIndexIsOutsideTheBoundsOfTheArray,
+        IndexIsValid
+    }
+
     //========
     void Start()
     {
         mover = gameObject.GetComponent<IMover>();
+        moveAnimator = gameObject.GetComponent<INPCMoveAnimator>();
     }
 
     void FixedUpdate()
     {
         Patrol();
     }
+
+    #region Tool
+    void OnValidate()
+    {
+        
+    }
+
+    void GetWaypointsFromTransform()
+    {
+        if(getWaypointsButton == false)
+        {
+            return;
+        }
+        getWaypointsButton = false;
+
+        if(transformToGetWaypointsFrom == null)
+        {
+            Debug.Log("no transform selected, select a parent object that has children that're supposed to be waypoints");
+            return;
+        }
+
+        IndexSelectValidate indexValidation = ValidateIndexSelection();
+        int indexToWriteTo = indexSelection;
+
+        if(indexValidation == IndexSelectValidate.InvalidNegativeIndex)
+        {
+            Debug.LogError("Will not write to a negative index");
+            return;
+        }
+
+        if(indexValidation == IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray)
+        {
+            Debug.Log("Creating a new list entry, because index is greater than list bounds");
+            waypointSets.Add(new NPCWaypointSet("new set", 0, new List<NPCWaypoint>()));
+            indexToWriteTo = waypointSets.Count - 1;
+        }
+
+        Transform[] childObjects = transformToGetWaypointsFrom.GetComponentsInChildren<Transform>();
+    }
+
+    IndexSelectValidate ValidateIndexSelection()
+    {
+        if (indexSelection < 0)
+        {
+            Debug.Log("selected index is negative");
+            return IndexSelectValidate.InvalidNegativeIndex;
+        }
+
+        if (indexSelection > waypointSets.Count - 1)
+        {
+            Debug.Log("selected index is greater than list size");
+            return IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray;
+        }
+
+        return IndexSelectValidate.IndexIsValid;
+    }
+
+    #endregion
 
     #region Core
     void Patrol() // happens every frame on fixed update
@@ -87,7 +174,7 @@ public class NPCPatrolScript : MonoBehaviour
 
     bool CheckIfInRangeOfCurrentWaypoint()
     {
-        float distance = Vector3.Distance(transform.position, CurrentWaypoint().waypointTransform.position);
+        float distance = Vector3.Distance(transform.position, CurrentWaypoint().wa.position);
         if (distance <= CurrentWaypoint().wayPointRadius)
         {
             return true;
@@ -183,11 +270,21 @@ public class NPCPatrolScript : MonoBehaviour
     void MoveTowardsCurrentWaypoint()
     {
         mover.Move(TowardsCurrentWaypoint());
+
+        if (animationsEnabled == true)
+        {
+            moveAnimator.UpdateWalkCycleAnimation(TowardsCurrentWaypoint());
+        }
     }
 
     void StopMoving()
     {
         mover.Move(Vector2.zero);
+
+        if (animationsEnabled == true)
+        {
+            moveAnimator.UpdateWalkCycleAnimation(Vector2.zero);
+        }
     }
     #endregion
 
