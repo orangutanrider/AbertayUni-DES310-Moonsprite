@@ -80,6 +80,7 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
     // Update is called once per frame
     void Update()
     {
+        /*
         if (active == false)
         {
             return;
@@ -103,6 +104,7 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
             var velocity = particleSystem.velocityOverLifetime;
             velocity.speedModifierMultiplier = newVelocityOverTime;
         }
+        */
     }
 
     void ITimelineEvent.TimelineEvent()
