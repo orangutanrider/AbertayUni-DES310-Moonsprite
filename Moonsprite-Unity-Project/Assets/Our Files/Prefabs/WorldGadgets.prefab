@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 353c4a5dc7b61389000000004dcac462358e1247
+  m_ApplyToSortingLayers: 353c4a5dc7b61389000000004dcac462358e124755cd63e3
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283919975781890205}
   - component: {fileID: 3168087159636362524}
+  - component: {fileID: 488227376485267974}
   m_Layer: 0
   m_Name: DevestationTracker
   m_TagString: Untagged
@@ -208,6 +209,23 @@ MonoBehaviour:
       convinces the squatter to leave, it will be prevented.
     hasHappened: 0
     wasPrevented: 0
+--- !u!114 &488227376485267974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068052802019143743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2376d9de5164ef04ba2a554ad2c7b99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReadMeText: 'The devestation tracker is essentially a log book for the devestation
+    events. It doesn''t track anything on it''s own, other scripts write to it and
+    tell it if the even has been triggered or prevented.
+
+'
 --- !u!1 &8566909220655351874
 GameObject:
   m_ObjectHideFlags: 0
