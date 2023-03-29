@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8347040166524537832}
   - component: {fileID: 1515629194484575725}
   - component: {fileID: -8296515926360022526}
+  - component: {fileID: 5842511223947104044}
   m_Layer: 6
   m_Name: CollectableBase
   m_TagString: Untagged
@@ -117,6 +118,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sampleItemData: {fileID: 11400000, guid: 0cc8df0080c65434792c602cca292ad9, type: 2}
   interactionPriotiry: 1
+--- !u!114 &5842511223947104044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014324061131137799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderers:
+  - spriteRenderer: {fileID: 8347040166524537832}
+    offset: 0
+  movable: 0
+  sortingPointOffset: 0.6
+  displayGizmos: 0
+  setSortingOrderButton: 0
 --- !u!1001 &8479511226665643657
 PrefabInstance:
   m_ObjectHideFlags: 0
