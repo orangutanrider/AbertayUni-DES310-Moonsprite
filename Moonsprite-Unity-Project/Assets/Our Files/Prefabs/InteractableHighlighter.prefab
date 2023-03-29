@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7459027051541992843}
   - component: {fileID: -5761124477696138835}
   - component: {fileID: -6061626701180642116}
+  - component: {fileID: -1864417490319038515}
   m_Layer: 0
   m_Name: InteractableHighlighter
   m_TagString: Untagged
@@ -4845,3 +4846,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-1864417490319038515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264211524098474753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2376d9de5164ef04ba2a554ad2c7b99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReadMeText: Attach this as a child object of anything that is interactable
