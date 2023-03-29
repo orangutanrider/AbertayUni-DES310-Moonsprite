@@ -15,7 +15,7 @@ public class InventoryItem
     public InventoryItem(ItemData item, bool actionsFailLoaded = false , bool actionsLoaded = false, IItemAction[] actions = null)
     {
         itemData = item;
-
+        itemActionsFailLoaded = actionsFailLoaded;
         itemActionsLoaded = actionsLoaded;
         itemActions = actions;
     }

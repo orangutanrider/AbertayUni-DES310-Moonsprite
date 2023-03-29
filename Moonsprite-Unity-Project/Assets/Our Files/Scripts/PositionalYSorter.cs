@@ -24,7 +24,10 @@ public class PositionalYSorter : MonoBehaviour
     #endregion
 
     #region Variables
-    public const float sortingOrderMultiply = -10000; //sorting orders are int numbers so the yPosition has to be multiplied to get enough granularity
+    public const float sortingOrderMultiply = -1000;
+    // sorting orders are int numbers so the yPosition has to be multiplied to get enough granularity
+    // sorting orders are capped at 32767 and -32767, so the multiply can't be too large
+
     public const float gizmoRadius = 0.1f;
     #endregion
 
@@ -34,7 +37,7 @@ public class PositionalYSorter : MonoBehaviour
         if (displayGizmos == true)
         {
             Gizmos.DrawWireSphere(new Vector3(transform.position.x, transform.position.y + sortingPointOffset), gizmoRadius);
-            Gizmos.DrawLine(new Vector3(-100, transform.position.y + sortingPointOffset), new Vector3(100, transform.position.y + sortingPointOffset, 0));
+            Gizmos.DrawLine(new Vector3(-1000, transform.position.y + sortingPointOffset), new Vector3(1000, transform.position.y + sortingPointOffset, 0));
         }
     }
 

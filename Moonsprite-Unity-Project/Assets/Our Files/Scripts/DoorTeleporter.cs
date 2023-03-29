@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class DoorTeleporter : MonoBehaviour, IInteractable
 {
     public GameObject DestinationObject;
@@ -9,6 +10,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     [Space]
     public bool destinationHasCameraCollider = false;
     public Collider2D cameraCollider = null;
+    public float cameraColliderDamping = 0.05f;
     [Space]
     [SerializeField] int interactionPriority = 0;
 
@@ -38,7 +40,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
         player.playerMovement.AnimatorUpdate(Vector2.zero);
         TeleportPlayerToDestinationObject();
         yield return new WaitForSeconds(_doorTransitionTime * (1f / 3f));
-        player.ExitInteraction();
+        player.ExitInteraction(); 
     }
 
     void TeleportPlayerToDestinationObject()
@@ -47,7 +49,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
 
         if(destinationHasCameraCollider == true)
         {
-            PlayerCameraManager.instance.ConfineCameraWith(cameraCollider);
+            PlayerCameraManager.instance.ConfineCameraWith(cameraCollider, cameraColliderDamping);
         }
         else
         {

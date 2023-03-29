@@ -54,3 +54,6 @@ TagManager:
   - name: HUD
     uniqueID: 1192398389
     locked: 0
+  - name: HUD spriteRenderers
+    uniqueID: 3814968661
+    locked: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName ="New Tag", menuName ="Tags/NewTag")]
+[CreateAssetMenu(fileName ="Tag", menuName ="Tag")]
 
 public class CustomTag : ScriptableObject
 {
