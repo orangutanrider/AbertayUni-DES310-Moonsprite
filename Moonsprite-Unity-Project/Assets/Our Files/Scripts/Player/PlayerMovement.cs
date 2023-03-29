@@ -178,7 +178,7 @@ public class PlayerMovement : MonoBehaviour
             rb2D.AddForce(new Vector2(limitedInput.x, 0) * moveSpeed, ForceMode2D.Impulse);
         }
 
-        if (limitedInput.y < 0 && rb2D.velocity.y > maxMoveSpeed * limitedInput.y)
+        if (limitedInput.y > 0 && rb2D.velocity.y < maxMoveSpeed * limitedInput.y)
         {
             rb2D.AddForce(new Vector2(0, limitedInput.y) * moveSpeed, ForceMode2D.Impulse);
         }
