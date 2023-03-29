@@ -4,31 +4,72 @@ using UnityEngine;
 
 public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
 {
+    [System.Serializable]
+    public class ParticleSystemBurstParameters
+    {
+        public int burstIndexOnParticleSystem = 0;
+        [Space]
+        public bool burstCountOverTimeEnabled = false;
+        public AnimationCurve burstCountOverTimeCurve;
+        [Space]
+        public bool burstIntervalOverTimeEnabled = false;
+        public AnimationCurve burstIntervalOverTimeCurve;
+        [Space]
+        public bool burstProbabilityOverTimeEnabled = false;
+        public AnimationCurve burstProbabilityOverTimeCurve;
+
+        public ParticleSystemBurstParameters(int burstIndexOnParticleSystem, bool burstCountOverTimeEnabled, AnimationCurve burstCountOverTimeCurve, bool burstIntervalOverTimeEnabled, AnimationCurve burstIntervalOverTimeCurve, bool burstProbabilityOverTimeEnabled, AnimationCurve burstProbabilityOverTimeCurve)
+        {
+            this.burstIndexOnParticleSystem = burstIndexOnParticleSystem;
+            this.burstCountOverTimeEnabled = burstCountOverTimeEnabled;
+            this.burstCountOverTimeCurve = burstCountOverTimeCurve;
+            this.burstIntervalOverTimeEnabled = burstIntervalOverTimeEnabled;
+            this.burstIntervalOverTimeCurve = burstIntervalOverTimeCurve;
+            this.burstProbabilityOverTimeEnabled = burstProbabilityOverTimeEnabled;
+            this.burstProbabilityOverTimeCurve = burstProbabilityOverTimeCurve;
+        }   
+    }
+
     [Header("Required Reference")]
     public ParticleSystem[] particleSystems;
 
-    [Header("Settings")]
+    [Header("Trigger Settings")]
     public bool startChangingOnStart = false;
     public bool startChangingOnTimelineEvent = false;
-    [Space]
+
+    [Header("Particle Settings")]
+    public bool rateOverTimeEnabled = false;
     public AnimationCurve rateOverTimeCurve;
-    public AnimationCurve velocityOverTimeCurve;
-    public float changeTime = 10;
+    [Space]
+    public bool velocityMultiplyOverTimeEnabled = false;
+    public AnimationCurve velocityMultiplyOverTimeCurve;
+    [Space]
+    public bool velocityOverTimeEnabled = false;
+    public Vector2 maxVelocity;
+    public Vector2 minVelocity;
+    public AnimationCurve velocityOverTimeLerpShape;
+    [Space]
+    public bool burstChangeOverTimeEnabled = false;
+    public List<ParticleSystemBurstParameters> burstsToChangeOverTime = new List<ParticleSystemBurstParameters>();
+    [Space]
+    public float sharedDuration = 10;
 
     [Header("these are exposed so you can test your changes, they get set to 0 and false when the game starts")]
-    public float changeTimer = 0;
+    public float timer = 0;
     public bool active = false;
 
+    /*
     [Header("You have to manually add this script's host gameObject to the timeline event master to register it (if you're triggering it on a timeline event)")]
     [Header("Also, use 1 as the end time value for the intensity curve")]
 
     bool e = false; // this is here so it lets these other header exist
+    */
 
     // Start is called before the first frame update
     void Start()
     {
         active = false;
-        changeTimer = 0;
+        timer = 0;
         if (startChangingOnStart == false)
         {
             return;
@@ -44,15 +85,15 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
             return;
         }
 
-        if (changeTimer > changeTime)
+        if (timer > sharedDuration)
         {
             return;
         }
 
-        changeTimer = changeTimer + Time.deltaTime;
+        timer = timer + Time.deltaTime;
 
-        float newEmissionRate = rateOverTimeCurve.Evaluate(changeTimer / changeTime);
-        float newVelocityOverTime = velocityOverTimeCurve.Evaluate(changeTimer / changeTime);
+        float newEmissionRate = rateOverTimeCurve.Evaluate(timer / sharedDuration);
+        float newVelocityOverTime = velocityOverTimeCurve.Evaluate(timer / sharedDuration);
 
         foreach(ParticleSystem particleSystem in particleSystems)
         {
