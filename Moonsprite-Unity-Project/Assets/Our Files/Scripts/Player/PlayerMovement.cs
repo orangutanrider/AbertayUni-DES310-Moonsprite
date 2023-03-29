@@ -168,8 +168,37 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 limitedInput = Vector2MagnitudeLimit(new Vector2(xInput, yInput), 1); // this limits the input magnitude, so the player can't abuse vectors to go really fast
 
-        rb2D.AddForce(new Vector2(limitedInput.x, limitedInput.y) * moveSpeed, ForceMode2D.Impulse); // this makes the player move left and right
+        if(limitedInput.x > 0 && rb2D.velocity.x < maxMoveSpeed * limitedInput.x)
+        {
+            rb2D.AddForce(new Vector2(limitedInput.x, 0) * moveSpeed, ForceMode2D.Impulse);
+        }
 
+        if (limitedInput.x < 0 && rb2D.velocity.x > maxMoveSpeed * limitedInput.x)
+        {
+            rb2D.AddForce(new Vector2(limitedInput.x, 0) * moveSpeed, ForceMode2D.Impulse);
+        }
+
+        if (limitedInput.y < 0 && rb2D.velocity.y > maxMoveSpeed * limitedInput.y)
+        {
+            rb2D.AddForce(new Vector2(0, limitedInput.y) * moveSpeed, ForceMode2D.Impulse);
+        }
+
+        if (limitedInput.y < 0 && rb2D.velocity.y > maxMoveSpeed * limitedInput.y)
+        {
+            rb2D.AddForce(new Vector2(0, limitedInput.y) * moveSpeed, ForceMode2D.Impulse);
+        }
+
+        // so instead of pushing back on the player when they're above a certain speed
+        // it just stops pushing the player once they're above that speed
+        // this makes the movement smoother, which fixes camera jittering
+
+        // nevermind that seemingly wasn't causing the jitter
+        // it was instead because the camera was following an attached gameobject (the camera tracking point) instead of the player itself
+        // we can still maintain the camera tracking point though, as there is an offset parameter in the cinemachine brain
+
+        //rb2D.AddForce(new Vector2(limitedInput.x, limitedInput.y) * moveSpeed, ForceMode2D.Impulse); 
+
+        /*
         // this slows the player down at a rate equal to their movespeed
         if (rb2D.velocity.x >= maxMoveSpeed * limitedInput.x)
         {
@@ -188,6 +217,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2D.AddForce(new Vector2(0, moveSpeed) * xDeccelerateFactor, ForceMode2D.Impulse);
         }
+        */
     }
 
     Vector2 Vector2MagnitudeLimit(Vector2 vector2, float limit)
