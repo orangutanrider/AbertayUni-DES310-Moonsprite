@@ -105,6 +105,43 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
             velocity.speedModifierMultiplier = newVelocityOverTime;
         }
         */
+
+        RateOverTime();
+        VelocityMultiplyOverTime();
+        VelocityOverTime();
+        BurstsOverTime();
+    }
+
+    void RateOverTime()
+    {
+        if(rateOverTimeEnabled == false)
+        {
+            return;
+        }
+    }
+
+    void VelocityMultiplyOverTime()
+    {
+        if (rateOverTimeEnabled == false)
+        {
+            return;
+        }
+    }
+
+    void VelocityOverTime()
+    {
+        if (velocityOverTimeEnabled == false)
+        {
+            return;
+        }
+    }
+
+    void BurstsOverTime()
+    {
+        if (burstChangeOverTimeEnabled == false)
+        {
+            return;
+        }
     }
 
     void ITimelineEvent.TimelineEvent()
