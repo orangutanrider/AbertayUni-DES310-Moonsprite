@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
+[System.Obsolete("Replaced by lerpers")]
+public class ChangeParticleSystemOverTime : MonoBehaviour //, ITimelineEvent
 {
+    /*
     [System.Serializable]
     public class ParticleSystemBurstParameters
     {
@@ -58,12 +60,10 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
     public float timer = 0;
     public bool active = false;
 
-    /*
     [Header("You have to manually add this script's host gameObject to the timeline event master to register it (if you're triggering it on a timeline event)")]
     [Header("Also, use 1 as the end time value for the intensity curve")]
 
     bool e = false; // this is here so it lets these other header exist
-    */
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +80,6 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
     // Update is called once per frame
     void Update()
     {
-        /*
         if (active == false)
         {
             return;
@@ -104,7 +103,6 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
             var velocity = particleSystem.velocityOverLifetime;
             velocity.speedModifierMultiplier = newVelocityOverTime;
         }
-        */
 
         RateOverTime();
         VelocityMultiplyOverTime();
@@ -152,4 +150,5 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
         }
         active = true;
     }
+    */
 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeGlobalLightOverTime : MonoBehaviour, ITimelineEvent
+[System.Obsolete("Replaced by 'LightLerper'")]
+public class ChangeGlobalLightOverTime : MonoBehaviour //, ITimelineEvent
 {
+    /*
     [Header("Required Reference")]
     public Light globalLight;
 
@@ -64,4 +66,5 @@ public class ChangeGlobalLightOverTime : MonoBehaviour, ITimelineEvent
         }
         active = true;
     }
+    */
 }
