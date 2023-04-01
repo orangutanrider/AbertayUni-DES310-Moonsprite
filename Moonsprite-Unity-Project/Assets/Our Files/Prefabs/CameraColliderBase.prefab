@@ -76,4 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2376d9de5164ef04ba2a554ad2c7b99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReadMeText: Place this down and edit the polygons in the scene once you do.
+  ReadMeText: 'Place this down and edit the polygons of the camera collider (polygon
+    collider 2d component)
+
+    Do this inside the scene (don''t edit this prefab)'
