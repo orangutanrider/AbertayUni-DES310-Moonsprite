@@ -25,8 +25,8 @@ public class PsVelocityVectorLerper : MonoBehaviour, ITimelineEvent
 
     [Header("ReadMe")]
     [TextArea(10, 100)]
-    public string ReadMeText = "If you want to trigger this via a timeline event you have to manually add the game object (that this script is attached to) to the timeline event master to register it " +
-        "Also, use 0 as the start and 1 as the end, for the time values on the vectorLerpCurve";
+    public string ReadMeText = "If you want to trigger this via a timeline event you have to manually add the game object (that this script is attached to) to the timeline event master to register it."
+        +System.Environment.NewLine + "Also, use 0 as the start and 1 as the end, for the time values on the vectorLerpCurve.";
 
     void Start()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightLerper : MonoBehaviour, ITimelineEvent
 {
-    public Light light;
+    public UnityEngine.Rendering.Universal.Light2D light2D;
 
     [Header("Settings")]
     public bool startLerpingOnStart = false;
@@ -20,8 +20,8 @@ public class LightLerper : MonoBehaviour, ITimelineEvent
 
     [Header("ReadMe")]
     [TextArea(10, 100)]
-    public string ReadMeText = "If you want to trigger this via a timeline event you have to manually add the game object (that this script is attached to) to the timeline event master to register it " +
-        "Also, use 0 as the start and 1 as the end, for the time values on the intensity curve";
+    public string ReadMeText = "If you want to trigger this via a timeline event you have to manually add the game object (that this script is attached to) to the timeline event master to register it. " 
+        + System.Environment.NewLine + "Also, use 0 as the start and 1 as the end, for the time values on the intensity curve.";
 
     void Start()
     {
@@ -49,8 +49,8 @@ public class LightLerper : MonoBehaviour, ITimelineEvent
         Color newColor = colourChangeGradient.Evaluate(changeTimer / changeTime);
         float newIntensity = intensityCurve.Evaluate(changeTimer / changeTime);
 
-        light.color = newColor;
-        light.intensity = newIntensity;
+        light2D.color = newColor;
+        light2D.intensity = newIntensity;
     }
 
     void ITimelineEvent.TimelineEvent()
