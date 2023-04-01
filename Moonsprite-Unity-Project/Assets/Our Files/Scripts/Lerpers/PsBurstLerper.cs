@@ -228,14 +228,14 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
             Debug.LogError("intervalLerp was null");
         }
 
-        short newBurstInterval = 0;
+        float newBurstInterval = 0;
         ParticleSystem.Burst newBurst = burstToWriteTo;
 
         if (overrideAllCurvesToLinear == false && intervalLerp.curve != null)
         {
             float curveTime = intervalLerp.curve.Evaluate(changeTimer / changeTime);
 
-            newBurstInterval = FloatToShort(Mathf.LerpUnclamped(intervalLerp.min, intervalLerp.max, curveTime));
+            newBurstInterval = Mathf.LerpUnclamped(intervalLerp.min, intervalLerp.max, curveTime);
             newBurst.repeatInterval = newBurstInterval;
 
             return newBurst;
@@ -245,7 +245,7 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
             Debug.LogWarning("Curve was null, falling back on linear override");
         }
 
-        newBurstInterval = FloatToShort(Mathf.LerpUnclamped(intervalLerp.min, intervalLerp.max, changeTimer / changeTime));
+        newBurstInterval = Mathf.LerpUnclamped(intervalLerp.min, intervalLerp.max, changeTimer / changeTime);
         newBurst.repeatInterval = newBurstInterval;
 
         return newBurst;

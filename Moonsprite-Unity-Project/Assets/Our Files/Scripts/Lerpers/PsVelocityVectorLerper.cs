@@ -62,6 +62,10 @@ public class PsVelocityVectorLerper : MonoBehaviour, ITimelineEvent
         xVelocity.constantMax = newMaxVelocity.x;
         yVelocity.constantMin = newMinVelocity.y;
         yVelocity.constantMax = newMaxVelocity.y;
+
+        var velocityOverLifetime = particleSystem.velocityOverLifetime;
+        velocityOverLifetime.x = xVelocity;
+        velocityOverLifetime.y = yVelocity;
     }
 
     void ITimelineEvent.TimelineEvent()
