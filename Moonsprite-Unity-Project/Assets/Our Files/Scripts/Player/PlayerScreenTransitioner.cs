@@ -6,6 +6,7 @@ public class PlayerScreenTransitioner : MonoBehaviour
 {
     [Header("Required Components")]
     public ImageFader doorTransitionImageFader;
+    public ImageFader miscTransitionImageFader;
 
     [Header("Parameters")]
     public float doorTransitionTime;
@@ -29,5 +30,15 @@ public class PlayerScreenTransitioner : MonoBehaviour
         doorTransitionImageFader.FadeIn(_doorTransitionTime * (1f / 3f)); 
         yield return new WaitForSeconds(_doorTransitionTime * (2f / 3f));
         doorTransitionImageFader.FadeOut(_doorTransitionTime * (1f / 3f));
+    }
+
+    public void FadeInMiscTransition(float transitionTime)
+    {
+        miscTransitionImageFader.FadeIn(transitionTime);
+    }
+
+    public void FadeOutMiscTransition(float transitionTime)
+    {
+        miscTransitionImageFader.FadeOut(transitionTime);
     }
 }
