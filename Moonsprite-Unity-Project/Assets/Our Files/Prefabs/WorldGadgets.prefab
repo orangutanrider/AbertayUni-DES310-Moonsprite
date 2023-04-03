@@ -223,7 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadMeText: 'The devestation tracker is essentially a log book for the devestation
     events. It doesn''t track anything on it''s own, other scripts write to it and
-    tell it if the even has been triggered or prevented.
+    tell it if the event has been triggered or prevented.
 
 '
 --- !u!1 &8566909220655351874
