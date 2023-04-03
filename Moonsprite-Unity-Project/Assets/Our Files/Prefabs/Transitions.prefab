@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorTransitionImageFader: {fileID: 7118658089069234645}
-  doorTransitionTime: 1
+  doorTransitionTime: 2
