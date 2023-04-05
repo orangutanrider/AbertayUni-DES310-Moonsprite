@@ -201,7 +201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3328940228554206063, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3328940228554206063, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -245,14 +245,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
       propertyPath: timelineEvents.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
       propertyPath: timelineEvents.Array.data[0].name
       value: Abandoned House Collapse
       objectReference: {fileID: 0}
     - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
+      propertyPath: timelineEvents.Array.data[1].name
+      value: Game end Pop-Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
       propertyPath: timelineEvents.Array.data[0].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
+      propertyPath: timelineEvents.Array.data[1].active
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
@@ -260,12 +268,20 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
+      propertyPath: timelineEvents.Array.data[1].triggerTimeSeconds
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
       propertyPath: timelineEvents.Array.data[0].gameObjectWithTimelineEvents
+      value: 
+      objectReference: {fileID: 1889020230}
+    - target: {fileID: 4319797905599350829, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
+      propertyPath: timelineEvents.Array.data[1].gameObjectWithTimelineEvents
       value: 
       objectReference: {fileID: 1889020230}
     - target: {fileID: 8566909220655351874, guid: 77f7dec321c6915498fc9a9362c7fc10, type: 3}
       propertyPath: m_Name
-      value: WorldGadgets
+      value: WorldGadgets (Prefab)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -84238,7 +84254,7 @@ Transform:
   - {fileID: 1074537587}
   - {fileID: 112764225}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &183342633
 PrefabInstance:
@@ -84735,7 +84751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1672413713335408976, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1672413713335408976, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87007,7 +87023,7 @@ Transform:
   m_Children:
   - {fileID: 1096585030}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &569950190
 PrefabInstance:
@@ -89186,7 +89202,7 @@ Transform:
   - {fileID: 338099951}
   - {fileID: 637177154}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &830303194
 GameObject:
@@ -90278,6 +90294,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7074299353149826722, guid: 4dcd49ee5fe2cd04a9e5b1b13d9edf7e, type: 3}
   m_PrefabInstance: {fileID: 927051093}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &929054733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929054734}
+  - component: {fileID: 929054735}
+  m_Layer: 0
+  m_Name: Timeline Event Master
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &929054734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929054733}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1553843617}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &929054735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929054733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694d0220c403ec343935c1f0f5b3d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterTimer: 0
+  timelineEvents:
+  - name: Abandoned House Collapse
+    triggerTimeSeconds: 40
+    gameObjectWithTimelineEvents: {fileID: 1889020230}
+    active: 1
+    passed: 0
+    interfacesLoaded: 0
+  - name: Game end pop-up
+    triggerTimeSeconds: 120
+    gameObjectWithTimelineEvents: {fileID: 1241565092}
+    active: 1
+    passed: 0
+    interfacesLoaded: 0
+  instance: {fileID: 0}
 --- !u!1001 &931944701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93472,7 +93547,7 @@ Transform:
   - {fileID: 1046623882}
   - {fileID: 326175055}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1138216696 stripped
 Transform:
@@ -93984,6 +94059,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1675183562876426967, guid: 9883a5087f51a7341bd9f91ea2410ed7, type: 3}
   m_PrefabInstance: {fileID: 231481470}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1241565092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241565093}
+  - component: {fileID: 1241565094}
+  m_Layer: 0
+  m_Name: Game end pop-up trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1241565093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241565092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1553843617}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1241565094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241565092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312b7b0692f581648bd205304fddee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: a322333bfd1cd05488ae08d3855b83ff, type: 2}
 --- !u!1001 &1241699344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94359,7 +94479,7 @@ Transform:
   - {fileID: 2025359533}
   - {fileID: 1562707407}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333210755
 GameObject:
@@ -96229,6 +96349,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 49547c97b3f87504496636431112adb0, type: 3}
+--- !u!1 &1553843616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553843617}
+  m_Layer: 0
+  m_Name: WorldGadgets (SceneSpecific)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1553843617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553843616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 929054734}
+  - {fileID: 1241565093}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1556060514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97230,7 +97383,7 @@ Transform:
   - {fileID: 886618819}
   - {fileID: 1089425217}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1688320069
 PrefabInstance:
