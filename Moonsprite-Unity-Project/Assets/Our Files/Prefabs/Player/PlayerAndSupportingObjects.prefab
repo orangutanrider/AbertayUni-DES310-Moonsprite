@@ -255,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672413713434161109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.369649, y: -1.0789882, z: -10}
+  m_LocalPosition: {x: 0, y: 1.1000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672413713752001828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.369649, y: 2.1789882, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1255,6 +1255,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 709990666512416354, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
   m_PrefabInstance: {fileID: 4602236585517577445}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4959298344958861110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8866631485480790995, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
+  m_PrefabInstance: {fileID: 4602236585517577445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5034319727683992767 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8791891603499026522, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
@@ -1275,6 +1280,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7914909011970294341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5911267005915461280, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
+  m_PrefabInstance: {fileID: 4602236585517577445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8330053351622525092 stripped
@@ -1381,13 +1397,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8330053351622525092}
     - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
+      propertyPath: npcNameTextBox
+      value: 
+      objectReference: {fileID: 8330053353113347472}
+    - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
       propertyPath: otherNameTextBox
       value: 
       objectReference: {fileID: 8330053353113347472}
     - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
+      propertyPath: npcDialogueTextBox
+      value: 
+      objectReference: {fileID: 5034319727683992767}
+    - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
+      propertyPath: npcDialogueUIObject
+      value: 
+      objectReference: {fileID: 1496464544292913495}
+    - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
       propertyPath: otherDialogueTextBox
       value: 
       objectReference: {fileID: 5034319727683992767}
+    - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
+      propertyPath: npcAvatarImageDisplay
+      value: 
+      objectReference: {fileID: 5151616484421478480}
     - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
       propertyPath: otherDialogueUIObject
       value: 
@@ -1404,6 +1436,14 @@ PrefabInstance:
       propertyPath: otherAvatarImageDisplay
       value: 
       objectReference: {fileID: 5151616484421478480}
+    - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
+      propertyPath: narrationDialogueTextBox
+      value: 
+      objectReference: {fileID: 7914909011970294341}
+    - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
+      propertyPath: narrationDialogueUIObject
+      value: 
+      objectReference: {fileID: 4959298344958861110}
     - target: {fileID: 7555542789626547739, guid: 334331da5ae7ecf4883e016992655a77, type: 3}
       propertyPath: playerAvatarImagerDisplay
       value: 
