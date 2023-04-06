@@ -22,6 +22,11 @@ public class PlayerBedScript : MonoBehaviour, IInteractable
         // there should be somekind of confirmation step in this
         // (i.e. asking the player "are you sure")
 
-        PlayerScreenTransitioner.instance.FadeOutToNewScene(2f, "");
+        // fade out
+
+        // play cut-scene part 1 (camera pan over town, player picks up newspaper)
+        // play cut-scene part 2 (news paper unrolled and viewed)
+
+        // transition back to main menu
     }
 }
