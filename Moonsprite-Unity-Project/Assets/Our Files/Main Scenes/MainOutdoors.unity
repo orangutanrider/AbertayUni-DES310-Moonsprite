@@ -94392,6 +94392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310994713}
   - component: {fileID: 1310994714}
+  - component: {fileID: 1310994715}
   m_Layer: 0
   m_Name: Dawn chorus trigger
   m_TagString: Untagged
@@ -94429,6 +94430,19 @@ MonoBehaviour:
   ReadMeText: This'll probably be one big audio track of bird songs, so to trigger
     this I'd recommend simply instantiating a game object that has an audio source
     on it.
+--- !u!114 &1310994715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310994712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5450c0fbd3ae8741b576a57d5ffb98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1310994712}
 --- !u!1001 &1313701008
 PrefabInstance:
   m_ObjectHideFlags: 0
