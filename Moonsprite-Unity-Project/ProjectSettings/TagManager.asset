@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - NPC
+  - Debris Projectile
+  - PlayerInteractionHighlighter
+  - Squatter
   layers:
   - Default
   - TransparentFX
@@ -56,4 +59,7 @@ TagManager:
     locked: 0
   - name: HUD spriteRenderers
     uniqueID: 3814968661
+    locked: 0
+  - name: Menus
+    uniqueID: 2088822939
     locked: 0
