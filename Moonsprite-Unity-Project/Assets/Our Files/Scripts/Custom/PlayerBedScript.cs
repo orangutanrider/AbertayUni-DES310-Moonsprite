@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBedScript : MonoBehaviour, IInteractable
 {
@@ -28,5 +29,8 @@ public class PlayerBedScript : MonoBehaviour, IInteractable
         // play cut-scene part 2 (news paper unrolled and viewed)
 
         // transition back to main menu
+
+
+        SceneManager.LoadScene(SceneReferenceHolder.mainMenuScene, LoadSceneMode.Single);
     }
 }

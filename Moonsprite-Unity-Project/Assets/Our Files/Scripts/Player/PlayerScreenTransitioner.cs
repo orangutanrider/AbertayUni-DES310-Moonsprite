@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScreenTransitioner : MonoBehaviour
 {
-    [Header("Required Components")]
+    [Header("Required References")]
     public ImageFader doorTransitionImageFader;
     public ImageFader miscTransitionImageFader;
-    public ImageFader sceneTransitionImageFader;
 
     [Header("Parameters")]
     public float doorTransitionTime;
@@ -17,7 +16,7 @@ public class PlayerScreenTransitioner : MonoBehaviour
 
     void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogError("Error, two instances of PlayerScreenTransitioner in the scene");
         }
@@ -29,7 +28,7 @@ public class PlayerScreenTransitioner : MonoBehaviour
     {
         // these number values have to be declared with a f otherwise it breaks
 
-        doorTransitionImageFader.FadeIn(_doorTransitionTime * (1f / 3f)); 
+        doorTransitionImageFader.FadeIn(_doorTransitionTime * (1f / 3f));
         yield return new WaitForSeconds(_doorTransitionTime * (2f / 3f));
         doorTransitionImageFader.FadeOut(_doorTransitionTime * (1f / 3f));
     }
@@ -42,27 +41,5 @@ public class PlayerScreenTransitioner : MonoBehaviour
     public void FadeOutMiscTransition(float transitionTime)
     {
         miscTransitionImageFader.FadeOut(transitionTime);
-    }
-
-    public IEnumerator FadeOutToNewScene(float _transitionTime, string _sceneName)
-    {
-        Scene sceneBeingLoaded = SceneManager.GetSceneByName(_sceneName);
-        if(sceneBeingLoaded == null)
-        {
-            Debug.LogError("Was unable to get a scene by that name  (" + _sceneName + ")");
-            yield break;
-        }
-
-        miscTransitionImageFader.FadeIn(_transitionTime * (1f / 3f));
-
-        yield return new WaitForSeconds(_transitionTime * (1f / 3f));
-        SceneManager.MoveGameObjectToScene(gameObject, sceneBeingLoaded);
-        SceneManager.LoadScene(_sceneName, LoadSceneMode.Single);
-
-        yield return new WaitForSeconds(_transitionTime * (1f / 3f));
-        miscTransitionImageFader.FadeOut(_transitionTime * (1f / 3f));
-
-        yield return new WaitForSeconds(_transitionTime * (1f / 3f));
-        Destroy(gameObject);
     }
 }
