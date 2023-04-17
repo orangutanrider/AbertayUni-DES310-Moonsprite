@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScreenTransitioner : MonoBehaviour
 {
-    [Header("Required Components")]
+    [Header("Required References")]
     public ImageFader doorTransitionImageFader;
+    public ImageFader miscTransitionImageFader;
 
     [Header("Parameters")]
     public float doorTransitionTime;
@@ -14,7 +16,7 @@ public class PlayerScreenTransitioner : MonoBehaviour
 
     void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogError("Error, two instances of PlayerScreenTransitioner in the scene");
         }
@@ -26,8 +28,18 @@ public class PlayerScreenTransitioner : MonoBehaviour
     {
         // these number values have to be declared with a f otherwise it breaks
 
-        doorTransitionImageFader.FadeIn(_doorTransitionTime * (1f / 3f)); 
+        doorTransitionImageFader.FadeIn(_doorTransitionTime * (1f / 3f));
         yield return new WaitForSeconds(_doorTransitionTime * (2f / 3f));
         doorTransitionImageFader.FadeOut(_doorTransitionTime * (1f / 3f));
+    }
+
+    public void FadeInMiscTransition(float transitionTime)
+    {
+        miscTransitionImageFader.FadeIn(transitionTime);
+    }
+
+    public void FadeOutMiscTransition(float transitionTime)
+    {
+        miscTransitionImageFader.FadeOut(transitionTime);
     }
 }

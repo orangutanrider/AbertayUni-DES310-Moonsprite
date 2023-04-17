@@ -7,7 +7,14 @@ public class DialogueSpeakerObject : ScriptableObject
 {
     // Attribution: Vasco F + Dominic R
 
-    public bool isPlayer;
+    public enum SpeakerType
+    {
+        Player,
+        NPC,
+        Narration
+    }
+
+    public SpeakerType speakerType;
     [Space]
     public string nameText;
     public Sprite avatarSprite;

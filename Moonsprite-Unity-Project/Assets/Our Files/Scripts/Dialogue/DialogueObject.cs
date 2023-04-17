@@ -7,15 +7,14 @@ public class DialogueObject : ScriptableObject
 {
     // Attribution: Vasco F + Dominic R
 
-    [Header("(add multiple for when the player has reply options) (leave empty to exit the dialogue)")]
+    [Header("Dialogue")]
+    public DialogueSpeakerObject dialogueSpeaker = null;
+    [TextArea(7, 7)] public string dialogueText = "(Placeholder text)";
+    [Space]
     public DialogueObject[] nextDialogueObjects = null;
 
-    [Header("Dialogue Event Settings")]
+    [Header("Event Settings")]
     [Tooltip("The event will pass the taglist to the triggered script")] public bool triggerDialogueEventsOnDialogueGiver = false;
     [Tooltip("The event will pass the taglist to the triggered script")] public bool triggerDialogueEventsOnPlayer = false;
     public TagList customTags = null;
-
-    [Header("Dialogue display settings")]
-    public DialogueSpeakerObject dialogueSpeaker = null;
-    [TextArea(6,5)] public string dialogueText = "(Placeholder text)";
 }

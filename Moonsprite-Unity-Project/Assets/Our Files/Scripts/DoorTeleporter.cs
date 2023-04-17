@@ -5,7 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class DoorTeleporter : MonoBehaviour, IInteractable
 {
-    public GameObject DestinationObject;
+    public bool gizmosActive = true;
+
+    [Header("Settings")]
+    public GameObject destinationObject;
     public Vector2 exitDirection;
     [Space]
     public bool destinationHasCameraCollider = false;
@@ -14,13 +17,13 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     [Space]
     [SerializeField] int interactionPriority = 0;
 
-
     int IInteractable.InteractionPriority 
     {
         get { return interactionPriority; }
         set { interactionPriority = value; }
     }
 
+    const float gizmoSize = 1f;
     PlayerInteractionController player = null;
 
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
@@ -45,7 +48,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
 
     void TeleportPlayerToDestinationObject()
     {
-        player.gameObject.transform.position = DestinationObject.transform.position;
+        player.gameObject.transform.position = destinationObject.transform.position;
 
         if(destinationHasCameraCollider == true)
         {
@@ -55,5 +58,26 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
         {
             PlayerCameraManager.instance.FreeCameraFromConfiner();
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        if(gizmosActive == false)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireCube(transform.position, new Vector3(gizmoSize, gizmoSize));
+
+        if(destinationObject ?? null) // you have to use this '??' thing to check if something is null cause unity overrides '!=' and '==' for game objects
+        {
+        }
+        else
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(destinationObject.transform.position, gizmoSize / 4f);
+        Gizmos.DrawLine(transform.position, destinationObject.transform.position);
     }
 }

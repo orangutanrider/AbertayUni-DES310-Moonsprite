@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4930923760469811925
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6881165143722708414}
-  - component: {fileID: 4319797905599350829}
-  m_Layer: 0
-  m_Name: Timeline Event Master
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6881165143722708414
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930923760469811925}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3328940228554206063}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4319797905599350829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930923760469811925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694d0220c403ec343935c1f0f5b3d3e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterTimer: 0
-  timelineEvents: []
-  instance: {fileID: 0}
 --- !u!1 &5250855674885963408
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8717672228569949019}
   - component: {fileID: 1916329121267108243}
+  - component: {fileID: 3972074439322727849}
   m_Layer: 0
   m_Name: GlobalLight2D
   m_TagString: Untagged
@@ -99,7 +53,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 353c4a5dc7b61389000000004dcac462358e1247
+  m_ApplyToSortingLayers: 353c4a5dc7b61389000000004dcac462358e124755cd63e3
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -158,6 +112,80 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &3972074439322727849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250855674885963408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9ff6911af06204fbf87e0e9f1e1856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light2D: {fileID: 1916329121267108243}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  colourChangeGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 0, g: 0.24772462, b: 0.509434, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  intensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 120
+  changeTimer: 0
+  active: 0
+  ReadMeText: '(This is still to be polished)
+
+'
 --- !u!1 &8068052802019143743
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283919975781890205}
   - component: {fileID: 3168087159636362524}
+  - component: {fileID: 488227376485267974}
   m_Layer: 0
   m_Name: DevestationTracker
   m_TagString: Untagged
@@ -208,6 +237,23 @@ MonoBehaviour:
       convinces the squatter to leave, it will be prevented.
     hasHappened: 0
     wasPrevented: 0
+--- !u!114 &488227376485267974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068052802019143743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2376d9de5164ef04ba2a554ad2c7b99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReadMeText: 'The devestation tracker is essentially a log book for the devestation
+    events. It doesn''t track anything on it''s own, other scripts write to it and
+    tell it if the event has been triggered or prevented.
+
+'
 --- !u!1 &8566909220655351874
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3328940228554206063}
   m_Layer: 0
-  m_Name: WorldGadgets
+  m_Name: WorldGadgets (Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +284,6 @@ Transform:
   m_Children:
   - {fileID: 1283919975781890205}
   - {fileID: 8717672228569949019}
-  - {fileID: 6881165143722708414}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

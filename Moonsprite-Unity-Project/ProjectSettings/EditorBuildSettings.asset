@@ -23,10 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Our Files/Main Scenes/Menu/Gameplay Settings.unity
     guid: 2f6c753c4a50f9444a3abe9022fed522
-  - enabled: 1
-    path: Assets/Our Files/Misc/DR - Environment Test/EnvironmentTest.unity
-    guid: 5ff53f2dce589a445ba9c40d1d01b051
-  - enabled: 1
-    path: Assets/Our Files/Misc/DR - Folder re-structure/SampleScene.unity
-    guid: 27fb707dbf394e64ca46febe0869a950
   m_configObjects: {}

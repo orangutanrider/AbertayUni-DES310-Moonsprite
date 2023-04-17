@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
+[System.Obsolete("Replaced by 'LightLerper'")]
+public class ChangeGlobalLightOverTime : MonoBehaviour //, ITimelineEvent
 {
+    /*
     [Header("Required Reference")]
-    public ParticleSystem[] particleSystems;
+    public Light globalLight;
 
     [Header("Settings")]
     public bool startChangingOnStart = false;
     public bool startChangingOnTimelineEvent = false;
     [Space]
-    public AnimationCurve rateOverTimeCurve;
-    public AnimationCurve velocityOverTimeCurve;
+    public Gradient colourChangeGradient;
+    public AnimationCurve intensityCurve;
     public float changeTime = 10;
 
     [Header("these are exposed so you can test your changes, they get set to 0 and false when the game starts")]
@@ -27,9 +29,7 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
     // Start is called before the first frame update
     void Start()
     {
-        active = false;
-        changeTimer = 0;
-        if (startChangingOnStart == false)
+        if(startChangingOnStart == false)
         {
             return;
         }
@@ -39,37 +39,32 @@ public class ChangeParticleSystemOverTime : MonoBehaviour, ITimelineEvent
     // Update is called once per frame
     void Update()
     {
-        if (active == false)
+        if(active == false)
         {
             return;
         }
 
-        if (changeTimer > changeTime)
+        if(changeTimer > changeTime)
         {
             return;
         }
 
         changeTimer = changeTimer + Time.deltaTime;
 
-        float newEmissionRate = rateOverTimeCurve.Evaluate(changeTimer / changeTime);
-        float newVelocityOverTime = velocityOverTimeCurve.Evaluate(changeTimer / changeTime);
+        Color newColor = colourChangeGradient.Evaluate(changeTimer / changeTime);
+        float newIntensity = intensityCurve.Evaluate(changeTimer / changeTime);
 
-        foreach(ParticleSystem particleSystem in particleSystems)
-        {
-            var emission = particleSystem.emission;
-            emission.rateOverTime = newEmissionRate;
-
-            var velocity = particleSystem.velocityOverLifetime;
-            velocity.speedModifierMultiplier = newVelocityOverTime;
-        }
+        globalLight.color = newColor;
+        globalLight.intensity = newIntensity;
     }
 
     void ITimelineEvent.TimelineEvent()
     {
-        if (startChangingOnTimelineEvent == false)
+        if(startChangingOnTimelineEvent == false)
         {
             return;
         }
         active = true;
     }
+    */
 }

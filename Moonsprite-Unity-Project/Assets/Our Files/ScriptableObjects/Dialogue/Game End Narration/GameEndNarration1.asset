@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
+  m_Name: GameEndNarration1
+  m_EditorClassIdentifier: 
+  dialogueSpeaker: {fileID: 11400000, guid: 40cf6769411b86d42b9ac5987d2f623a, type: 2}
+  dialogueText: 'The storm rumbles, receeding into the distance it no longer engulfs
+    the town. You look upon it, a heavy ball of rain, rolling into the mountains.
+    The alpine forests soak it in like a sponge, swaying fiercely against the rough
+    winds.
+
+
+    It''s been a long day.'
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: 967490dd443ba9c429ed94e142a5aa17, type: 2}
+  triggerDialogueEventsOnDialogueGiver: 0
+  triggerDialogueEventsOnPlayer: 0
+  customTags:
+    tags: []
