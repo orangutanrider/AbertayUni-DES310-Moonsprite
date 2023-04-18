@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d50d1c59fa74eee41a36ff26875958eb, type: 3}
-  m_Name: NarrationDialogueObject
+  m_Name: FarmerDialogueSpeakerObject
   m_EditorClassIdentifier: 
-  speakerType: 2
-  nameText: 
-  avatarSprite: {fileID: 21300000, guid: 7c2489bb58a4956409cfb38cb2772d09, type: 3}
+  speakerType: 1
+  nameText: Farmer
+  avatarSprite: {fileID: -2115474316, guid: aebe5fa5c76348941bcbcbab143e1613, type: 3}
