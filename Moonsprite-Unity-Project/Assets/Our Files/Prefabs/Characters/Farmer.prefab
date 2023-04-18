@@ -269,4 +269,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingDialogueObject: {fileID: 11400000, guid: 89c4f6d1caa43ca4a8323a9532e42a05, type: 2}
-  interactionPriority: 0
+  interactionPriority: 1
