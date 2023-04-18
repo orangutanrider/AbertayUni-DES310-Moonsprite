@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         targetPos = transform.position;
+       
     }
 
     // Update is called once per frame
@@ -118,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKey(upKey) == true || Input.GetKey(auxUpKey) == true)
         {
             yInput = 1;
+            FindObjectOfType<AudioManager>().Play("123"); // This will start playing background ambience music when the game starts
         }
         else
         {
@@ -135,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
         {
             targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPos.z = transform.position.z;
+           
         }
 
         if (currentPos.x <= targetPos.x - damp)
@@ -162,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
         {
             yInput = 0;
         }
+
     }
 
     private void MovePlayer()
