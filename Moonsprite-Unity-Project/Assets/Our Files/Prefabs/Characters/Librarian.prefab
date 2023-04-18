@@ -158,7 +158,11 @@ GameObject:
   - component: {fileID: 4865794557466709561}
   - component: {fileID: 3706865620225789784}
   - component: {fileID: 4942012074663314111}
-  - component: {fileID: 1746607703079656668}
+  - component: {fileID: 6206227863425776669}
+  - component: {fileID: 6669913504853857958}
+  - component: {fileID: 8412520799992905468}
+  - component: {fileID: 6789863008028459074}
+  - component: {fileID: 5125595865738667304}
   m_Layer: 0
   m_Name: Librarian
   m_TagString: Untagged
@@ -181,7 +185,7 @@ Transform:
   - {fileID: 1399987443817524604}
   - {fileID: 2467726392420914859}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3706865620225789784
 SpriteRenderer:
@@ -224,7 +228,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -898345567, guid: f0750ea3a1f7df74dbd51f6d8bc6ccf0, type: 3}
+  m_Sprite: {fileID: 1971420121, guid: a6b6e05f1d3430c47aaae54581c479c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -254,8 +258,78 @@ MonoBehaviour:
   sortingPointOffset: 0
   displayGizmos: 0
   setSortingOrderButton: 0
---- !u!70 &1746607703079656668
-CapsuleCollider2D:
+--- !u!95 &6206227863425776669
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131543488101999686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6e78bc9ec083524493fdbcfcfd8b5a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6669913504853857958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131543488101999686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505803aea7b0f9044aa96616ea6adf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.02
+--- !u!114 &8412520799992905468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131543488101999686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cb68f167982f549afcab3c37bd83ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcAnimator: {fileID: 6206227863425776669}
+  spriteRenderer: {fileID: 3706865620225789784}
+--- !u!114 &6789863008028459074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131543488101999686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f7aa1acaccdc249b16ee635450cac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationsEnabled: 1
+  indexSelection: 0
+  clearIndexBUTTON: 0
+  transformToGetWaypointsFrom: {fileID: 0}
+  getWaypointsBUTTON: 0
+  setAllWaitTimeTo: 1
+  setWaitTimeBUTTON: 0
+  setAllRandomWaitTimeTo: 0
+  setRandomWaitTimeBUTTON: 0
+  patrolState: 0
+  waypointSets: []
+--- !u!58 &5125595865738667304
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -264,9 +338,9 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7}
-  m_Size: {x: 0.9170189, y: 1.5205765}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.075416535}
+  serializedVersion: 2
+  m_Radius: 0.23630056

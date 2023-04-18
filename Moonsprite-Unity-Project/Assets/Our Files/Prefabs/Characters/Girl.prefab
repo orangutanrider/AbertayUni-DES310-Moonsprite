@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5591757489936933811}
   - component: {fileID: 1066789328646592995}
   - component: {fileID: 2833131466444348108}
+  - component: {fileID: 3722110645643455671}
   m_Layer: 0
   m_Name: Girl
   m_TagString: Untagged
@@ -207,6 +208,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.7}
   m_Size: {x: 0.9170189, y: 1.5205765}
   m_Direction: 0
+--- !u!58 &3722110645643455671
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619339010044023939}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.075416535}
+  serializedVersion: 2
+  m_Radius: 0.23630056
 --- !u!1 &8444646981855432264
 GameObject:
   m_ObjectHideFlags: 0

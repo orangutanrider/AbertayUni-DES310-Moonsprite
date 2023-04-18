@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6174080403971409630}
   - component: {fileID: 5841344564786917205}
   - component: {fileID: 3132333568198581873}
-  - component: {fileID: 327975363709318572}
+  - component: {fileID: 8601299187673973728}
   m_Layer: 0
   m_Name: Barista
   m_TagString: Untagged
@@ -191,8 +191,8 @@ MonoBehaviour:
   sortingPointOffset: 0
   displayGizmos: 0
   setSortingOrderButton: 0
---- !u!70 &327975363709318572
-CapsuleCollider2D:
+--- !u!58 &8601299187673973728
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -201,12 +201,12 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7}
-  m_Size: {x: 0.9170189, y: 1.5205765}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.075416535}
+  serializedVersion: 2
+  m_Radius: 0.23630056
 --- !u!1 &6698105834727138079
 GameObject:
   m_ObjectHideFlags: 0

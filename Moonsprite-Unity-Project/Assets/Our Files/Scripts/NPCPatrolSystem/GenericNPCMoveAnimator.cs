@@ -5,6 +5,7 @@ using UnityEngine;
 public class GenericNPCMoveAnimator : MonoBehaviour, INPCMoveAnimator
 {
     public Animator npcAnimator;
+    public SpriteRenderer spriteRenderer;
 
     const string xMove = "xMove";
     const string yMove = "yMove";
@@ -13,5 +14,14 @@ public class GenericNPCMoveAnimator : MonoBehaviour, INPCMoveAnimator
     {
         npcAnimator.SetFloat(xMove, moveDirection.x);
         npcAnimator.SetFloat(yMove, moveDirection.y);
+
+        if(moveDirection.x > 0.05f)
+        {
+            spriteRenderer.flipX = true;
+        }
+        if(moveDirection.x < -0.05f)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 }
