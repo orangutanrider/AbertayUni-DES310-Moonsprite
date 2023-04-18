@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1535935363987565582}
   - component: {fileID: 501946981261033829}
   m_Layer: 0
-  m_Name: red_house_TILESET_0
+  m_Name: red house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
