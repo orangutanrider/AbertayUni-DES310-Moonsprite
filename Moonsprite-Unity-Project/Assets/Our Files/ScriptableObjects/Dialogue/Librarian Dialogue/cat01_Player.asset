@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
-  m_Name: bad2_02_Librarian
+  m_Name: cat01_Player
   m_EditorClassIdentifier: 
-  dialogueSpeaker: {fileID: 0}
-  dialogueText: Oh my, I'm sorry to hear that deary.
+  dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
+  dialogueText: Have you seen Halle's cat?
   nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0

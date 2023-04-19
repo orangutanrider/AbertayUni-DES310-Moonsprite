@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
-  m_Name: good01_02_Librarian
+  m_Name: bad02_Librarian
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 0}
-  dialogueText: "That\u2019s great to hear, dearie."
+  dialogueText: Oh my, I'm sorry to hear that deary.
   nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
