@@ -171,6 +171,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToolBarSlot3
       objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -18.8796
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -19.1541
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000024795532
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000015258789
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
@@ -274,6 +290,22 @@ PrefabInstance:
     - target: {fileID: 1321297851243859919, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
       propertyPath: m_Name
       value: ToolBarSlot0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -18.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -18.877
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.0422
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.033
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -379,6 +411,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToolBarSlot1
       objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -18.307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -18.5867
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.4475994
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.3404999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
@@ -483,6 +531,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToolBarSlot2
       objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -19.737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -20.0036
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.7927
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.541
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
@@ -586,6 +650,22 @@ PrefabInstance:
     - target: {fileID: 1321297851243859919, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
       propertyPath: m_Name
       value: ToolBarSlot4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -19.5391
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -19.8079
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321297852382345623, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
