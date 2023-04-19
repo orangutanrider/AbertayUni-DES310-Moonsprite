@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
   dialogueText: Have you seen Halle's cat?
-  nextDialogueObjects: []
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: c2ec10c7d7fad6742aed067496ebd170, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:

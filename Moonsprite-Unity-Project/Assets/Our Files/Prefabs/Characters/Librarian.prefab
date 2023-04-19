@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9870a2138d99ebd42a4b40eeddc9217b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingDialogueObject: {fileID: 11400000, guid: 89c4f6d1caa43ca4a8323a9532e42a05, type: 2}
+  startingDialogueObject: {fileID: 11400000, guid: 4226a432e810bb74485acae43c298779, type: 2}
   interactionPriority: 0
 --- !u!1 &1476680753838966698
 GameObject:

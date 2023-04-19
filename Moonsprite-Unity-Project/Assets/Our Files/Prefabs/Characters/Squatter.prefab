@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9870a2138d99ebd42a4b40eeddc9217b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingDialogueObject: {fileID: 11400000, guid: 89c4f6d1caa43ca4a8323a9532e42a05, type: 2}
+  startingDialogueObject: {fileID: 11400000, guid: 7f8d48a105fa0bc429b5f0ebe11b2eb6, type: 2}
   interactionPriority: 0
 --- !u!1 &6529944916226813871
 GameObject:
@@ -100,7 +100,7 @@ Transform:
   - {fileID: 4434490451587874469}
   - {fileID: 3672616421968049836}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6458620108831592457
 SpriteRenderer:

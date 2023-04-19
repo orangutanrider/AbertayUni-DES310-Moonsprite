@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
   dialogueText: Do you know anything about the abandoned house?
-  nextDialogueObjects: []
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: 9226930bc96645449932bbb4a473b304, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:

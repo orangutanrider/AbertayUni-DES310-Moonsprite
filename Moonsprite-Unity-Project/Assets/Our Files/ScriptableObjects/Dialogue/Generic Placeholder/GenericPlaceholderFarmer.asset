@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
-  m_Name: cat02_Librarian
+  m_Name: GenericPlaceholderFarmer
   m_EditorClassIdentifier: 
-  dialogueSpeaker: {fileID: 11400000, guid: a12a741bf10b57749b93a7496bfa4ab0, type: 2}
-  dialogueText: Have you seen Halle's cat?
+  dialogueSpeaker: {fileID: 11400000, guid: 8ea5a225336d86f46a857cc4d9e593e3, type: 2}
+  dialogueText: Hi, friend. My dialogue has not been implemented yet, but I'd love
+    to talk to you later. Why don't you check out the abandoned house on the North-Eastern
+    edge of the town?
   nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
