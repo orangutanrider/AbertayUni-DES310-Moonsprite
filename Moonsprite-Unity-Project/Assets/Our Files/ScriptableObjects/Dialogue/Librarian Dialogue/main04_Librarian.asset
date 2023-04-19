@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
+  m_Name: main04_Librarian
+  m_EditorClassIdentifier: 
+  dialogueSpeaker: {fileID: 0}
+  dialogueText: 'I am alright dreary, thank you for asking. How are you?
+
+
+    1
+    - I''m Good
+
+    2 - Not Good'
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: 6990ff86bd3a9894f80645fe00a23e57, type: 2}
+  - {fileID: 11400000, guid: a966bfff291cca244911c00f40950815, type: 2}
+  triggerDialogueEventsOnDialogueGiver: 0
+  triggerDialogueEventsOnPlayer: 0
+  customTags:
+    tags: []
