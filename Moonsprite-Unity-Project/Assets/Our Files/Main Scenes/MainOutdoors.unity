@@ -95667,7 +95667,7 @@ MonoBehaviour:
     passed: 0
     interfacesLoaded: 0
   - name: Game end pop-up
-    triggerTimeSeconds: 120
+    triggerTimeSeconds: 60
     gameObjectWithTimelineEvents: {fileID: 1241565092}
     active: 1
     passed: 0
@@ -104712,6 +104712,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.8146286
       objectReference: {fileID: 0}
+    - target: {fileID: 2310550602949864768, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -93.79999
+      objectReference: {fileID: 0}
     - target: {fileID: 2723532651210838282, guid: 3486ec53736c6854ebd3b1690331ce3c, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
@@ -111168,11 +111172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797486714421186564, guid: f3c096558ad40c84ea79f0dd017aa694, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -65.78
+      value: 29.63
       objectReference: {fileID: 0}
     - target: {fileID: 2797486714421186564, guid: f3c096558ad40c84ea79f0dd017aa694, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.49
+      value: -7.36
       objectReference: {fileID: 0}
     - target: {fileID: 2797486714421186564, guid: f3c096558ad40c84ea79f0dd017aa694, type: 3}
       propertyPath: m_LocalPosition.z
