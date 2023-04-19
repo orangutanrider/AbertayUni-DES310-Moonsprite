@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: GenericPlaceholder
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 0}
-  dialogueText: Hi, friend. My dialogue has not been implemented yet, I'd love to
-    talk to you later. Why don't you check out the abandoned house on the north-eastern
-    edge of the town. I'm sure you will find something interesting there.
+  dialogueText: 'Hi, friend. My dialogue has not been implemented yet, but I''d love
+    to talk to you later. Why don''t you check out the abandoned house on the North-Eastern
+    edge of the town?
+
+    I''m sure you will find something interesting there.'
   nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
