@@ -27,7 +27,7 @@ public class CoroutineTest : MonoBehaviour
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
 
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
@@ -37,6 +37,11 @@ public class CoroutineTest : MonoBehaviour
         Debug.Log("letter number " + letter + " is " + testingString[letter]);
 
         //FindObjectOfType<AudioManager>().Play("123");
-        FindObjectOfType<AudioManager>().playDialogue();
+        FindObjectOfType<AudioManagerManager>().PlaySound("123");
+
+        yield return new WaitForSeconds(2);
+
+        //FindObjectOfType<AudioManager>().Play("123");
+        FindObjectOfType<AudioManagerManager>().PlaySound("5");
     }
 }
