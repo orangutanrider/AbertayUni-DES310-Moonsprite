@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 4339019779615691370}
   m_Layer: 0
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   moveSpeed: 0.35
   pivotTime: 0.1
   deccelerationPower: 2
-  maxMoveSpeed: 6
+  maxMoveSpeed: 3.5
   maxBoostedSpeed: 25
 --- !u!114 &989528950106796098
 MonoBehaviour:

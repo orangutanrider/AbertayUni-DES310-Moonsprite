@@ -177,11 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d6979fdd9e6d44b9aae33e2d165ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 1321297851243859919, guid: 99eaff8aa5e362a4ea50a8045fc44872, type: 3}
-  playerInventory: {fileID: 610643812}
-  inventoryItems: []
-  inventorySlots: []
-  slotNumber: 5
 --- !u!114 &30972532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,11 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8cbac343cd06a044a7e9c089dde3050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 1321297851243859919, guid: a50a7894df5a2c74b96894ed95ba0b38, type: 3}
-  playerInventory: {fileID: 610643812}
-  inventoryItems: []
-  inventorySlots: []
-  selectedSlot: 0
 --- !u!1 &106962719
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +569,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1515629194484575725, guid: 09916ea53af12a2419fc284b7294b690, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5787187221588220961, guid: 09916ea53af12a2419fc284b7294b690, type: 3}
       propertyPath: sampleItemData
       value: 
@@ -675,7 +669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ca5b341e70ab64b98fa3d91b1dfd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
+  itemActionContainerSceneObject: {fileID: 0}
+  itemList: []
 --- !u!4 &610643813
 Transform:
   m_ObjectHideFlags: 0
@@ -1019,7 +1014,7 @@ GameObject:
   - component: {fileID: 1422514547}
   m_Layer: 0
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1048,8 +1043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03a6942d102da54d91c9b289a68d50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 1618777378}
-  toolbar: {fileID: 30972529}
+  active: 1
+  itemActionKey: 0
 --- !u!114 &1422514549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,6 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31227772354f65b46a3a307d90547673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   rb2D: {fileID: 1422514550}
   anim: {fileID: 1868199386}
   spriteRenderer: {fileID: 1868199384}
@@ -1196,9 +1192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295a9a03ee4b74d41858c60f95556d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 1363405684}
-  labelText: {fileID: 1490307518}
-  stackSizeText: {fileID: 2024400878}
 --- !u!114 &1465749157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1445,11 +1438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d6979fdd9e6d44b9aae33e2d165ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 1321297851243859919, guid: 99eaff8aa5e362a4ea50a8045fc44872, type: 3}
-  playerInventory: {fileID: 610643812}
-  inventoryItems: []
-  inventorySlots: []
-  slotNumber: 6
 --- !u!114 &1618777381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,6 +1950,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1515629194484575725, guid: 09916ea53af12a2419fc284b7294b690, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5787187221588220961, guid: 09916ea53af12a2419fc284b7294b690, type: 3}
       propertyPath: sampleItemData
       value: 

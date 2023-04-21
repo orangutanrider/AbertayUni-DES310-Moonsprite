@@ -6,6 +6,7 @@ public class WaypointGizmoLinesDisplayer : MonoBehaviour
 {
     public bool displayingGizmos = false;
     [Space]
+    public bool waypointSetLoops = true;
     public float radiusDisplay = 0.25f;
     [Space]
     public bool setWaypointsToChildObjectsBUTTON = false;
@@ -38,7 +39,7 @@ public class WaypointGizmoLinesDisplayer : MonoBehaviour
             {
                 Gizmos.DrawLine(waypoints[loop].position, waypoints[loop + 1].position);
             }
-            else
+            else if(waypointSetLoops == true)
             {
                 Gizmos.DrawLine(waypoints[loop].position, waypoints[0].position);
             }
@@ -56,7 +57,7 @@ public class WaypointGizmoLinesDisplayer : MonoBehaviour
         {
             return;
         }
-        setWaypointsToChildObjectsBUTTON = true;
+        setWaypointsToChildObjectsBUTTON = false;
 
         waypoints.Clear();
 

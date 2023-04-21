@@ -1,0 +1,340 @@
+fileFormatVersion: 2
+guid: 27e65922916b9a043a3afe246465b01e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: greenery2_82
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf36d11d86719c7418ddb0c2d65293b5
+      internalID: -396568305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenery2_83
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6ff3f06de533745a943a70f59a8405
+      internalID: 717719046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenery2_84
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0890068a5a5813d4fb60b037375688d3
+      internalID: 921385013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      greenery2_3: 1807367483
+      greenery2_40: 130742331
+      greenery2_65: 923811820
+      greenery2_15: -2027106442
+      greenery2_21: 848904324
+      greenery2_7: 1047755520
+      greenery2_92: -1248368116
+      greenery2_101: -1280358926
+      greenery2_34: -1199943657
+      greenery2_6: 150893095
+      greenery2_44: 394153511
+      greenery2_98: 1582996224
+      greenery2_53: -1130893368
+      greenery2_43: 756627355
+      greenery2_94: -1640211516
+      greenery2_20: 332164600
+      greenery2_69: -1096321575
+      greenery2_11: -1675500663
+      greenery2_80: 1605957078
+      greenery2_90: -170829051
+      greenery2_66: -352807022
+      greenery2_81: -1694937138
+      greenery2_30: -236045827
+      greenery2_64: 145046843
+      greenery2_75: 747123229
+      greenery2_56: 2137996515
+      greenery2_0: -1976336018
+      greenery2_76: 706410621
+      greenery2_47: -1578311990
+      greenery2_85: 1555365612
+      greenery2_5: -574157508
+      greenery2_13: 1155502113
+      greenery2_17: -872059122
+      greenery2_23: 1477445343
+      greenery2_78: 1805339950
+      greenery2_14: 483542438
+      greenery2_2: 56465161
+      greenery2_37: 2006036532
+      greenery2_51: 1724038970
+      greenery2_100: 627505660
+      greenery2_77: -1746682644
+      greenery2_57: 531757913
+      greenery2_31: 1808171341
+      greenery2_109: -105711035
+      greenery2_35: -775078902
+      greenery2_95: -1009800620
+      greenery2_105: 175899838
+      greenery2_74: 917857789
+      greenery2_114: 15849417
+      greenery2_72: -862251494
+      greenery2_45: -216426274
+      greenery2_42: -2112960219
+      greenery2_84: 921385013
+      greenery2_112: 82455862
+      greenery2_52: -1266882148
+      greenery2_99: -961211351
+      greenery2_41: -110603602
+      greenery2_50: 1418168188
+      greenery2_61: -1285209466
+      greenery2_26: -2032675793
+      greenery2_106: -359529696
+      greenery2_63: 441851074
+      greenery2_102: 1481983731
+      greenery2_113: -1322213766
+      greenery2_108: -1376920824
+      greenery2_89: 329559914
+      greenery2_96: 488327924
+      greenery2_9: -971559750
+      greenery2_1: -535822457
+      greenery2_49: -467247960
+      greenery2_54: 539554311
+      greenery2_70: -1754074226
+      greenery2_73: 1638823764
+      greenery2_55: -774060786
+      greenery2_111: -906400154
+      greenery2_12: 715515078
+      greenery2_62: 685847210
+      greenery2_93: -802171830
+      greenery2_58: 64540123
+      greenery2_38: 206150698
+      greenery2_97: 616492407
+      greenery2_27: 653640942
+      greenery2_10: 1750999750
+      greenery2_71: 1847997419
+      greenery2_87: 153020960
+      greenery2_91: -1619577044
+      greenery2_28: -22330013
+      greenery2_19: -722044824
+      greenery2_116: 672064320
+      greenery2_103: -1745280663
+      greenery2_48: -2649040
+      greenery2_83: 717719046
+      greenery2_60: 900607274
+      greenery2_29: -1302854620
+      greenery2_33: 785300864
+      greenery2_22: 1830517821
+      greenery2_46: -1258301680
+      greenery2_115: -147163857
+      greenery2_104: 1415571890
+      greenery2_39: -1505462736
+      greenery2_18: 745939758
+      greenery2_82: -396568305
+      greenery2_67: 1552658424
+      greenery2_36: -1937651341
+      greenery2_32: -1540244175
+      greenery2_110: 1759723776
+      greenery2_107: 1911356663
+      greenery2_79: -659320068
+      greenery2_8: -2021225509
+      greenery2_4: 1198163973
+      greenery2_16: 173135559
+      greenery2_24: 1110762786
+      greenery2_86: -1719907417
+      greenery2_25: 254558291
+      greenery2_88: 1107884686
+      greenery2_68: 1042694985
+      greenery2_59: -568882682
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
