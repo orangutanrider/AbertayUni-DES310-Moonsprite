@@ -50,10 +50,12 @@ public class SquatterScript : MonoBehaviour, IInteractable
             return; 
         }
 
+        // transition
         PlayerScreenTransitioner.instance.StartCoroutine(PlayerScreenTransitioner.instance.SquatterAmbulanceTransition());
-        StartCoroutine(AmbulanceExit(PlayerScreenTransitioner.instance.ambulanceImageFadeDuration, playerInteractionController)); 
-
-        // Transition to black
+        StartCoroutine(AmbulanceExit(PlayerScreenTransitioner.instance.ambulanceImageFadeDuration + PlayerScreenTransitioner.instance.ambulanceImageFadeInDelay, playerInteractionController));
+        
+        // play ambulance audio
+        // (@audiomaster placeholder)
     }
     int IInteractable.InteractionPriority
     {
@@ -63,9 +65,10 @@ public class SquatterScript : MonoBehaviour, IInteractable
 
     IEnumerator AmbulanceExit(float _delay, PlayerInteractionController _playerInteractionController)
     {
-        yield return new WaitForSeconds(_delay);
+        yield return new WaitForSecondsRealtime(_delay);
         PlayerCameraManager.instance.FreeCameraFromConfiner();
         _playerInteractionController.ExitInteraction();
         playerSceneObject.position = ambulanceExitPosition.position;
+        Destroy(gameObject);
     }
 }

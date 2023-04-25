@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 6689053100100184563}
   - component: {fileID: 4870796790124490056}
   - component: {fileID: 4504630452116927061}
+  - component: {fileID: 4233411495505077063}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -255,8 +256,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -315,6 +316,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4233411495505077063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650536304872066618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d03b7cdcb7ed0648beb1bf5a9c500c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmpElement: {fileID: 4504630452116927061}
 --- !u!1 &4567149656870360475
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,9 +481,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b420701903240488ec9a57c2058cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorTransitionImageFader: {fileID: 7118658089069234645}
+  doorTransitionImageFader: {fileID: 782813184922466028}
+  ambulanceTransitionImageFader: {fileID: 782813184922466028}
+  ambulanceTextFader: {fileID: 4233411495505077063}
   miscTransitionImageFader: {fileID: 7924224553133277501}
   doorTransitionTime: 2
+  ambulanceImageFadeInDelay: 1
+  ambulanceImageFadeDuration: 2
+  ambulanceTextFadeDuration: 2
+  ambulanceTextFadeOutDelay: 4
+  ambulanceTextFadeInDelay: 1
 --- !u!1 &8827376313646045665
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

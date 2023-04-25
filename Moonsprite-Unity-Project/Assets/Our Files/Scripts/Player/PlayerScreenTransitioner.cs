@@ -16,8 +16,10 @@ public class PlayerScreenTransitioner : MonoBehaviour
     [Header("Parameters")]
     public float doorTransitionTime;
     [Space]
+    public float ambulanceImageFadeInDelay;
     public float ambulanceImageFadeDuration;
     public float ambulanceTextFadeDuration;
+    public float ambulanceTextFadeOutDelay;
     public float ambulanceTextFadeInDelay;
 
     [HideInInspector] public static PlayerScreenTransitioner instance = null;
@@ -45,13 +47,15 @@ public class PlayerScreenTransitioner : MonoBehaviour
     {
         // these number values have to be declared with a f otherwise it breaks
 
-        ambulanceTransitionImageFader.FadeIn(ambulanceImageFadeDuration * (1f / 2f));
-        yield return new WaitForSeconds(ambulanceImageFadeDuration * (1f / 2f));
-        ambulanceTextFader.FadeIn(ambulanceTextFadeDuration * (1f / 2f));
-        yield return new WaitForSeconds(ambulanceTextFadeInDelay + (ambulanceTextFadeDuration * (1f / 2f)));
-        ambulanceTextFader.FadeOut(ambulanceTextFadeDuration * (1f / 2f));
-        yield return new WaitForSeconds(ambulanceTextFadeDuration * (1f / 2f));
-        ambulanceTransitionImageFader.FadeOut(ambulanceImageFadeDuration * (1f / 2f));
+        yield return new WaitForSecondsRealtime(ambulanceImageFadeInDelay);
+        ambulanceTransitionImageFader.FadeIn(ambulanceImageFadeDuration);
+        yield return new WaitForSecondsRealtime(ambulanceImageFadeDuration + ambulanceTextFadeInDelay);
+        ambulanceTextFader.FadeIn(ambulanceTextFadeDuration);
+        yield return new WaitForSecondsRealtime(ambulanceTextFadeDuration);
+        yield return new WaitForSecondsRealtime(ambulanceTextFadeOutDelay);
+        ambulanceTextFader.FadeOut(ambulanceTextFadeDuration);
+        yield return new WaitForSecondsRealtime(ambulanceTextFadeDuration);
+        ambulanceTransitionImageFader.FadeOut(ambulanceImageFadeDuration);
     }
 
     public void FadeInMiscTransition(float transitionTime)

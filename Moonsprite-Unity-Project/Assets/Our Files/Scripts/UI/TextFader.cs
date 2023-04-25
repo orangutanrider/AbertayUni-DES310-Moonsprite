@@ -6,7 +6,7 @@ using TMPro;
 public class TextFader : MonoBehaviour
 {
     [Header("Required References")]
-    public TMPro.TextMeshPro tmpElement;
+    public TMP_Text tmpElement;
 
     bool fadeDirection = false; // false = fading out; true = fading in
     float fadeTimer = -1;

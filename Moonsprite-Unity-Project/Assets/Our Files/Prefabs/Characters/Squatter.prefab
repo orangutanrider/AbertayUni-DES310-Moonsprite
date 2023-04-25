@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 4918126040234724448}
   - component: {fileID: 4644960833420610918}
   - component: {fileID: 7515292398497918721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Squatter
   m_TagString: Squatter
   m_Icon: {fileID: 0}
@@ -222,7 +222,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squatterAnimator: {fileID: 2469177072846044488}
+  squatterDialogueGiver: {fileID: 7669486100708305509}
   debrisPilesPrefab: {fileID: 632706962773762397, guid: e29dcb4eb6718ae4d933e286b4221868, type: 3}
+  playerSceneObject: {fileID: 0}
+  interactionPriority: -1
+  debrisCollisionShakeAmplitude: 2
+  debrisCollisionShakeFrequency: 2
+  debrisCollisionShakeDuration: 2
+  debrisCollisionShakeDistanceFalloffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.2
+      inSlope: -0.012500003
+      outSlope: -0.012500003
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 16
+      value: 1
+      inSlope: -0.012500003
+      outSlope: -0.5
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 18
+      value: 0
+      inSlope: -0.5
+      outSlope: -0.5
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ambulanceExitPosition: {fileID: 0}
 --- !u!58 &7515292398497918721
 CircleCollider2D:
   m_ObjectHideFlags: 0
