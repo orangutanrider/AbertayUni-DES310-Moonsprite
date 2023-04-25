@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4772bebd0e831a24d8dd14863d892a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gizmosActive: 1
+  doorParameters: {fileID: 11400000, guid: f1c73eb50c89719489a62bc800b2baf7, type: 2}
   destinationObject: {fileID: 1290528972140584789}
   exitDirection: {x: 0, y: -1}
   destinationHasCameraCollider: 0

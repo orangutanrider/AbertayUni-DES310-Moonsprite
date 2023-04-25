@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4434490451587874469}
   - component: {fileID: 3368956931360862782}
   - component: {fileID: 7669486100708305509}
+  - component: {fileID: 1244030633607882674}
   m_Layer: 6
   m_Name: SquatterDialogueGiver
   m_TagString: Squatter
@@ -63,6 +64,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingDialogueObject: {fileID: 11400000, guid: 7f8d48a105fa0bc429b5f0ebe11b2eb6, type: 2}
   interactionPriority: 0
+--- !u!114 &1244030633607882674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749168051154963698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e3129e4ce6d974bb8388e8fedec2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolScript: {fileID: 2290336290540838900}
 --- !u!1 &6529944916226813871
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +92,9 @@ GameObject:
   - component: {fileID: 4918126040234724448}
   - component: {fileID: 4644960833420610918}
   - component: {fileID: 7515292398497918721}
+  - component: {fileID: 5823449275616130461}
+  - component: {fileID: 7076575739573076560}
+  - component: {fileID: 2290336290540838900}
   m_Layer: 6
   m_Name: Squatter
   m_TagString: Squatter
@@ -279,6 +296,56 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.91}
   serializedVersion: 2
   m_Radius: 0.23630056
+--- !u!114 &5823449275616130461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529944916226813871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505803aea7b0f9044aa96616ea6adf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+--- !u!114 &7076575739573076560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529944916226813871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cb68f167982f549afcab3c37bd83ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcAnimator: {fileID: 2469177072846044488}
+  spriteRenderer: {fileID: 6458620108831592457}
+--- !u!114 &2290336290540838900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529944916226813871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f7aa1acaccdc249b16ee635450cac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationsEnabled: 0
+  indexSelection: 0
+  clearIndexBUTTON: 0
+  transformToGetWaypointsFrom: {fileID: 0}
+  getWaypointsBUTTON: 0
+  setAllWaitTimeTo: 1
+  setWaitTimeBUTTON: 0
+  setAllRandomWaitTimeTo: 0
+  setRandomWaitTimeBUTTON: 0
+  patrolState: 0
+  waypointSets: []
 --- !u!1 &8232923705634516967
 GameObject:
   m_ObjectHideFlags: 0
