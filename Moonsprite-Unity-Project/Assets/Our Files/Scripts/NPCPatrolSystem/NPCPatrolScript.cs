@@ -10,18 +10,18 @@ public class NPCPatrolScript : MonoBehaviour
 
     [Header("(TOOL) Get Waypoints")]
     public Transform transformToGetWaypointsFrom = null;
-    public bool BUTTONgetWaypoints = false;
+    public bool BUTTONGetWaypoints = false;
 
     [Header("(TOOL) Multi-Edit")]
     public int selectListIndex = 0;
     [Space]
-    public bool BUTTONclearSelectedIndex = false;
+    public bool BUTTONClearSelectedIndex = false;
     [Space]
+    public bool BUTTONSetAllInSelectedIndexToWaitTime = false;
     public float allWaitTimeValue = 1;
-    public bool BUTTONsetAllInSelectedIndexToWaitTime = false;
     [Space]
+    public bool BUTTONSetAllInSelectedIndexToRandomWaitTime = false;
     public float allRandomWaitTimeValue = 0;
-    public bool BUTTONsetAllInSelectedIndexToRandomWaitTime = false;
 
     [Header("System")]
     public bool animationsEnabled = false;
@@ -76,11 +76,11 @@ public class NPCPatrolScript : MonoBehaviour
 
     void ClearSelectedIndex()
     {
-        if (BUTTONclearSelectedIndex == false)
+        if (BUTTONClearSelectedIndex == false)
         {
             return;
         }
-        BUTTONclearSelectedIndex = false;
+        BUTTONClearSelectedIndex = false;
 
         #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();
@@ -117,11 +117,11 @@ public class NPCPatrolScript : MonoBehaviour
 
     void GetWaypointsFromTransform()
     {
-        if(BUTTONgetWaypoints == false)
+        if(BUTTONGetWaypoints == false)
         {
             return;
         }
-        BUTTONgetWaypoints = false;
+        BUTTONGetWaypoints = false;
 
         if(transformToGetWaypointsFrom == null)
         {
@@ -164,11 +164,11 @@ public class NPCPatrolScript : MonoBehaviour
 
     void MultiEditSetWaitTime()
     {
-        if (BUTTONsetAllInSelectedIndexToWaitTime == false)
+        if (BUTTONSetAllInSelectedIndexToWaitTime == false)
         {
             return;
         }
-        BUTTONsetAllInSelectedIndexToWaitTime = false;
+        BUTTONSetAllInSelectedIndexToWaitTime = false;
 
         #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();
@@ -199,11 +199,11 @@ public class NPCPatrolScript : MonoBehaviour
 
     void MultiEditSetRandomWaitTime()
     {
-        if (BUTTONsetAllInSelectedIndexToRandomWaitTime == false)
+        if (BUTTONSetAllInSelectedIndexToRandomWaitTime == false)
         {
             return;
         }
-        BUTTONsetAllInSelectedIndexToRandomWaitTime = false;
+        BUTTONSetAllInSelectedIndexToRandomWaitTime = false;
 
         #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();

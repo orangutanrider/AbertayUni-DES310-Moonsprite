@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505803aea7b0f9044aa96616ea6adf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 0.035
 --- !u!114 &7076575739573076560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,15 +335,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f7aa1acaccdc249b16ee635450cac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationsEnabled: 0
-  indexSelection: 0
-  clearIndexBUTTON: 0
   transformToGetWaypointsFrom: {fileID: 0}
-  getWaypointsBUTTON: 0
-  setAllWaitTimeTo: 1
-  setWaitTimeBUTTON: 0
-  setAllRandomWaitTimeTo: 0
-  setRandomWaitTimeBUTTON: 0
+  BUTTONGetWaypoints: 0
+  selectListIndex: 0
+  BUTTONClearSelectedIndex: 0
+  BUTTONSetAllInSelectedIndexToWaitTime: 0
+  allWaitTimeValue: 1
+  BUTTONSetAllInSelectedIndexToRandomWaitTime: 0
+  allRandomWaitTimeValue: 0
+  animationsEnabled: 0
   patrolState: 0
   waypointSets: []
 --- !u!1 &8232923705634516967
