@@ -12,6 +12,7 @@ public class PlayerFootstepPlayer : MonoBehaviour
     public AudioSource audioSource;
 
     [Header("Parameters")]
+    public LayerMask surfaceLayerMask;
     public float footstepRate = 0;
     public FootstepSurface fallbackFootstep;
     public FootstepSurface[] footstepSurfaceSounds;
@@ -95,5 +96,26 @@ public class PlayerFootstepPlayer : MonoBehaviour
         int randomIndex = Random.Range(0, footstepSurface.footstepSounds.Length - 1);
         audioSource.clip = footstepSurface.footstepSounds[randomIndex];
         audioSource.Play();
+    }
+
+    private void OnTriggerEnter2D(Collider2D surfaceTrigger)
+    {
+        // https://answers.unity.com/questions/50279/check-if-layer-is-in-layermask.html
+        if (surfaceLayerMask == (surfaceLayerMask | (1 << surfaceTrigger.gameObject.layer))) 
+        {
+            activeSurfaces.Add(surfaceTrigger.tag);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D surfaceTrigger)
+    {
+        // https://answers.unity.com/questions/50279/check-if-layer-is-in-layermask.html
+        if (surfaceLayerMask == (surfaceLayerMask | (1 << surfaceTrigger.gameObject.layer)))
+        {
+            if (activeSurfaces.Contains(surfaceTrigger.tag) == true)
+            {
+                activeSurfaces.Remove(surfaceTrigger.tag);
+            }
+        }
     }
 }
