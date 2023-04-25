@@ -29,7 +29,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
     {
         player = playerInteractionController;
-        StartCoroutine(PlayerScreenTransitioner.instance.DoorTransition(PlayerScreenTransitioner.instance.doorTransitionTime));
+        StartCoroutine(PlayerScreenTransitioner.instance.DoorTransition());
         StartCoroutine(WaitForFadeThenTeleport(PlayerScreenTransitioner.instance.doorTransitionTime));
     }
 
