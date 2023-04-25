@@ -222,6 +222,7 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
     source: {fileID: 0}
+  managerName: clack
 --- !u!4 &170185068
 Transform:
   m_ObjectHideFlags: 0
@@ -392,6 +393,7 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
     source: {fileID: 0}
+  managerName: click
 --- !u!4 &1190288840
 Transform:
   m_ObjectHideFlags: 0

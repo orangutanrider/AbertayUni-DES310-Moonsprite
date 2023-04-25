@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 public class AudioManager : MonoBehaviour
 {
 
-    public static AudioManager instance;
+   // public static AudioManager instance;
 
     public AudioMixerGroup mixerGroup;
 
@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
         //}
         //else
         //{
-            instance = this;
+           // instance = this;
             DontDestroyOnLoad(gameObject);
         //}
 
