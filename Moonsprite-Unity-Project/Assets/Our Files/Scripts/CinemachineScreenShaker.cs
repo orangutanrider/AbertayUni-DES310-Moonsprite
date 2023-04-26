@@ -19,7 +19,8 @@ public class CinemachineScreenShaker : MonoBehaviour
     void Start()
     {
         Instance = this;
-        cinemachinePerlin = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        cinemachinePerlin = GetComponent<CinemachineVirtualCamera>().AddCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        //cinemachinePerlin = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     public void ShakeCamera(float amplitude, float frequency, float time)

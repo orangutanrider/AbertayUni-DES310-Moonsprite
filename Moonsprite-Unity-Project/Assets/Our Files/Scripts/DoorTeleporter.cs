@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class DoorTeleporter : MonoBehaviour, IInteractable
 {
-    public bool gizmosActive = true;
+    public DoorParameters doorParameters;
 
     [Header("Settings")]
     public GameObject destinationObject;
@@ -29,7 +29,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
     {
         player = playerInteractionController;
-        StartCoroutine(PlayerScreenTransitioner.instance.DoorTransition(PlayerScreenTransitioner.instance.doorTransitionTime));
+        StartCoroutine(PlayerScreenTransitioner.instance.DoorTransition());
         StartCoroutine(WaitForFadeThenTeleport(PlayerScreenTransitioner.instance.doorTransitionTime));
     }
 
@@ -62,7 +62,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
 
     void OnDrawGizmos()
     {
-        if(gizmosActive == false)
+        if(doorParameters.gizmosEnabled == false)
         {
             return;
         }

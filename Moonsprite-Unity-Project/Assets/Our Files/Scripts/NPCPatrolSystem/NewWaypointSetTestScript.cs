@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewWaypointSetTestScript : MonoBehaviour
 {
+    /*
     public NPCPatrolScript patrolScriptToTarget;
     [Space]
     public int indexToSwitchTo = 0;
@@ -21,4 +22,5 @@ public class NewWaypointSetTestScript : MonoBehaviour
             patrolScriptToTarget.SwitchToSetByReference(newSetToSwitchTo);
         }
     }
+    */
 }

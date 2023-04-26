@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeaker: {fileID: 11400000, guid: 09a1d6aab06b3f34c8baebde2008fd3f, type: 2}
   dialogueText: Oh, cheers mate for letting me know.
   nextDialogueObjects: []
-  triggerDialogueEventsOnDialogueGiver: 0
+  triggerDialogueEventsOnDialogueGiver: 1
   triggerDialogueEventsOnPlayer: 0
   customTags:
     tags: []

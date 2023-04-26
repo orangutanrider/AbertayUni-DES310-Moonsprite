@@ -15,7 +15,7 @@ public class TransformMover : MonoBehaviour, IMover
             moveSpeed = value;
         }
     }
-    [SerializeField] float moveSpeed = 1;
+    [SerializeField] float moveSpeed = 0.03f;
 
     // Must be called on fixed update to work correctly
     void IMover.Move(Vector2 moveVector)

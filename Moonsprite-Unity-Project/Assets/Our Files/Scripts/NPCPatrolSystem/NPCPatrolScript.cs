@@ -8,23 +8,23 @@ public class NPCPatrolScript : MonoBehaviour
 {
     // Attribution: Vasco F + Dominic R
 
-    public bool animationsEnabled = false;
-
-    [Header("Tools (multi-edit and get all waypoints from parent object)")]
-    public int indexSelection = 0;
-    [Space]
-    public bool clearIndexBUTTON = false;
-    [Space]
+    [Header("(TOOL) Get Waypoints")]
     public Transform transformToGetWaypointsFrom = null;
-    public bool getWaypointsBUTTON = false;
-    [Space]
-    public float setAllWaitTimeTo = 1;
-    public bool setWaitTimeBUTTON = false;
-    [Space]
-    public float setAllRandomWaitTimeTo = 0;
-    public bool setRandomWaitTimeBUTTON = false;
+    public bool BUTTONGetWaypoints = false;
 
-    [Header("(by default NPCs will follow the first waypointSet in the list)")]
+    [Header("(TOOL) Multi-Edit")]
+    public int selectListIndex = 0;
+    [Space]
+    public bool BUTTONClearSelectedIndex = false;
+    [Space]
+    public bool BUTTONSetAllInSelectedIndexToWaitTime = false;
+    public float allWaitTimeValue = 1;
+    [Space]
+    public bool BUTTONSetAllInSelectedIndexToRandomWaitTime = false;
+    public float allRandomWaitTimeValue = 0;
+
+    [Header("System")]
+    public bool animationsEnabled = false;
     public NPCPatrolState patrolState = NPCPatrolState.FollowingWaypointSet;
     public List<NPCWaypointSet> waypointSets = new List<NPCWaypointSet>();
 
@@ -48,7 +48,7 @@ public class NPCPatrolScript : MonoBehaviour
         IndexIsValid
     }
 
-    //========
+    //EXECUTION
     void Start()
     {
         mover = gameObject.GetComponent<IMover>();
@@ -76,15 +76,15 @@ public class NPCPatrolScript : MonoBehaviour
 
     void ClearSelectedIndex()
     {
-        if (clearIndexBUTTON == false)
+        if (BUTTONClearSelectedIndex == false)
         {
             return;
         }
-        clearIndexBUTTON = false;
+        BUTTONClearSelectedIndex = false;
 
         #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();
-        int indexToWriteTo = indexSelection;
+        int indexToWriteTo = selectListIndex;
 
         if (indexValidation == IndexSelectValidate.InvalidNegativeIndex)
         {
@@ -100,28 +100,28 @@ public class NPCPatrolScript : MonoBehaviour
         }
         #endregion
 
-        if (waypointSets[indexSelection].waypoints == null)
+        if (waypointSets[selectListIndex].waypoints == null)
         {
             Debug.Log("No waypoints to clear");
             return;
         }
 
-        if (waypointSets[indexSelection].waypoints.Count == 0)
+        if (waypointSets[selectListIndex].waypoints.Count == 0)
         {
             Debug.Log("No waypoints to clear");
             return;
         }
 
-        waypointSets[indexSelection].waypoints.Clear();
+        waypointSets[selectListIndex].waypoints.Clear();
     }
 
     void GetWaypointsFromTransform()
     {
-        if(getWaypointsBUTTON == false)
+        if(BUTTONGetWaypoints == false)
         {
             return;
         }
-        getWaypointsBUTTON = false;
+        BUTTONGetWaypoints = false;
 
         if(transformToGetWaypointsFrom == null)
         {
@@ -131,7 +131,7 @@ public class NPCPatrolScript : MonoBehaviour
 
         #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();
-        int indexToWriteTo = indexSelection;
+        int indexToWriteTo = selectListIndex;
 
         if(indexValidation == IndexSelectValidate.InvalidNegativeIndex)
         {
@@ -147,7 +147,7 @@ public class NPCPatrolScript : MonoBehaviour
         }
         #endregion
 
-        waypointSets[indexSelection].waypoints.Clear();
+        waypointSets[selectListIndex].waypoints.Clear();
 
         Transform[] childObjects = transformToGetWaypointsFrom.GetComponentsInChildren<Transform>();
         foreach(Transform child in childObjects)
@@ -164,11 +164,11 @@ public class NPCPatrolScript : MonoBehaviour
 
     void MultiEditSetWaitTime()
     {
-        if (setWaitTimeBUTTON == false)
+        if (BUTTONSetAllInSelectedIndexToWaitTime == false)
         {
             return;
         }
-        setWaitTimeBUTTON = false;
+        BUTTONSetAllInSelectedIndexToWaitTime = false;
 
         #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();
@@ -179,31 +179,31 @@ public class NPCPatrolScript : MonoBehaviour
         }
         #endregion
 
-        if (waypointSets[indexSelection].waypoints == null)
+        if (waypointSets[selectListIndex].waypoints == null)
         {
             Debug.Log("No waypoints to write to");
             return;
         }
 
-        if (waypointSets[indexSelection].waypoints.Count == 0)
+        if (waypointSets[selectListIndex].waypoints.Count == 0)
         {
             Debug.Log("No waypoints to write to");
             return;
         }
 
-        foreach (NPCWaypoint waypoint in waypointSets[indexSelection].waypoints)
+        foreach (NPCWaypoint waypoint in waypointSets[selectListIndex].waypoints)
         {
-            waypoint.waitTime = setAllWaitTimeTo;
+            waypoint.waitTime = allWaitTimeValue;
         }
     }
 
     void MultiEditSetRandomWaitTime()
     {
-        if (setRandomWaitTimeBUTTON == false)
+        if (BUTTONSetAllInSelectedIndexToRandomWaitTime == false)
         {
             return;
         }
-        setRandomWaitTimeBUTTON = false;
+        BUTTONSetAllInSelectedIndexToRandomWaitTime = false;
 
         #region index validation
         IndexSelectValidate indexValidation = ValidateIndexSelection();
@@ -214,33 +214,33 @@ public class NPCPatrolScript : MonoBehaviour
         }
         #endregion
 
-        if (waypointSets[indexSelection].waypoints == null)
+        if (waypointSets[selectListIndex].waypoints == null)
         {
             Debug.Log("No waypoints to write to");
             return;
         }
 
-        if (waypointSets[indexSelection].waypoints.Count == 0)
+        if (waypointSets[selectListIndex].waypoints.Count == 0)
         {
             Debug.Log("No waypoints to write to");
             return;
         }
 
-        foreach (NPCWaypoint waypoint in waypointSets[indexSelection].waypoints)
+        foreach (NPCWaypoint waypoint in waypointSets[selectListIndex].waypoints)
         {
-            waypoint.randomWaitTimePlus = setAllRandomWaitTimeTo;
+            waypoint.randomWaitTimePlus = allRandomWaitTimeValue;
         }
     }
 
     IndexSelectValidate ValidateIndexSelection()
     {
-        if (indexSelection < 0)
+        if (selectListIndex < 0)
         {
             Debug.Log("selected index is negative");
             return IndexSelectValidate.InvalidNegativeIndex;
         }
 
-        if (indexSelection > waypointSets.Count - 1)
+        if (selectListIndex > waypointSets.Count - 1)
         {
             Debug.Log("selected index is greater than list size");
             return IndexSelectValidate.PositiveIndexIsOutsideTheBoundsOfTheArray;
@@ -357,7 +357,7 @@ public class NPCPatrolScript : MonoBehaviour
         }
     }
 
-    public bool SwitchToSetByIndex(int newSetIndex) // returns true if succesful
+    bool SwitchToSetByIndex(int newSetIndex) // returns true if succesful
     {
         if(newSetIndex > waypointSets.Count - 1 || newSetIndex < 0)
         {
@@ -374,7 +374,18 @@ public class NPCPatrolScript : MonoBehaviour
         return true;
     }
 
-    public bool SwitchToSetByReference(NPCWaypointSet newWaypointSet) // returns true if succesful
+    public bool StartFollowingNewSetViaIndex(int index, NPCPatrolState newPatrolState)
+    {
+        bool succesfulSwitch = SwitchToSetByIndex(index);
+        if(succesfulSwitch == true)
+        {
+            patrolState = newPatrolState;
+            return true;
+        }
+        return false;
+    }
+
+    public bool StartFollowingNewSet(NPCWaypointSet newWaypointSet, NPCPatrolState newPatrolState) // returns true if succesful
     {
         if (newWaypointSet == null)
         {
@@ -389,6 +400,8 @@ public class NPCPatrolScript : MonoBehaviour
             waypointSets.Add(newWaypointSet);
             newSetIndex = waypointSets.Count - 1;
         }
+
+        patrolState = newPatrolState;
 
         CurrentSet().active = false;
         currentSetIndex = newSetIndex;
