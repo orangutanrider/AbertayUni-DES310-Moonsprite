@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07376d4653e163c47b5d8265cc85abaa, type: 3}
   m_Name: DoorParameters
   m_EditorClassIdentifier: 
-  gizmosEnabled: 0
+  gizmosEnabled: 1
