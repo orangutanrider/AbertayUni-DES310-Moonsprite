@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CrossFadeLooper : MonoBehaviour
 {
@@ -22,12 +23,27 @@ public class CrossFadeLooper : MonoBehaviour
         }
     }
 
+    [Header("Tools")]
     public bool BUTTONGetAudioSources = false;
-    public float playOffset = 0;
-    public List<AudioSourceWithLoopPoints> audioSourcesInLoop = new List<AudioSourceWithLoopPoints>();
     [Space]
+    public bool BUTTONMultiEdit = false;
+    public AudioClip multiEditAudioClip = null;
+    public AudioMixerGroup audioMixerGroup = null;
+    public bool multiEditBypassEffects = false;
+    public bool multiEditBypassListenerEffects = false;
+    public bool multiEditBypassReverbZones = false;
+    public int multiEditPriority = 128;
+    public float multiEditPitch = 1;
+    public float multiEditStereoPan = 0;
+    public float multiEditSpatialBlend = 0;
+    public float multiEditReverbZoneMix = 0;
+
+
+    [Header("Parameters")]
+    public float playOffset = 0;
     [SerializeField] float volume = 1; // to change the system's volume during run-time use an audio mixer group
     [SerializeField] bool mute = false;
+    public List<AudioSourceWithLoopPoints> audioSourcesInLoop = new List<AudioSourceWithLoopPoints>();
 
     int activeSourceIndex = 0;
 
@@ -51,12 +67,35 @@ public class CrossFadeLooper : MonoBehaviour
     void OnValidate()
     {
         GetAudioButton();
+        MultiEditAudioButton();
+    }
+
+    void MultiEditAudioButton()
+    {
+        if (BUTTONMultiEdit == false) { return; }
+        BUTTONMultiEdit = false;
+
+        foreach (AudioSourceWithLoopPoints audioSourceWithLoop in audioSourcesInLoop)
+        {
+            if (audioSourceWithLoop.audioSource == null) { continue; }
+
+            audioSourceWithLoop.audioSource.clip = multiEditAudioClip;
+            audioSourceWithLoop.audioSource.outputAudioMixerGroup = audioMixerGroup;
+            audioSourceWithLoop.audioSource.bypassEffects = multiEditBypassEffects;
+            audioSourceWithLoop.audioSource.bypassListenerEffects = multiEditBypassListenerEffects;
+            audioSourceWithLoop.audioSource.bypassReverbZones = multiEditBypassReverbZones;
+            audioSourceWithLoop.audioSource.priority = multiEditPriority;
+            audioSourceWithLoop.audioSource.pitch = multiEditPitch;
+            audioSourceWithLoop.audioSource.panStereo = multiEditStereoPan;
+            audioSourceWithLoop.audioSource.spatialBlend = multiEditSpatialBlend;
+            audioSourceWithLoop.audioSource.reverbZoneMix = multiEditReverbZoneMix;
+        }
     }
 
     void GetAudioButton()
     {
         if(BUTTONGetAudioSources == false) { return; }
-        BUTTONGetAudioSources = true;
+        BUTTONGetAudioSources = false;
 
         List<AudioSourceWithLoopPoints> newAudioSourceList = new List<AudioSourceWithLoopPoints>();
 
