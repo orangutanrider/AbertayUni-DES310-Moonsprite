@@ -25,23 +25,24 @@ public class CrossFadeLooper : MonoBehaviour
 
     [Header("Tools")]
     public bool BUTTONGetAudioSources = false;
-    [Space]
     public bool BUTTONMultiEdit = false;
+    [Space]
+    public float multiEditFadeInDuration = 1;
+    public float multiEditFadeOutDuration = 1;
+    [Space]
     public AudioClip multiEditAudioClip = null;
-    public AudioMixerGroup audioMixerGroup = null;
+    public AudioMixerGroup multiEditAudioMixerGroup = null;
     public bool multiEditBypassEffects = false;
     public bool multiEditBypassListenerEffects = false;
     public bool multiEditBypassReverbZones = false;
-    public int multiEditPriority = 128;
-    public float multiEditPitch = 1;
-    public float multiEditStereoPan = 0;
-    public float multiEditSpatialBlend = 0;
-    public float multiEditReverbZoneMix = 0;
-
+    [Range(0, 256)] public int multiEditPriority = 128;
+    [Range(-3f, 3f)] public float multiEditPitch = 1;
+    [Range(-1f, 1f)] public float multiEditStereoPan = 0;
+    [Range(0f, 1f)] public float multiEditSpatialBlend = 0;
+    [Range(0f, 1.1f)] public float multiEditReverbZoneMix = 1;
 
     [Header("Parameters")]
-    public float playOffset = 0;
-    [SerializeField] float volume = 1; // to change the system's volume during run-time use an audio mixer group
+    [Range(0f, 1f)] [SerializeField] float volume = 1; // to change the system's volume during run-time use an audio mixer group
     [SerializeField] bool mute = false;
     public List<AudioSourceWithLoopPoints> audioSourcesInLoop = new List<AudioSourceWithLoopPoints>();
 
@@ -63,7 +64,7 @@ public class CrossFadeLooper : MonoBehaviour
         }
     }
 
-    #region Tool(s)
+    #region Tools
     void OnValidate()
     {
         GetAudioButton();
@@ -79,8 +80,11 @@ public class CrossFadeLooper : MonoBehaviour
         {
             if (audioSourceWithLoop.audioSource == null) { continue; }
 
+            audioSourceWithLoop.fadeInDuration = multiEditFadeInDuration;
+            audioSourceWithLoop.fadeOutDuration = multiEditFadeOutDuration;
+
             audioSourceWithLoop.audioSource.clip = multiEditAudioClip;
-            audioSourceWithLoop.audioSource.outputAudioMixerGroup = audioMixerGroup;
+            audioSourceWithLoop.audioSource.outputAudioMixerGroup = multiEditAudioMixerGroup;
             audioSourceWithLoop.audioSource.bypassEffects = multiEditBypassEffects;
             audioSourceWithLoop.audioSource.bypassListenerEffects = multiEditBypassListenerEffects;
             audioSourceWithLoop.audioSource.bypassReverbZones = multiEditBypassReverbZones;
@@ -109,16 +113,25 @@ public class CrossFadeLooper : MonoBehaviour
             newAudioSourceList.Add(newListEntry);
         }
         audioSourcesInLoop = newAudioSourceList;
+
+        BUTTONMultiEdit = true;
+        MultiEditAudioButton();
     }
     #endregion
 
     void Start()
     {
         Mute = mute;
-        SoundUpdate();
+
+        AudioSourceWithLoopPoints current = audioSourcesInLoop[activeSourceIndex];
+
+        StartCoroutine(StartFade(current.audioSource, current.fadeInDuration, volume));
+        StartCoroutine(QuePlayAudio(current.audioSource, 0f));
+
+        AudioUpdate();
     }
 
-    void SoundUpdate()
+    void AudioUpdate()
     {
         AudioSourceWithLoopPoints current = audioSourcesInLoop[activeSourceIndex];
 
@@ -130,9 +143,10 @@ public class CrossFadeLooper : MonoBehaviour
         AudioSourceWithLoopPoints next = audioSourcesInLoop[nextIndex];
 
         float currentFadeOutStart = current.audioSource.clip.length - current.fadeOutDuration - current.audioSource.time;
+
         StartCoroutine(QueAudioFadeOut(current));
         StartCoroutine(QueAudioFadeIn(current, next));
-        StartCoroutine(QueSoundUpdate(currentFadeOutStart));
+        StartCoroutine(QueNextAudioUpdate(currentFadeOutStart));
     }
 
     IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
@@ -145,14 +159,17 @@ public class CrossFadeLooper : MonoBehaviour
             audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
             yield return null;
         }
+
+        Debug.Log("Fade Finished");
         yield break;
     }
 
     IEnumerator QueAudioFadeIn(AudioSourceWithLoopPoints currentlyPlayingAudioSource, AudioSourceWithLoopPoints newAudioSource)
     {
         float currentFadeOutStart = currentlyPlayingAudioSource.audioSource.clip.length - currentlyPlayingAudioSource.fadeOutDuration - currentlyPlayingAudioSource.audioSource.time;
+        Debug.Log(currentFadeOutStart);
         yield return new WaitForSeconds(currentFadeOutStart);
-        StartCoroutine(QueAudioPlay(newAudioSource.audioSource, playOffset));
+        StartCoroutine(QuePlayAudio(newAudioSource.audioSource, 0f));
         StartCoroutine(StartFade(newAudioSource.audioSource, newAudioSource.fadeInDuration, volume));
         yield break;
     }
@@ -166,7 +183,7 @@ public class CrossFadeLooper : MonoBehaviour
         yield break;
     }
 
-    IEnumerator QueSoundUpdate(float delay)
+    IEnumerator QueNextAudioUpdate(float delay)
     {
         yield return new WaitForSeconds(delay);
 
@@ -175,20 +192,24 @@ public class CrossFadeLooper : MonoBehaviour
         {
             activeSourceIndex = 0;
         }
-        SoundUpdate();
+
+        AudioUpdate();
+
         yield break;
     }
 
     IEnumerator QueStopAudio(AudioSource audioSource, float delay)
     {
         yield return new WaitForSeconds(delay);
+        Debug.Log("Audio Stopped");
         audioSource.Stop();
         yield break;
     }
 
-    IEnumerator QueAudioPlay(AudioSource audioSource, float delay)
+    IEnumerator QuePlayAudio(AudioSource audioSource, float delay)
     {
         yield return new WaitForSeconds(delay);
+        Debug.Log("Audio Played");
         audioSource.Play();
         yield break;
     }

@@ -443,8 +443,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c42180ce9afb943a4eeddb8835216c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BUTTONGetAudioSources: 1
-  playOffset: 0.05
+  BUTTONGetAudioSources: 0
+  BUTTONMultiEdit: 0
+  multiEditFadeInDuration: 1
+  multiEditFadeOutDuration: 1
+  multiEditAudioClip: {fileID: 0}
+  multiEditAudioMixerGroup: {fileID: 0}
+  multiEditBypassEffects: 0
+  multiEditBypassListenerEffects: 0
+  multiEditBypassReverbZones: 0
+  multiEditPriority: 128
+  multiEditPitch: 1
+  multiEditStereoPan: 0
+  multiEditSpatialBlend: 0
+  multiEditReverbZoneMix: 0
+  volume: 1
+  mute: 1
   audioSourcesInLoop:
   - audioSource: {fileID: 658955406}
     bakedFades: 0
@@ -458,8 +472,6 @@ MonoBehaviour:
     bakedFades: 0
     fadeInDuration: 0
     fadeOutDuration: 0
-  volume: 1
-  mute: 1
 --- !u!4 &658955408
 Transform:
   m_ObjectHideFlags: 0
@@ -913,23 +925,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c42180ce9afb943a4eeddb8835216c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BUTTONGetAudioSources: 1
-  playOffset: 0.05
+  BUTTONGetAudioSources: 0
+  BUTTONMultiEdit: 0
+  multiEditFadeInDuration: 5
+  multiEditFadeOutDuration: 5
+  multiEditAudioClip: {fileID: 8300000, guid: b7c75a8d99cb9d5468ad8be383acfa5c, type: 3}
+  multiEditAudioMixerGroup: {fileID: 0}
+  multiEditBypassEffects: 0
+  multiEditBypassListenerEffects: 0
+  multiEditBypassReverbZones: 0
+  multiEditPriority: 128
+  multiEditPitch: 1
+  multiEditStereoPan: 0
+  multiEditSpatialBlend: 0
+  multiEditReverbZoneMix: 1
+  volume: 1
+  mute: 0
   audioSourcesInLoop:
   - audioSource: {fileID: 2014277521}
     bakedFades: 0
-    fadeInDuration: 0
-    fadeOutDuration: 0
+    fadeInDuration: 5
+    fadeOutDuration: 5
   - audioSource: {fileID: 2014277520}
     bakedFades: 0
-    fadeInDuration: 0
-    fadeOutDuration: 0
+    fadeInDuration: 5
+    fadeOutDuration: 5
   - audioSource: {fileID: 2014277519}
     bakedFades: 0
-    fadeInDuration: 0
-    fadeOutDuration: 0
-  volume: 1
-  mute: 0
+    fadeInDuration: 5
+    fadeOutDuration: 5
 --- !u!4 &2014277523
 Transform:
   m_ObjectHideFlags: 0
