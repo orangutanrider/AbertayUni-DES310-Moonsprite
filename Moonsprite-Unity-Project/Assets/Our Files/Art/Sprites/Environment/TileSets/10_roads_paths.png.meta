@@ -1,0 +1,354 @@
+fileFormatVersion: 2
+guid: 5bed04a9a37948d449012456ea4d47c1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 10_roads_paths_86
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 379
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a3b33d3a40ea841a4a86da83cdc314
+      internalID: 1805196346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 10_roads_paths_87
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 379
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2b58a410338d247bbc20a4b3105cfa
+      internalID: -665859686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 10_roads_paths_100
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 251
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82803d5fbd78548459fe3308e8acf151
+      internalID: 1836159156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 10_roads_paths_101
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 251
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4697ea89857194d855c909a17c80b3
+      internalID: 2080322669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      10_roads_paths_92: -935312510
+      10_roads_paths_33: 715948543
+      10_roads_paths_109: 307137013
+      10_roads_paths_71: 1586994376
+      10_roads_paths_101: 2080322669
+      10_roads_paths_78: 1821043987
+      10_roads_paths_105: 508938709
+      10_roads_paths_98: -2120749806
+      10_roads_paths_61: -887455858
+      10_roads_paths_85: 205813468
+      10_roads_paths_42: 604904827
+      10_roads_paths_23: 1150038516
+      10_roads_paths_94: 1541205258
+      10_roads_paths_24: 727961278
+      10_roads_paths_57: -1656471424
+      10_roads_paths_89: 1401818022
+      10_roads_paths_55: -1558709678
+      10_roads_paths_77: -1044969049
+      10_roads_paths_62: 1217016970
+      10_roads_paths_80: 138866233
+      10_roads_paths_11: 2114767920
+      10_roads_paths_4: -1750007784
+      10_roads_paths_82: -573315588
+      10_roads_paths_14: -1478795557
+      10_roads_paths_91: 434065458
+      10_roads_paths_44: 953357118
+      10_roads_paths_7: 2083164088
+      10_roads_paths_39: 636719479
+      10_roads_paths_58: 1224566744
+      10_roads_paths_3: -1485647182
+      10_roads_paths_72: 851591322
+      10_roads_paths_30: -324648285
+      10_roads_paths_41: -1267286685
+      10_roads_paths_47: 1603356863
+      10_roads_paths_95: -771630082
+      10_roads_paths_68: -120282352
+      10_roads_paths_51: 368512521
+      10_roads_paths_81: -631645508
+      10_roads_paths_21: -827744347
+      10_roads_paths_106: 1557122148
+      10_roads_paths_88: 822004084
+      10_roads_paths_48: 1482994818
+      10_roads_paths_99: -9984509
+      10_roads_paths_93: 880194836
+      10_roads_paths_70: 445007583
+      10_roads_paths_49: -1434622444
+      10_roads_paths_76: -278270699
+      10_roads_paths_10: -83847005
+      10_roads_paths_5: 2118858307
+      10_roads_paths_107: -358473226
+      10_roads_paths_25: 355970211
+      10_roads_paths_43: -123308845
+      10_roads_paths_12: -1329414321
+      10_roads_paths_22: 1976798900
+      10_roads_paths_18: 1086925078
+      10_roads_paths_79: -1676764522
+      10_roads_paths_50: 577670575
+      10_roads_paths_20: -691225014
+      10_roads_paths_60: 1755246373
+      10_roads_paths_1: -1790193422
+      10_roads_paths_66: -499660681
+      10_roads_paths_40: 1744171313
+      10_roads_paths_27: 1573897934
+      10_roads_paths_74: -868153196
+      10_roads_paths_97: -1382182651
+      10_roads_paths_13: -1747570541
+      10_roads_paths_104: -101984914
+      10_roads_paths_64: 626019066
+      10_roads_paths_87: -665859686
+      10_roads_paths_34: -1553577367
+      10_roads_paths_36: -626489136
+      10_roads_paths_65: -122730315
+      10_roads_paths_0: 1519752806
+      10_roads_paths_67: -626721844
+      10_roads_paths_9: 2031410987
+      10_roads_paths_90: 1604915889
+      10_roads_paths_31: -1849455307
+      10_roads_paths_53: 1122140582
+      10_roads_paths_108: -577424781
+      10_roads_paths_35: 1788023004
+      10_roads_paths_19: -1685605959
+      10_roads_paths_75: -1516138261
+      10_roads_paths_96: -732187518
+      10_roads_paths_100: 1836159156
+      10_roads_paths_54: -1999331294
+      10_roads_paths_38: 1689280556
+      10_roads_paths_45: 667764647
+      10_roads_paths_26: 2124887432
+      10_roads_paths_73: -1080208595
+      10_roads_paths_8: 850388726
+      10_roads_paths_16: 315877824
+      10_roads_paths_52: 1489423765
+      10_roads_paths_17: -2133991081
+      10_roads_paths_28: -361780483
+      10_roads_paths_84: 341933546
+      10_roads_paths_59: 1365188838
+      10_roads_paths_2: -104041276
+      10_roads_paths_86: 1805196346
+      10_roads_paths_69: 1750895526
+      10_roads_paths_6: 1453665101
+      10_roads_paths_56: 697715292
+      10_roads_paths_83: 224617150
+      10_roads_paths_32: 1404434639
+      10_roads_paths_46: 500293771
+      10_roads_paths_63: 1783612280
+      10_roads_paths_29: 719940833
+      10_roads_paths_15: -2085968384
+      10_roads_paths_37: 1966254299
+      10_roads_paths_102: -140289981
+      10_roads_paths_103: -2091167116
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
