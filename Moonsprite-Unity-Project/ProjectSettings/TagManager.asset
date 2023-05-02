@@ -8,6 +8,9 @@ TagManager:
   - Debris Projectile
   - PlayerInteractionHighlighter
   - Squatter
+  - GrassAudo
+  - ConcreteAudio
+  - WoodenAudio
   layers:
   - Default
   - TransparentFX
