@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
 
     public string managerName;
 
+    public bool dialogue;
+
 
     void Awake()
     {
@@ -38,6 +40,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public string getName()
+    {
+
+        return managerName;
+
+    }
+
     public void Play(string sound)
     {
         Debug.LogWarning("searching for Sound: " + sound + "...");
@@ -50,6 +59,22 @@ public class AudioManager : MonoBehaviour
 
         s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
         s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+
+        s.source.Play();
+    }
+
+    public void Play(string sound, float pitch, float volume)
+    {
+        Debug.LogWarning("searching for Sound: " + sound + "...");
+        Sound s = Array.Find(sounds, item => item.name == sound);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        s.source.volume = s.volume * (1f + volume);
+        s.source.pitch = s.pitch * (1f + pitch);
 
         s.source.Play();
     }
@@ -76,16 +101,16 @@ public class AudioManager : MonoBehaviour
         return true;
     }
 
-    public void playDialogue()
+    public void playDialogue(string text, float delay, float pitch, float volume)
     {
-        string[] test = Regex.Split("3454435433", string.Empty);
-        float y = 1;
+        string[] test = Regex.Split(text, string.Empty);
+        float y = 0.1f;
         foreach (string x in test)
         {
             Debug.LogWarning("current Sound: " + x);
-            StartCoroutine(PlayDialogue(x, y, 1, 1));
+            StartCoroutine(PlayDialogue(x, y, pitch, volume));
             // StartCoroutine(DelayLoop());
-            y = y + 0.2f;
+            y = y + delay;
         }
     }
 
@@ -118,7 +143,7 @@ public class AudioManager : MonoBehaviour
 
 
 
-        Play(sound);
+        Play(sound, pitch, volume);
 
 
         //}

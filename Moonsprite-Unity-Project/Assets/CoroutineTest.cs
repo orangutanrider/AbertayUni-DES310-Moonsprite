@@ -37,11 +37,15 @@ public class CoroutineTest : MonoBehaviour
         Debug.Log("letter number " + letter + " is " + testingString[letter]);
 
         //FindObjectOfType<AudioManager>().Play("123");
-        FindObjectOfType<AudioManagerManager>().PlaySpecificSound("clack","123");
+        FindObjectOfType<AudioManagerManager>().PlaySpecificSound("clack", "123");
 
         yield return new WaitForSeconds(2);
 
         //FindObjectOfType<AudioManager>().Play("123");
-        FindObjectOfType<AudioManagerManager>().PlaySpecificSound("click","5");
+        FindObjectOfType<AudioManagerManager>().PlaySpecificSound("click", "5");
+
+        yield return new WaitForSeconds(2);
+
+        FindObjectOfType<AudioManagerManager>().playDialogue("AN SSA  NSAASS", 0.1f, 0.01f, -0.5f);
     }
 }

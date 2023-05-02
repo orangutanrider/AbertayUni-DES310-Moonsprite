@@ -93,8 +93,8 @@ public class AudioManagerManager : MonoBehaviour
             return;
         }
 
-        
-            s.StopPlaying();
+
+        s.StopPlaying();
 
     }
 
@@ -104,6 +104,21 @@ public class AudioManagerManager : MonoBehaviour
         {
             x.StopPlaying();
         }
-       
+
+    }
+
+    public void playDialogue(string text, float delay, float pitch, float volume)
+    {
+
+        AudioManager s = Array.Find(audioManagers, item => item.managerName == "Dialogue");
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        if (s.managerName == "Dialogue")
+            s.playDialogue(text, delay, pitch, volume);
+
     }
 }
