@@ -214,6 +214,15 @@ MonoBehaviour:
   mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
   sounds:
   - name: 123
+    clip: {fileID: 8300000, guid: 79bd439125382ee4d96d976fe0e6ef8a, type: 3}
+    volume: 0.149
+    volumeVariance: 0.21
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
+    source: {fileID: 0}
+  - name: A
     clip: {fileID: 8300000, guid: f714c09c5c5ef1b40a3d103c0d0b2d88, type: 3}
     volume: 0.149
     volumeVariance: 0.21
@@ -222,7 +231,26 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
     source: {fileID: 0}
-  managerName: clack
+  - name: N
+    clip: {fileID: 8300000, guid: 1061178ecd69b094d97a72b7c298a9cb, type: 3}
+    volume: 0.149
+    volumeVariance: 0.21
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
+    source: {fileID: 0}
+  - name: S
+    clip: {fileID: 8300000, guid: 00376cd8eaf324546a5f91becc136f6d, type: 3}
+    volume: 0.149
+    volumeVariance: 0.21
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
+    source: {fileID: 0}
+  managerName: Dialogue
+  dialogue: 0
 --- !u!4 &170185068
 Transform:
   m_ObjectHideFlags: 0
@@ -366,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
   sounds:
-  - name: 3
+  - name: G
     clip: {fileID: 8300000, guid: c8bc60e8b83617e4fb226036bb5b6e0b, type: 3}
     volume: 0.149
     volumeVariance: 0.21
@@ -375,7 +403,7 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
     source: {fileID: 0}
-  - name: 4
+  - name: T
     clip: {fileID: 8300000, guid: e7886600814e99c418663faa2599c200, type: 3}
     volume: 0.149
     volumeVariance: 0.21
@@ -393,7 +421,8 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
     source: {fileID: 0}
-  managerName: click
+  managerName: Audio
+  dialogue: 0
 --- !u!4 &1190288840
 Transform:
   m_ObjectHideFlags: 0
