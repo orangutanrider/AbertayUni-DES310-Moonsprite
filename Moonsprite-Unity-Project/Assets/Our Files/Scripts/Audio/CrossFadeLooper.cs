@@ -151,6 +151,8 @@ public class CrossFadeLooper : MonoBehaviour
 
     IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
+        Debug.Log("FadeStart " + Time.time);
+
         float currentTime = 0;
         float start = audioSource.volume;
         while (currentTime < duration)
@@ -160,7 +162,12 @@ public class CrossFadeLooper : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("Fade Finished");
+        audioSource.volume = targetVolume;
+        if (targetVolume <= 0)
+        {
+            audioSource.Stop();
+        }
+        Debug.Log("Fade Finished " + Time.time);
         yield break;
     }
 
@@ -179,7 +186,6 @@ public class CrossFadeLooper : MonoBehaviour
         float currentFadeOutStart = currentlyPlayingAudioSource.audioSource.clip.length - currentlyPlayingAudioSource.fadeOutDuration - currentlyPlayingAudioSource.audioSource.time;
         yield return new WaitForSeconds(currentFadeOutStart);
         StartCoroutine(StartFade(currentlyPlayingAudioSource.audioSource, currentlyPlayingAudioSource.fadeOutDuration, 0));
-        StartCoroutine(QueStopAudio(currentlyPlayingAudioSource.audioSource, currentlyPlayingAudioSource.fadeOutDuration));
         yield break;
     }
 
@@ -195,14 +201,6 @@ public class CrossFadeLooper : MonoBehaviour
 
         AudioUpdate();
 
-        yield break;
-    }
-
-    IEnumerator QueStopAudio(AudioSource audioSource, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Debug.Log("Audio Stopped");
-        audioSource.Stop();
         yield break;
     }
 
