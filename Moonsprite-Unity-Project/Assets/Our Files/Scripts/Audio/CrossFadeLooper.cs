@@ -27,6 +27,7 @@ public class CrossFadeLooper : MonoBehaviour
     public bool BUTTONGetAudioSources = false;
     public bool BUTTONMultiEdit = false;
     [Space]
+    public bool multiEditBakedFades = false;
     public float multiEditFadeInDuration = 1;
     public float multiEditFadeOutDuration = 1;
     [Space]
@@ -42,7 +43,9 @@ public class CrossFadeLooper : MonoBehaviour
     [Range(0f, 1.1f)] public float multiEditReverbZoneMix = 1;
 
     [Header("Parameters")]
-    [Range(0f, 1f)] [SerializeField] float volume = 1; // to change the system's volume during run-time use an audio mixer group
+    // to change the system's volume during run-time it's best to use an audio mixer group
+    // this system only updates the volume on start and when a new loop is played
+    [Range(0f, 1f)] [SerializeField] float volume = 1; 
     [SerializeField] bool mute = false;
     public List<AudioSourceWithLoopPoints> audioSourcesInLoop = new List<AudioSourceWithLoopPoints>();
 
@@ -79,6 +82,12 @@ public class CrossFadeLooper : MonoBehaviour
         foreach (AudioSourceWithLoopPoints audioSourceWithLoop in audioSourcesInLoop)
         {
             if (audioSourceWithLoop.audioSource == null) { continue; }
+
+            audioSourceWithLoop.bakedFades = multiEditBakedFades;
+            if(audioSourceWithLoop.bakedFades == true)
+            {
+                audioSourceWithLoop.audioSource.volume = volume;
+            }
 
             audioSourceWithLoop.fadeInDuration = multiEditFadeInDuration;
             audioSourceWithLoop.fadeOutDuration = multiEditFadeOutDuration;
@@ -125,7 +134,14 @@ public class CrossFadeLooper : MonoBehaviour
 
         AudioSourceWithLoopPoints current = audioSourcesInLoop[activeSourceIndex];
 
-        StartCoroutine(StartFade(current.audioSource, current.fadeInDuration, volume));
+        if (current.bakedFades == false)
+        {
+            StartCoroutine(StartFade(current.audioSource, current.fadeInDuration, volume));
+        }
+        else
+        {
+            current.audioSource.volume = volume;
+        }
         StartCoroutine(QuePlayAudio(current.audioSource, 0f));
 
         AudioUpdate();
@@ -151,8 +167,6 @@ public class CrossFadeLooper : MonoBehaviour
 
     IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
-        Debug.Log("FadeStart " + Time.time);
-
         float currentTime = 0;
         float start = audioSource.volume;
         while (currentTime < duration)
@@ -167,17 +181,22 @@ public class CrossFadeLooper : MonoBehaviour
         {
             audioSource.Stop();
         }
-        Debug.Log("Fade Finished " + Time.time);
         yield break;
     }
 
     IEnumerator QueAudioFadeIn(AudioSourceWithLoopPoints currentlyPlayingAudioSource, AudioSourceWithLoopPoints newAudioSource)
     {
         float currentFadeOutStart = currentlyPlayingAudioSource.audioSource.clip.length - currentlyPlayingAudioSource.fadeOutDuration - currentlyPlayingAudioSource.audioSource.time;
-        Debug.Log(currentFadeOutStart);
         yield return new WaitForSeconds(currentFadeOutStart);
         StartCoroutine(QuePlayAudio(newAudioSource.audioSource, 0f));
-        StartCoroutine(StartFade(newAudioSource.audioSource, newAudioSource.fadeInDuration, volume));
+        if (currentlyPlayingAudioSource.bakedFades == false)
+        {
+            StartCoroutine(StartFade(newAudioSource.audioSource, newAudioSource.fadeInDuration, volume));
+        }
+        else
+        {
+            newAudioSource.audioSource.volume = volume;
+        }
         yield break;
     }
 
@@ -185,7 +204,10 @@ public class CrossFadeLooper : MonoBehaviour
     {
         float currentFadeOutStart = currentlyPlayingAudioSource.audioSource.clip.length - currentlyPlayingAudioSource.fadeOutDuration - currentlyPlayingAudioSource.audioSource.time;
         yield return new WaitForSeconds(currentFadeOutStart);
-        StartCoroutine(StartFade(currentlyPlayingAudioSource.audioSource, currentlyPlayingAudioSource.fadeOutDuration, 0));
+        if (currentlyPlayingAudioSource.bakedFades == false)
+        {
+            StartCoroutine(StartFade(currentlyPlayingAudioSource.audioSource, currentlyPlayingAudioSource.fadeOutDuration, 0));
+        }
         yield break;
     }
 
@@ -207,7 +229,6 @@ public class CrossFadeLooper : MonoBehaviour
     IEnumerator QuePlayAudio(AudioSource audioSource, float delay)
     {
         yield return new WaitForSeconds(delay);
-        Debug.Log("Audio Played");
         audioSource.Play();
         yield break;
     }
