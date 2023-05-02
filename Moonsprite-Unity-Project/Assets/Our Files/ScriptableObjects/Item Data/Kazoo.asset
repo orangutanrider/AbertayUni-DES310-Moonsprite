@@ -16,4 +16,4 @@ MonoBehaviour:
     tags:
     - {fileID: 11400000, guid: 269c9487ad4d4cd49b4f7b32101d1ede, type: 2}
   icon: {fileID: 21300000, guid: 1c407d2d72d9215479d323d707f08409, type: 3}
-  itemActionPrefab: {fileID: 0}
+  itemActionPrefab: {fileID: 5797688703093998910, guid: bbcd91273d532a34caa6028ffeb47885, type: 3}

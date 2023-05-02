@@ -27,7 +27,7 @@ public class SquatterScript : MonoBehaviour, IInteractable
         debrisHasCollided = true;
 
         // devestation tracker logbook entry
-        DevestationTracker.DevestationEventEntry squatterInjuredEvent = DevestationTracker.instance.GetDevestationEventByName("Squatter Injured");
+        DevestationTracker.DevestationEventEntry squatterInjuredEvent = DevestationTracker.instance.GetDevestationEventByName(DevestationTracker.squatterInjuredLogName);
         DevestationTracker.instance.ConfirmDevestationEventHappened(squatterInjuredEvent);
 
         // screenshake
