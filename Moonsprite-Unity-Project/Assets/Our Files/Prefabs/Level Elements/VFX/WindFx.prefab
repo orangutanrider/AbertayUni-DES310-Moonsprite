@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1615734876736460121}
   - component: {fileID: 1748829323}
   - component: {fileID: 778760413}
+  - component: {fileID: 5449047088095813563}
+  - component: {fileID: 2286794400530436765}
+  - component: {fileID: 2005509713926108763}
   m_Layer: 0
   m_Name: WindFx
   m_TagString: Untagged
@@ -31,7 +34,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4878,3 +4881,212 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &5449047088095813563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a676d3a8bfa95b4989413eca95bd262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  rateOverTimeLerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0.5379874
+      outSlope: 0.5379874
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.2500026
+    - serializedVersion: 3
+      time: 0.5053711
+      value: 1.1961746
+      inSlope: -0.97015125
+      outSlope: -0.97015125
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.40768504
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.037656844
+      outSlope: -0.037656844
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.40216637
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 60
+  changeTimer: 0
+  active: 0
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the rateOverTimeLerpCurve.'
+--- !u!114 &2286794400530436765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce787cfc0f0db74994dba052aa20372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  velocityMultiplyLerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.5
+      inSlope: -1.2500001
+      outSlope: -1.2500001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7
+      value: 0.8
+      inSlope: -3.5000002
+      outSlope: -3.5000002
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 60
+  changeTimer: 0
+  active: 0
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the velocityMultiplyLerpCurve.'
+--- !u!114 &2005509713926108763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20b93dd2dd2db946864b20f7c46f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  changeTime: 60
+  overrideAllCurvesToLinear: 0
+  lerpParametersForBursts:
+  - burstIndexOnParticleSystem: 0
+    burstCountLerpEnabled: 1
+    burstCountLerp:
+      randomMinCountMin: 0
+      randomMinCountMax: 0
+      randomMaxCountMin: 20
+      randomMaxCountMax: 30
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0.7622009
+          outSlope: 0.7622009
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.15566564
+        - serializedVersion: 3
+          time: 0.35542268
+          value: 0.20536666
+          inSlope: 1.6134499
+          outSlope: 1.6134499
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.6310406
+          value: 0.76298714
+          inSlope: -0.022389054
+          outSlope: -0.022389054
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -2.067943
+          outSlope: -2.067943
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+    intervalLerpEnabled: 0
+    burstIntervalLerp:
+      min: 0
+      max: 0
+      curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+    probabilityLerpEnabled: 0
+    burstProbabilityLerp:
+      min: 0
+      max: 0
+      curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  changeTimer: 0
+  active: 0
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the curves.'
