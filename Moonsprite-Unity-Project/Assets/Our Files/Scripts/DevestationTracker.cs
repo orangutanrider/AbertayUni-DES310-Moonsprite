@@ -23,9 +23,13 @@ public class DevestationTracker : MonoBehaviour
     }
 
     public List<DevestationEventEntry> devestationEventEntries = new List<DevestationEventEntry>();
+    public int score = 0;
+
+    public const string allCitizensWokenLogName = "All Citizens Woken";
+    public const string squatterInjuredLogName = "Squatter Injured";
 
     [HideInInspector] public static DevestationTracker instance;
-    private void Awake()
+    void Awake()
     {
         instance = this;
     }
