@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 535157620386216780}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2847761939795140224
 SpriteRenderer:
@@ -105,7 +105,7 @@ MonoBehaviour:
   - spriteRenderer: {fileID: 7082597263431696064}
     offset: 1
   movable: 0
-  sortingPointOffset: 4.05
+  sortingPointOffset: 0
   displayGizmos: 0
   setSortingOrderButton: 0
 --- !u!61 &7630576247133315279
