@@ -51,6 +51,43 @@ public class ToolBarUIScript : MonoBehaviour
 
     #endregion
 
+    [Tooltip("Indexes must be given in order (e.g. -3, -2, -1, 0, 1, 2, 3, ect.)")]
+    List<int> LoopListOfIndex(List<int> indexList, int maxIndex)
+    {
+        List<int> valid = new List<int>();
+        List<int> invalidNegatives = new List<int>();
+        List<int> invalidPositives = new List<int>();
+        foreach (int index in indexList)
+        {
+            if (index < 0)
+            {
+                invalidNegatives.Add(index);
+            }
+            else if (index > maxIndex)
+            {
+                invalidPositives.Add(index);
+            }
+            else
+            {
+                valid.Add(index);
+            }
+        }
+
+        invalidNegatives.Reverse();
+
+        foreach (int negativeIndex in invalidNegatives)
+        {
+            valid.Insert(0, negativeIndex + maxIndex + 1);
+        }
+
+        foreach (int positiveIndex in invalidPositives)
+        {
+            valid.Add(positiveIndex - (maxIndex + 1));
+        }
+
+        return valid;
+    }
+
     #region Public Functions
     public bool ShiftSelectedSlot(int moveSelectionBy)
     {
@@ -140,43 +177,6 @@ public class ToolBarUIScript : MonoBehaviour
         }
     }
 
-    [Tooltip("Indexes must be given in order (e.g. -3, -2, -1, 0, 1, 2, 3, ect.)")]
-    List<int> LoopListOfIndex(List<int> indexList, int maxIndex) 
-    {
-        List<int> valid = new List<int>();
-        List<int> invalidNegatives = new List<int>();
-        List<int> invalidPositives = new List<int>();
-        foreach (int index in indexList)
-        {
-            if(index < 0)
-            {
-                invalidNegatives.Add(index);
-            }
-            else if(index > maxIndex)
-            {
-                invalidPositives.Add(index);
-            }
-            else
-            {
-                valid.Add(index);
-            }
-        }
-
-        invalidNegatives.Reverse();
-
-        foreach(int negativeIndex in invalidNegatives)
-        {
-            valid.Insert(0, negativeIndex + maxIndex + 1);
-        }
-
-        foreach(int positiveIndex in invalidPositives)
-        {
-            valid.Add(positiveIndex - (maxIndex + 1));
-        }
-
-        return valid;
-    }
-
     public void HideAllSlots(bool otherThanCenter = false)
     {
         for (int loop = 0; loop < toolbarSlots.Length; loop++)
@@ -224,13 +224,11 @@ public class ToolBarUIScript : MonoBehaviour
             Debug.Log("Failed to load selected item's actions");
             return false;
         }
-
         if(Inventory.instance.itemList[selectedItem].itemActions == null)
         {
             Debug.Log("Item has no list of actions to trigger");
             return false;
         }
-
         if (Inventory.instance.itemList[selectedItem].itemActions.Length == 0)
         {
             Debug.Log("action list has no actions in it");
