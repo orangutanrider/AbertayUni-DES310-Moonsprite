@@ -8,46 +8,109 @@ public class Inventory : MonoBehaviour
     // Attribution: Maceij Wolski + Dominic Rooney
 
     public GameObject itemActionContainerSceneObject;
-
     public List<InventoryItem> itemList = new List<InventoryItem>();
+    public List<ToolbarSlotScript> slotList = new List<ToolbarSlotScript>();
 
-    //private Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
-    public static event Action<List<InventoryItem>> OnInventoryChange;
+    [Header("for viewing purposes")]
+    public int itemSelectionCursor = 0;
 
     public static Inventory instance = null;
 
-    bool firstOnEnable = true;
-
     bool newItemFlipFlop = false;
 
-    private void Awake()
+    void Awake()
     {
         instance = this;
     }
 
-    private void Start()
+    // get data
+    InventoryItem FindSelectedItem()
     {
-        GenericCollectibleItem.OnItemCollected += Add;
-    }
-
-    private void OnEnable()
-    {
-        if (firstOnEnable == false)
+        InventoryItem selectedItem = null;
+        foreach (InventoryItem item in itemList)
         {
-            GenericCollectibleItem.OnItemCollected += Add;
-
-            ToolBarUIScript.Instance.UpdateSlots();
+            if(item.slotIndex != 2) { continue; }
+            selectedItem = item;
         }
-        firstOnEnable = true;
+        return selectedItem;
     }
 
-    private void OnDisable()
+    InventoryItem GetSelectedItem()
     {
-        GenericCollectibleItem.OnItemCollected -= Add;
+        // error handling
+        if(itemList == null) { return null; }
+        if(itemList.Count == 0) { return null; }
+        if(itemSelectionCursor < 0 || itemSelectionCursor > itemList.Count - 1)
+        {
+            ShiftSelectedSlot(0);
+        }
+        if (itemSelectionCursor < 0 || itemSelectionCursor > itemList.Count - 1)
+        {
+            return null;
+        }
 
-        ToolBarUIScript.Instance.UpdateSlots();
+        // return code
+        return itemList[itemSelectionCursor];
     }
 
+    public TagList TagListOfCurrentItem()
+    {
+        return GetSelectedItem().itemData.tagList;
+    }
+
+    // select item
+    public bool ShiftSelectedSlot(int moveSelectionBy)
+    {
+        if (itemList.Count <= 1)
+        {
+            UpdateUI(0);
+            return false;
+        }
+
+        int newSelectedIndex = itemSelectionCursor + moveSelectionBy;
+        if (newSelectedIndex > itemList.Count - 1)
+        {
+            newSelectedIndex = 0;
+        }
+        else if (newSelectedIndex < 0)
+        {
+            newSelectedIndex = itemList.Count - 1;
+        }
+        itemSelectionCursor = newSelectedIndex;
+
+        UpdateUI(itemSelectionCursor);
+        return true;
+    }
+
+    void UpdateUI(int selectedItemIndex)
+    {
+        // update slot indexes
+        for(int loop = 0; loop < itemList.Count; loop++)
+        {
+            itemList[loop].slotIndex = 2 + (loop - selectedItemIndex);
+        }
+
+        // make slots show 
+        List<int> displayingSlotsIndexes = new List<int>();
+        for(int loop = 0; loop < itemList.Count; loop++)
+        {
+            int slotIndex = itemList[loop].slotIndex;
+            if (slotIndex < 0 || slotIndex > 4) { continue; }
+
+            slotList[slotIndex].ShowItemInSlot(itemList[loop]);
+            displayingSlotsIndexes.Add(slotIndex);
+        }
+
+        // hide slots that don't have any item to show
+        for(int loop = 0; loop < slotList.Count; loop++)
+        {
+            if(displayingSlotsIndexes.Contains(loop) == true) { continue; }
+
+            slotList[loop].ShowEmptySlot();
+        }
+    }
+
+    // Add + Remove items
     public void Add(ItemData itemData)
     {
         InventoryItem newItem = new InventoryItem(itemData);
@@ -60,12 +123,7 @@ public class Inventory : MonoBehaviour
         else
         {
             itemList.Insert(0, newItem);
-            ToolBarUIScript.Instance.ShiftSelectedSlot(1);
         }
-
-        //itemDictionary.Add(itemData, newItem);
-
-        ToolBarUIScript.Instance.UpdateSlots(); 
     }
 
     public void Remove(InventoryItem inventoryItem)
@@ -80,17 +138,9 @@ public class Inventory : MonoBehaviour
             itemList.Remove(inventoryItem);
         }
 
-        /*
-        if (contains == true /*&& itemDictionary.TryGetValue(inventoryItem.itemData, out InventoryItem item))
-        {
-            itemList.Remove(item);
-            itemDictionary.Remove(inventoryItem.itemData);
-        }
-        */
-
-        ToolBarUIScript.Instance.UpdateSlots();
     }
 
+    // Item Actions
     public bool LoadItemsActions(InventoryItem inventoryItem)
     {
         if(inventoryItem.itemActionsFailLoaded == true)
@@ -135,4 +185,65 @@ public class Inventory : MonoBehaviour
 
         return true;
     }
+
+    public bool TriggerItemActionOfSelectedItem(PlayerInventoryController playerInventoryController)
+    {
+        // error handling
+        if (itemList.Count == 0)
+        {
+            Debug.Log("No items to trigger");
+            return false;
+        }
+
+        InventoryItem selectedItem = GetSelectedItem();
+        // error handling
+        if(selectedItem == null)
+        {
+            UpdateUI(0);
+            selectedItem = GetSelectedItem();
+            Debug.Log("No selected item, updating item selection");
+        }
+        if (selectedItem == null)
+        {
+            Debug.LogWarning("Failed to get selected item after updating item selection");
+            return false;
+        }
+
+        // try load
+        bool loadSuccess = false;
+        if (selectedItem.itemActionsLoaded == false)
+        {
+            Debug.Log("Loading selected item's actions");
+            loadSuccess = LoadItemsActions(selectedItem);
+        }
+        else
+        {
+            loadSuccess = true;
+        }
+
+        // error handling
+        if (loadSuccess == false)
+        {
+            Debug.Log("Failed to load selected item's actions");
+            return false;
+        }
+        if (selectedItem.itemActions == null)
+        {
+            Debug.Log("Item has no list of actions to trigger");
+            return false;
+        }
+        if (selectedItem.itemActions.Length == 0)
+        {
+            Debug.Log("action list has no actions in it");
+            return false;
+        }
+
+        // Trigger the item's actions
+        foreach (IItemAction itemAction in selectedItem.itemActions)
+        {
+            itemAction.TriggerItemAction(playerInventoryController);
+        }
+        return true;
+    }
+    
 }

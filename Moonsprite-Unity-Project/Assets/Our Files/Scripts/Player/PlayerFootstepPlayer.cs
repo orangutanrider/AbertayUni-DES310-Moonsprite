@@ -8,6 +8,8 @@ public class PlayerFootstepPlayer : MonoBehaviour
     // when it plays a footstep sound this script store's the player's current position at that moment
     // and then if they get too far away from that stored position, it goes to play another footstep sound (re-setting the process)
 
+    public bool printData = false;
+
     [Header("Required References")]
     public AudioSource audioSource;
 
@@ -20,8 +22,8 @@ public class PlayerFootstepPlayer : MonoBehaviour
     List<string> activeSurfaces = new List<string>();
     Vector3 previousFootstepPosition = Vector3.zero;
 
-    string errorTag = "ERROR";
-    string emptyTag = "NONE";
+    const string errorTag = "ERROR";
+    const string emptyTag = "NONE";
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +37,13 @@ public class PlayerFootstepPlayer : MonoBehaviour
         // Error handling
         if(footstepSurfaceSounds == null)
         {
+            if(printData == false) { return; }
             Debug.LogError("footstepSurfaceSounds list was null");
             return;
         }
         if(footstepSurfaceSounds.Length == 0)
         {
+            if (printData == false) { return; }
             Debug.LogWarning("footstepSurfaceSounds list had no entries");
             return;
         }
@@ -61,12 +65,14 @@ public class PlayerFootstepPlayer : MonoBehaviour
     {
         if(activeSurfaces == null)
         {
+            if (printData == false) { return errorTag; }
             Debug.LogError("The activeSurfaces list was null");
             return errorTag;
         }
 
         if (activeSurfaces.Count == 0)
         {
+            if (printData == false) { return emptyTag; }
             Debug.Log("No active surface");
             return emptyTag;
         }

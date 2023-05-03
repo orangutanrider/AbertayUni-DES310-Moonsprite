@@ -8,6 +8,8 @@ public class ToolbarSlotScript : MonoBehaviour
 {
     // Attribution: Maceij Wolski + Dominic Rooney
 
+    public ToolBarSlotSharedParameters toolBarSlotSharedParameters;
+    [Space]
     public Image slotBackgroundImageDisplay;
     public Image itemIconImageDisplay;
     [Space]
@@ -46,23 +48,18 @@ public class ToolbarSlotScript : MonoBehaviour
 
     void HideSlot()
     {
-        ClearItemInSlot();
-
-        Color invisibleColor = new Color(slotBackgroundImageDisplay.color.r, slotBackgroundImageDisplay.color.b, slotBackgroundImageDisplay.color.g, 0);
-        slotBackgroundImageDisplay.color = invisibleColor;
-        slotBackgroundImageDisplay.raycastTarget = false;
+        slotBackgroundImageDisplay.sprite = toolBarSlotSharedParameters.emptySlotImage;
     }
     void ShowSlot()
     {
-        Color visibleColor = new Color(slotBackgroundImageDisplay.color.r, slotBackgroundImageDisplay.color.b, slotBackgroundImageDisplay.color.g, backgroundDefaultAlpha);
-        slotBackgroundImageDisplay.color = visibleColor;
-        slotBackgroundImageDisplay.raycastTarget = true;
+        slotBackgroundImageDisplay.sprite = toolBarSlotSharedParameters.activeSlotImage;
     }
 
-    public void ClearItemInSlot()
+    public void ShowEmptySlot()
     {
         Color invisibleColor = new Color(itemIconImageDisplay.color.r, itemIconImageDisplay.color.b, itemIconImageDisplay.color.g, 0);
         itemIconImageDisplay.color = invisibleColor;
+        HideSlot();
         itemIconImageDisplay.raycastTarget = false;
     }
     public void ShowItemInSlot(InventoryItem item)
@@ -71,7 +68,7 @@ public class ToolbarSlotScript : MonoBehaviour
         {
             Active = true;
         }
-
+        ShowSlot();
         itemIconImageDisplay.sprite = item.itemData.icon;
         Color visibleColor = new Color(itemIconImageDisplay.color.r, itemIconImageDisplay.color.b, itemIconImageDisplay.color.g, imageDisplayDefaultAlpha);
         itemIconImageDisplay.color = visibleColor;

@@ -35,7 +35,7 @@ public class SquatterScript : MonoBehaviour, IInteractable
         float amplitude = debrisCollisionShakeAmplitude * debrisCollisionShakeDistanceFalloffCurve.Evaluate(playerDistance);
         float frequency = debrisCollisionShakeFrequency * debrisCollisionShakeDistanceFalloffCurve.Evaluate(playerDistance);
         float duration = debrisCollisionShakeDuration * debrisCollisionShakeDistanceFalloffCurve.Evaluate(playerDistance);
-        CinemachineScreenShaker.Instance.ShakeCamera(amplitude, frequency, duration);
+        CinemachineScreenShaker.instance.ShakeCamera(amplitude, frequency, duration);
 
         Instantiate(debrisPilesPrefab, transform.position, transform.rotation);
         squatterAnimator.SetBool("DebrisCollision", true);

@@ -11,7 +11,7 @@ using System.Threading;
 [System.Obsolete("Replaced by DialogueManager, DR: This was done for the sake of naming conventions")]
 public class DialogueText : MonoBehaviour
 {
-
+    /*
     [SerializeField] TMP_Text textComponent;
     [SerializeField] DialogueState startingState;
     [SerializeField] bool isPlayer;
@@ -122,4 +122,5 @@ public class DialogueText : MonoBehaviour
             Pos2.SetActive(true);
         }
     }
+    */
 }

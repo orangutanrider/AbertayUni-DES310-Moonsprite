@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // generic next dialogue input
-        if (Input.GetMouseButtonUp(0) == true || Input.GetKeyDown(PlayerInteractionController.interactionKey) == true)
+        if (Input.anyKeyDown == true)
         {
             NextDialogueObject();
         }

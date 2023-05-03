@@ -5,5 +5,7 @@ using UnityEngine;
 [System.Obsolete("Interaction interface overwrites this")]
 public interface ICollectible
 {
+    /*
     public void Collect();
+    */
 }

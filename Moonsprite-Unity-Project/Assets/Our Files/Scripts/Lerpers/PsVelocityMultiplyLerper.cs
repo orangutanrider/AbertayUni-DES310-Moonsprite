@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PsVelocityMultiplyLerper : MonoBehaviour, ITimelineEvent
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem ps;
 
     [Header("Settings")]
     public bool startLerpingOnStart = false;
@@ -46,7 +46,7 @@ public class PsVelocityMultiplyLerper : MonoBehaviour, ITimelineEvent
         changeTimer = changeTimer + Time.deltaTime;
 
         float newVelocityMultiply = velocityMultiplyLerpCurve.Evaluate(changeTimer / changeTime);
-        var velocity = particleSystem.velocityOverLifetime;
+        var velocity = ps.velocityOverLifetime;
         velocity.speedModifierMultiplier = newVelocityMultiply;
     }
 

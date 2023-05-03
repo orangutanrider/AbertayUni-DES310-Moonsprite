@@ -28,11 +28,11 @@ public class PlayerInventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            ToolBarUIScript.Instance.ShiftSelectedSlot(-1);
+            Inventory.instance.ShiftSelectedSlot(-1);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ToolBarUIScript.Instance.ShiftSelectedSlot(1);
+            Inventory.instance.ShiftSelectedSlot(1);
         }
     }
 
@@ -40,13 +40,14 @@ public class PlayerInventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(itemActionKey) && itemActionsCheckedIn <= 0)
         {
-            bool triggerSuccess = ToolBarUIScript.Instance.TriggerItemActionOfSelectedItem(this);
+            bool triggerSuccess = Inventory.instance.TriggerItemActionOfSelectedItem(this);
             if(triggerSuccess == true)
             {
                 itemActionsCheckedIn++;
             }
         }
     }
+
 
     public void ItemActionExit()
     {
