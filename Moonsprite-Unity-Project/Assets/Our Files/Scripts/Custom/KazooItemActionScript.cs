@@ -26,7 +26,7 @@ public class KazooItemActionScript : MonoBehaviour, IItemAction
         {
             if(soundHit.collider.tag != sleepingCitizenTag) { continue; }
 
-            soundHit.collider.GetComponent<SleepingCitizenScript>().WakeUp();
+            soundHit.collider.gameObject.GetComponent<SleepingCitizenScript>().WakeUp();
         }
     }
 }

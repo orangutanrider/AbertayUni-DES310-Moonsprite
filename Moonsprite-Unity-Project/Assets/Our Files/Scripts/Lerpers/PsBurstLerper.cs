@@ -235,7 +235,7 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
         {
             float curveTime = intervalLerp.curve.Evaluate(changeTimer / changeTime);
 
-            newBurstInterval = Mathf.LerpUnclamped(intervalLerp.min, intervalLerp.max, curveTime);
+            newBurstInterval = Mathf.Lerp(intervalLerp.min, intervalLerp.max, curveTime);
             newBurst.repeatInterval = newBurstInterval;
 
             return newBurst;
@@ -245,7 +245,7 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
             Debug.LogWarning("Curve was null, falling back on linear override");
         }
 
-        newBurstInterval = Mathf.LerpUnclamped(intervalLerp.min, intervalLerp.max, changeTimer / changeTime);
+        newBurstInterval = Mathf.Lerp(intervalLerp.min, intervalLerp.max, changeTimer / changeTime);
         newBurst.repeatInterval = newBurstInterval;
 
         return newBurst;
