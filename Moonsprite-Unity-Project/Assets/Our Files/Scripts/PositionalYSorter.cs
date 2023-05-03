@@ -24,7 +24,7 @@ public class PositionalYSorter : MonoBehaviour
     #endregion
 
     #region Variables
-    public const float sortingOrderMultiply = -1000;
+    public const float sortingOrderMultiply = -500;
     // sorting orders are int numbers so the yPosition has to be multiplied to get enough granularity
     // sorting orders are capped at 32767 and -32767, so the multiply can't be too large
 
