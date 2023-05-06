@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TogglePauseMenu : MonoBehaviour
 {
@@ -15,34 +16,45 @@ public class TogglePauseMenu : MonoBehaviour
         {
             if(Input.GetKeyDown(pauseKey) == true)
             {
-                paused = true;
-                PauseEnabled();
+                Pause();
             }
         }
         else
         {
             if (Input.GetKeyDown(pauseKey) == true)
             {
-                paused = false;
-                PauseDisabled();
+                UnPause();
             }
         }
     }
 
     void Start()
     {
-        PauseDisabled();
+        UnPause();
     }
 
-    void PauseEnabled()
+    void Pause()
     {
+        paused = true;
         pauseMenuObject.SetActive(true);
         Time.timeScale = 0;
     }
 
-    void PauseDisabled()
+    void UnPause()
     {
+        paused = false;
         pauseMenuObject.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void ResumeButton()
+    {
+        UnPause();
+    }
+
+    public void MainMenuButton()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneReferenceHolder.mainMenuScene, LoadSceneMode.Single);
     }
 }
