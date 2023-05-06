@@ -47,10 +47,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemActionContainerSceneObject: {fileID: 0}
-  itemList:
-  - itemData: {fileID: 11400000, guid: ebb8875256ea512499666eced690f7c3, type: 2}
+  storedItemList:
+  - empty: 1
+    itemData: {fileID: 0}
     itemActionsFailLoaded: 0
     itemActionsLoaded: 0
+    previousIndex: 0
+  - empty: 1
+    itemData: {fileID: 0}
+    itemActionsFailLoaded: 0
+    itemActionsLoaded: 0
+    previousIndex: 0
+  - empty: 0
+    itemData: {fileID: 11400000, guid: ebb8875256ea512499666eced690f7c3, type: 2}
+    itemActionsFailLoaded: 0
+    itemActionsLoaded: 0
+    previousIndex: 0
+  - empty: 1
+    itemData: {fileID: 0}
+    itemActionsFailLoaded: 0
+    itemActionsLoaded: 0
+    previousIndex: 0
+  - empty: 1
+    itemData: {fileID: 0}
+    itemActionsFailLoaded: 0
+    itemActionsLoaded: 0
+    previousIndex: 0
+  slotList: []
 --- !u!114 &7478695862986061833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +100,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3792affed79e04d80cabc0eb046057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotParentObject: {fileID: 0}
-  toolbarSlots: []
-  selectedItem: 0
