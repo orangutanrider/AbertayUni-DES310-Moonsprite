@@ -10,11 +10,4 @@ public class ItemData : ScriptableObject
     public Sprite icon;
     [Space]
     public GameObject itemActionPrefab;
-
-    public ItemData(ItemData itemData)
-    {
-        tagList = itemData.tagList;
-        icon = itemData.icon;
-        itemActionPrefab = itemData.itemActionPrefab;
-    }
 }
