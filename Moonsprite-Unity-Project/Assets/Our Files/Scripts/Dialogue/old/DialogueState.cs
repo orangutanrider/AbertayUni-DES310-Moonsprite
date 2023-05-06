@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DialogueState : ScriptableObject
 {
 
+    /*
     [TextArea(14, 10)][SerializeField] string storyText;
     [TextArea(14, 10)][SerializeField] string NameText;
     [SerializeField] DialogueState[] nextStates;
@@ -63,5 +64,5 @@ public class DialogueState : ScriptableObject
 
 
     }
-
+    */
 }

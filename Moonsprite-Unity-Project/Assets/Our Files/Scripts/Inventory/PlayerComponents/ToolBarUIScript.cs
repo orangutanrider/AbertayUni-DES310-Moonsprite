@@ -1,49 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolBarUIScript : MonoBehaviour
 {
+    /*
     // https://www.youtube.com/watch?v=DUDmsFmKw8E&list=PL4PNgDjMajPN51E5WzEi7cXzJ16BCHZXl&index=14 
 
     // Attribution: Maceij Wolski + Dominic Rooney
 
     [Header("Required References")]
-    public GameObject slotParentObject;
-    public ToolbarSlotScript[] toolbarSlots; [Tooltip("Slots should be inserted into list like this: [0 1 2 3 4], with 0 being the slot furthest to the left, and 4 being the slot furthest to the right")]
+    public List<ToolbarSlotScript> toolbarSlots = new List<ToolbarSlotScript>(); [Tooltip("Slots should be inserted into list like this: [0 1 2 3 4], with 0 being the slot furthest to the left, and 4 being the slot furthest to the right")]
 
-    [Header("DO NOT EDIT - For Viewing Purposes Only")]
+    [Header("For Viewing Purposes")]
     [SerializeField] int selectedItem = 0;
 
-    [HideInInspector] public static ToolBarUIScript Instance = null;
+    [HideInInspector] public static ToolBarUIScript instance = null;
 
-    bool firstOnEnable = true;
+    //bool firstOnEnable = true;
 
     #region Execution
-    private void OnEnable()
-    {
-        if (firstOnEnable == false)
-        {
-            UpdateSlots();
-        }
-        firstOnEnable = false;
-    }
-
-    private void OnDisable()
-    {
-        UpdateSlots();
-    }
-
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
-    private void Start()
+    void Start()
     {
-        if(toolbarSlots.Length != 5)
+        if(toolbarSlots.Count != 5)
         {
-            Debug.LogError("There must be 5 toolbarSlots");
+            Debug.LogWarning("There must be 5 toolbarSlots");
         }
 
         UpdateSlots();
@@ -91,7 +78,7 @@ public class ToolBarUIScript : MonoBehaviour
     #region Public Functions
     public bool ShiftSelectedSlot(int moveSelectionBy)
     {
-        if (toolbarSlots.Length <= 1)
+        if (toolbarSlots.Count <= 1)
         {
             UpdateSlots();
             return false;
@@ -179,7 +166,7 @@ public class ToolBarUIScript : MonoBehaviour
 
     public void HideAllSlots(bool otherThanCenter = false)
     {
-        for (int loop = 0; loop < toolbarSlots.Length; loop++)
+        for (int loop = 0; loop < toolbarSlots.Count; loop++)
         {
             if(otherThanCenter == true && loop == 2)
             {
@@ -243,4 +230,5 @@ public class ToolBarUIScript : MonoBehaviour
         return true;
     }
     #endregion
+    */
 }

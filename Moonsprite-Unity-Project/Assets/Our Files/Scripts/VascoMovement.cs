@@ -7,6 +7,7 @@ using Debug = UnityEngine.Debug;
 
 public class VascoMovement : MonoBehaviour
 {
+    /*
     public float speed = 10.0f;
 
     private Rigidbody2D rb;
@@ -92,5 +93,6 @@ public class VascoMovement : MonoBehaviour
             }
         }
     }
+    */
 }
 

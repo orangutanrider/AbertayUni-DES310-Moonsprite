@@ -4834,7 +4834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a676d3a8bfa95b4989413eca95bd262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 1748829322}
+  ps: {fileID: 1748829322}
   startLerpingOnStart: 1
   startLerpingOnTimelineEvent: 0
   rateOverTimeLerpCurve:
@@ -4891,7 +4891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45b8affda1328446ba8db92e4f46fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 1748829322}
+  ps: {fileID: 1748829322}
   startLerpingOnStart: 1
   startLerpingOnTimelineEvent: 0
   randomMinVectorMin: {x: 5, y: -40, z: 0}

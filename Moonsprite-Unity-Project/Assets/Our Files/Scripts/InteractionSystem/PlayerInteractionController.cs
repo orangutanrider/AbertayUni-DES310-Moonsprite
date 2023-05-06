@@ -18,15 +18,18 @@ public class PlayerInteractionController : MonoBehaviour
     public bool enableGizmos = false;
     public bool printData = false;
 
-    public const KeyCode interactionKey = KeyCode.G;
+    public readonly KeyCode[] interactionKeys = new KeyCode[3] { KeyCode.G, KeyCode.KeypadEnter, KeyCode.Return };
     int interactingWithXScripts = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(interactionKey) == true && active == true)
+        foreach(KeyCode keyCode in interactionKeys)
         {
-            TryInteract();
+            if (Input.GetKeyDown(keyCode) == true && active == true)
+            {
+                TryInteract();
+            }
         }
     }
 
@@ -46,7 +49,7 @@ public class PlayerInteractionController : MonoBehaviour
             return;
         }
 
-        TagList activeItemTags = ToolBarUIScript.Instance.GetTagListOfSelectedItem();
+        TagList activeItemTags = Inventory.instance.TagListOfCurrentItem();
 
         IInteractable[] interactionInterfaces = RayCastForInterface();
 

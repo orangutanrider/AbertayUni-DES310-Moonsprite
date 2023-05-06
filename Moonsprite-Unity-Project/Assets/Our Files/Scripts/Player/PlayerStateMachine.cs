@@ -31,6 +31,14 @@ public class PlayerStateMachine : MonoBehaviour
 
     void ComputeStateLogicToPlayerScripts()
     {
+        if(Time.timeScale == 0)
+        {
+            movement.active = false;
+            interactionController.active = false;
+            inventoryController.active = false;
+            return;
+        }
+
         switch (playerState)
         {
             case PlayerState.NoState:

@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
     [System.Obsolete("DR: It'd be nice to have mouse click movement, but it could clash with our UI and interaction system (as you might click for those). It could be made to work with them, but lets just leave it.")]
     private void GetPlayerMouseInput()
     {
+        /*
         currentPos = transform.position;
         float damp = 0.3f;
 
@@ -162,6 +163,7 @@ public class PlayerMovement : MonoBehaviour
         {
             yInput = 0;
         }
+        */
     }
 
     private void MovePlayer()

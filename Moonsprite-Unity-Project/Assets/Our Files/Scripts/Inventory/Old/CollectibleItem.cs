@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Obsolete("Replaced by GenericCollectibleItem")]
-public class CollectibleItem : MonoBehaviour, ICollectible
+public class CollectibleItem : MonoBehaviour //, ICollectible
 {
+    /*
     public ItemData sampleItemData;
 
     public static event HandleItemPickup OnItemCollected;
@@ -15,4 +16,5 @@ public class CollectibleItem : MonoBehaviour, ICollectible
         Destroy(gameObject);
         OnItemCollected?.Invoke(sampleItemData);
     }
+    */
 }

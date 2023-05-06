@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PsRateOverTimeLerper : MonoBehaviour, ITimelineEvent
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem ps;
 
     [Header("Settings")]
     public bool startLerpingOnStart = false;
@@ -46,7 +46,7 @@ public class PsRateOverTimeLerper : MonoBehaviour, ITimelineEvent
         changeTimer = changeTimer + Time.deltaTime;
 
         float newEmissionRate = rateOverTimeLerpCurve.Evaluate(changeTimer / changeTime);
-        var emission = particleSystem.emission;
+        var emission = ps.emission;
         emission.rateOverTime = newEmissionRate;
     }
 

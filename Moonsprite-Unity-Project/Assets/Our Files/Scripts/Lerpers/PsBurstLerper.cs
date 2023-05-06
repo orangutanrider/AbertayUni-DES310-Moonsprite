@@ -88,7 +88,7 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
     }
     #endregion
 
-    public ParticleSystem particleSystem;
+    public ParticleSystem ps;
 
     [Header("Settings")]
     public bool startLerpingOnStart = false;
@@ -134,7 +134,7 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
         for (int loop = 0; loop < lerpParametersForBursts.Count; loop++)
         {
             ParticleSystem.Burst newBurst = CreateBurstFromParametersAndLerp(lerpParametersForBursts[loop]);
-            particleSystem.emission.SetBurst(lerpParametersForBursts[loop].burstIndexOnParticleSystem, newBurst);
+            ps.emission.SetBurst(lerpParametersForBursts[loop].burstIndexOnParticleSystem, newBurst);
         }
     }
 
@@ -158,14 +158,14 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
 
         int burstIndex = burstParameters.burstIndexOnParticleSystem;
 
-        if (burstIndex < 0 || burstIndex > particleSystem.emission.burstCount - 1)
+        if (burstIndex < 0 || burstIndex > ps.emission.burstCount - 1)
         {
             Debug.LogError("burstIndex recieved is outside the bounds of the particle system's array of bursts");
             return ErrorBurst();
         }
         #endregion
 
-        ParticleSystem.Burst burstBase = particleSystem.emission.GetBurst(burstIndex);
+        ParticleSystem.Burst burstBase = ps.emission.GetBurst(burstIndex);
         ParticleSystem.Burst returnBurst = burstBase;
 
         if (burstParameters.burstCountLerpEnabled == true)
