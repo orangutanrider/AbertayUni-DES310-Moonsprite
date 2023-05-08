@@ -1145,7 +1145,8 @@ PrefabInstance:
       propertyPath: inventoryController
       value: 
       objectReference: {fileID: 7324767582654066352}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1680937840047801294, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
 --- !u!4 &1672413713112795449 stripped

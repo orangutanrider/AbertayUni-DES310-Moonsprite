@@ -10,6 +10,8 @@ public class PlayerInventoryController : MonoBehaviour
 
     int itemActionsCheckedIn = 0;
 
+    public AudioSource inventorySwapAudioSource;    // Audio source for the inventory
+
     void Update()
     {
         if(itemActionsCheckedIn > 0)
@@ -29,10 +31,12 @@ public class PlayerInventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ToolBarUIScript.Instance.ShiftSelectedSlot(-1);
+            inventorySwapAudioSource.Play(); 
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             ToolBarUIScript.Instance.ShiftSelectedSlot(1);
+            inventorySwapAudioSource.Play();
         }
     }
 
