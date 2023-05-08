@@ -9,10 +9,17 @@ public class PositionalYSorter : MonoBehaviour
     {
         public SpriteRenderer spriteRenderer;
         public int offset = 0;
+
+        public SpriteRendererWithOffset(SpriteRenderer _spriteRenderer, int _offset)
+        {
+            spriteRenderer = _spriteRenderer;
+            offset = _offset;
+        }
     }
 
     #region Parameters
     [Header("Select SpriteRenderer(s)")]
+    public bool getSpriteRenderersButton = false;
     public List<SpriteRendererWithOffset> spriteRenderers = new List<SpriteRendererWithOffset>();
 
     [Header("Parameters")]
@@ -50,6 +57,14 @@ public class PositionalYSorter : MonoBehaviour
         {
             setSortingOrderButton = false;
             SetAllSpriteRendererSortingOrdersTo(CalculateSortingOrder(transform.position.y));
+        }
+
+        if(getSpriteRenderersButton == true)
+        {
+            getSpriteRenderersButton = false;
+
+            SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            spriteRenderers.Add(new SpriteRendererWithOffset(spriteRenderer, 0));
         }
     }
 

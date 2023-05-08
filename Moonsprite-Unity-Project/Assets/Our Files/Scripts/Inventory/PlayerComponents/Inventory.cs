@@ -311,7 +311,6 @@ public class Inventory : MonoBehaviour
     void UpdateUIDisplays()
     {
         storedItemList = Squish(storedItemList);
-        Debug.Log(storedItemList.Count);
         for (int loop = 0; loop <= 4; loop++)
         {
             if (storedItemList[loop].empty == true)
