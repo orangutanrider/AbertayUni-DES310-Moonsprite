@@ -16,6 +16,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     public float cameraColliderDamping = 0.05f;
     [Space]
     [SerializeField] int interactionPriority = 0;
+    public AudioSource DoorOpenAudio;       // Audio source to be triggered when door(s) open
 
     int IInteractable.InteractionPriority 
     {
@@ -29,8 +30,10 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
     {
         player = playerInteractionController;
+        DoorOpenAudio.Play();       // play Audio when door opens
         StartCoroutine(PlayerScreenTransitioner.instance.DoorTransition());
         StartCoroutine(WaitForFadeThenTeleport(PlayerScreenTransitioner.instance.doorTransitionTime));
+        
     }
 
     IEnumerator WaitForFadeThenTeleport(float _doorTransitionTime)

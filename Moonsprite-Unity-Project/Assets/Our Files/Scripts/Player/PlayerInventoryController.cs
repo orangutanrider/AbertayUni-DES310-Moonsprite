@@ -10,7 +10,8 @@ public class PlayerInventoryController : MonoBehaviour
 
     int itemActionsCheckedIn = 0;
 
-    public AudioSource inventorySwapAudioSource;    // Audio source for the inventory
+    public AudioSource inventorySwapLeftAudioSource;    // Audio source for the inventory left on the hot bar
+    public AudioSource inventorySwapRightAudioSource;    // Audio source for the inventory Right on the hot bar
 
     void Update()
     {
@@ -31,12 +32,12 @@ public class PlayerInventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ToolBarUIScript.Instance.ShiftSelectedSlot(-1);
-            inventorySwapAudioSource.Play(); 
+            inventorySwapLeftAudioSource.Play(); 
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             ToolBarUIScript.Instance.ShiftSelectedSlot(1);
-            inventorySwapAudioSource.Play();
+            inventorySwapRightAudioSource.Play();
         }
     }
 
