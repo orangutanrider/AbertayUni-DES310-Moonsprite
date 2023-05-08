@@ -142,7 +142,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03d5aef4db61ea49819c8b139ffc4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleItemData: {fileID: 11400000, guid: 0cc8df0080c65434792c602cca292ad9, type: 2}
+  itemData: {fileID: 0}
   interactionPriotiry: 1
 --- !u!114 &5842511223947104044
 MonoBehaviour:
@@ -216,11 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSpriteRenderersButton: 0
   spriteRenderers:
   - spriteRenderer: {fileID: 8347040166524537832}
     offset: 0
   movable: 0
-  sortingPointOffset: 0.6
+  sortingPointOffset: -0.02
   displayGizmos: 0
   setSortingOrderButton: 0
 --- !u!114 &-3122201384052926736
