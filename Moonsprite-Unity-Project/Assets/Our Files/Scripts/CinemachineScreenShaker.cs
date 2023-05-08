@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class CinemachineScreenShaker : MonoBehaviour
 {
-    [HideInInspector] public static CinemachineScreenShaker Instance { get; private set; }
+    [HideInInspector] public static CinemachineScreenShaker instance;
 
     public AnimationCurve decayCurve;
 
@@ -18,7 +18,7 @@ public class CinemachineScreenShaker : MonoBehaviour
 
     void Start()
     {
-        Instance = this;
+        instance = this;
         cinemachinePerlin = GetComponent<CinemachineVirtualCamera>().AddCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         //cinemachinePerlin = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }

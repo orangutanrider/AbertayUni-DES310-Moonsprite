@@ -7,6 +7,7 @@ using UnityEngine;
 [System.Obsolete("Replaced by NPCPatrolScript, DR: This was done for the sake of naming conventions")]
 public class NPCPatrol : MonoBehaviour
 {
+    /*
     public Transform[] waypoints;
     public float speed = 2f;
     public float waypointRadius = 0.1f;
@@ -45,4 +46,5 @@ public class NPCPatrol : MonoBehaviour
         Vector2 direction = (waypoints[currentWaypoint].position - transform.position).normalized;
         transform.Translate(direction * speed * Time.deltaTime);
     }
+    */
 }

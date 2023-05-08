@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1615734876736460121}
   - component: {fileID: 1748829323}
   - component: {fileID: 1748829322}
+  - component: {fileID: 329479692748941550}
+  - component: {fileID: 2380563464678183219}
   m_Layer: 0
   m_Name: HeavyRain
   m_TagString: Untagged
@@ -31,7 +33,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -946,7 +948,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 300
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1569,8 +1571,8 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 30
-      minScalar: 30
+      scalar: 40
+      minScalar: 70
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1622,7 +1624,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -40
+      scalar: -60
       minScalar: -60
       maxCurve:
         serializedVersion: 2
@@ -4820,3 +4822,121 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &329479692748941550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a676d3a8bfa95b4989413eca95bd262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 1748829322}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  rateOverTimeLerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 50
+      inSlope: 1561.344
+      outSlope: 1561.344
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09226928
+    - serializedVersion: 3
+      time: 0.5
+      value: 400
+      inSlope: 161.6857
+      outSlope: 161.6857
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16201341
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2039.7562
+      outSlope: -2039.7562
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.045155764
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 60
+  changeTimer: 0
+  active: 1
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the rateOverTimeLerpCurve.'
+--- !u!114 &2380563464678183219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45b8affda1328446ba8db92e4f46fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 1748829322}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  randomMinVectorMin: {x: 5, y: -40, z: 0}
+  randomMinVectorMax: {x: 10, y: -60, z: 0}
+  randomMaxVectorMin: {x: 40, y: -60, z: 0}
+  randomMaxVectorMax: {x: 70, y: -60, z: 0}
+  vectorLerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 6.2668467
+      outSlope: 6.2668467
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05645161
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.4461954
+      outSlope: -1.4461954
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.24462366
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 60
+  changeTimer: 0
+  active: 1
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the vectorLerpCurve.'

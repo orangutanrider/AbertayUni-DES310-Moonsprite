@@ -6,6 +6,7 @@ using Debug = UnityEngine.Debug;
 
 public class NPC_BasicLogic : MonoBehaviour
 {
+    /*
     private SpriteRenderer spriteRenderer;
     public  DialogueState curDialogue;
     [SerializeField] DialogueState[] NPCDialogue;
@@ -43,5 +44,5 @@ public class NPC_BasicLogic : MonoBehaviour
       
     }
    
-
+    */
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Obsolete("ForTestingPurposes")]
 public class SamplePickupItem : Collectible
 {
+    /*
     public static event HandleItemPickup OnItemCollected;
 
     public delegate void HandleItemPickup(ItemData itemData);
@@ -22,4 +23,5 @@ public class SamplePickupItem : Collectible
         Destroy(gameObject);
         OnItemCollected?.Invoke(sampleItemData);
     }
+    */
 }

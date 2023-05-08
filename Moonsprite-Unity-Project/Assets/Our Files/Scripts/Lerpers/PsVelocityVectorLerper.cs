@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PsVelocityVectorLerper : MonoBehaviour, ITimelineEvent
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem ps;
 
     [Header("Settings")]
     public bool startLerpingOnStart = false;
@@ -55,15 +55,15 @@ public class PsVelocityVectorLerper : MonoBehaviour, ITimelineEvent
         Vector3 newMinVelocity = Vector3.LerpUnclamped(randomMinVectorMin, randomMinVectorMax, curveValue);
         Vector3 newMaxVelocity = Vector3.LerpUnclamped(randomMaxVectorMin, randomMaxVectorMax, curveValue);
 
-        var xVelocity = particleSystem.velocityOverLifetime.x;
-        var yVelocity = particleSystem.velocityOverLifetime.y;
+        var xVelocity = ps.velocityOverLifetime.x;
+        var yVelocity = ps.velocityOverLifetime.y;
 
         xVelocity.constantMin = newMinVelocity.x;
         xVelocity.constantMax = newMaxVelocity.x;
         yVelocity.constantMin = newMinVelocity.y;
         yVelocity.constantMax = newMaxVelocity.y;
 
-        var velocityOverLifetime = particleSystem.velocityOverLifetime;
+        var velocityOverLifetime = ps.velocityOverLifetime;
         velocityOverLifetime.x = xVelocity;
         velocityOverLifetime.y = yVelocity;
     }

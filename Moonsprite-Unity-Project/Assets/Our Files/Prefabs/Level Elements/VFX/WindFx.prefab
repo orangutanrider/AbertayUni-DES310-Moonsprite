@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 1615734876736460121}
   - component: {fileID: 1748829323}
   - component: {fileID: 778760413}
+  - component: {fileID: 6383350625924220696}
+  - component: {fileID: 258182454028742050}
+  - component: {fileID: 8285646722243334239}
+  - component: {fileID: 3372963380085196046}
+  - component: {fileID: 5410015329689055111}
   m_Layer: 0
   m_Name: WindFx
   m_TagString: Untagged
@@ -18,26 +23,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1615734876736460121
-RectTransform:
+--- !u!4 &1615734876736460121
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615734876736460120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 110}
+  m_LocalPosition: {x: -38.1, y: 15.9, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142.04, y: 554}
-  m_SizeDelta: {x: 2204.0898, y: 100.0473}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &1748829323
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -194,7 +194,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -299,12 +299,12 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.02745098}
+      minMaxState: 2
+      minColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0.05882353}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.11764706}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -363,7 +363,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -680,7 +680,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 100
+    maxNumParticles: 3000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -748,7 +748,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 10, y: 0, z: 0}
+    m_Scale: {x: 1, y: 69, z: 0}
     placementMode: 1
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -946,7 +946,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1049,14 +1049,14 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 1
+    m_BurstCount: 2
     m_Bursts:
     - serializedVersion: 2
       time: 0
       countCurve:
         serializedVersion: 2
         minMaxState: 3
-        scalar: 13
+        scalar: 3
         minScalar: 1
         maxCurve:
           serializedVersion: 2
@@ -1107,8 +1107,66 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 0
-      repeatInterval: 0.03
-      probability: 0.1
+      repeatInterval: 0.1
+      probability: 0.05
+    - serializedVersion: 2
+      time: 0
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 0
+        minScalar: 1
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 0
+      repeatInterval: 100
+      probability: 0.001
   SizeModule:
     enabled: 1
     curve:
@@ -1122,20 +1180,20 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 1
-          inSlope: -1
-          outSlope: -1
+          inSlope: -0.40540695
+          outSlope: -0.40540695
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: -1
-          outSlope: -1
+          value: 0.59459305
+          inSlope: -0.40540695
+          outSlope: -0.40540695
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.33333334
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1272,7 +1330,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -1382,7 +1440,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7853982
+      scalar: 0
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -1627,8 +1685,8 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0
-      minScalar: 0
+      scalar: 12
+      minScalar: 12
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1680,8 +1738,8 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -6
-      minScalar: -20
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2157,7 +2215,7 @@ ParticleSystem:
     speedModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2321,7 +2379,7 @@ ParticleSystem:
         m_RotationOrder: 4
     m_Range: {x: 0, y: 1}
   ForceModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -2821,7 +2879,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 0.66
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2978,7 +3036,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.001
+    frequency: 6
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -2987,7 +3045,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4070,8 +4128,8 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.03
+      scalar: 0.06
+      minScalar: 0.02
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4878,3 +4936,531 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &6383350625924220696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce787cfc0f0db74994dba052aa20372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  velocityMultiplyLerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0.040819127
+      outSlope: 0.040819127
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.17851563
+    - serializedVersion: 3
+      time: 0.15
+      value: 0.5
+      inSlope: 0.08074062
+      outSlope: 0.08074062
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.21701461
+    - serializedVersion: 3
+      time: 0.66
+      value: 2
+      inSlope: 7.1355124
+      outSlope: 7.1355124
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0672558
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: -4.411765
+      outSlope: -4.411765
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 120
+  changeTimer: 0
+  active: 0
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the velocityMultiplyLerpCurve.'
+--- !u!114 &258182454028742050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a676d3a8bfa95b4989413eca95bd262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  rateOverTimeLerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2
+      inSlope: 0.040819127
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.17851563
+    - serializedVersion: 3
+      time: 0.33
+      value: 2
+      inSlope: -0
+      outSlope: 2.2327642
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2648609
+    - serializedVersion: 3
+      time: 0.66
+      value: 36
+      inSlope: 127.90411
+      outSlope: 127.90411
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04083292
+      outWeight: 0.10203019
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -105.88236
+      outSlope: -105.88236
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 120
+  changeTimer: 0
+  active: 0
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the rateOverTimeLerpCurve.'
+--- !u!114 &8285646722243334239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20b93dd2dd2db946864b20f7c46f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  changeTime: 120
+  overrideAllCurvesToLinear: 0
+  lerpParametersForBursts:
+  - burstIndexOnParticleSystem: 0
+    burstCountLerpEnabled: 1
+    burstCountLerp:
+      randomMinCountMin: 1
+      randomMinCountMax: 3
+      randomMaxCountMin: 6
+      randomMaxCountMax: 9
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0.040819127
+          outSlope: 0
+          tangentMode: 65
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.17851563
+        - serializedVersion: 3
+          time: 0.15
+          value: 0
+          inSlope: -0
+          outSlope: 0.08074062
+          tangentMode: 5
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.21701461
+        - serializedVersion: 3
+          time: 0.66
+          value: 1
+          inSlope: 5.5597124
+          outSlope: 5.5597124
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.0672558
+          outWeight: 0.116617374
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -2.9411767
+          outSlope: -2.9411767
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+    intervalLerpEnabled: 0
+    burstIntervalLerp:
+      min: 0
+      max: 0
+      curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+    probabilityLerpEnabled: 1
+    burstProbabilityLerp:
+      min: 0.05
+      max: 0.1
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0.040819127
+          outSlope: 0
+          tangentMode: 65
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.17851563
+        - serializedVersion: 3
+          time: 0.15
+          value: 0
+          inSlope: -0
+          outSlope: 0.08074062
+          tangentMode: 5
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.21701461
+        - serializedVersion: 3
+          time: 0.66
+          value: 1
+          inSlope: 4.856569
+          outSlope: 4.856569
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.053989656
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -2.9411767
+          outSlope: -2.9411767
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - burstIndexOnParticleSystem: 1
+    burstCountLerpEnabled: 1
+    burstCountLerp:
+      randomMinCountMin: 0
+      randomMinCountMax: 0
+      randomMaxCountMin: 10
+      randomMaxCountMax: 12
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0.040819127
+          outSlope: 0
+          tangentMode: 65
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.17851563
+        - serializedVersion: 3
+          time: 0.15
+          value: 0
+          inSlope: -0
+          outSlope: 0.08074062
+          tangentMode: 5
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.21701461
+        - serializedVersion: 3
+          time: 0.66
+          value: 1
+          inSlope: 5.5597124
+          outSlope: 5.5597124
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.0672558
+          outWeight: 0.116617374
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -2.9411767
+          outSlope: -2.9411767
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+    intervalLerpEnabled: 1
+    burstIntervalLerp:
+      min: 0.1
+      max: 100
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0.040819127
+          outSlope: 0
+          tangentMode: 69
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.17851563
+        - serializedVersion: 3
+          time: 0.15
+          value: 1
+          inSlope: -0
+          outSlope: 0.08074062
+          tangentMode: 5
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.21701461
+        - serializedVersion: 3
+          time: 0.66
+          value: 0
+          inSlope: -0.017933223
+          outSlope: -0.017933223
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.097216114
+          outWeight: 0.3898861
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 3.7263107
+          outSlope: 3.7263107
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10370596
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+    probabilityLerpEnabled: 1
+    burstProbabilityLerp:
+      min: 0
+      max: 0.25
+      curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0.040819127
+          outSlope: 0
+          tangentMode: 65
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.17851563
+        - serializedVersion: 3
+          time: 0.15
+          value: 0
+          inSlope: -0
+          outSlope: 0.08074062
+          tangentMode: 5
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.21701461
+        - serializedVersion: 3
+          time: 0.66
+          value: 1
+          inSlope: 4.856569
+          outSlope: 4.856569
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.053989656
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -2.9411767
+          outSlope: -2.9411767
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  changeTimer: 0
+  active: 0
+  ReadMeText: 'If you want to trigger this via a timeline event you have to manually
+    add the game object (that this script is attached to) to the timeline event master
+    to register it.
+
+    Also, use 0 as the start and 1 as the end, for the time
+    values on the curves.'
+--- !u!114 &3372963380085196046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c0acce95be123488bd99ff53b74ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  noiseStrengthLerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.040819127
+      outSlope: 0
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.17851563
+    - serializedVersion: 3
+      time: 0.15
+      value: 1
+      inSlope: -0
+      outSlope: -0.0076070926
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.24958067
+    - serializedVersion: 3
+      time: 0.66
+      value: 0.2
+      inSlope: 0.0044950116
+      outSlope: 0.0044950116
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11591444
+      outWeight: 0.36793092
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 6.924252
+      outSlope: 6.924252
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.043380264
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 120
+  changeTimer: 0
+  active: 0
+--- !u!114 &5410015329689055111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615734876736460120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c4efbbbe6907a4490763355d23c28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 778760413}
+  startLerpingOnStart: 1
+  startLerpingOnTimelineEvent: 0
+  minLifetimeMin: 0.02
+  maxLifetimeMin: 0.06
+  minLifetimeMax: 0.01
+  maxLifetimeMax: 0.03
+  lifetimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.040819127
+      outSlope: 0
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.17851563
+    - serializedVersion: 3
+      time: 0.15
+      value: 0
+      inSlope: -0
+      outSlope: 0.08074062
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.21701461
+    - serializedVersion: 3
+      time: 0.66
+      value: 1
+      inSlope: 2.715018
+      outSlope: 2.715018
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.097216114
+      outWeight: 0.11218191
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.9411767
+      outSlope: -2.9411767
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  changeTime: 120
+  changeTimer: 0
+  active: 0

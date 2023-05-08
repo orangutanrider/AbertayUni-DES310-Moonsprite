@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6822538620268226533}
   m_Layer: 5
   m_Name: ToolBarSlot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45402ca5aca0b1438694078aac2770d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolBarSlotSharedParameters: {fileID: 11400000, guid: 6285767bc21b06f419471e67080b49c2, type: 2}
   slotBackgroundImageDisplay: {fileID: 6822538620268226533}
   itemIconImageDisplay: {fileID: 1321297852382345622}
   active: 0
@@ -150,7 +151,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -13.4564, y: -13.7788}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1321297852382345621
 CanvasRenderer:
