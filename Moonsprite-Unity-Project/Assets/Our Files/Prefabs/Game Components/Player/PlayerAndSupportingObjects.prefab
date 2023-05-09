@@ -1079,6 +1079,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1672413713335408976}
     m_Modifications:
+    - target: {fileID: 2268058903117459319, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
+      propertyPath: printData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268058903117459319, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
+      propertyPath: footstepRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4339019779615691351, guid: f92b1c7efa45c384cbcb9f4500360f10, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
