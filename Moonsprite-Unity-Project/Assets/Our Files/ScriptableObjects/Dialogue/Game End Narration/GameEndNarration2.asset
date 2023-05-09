@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: 40cf6769411b86d42b9ac5987d2f623a, type: 2}
   dialogueText: "\rThis is the end of the game, you can continue to explore, but
-    most of the content is now in the past. When you\u2019re ready, go back to the
-    home and sleep. "
+    most of the content is now in the past.\nInteracting with this object will allow
+    you to exit and tally up your score. Thanks for playing."
   nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
-  triggerDialogueEventsOnPlayer: 0
+  triggerDialogueEventsOnPlayer: 1
   customTags:
-    tags: []
+    tags:
+    - {fileID: 11400000, guid: bcc506080768da54f8c790b232e4bd7e, type: 2}

@@ -11,7 +11,26 @@ public class DebrisProjectileScript : MonoBehaviour
         if (collision.gameObject.tag == "Squatter")
         {
             CollisionWithSquatter(collision);
+            return;
         }
+
+        if (collision.gameObject.tag == "AbandonedHouseFloorCollider")
+        {
+            CollisionWithFloor(collision);
+            return;
+        }
+    }
+
+    void CollisionWithFloor(Collider2D collision)
+    {
+        AbandonedHouseFloorScript floorScript = collision.transform.GetComponent<AbandonedHouseFloorScript>();
+        if(floorScript != null)
+        {
+            floorScript.DebrisCollision();
+        }
+
+        Instantiate(dustCloudPrefab, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
     void CollisionWithSquatter(Collider2D collision)

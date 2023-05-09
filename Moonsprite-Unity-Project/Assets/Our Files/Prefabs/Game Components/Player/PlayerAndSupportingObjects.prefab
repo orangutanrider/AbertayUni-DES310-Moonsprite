@@ -1290,34 +1290,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 2480112761148255417}
     m_Modifications:
-    - target: {fileID: 1362529870768960750, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_Name
-      value: Player Dialogue Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 2292002641929099685, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -93.79889
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495559956468143570, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_margin.w
-      value: 40.14987
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495559956468143570, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_margin.x
-      value: 67.70442
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495559956468143570, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_margin.y
-      value: 43.34185
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495559956468143570, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_margin.z
-      value: 37.749176
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495559956468143570, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 32
-      objectReference: {fileID: 0}
     - target: {fileID: 5495559956676981693, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1410,14 +1382,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1672413713434161111}
-    - target: {fileID: 8791891603499026522, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_margin.y
-      value: 36.395927
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791891603499026522, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}
-      propertyPath: m_margin.z
-      value: 65.75052
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 816912c94b1444e4090927a208ea4cf4, type: 3}

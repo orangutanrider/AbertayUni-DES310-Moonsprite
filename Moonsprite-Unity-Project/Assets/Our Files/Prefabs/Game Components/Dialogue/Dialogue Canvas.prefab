@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2444755539897016547}
   m_Layer: 5
-  m_Name: Dialogue Box
+  m_Name: Player Dialogue Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,7 +265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -93.8, y: 14}
+  m_AnchoredPosition: {x: -93.79889, y: 14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9037238403845750046
@@ -703,8 +703,7 @@ MonoBehaviour:
     into the mountains. The alpine forests soak it in like a sponge, swaying fiercely
     against the rough winds.
 
-
-    It''s been a long day.'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f33a0762b76ad943b60671d9224ab2c, type: 2}
   m_sharedMaterial: {fileID: -5132207303849105643, guid: 3f33a0762b76ad943b60671d9224ab2c, type: 2}
@@ -1230,7 +1229,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 32
-  m_fontSizeBase: 18
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1265,7 +1264,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 38.057816, y: 22.5206, z: 21.34961, w: 24.495857}
+  m_margin: {x: 67.70442, y: 43.34185, z: 37.749176, w: 40.14987}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1381,7 +1380,7 @@ RectTransform:
   - {fileID: 2292002641929099685}
   - {fileID: 5495559956720639599}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1694,7 +1693,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 38.057816, y: 22.5206, z: 21.34961, w: 24.495857}
+  m_margin: {x: 38.057816, y: 36.395927, z: 65.75052, w: 24.495857}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2033,7 +2032,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Time is running out...
+  m_text: The storm has passed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f33a0762b76ad943b60671d9224ab2c, type: 2}
   m_sharedMaterial: {fileID: -5132207303849105643, guid: 3f33a0762b76ad943b60671d9224ab2c, type: 2}

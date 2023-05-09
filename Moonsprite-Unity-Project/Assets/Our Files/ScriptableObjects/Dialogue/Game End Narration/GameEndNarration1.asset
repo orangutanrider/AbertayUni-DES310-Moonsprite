@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: GameEndNarration1
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: 40cf6769411b86d42b9ac5987d2f623a, type: 2}
-  dialogueText: 'The storm rumbles, receeding into the distance it no longer engulfs
-    the town. You look upon it, a heavy ball of rain, rolling into the mountains.
-    The alpine forests soak it in like a sponge, swaying fiercely against the rough
-    winds.
+  dialogueText: 'The storm clouds rumble in the distance. A heavy ball of rain rolling
+    into the mountains. The alpine forests soak it in like a sponge, swaying fiercely
+    against the rough winds.
 
-
-    It''s been a long day.'
+'
   nextDialogueObjects:
   - {fileID: 11400000, guid: 967490dd443ba9c429ed94e142a5aa17, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0

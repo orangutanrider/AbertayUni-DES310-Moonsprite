@@ -84,7 +84,6 @@ MonoBehaviour:
   toolBarSlotSharedParameters: {fileID: 11400000, guid: 6285767bc21b06f419471e67080b49c2, type: 2}
   slotBackgroundImageDisplay: {fileID: 5588497291646576997}
   itemIconImageDisplay: {fileID: 105521721567049494}
-  active: 0
 --- !u!114 &5588497291646576997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +217,7 @@ RectTransform:
   m_GameObject: {fileID: 1298155802709203213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3272216909614654565}
@@ -350,7 +349,6 @@ MonoBehaviour:
   toolBarSlotSharedParameters: {fileID: 11400000, guid: 6285767bc21b06f419471e67080b49c2, type: 2}
   slotBackgroundImageDisplay: {fileID: 7030550225978887246}
   itemIconImageDisplay: {fileID: 3272216910624150077}
-  active: 0
 --- !u!114 &7030550225978887246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +539,6 @@ MonoBehaviour:
   toolBarSlotSharedParameters: {fileID: 11400000, guid: 6285767bc21b06f419471e67080b49c2, type: 2}
   slotBackgroundImageDisplay: {fileID: 1764909110833303252}
   itemIconImageDisplay: {fileID: 6090696985358438567}
-  active: 0
 --- !u!114 &1764909110833303252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,7 +805,6 @@ MonoBehaviour:
   toolBarSlotSharedParameters: {fileID: 11400000, guid: 6285767bc21b06f419471e67080b49c2, type: 2}
   slotBackgroundImageDisplay: {fileID: 1252595470734712266}
   itemIconImageDisplay: {fileID: 6744891608457741241}
-  active: 0
 --- !u!114 &1252595470734712266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,7 +919,6 @@ MonoBehaviour:
   toolBarSlotSharedParameters: {fileID: 11400000, guid: 6285767bc21b06f419471e67080b49c2, type: 2}
   slotBackgroundImageDisplay: {fileID: 4046860585304953493}
   itemIconImageDisplay: {fileID: 8417757247125671142}
-  active: 0
 --- !u!114 &4046860585304953493
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -128,7 +128,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 1
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4993,7 +4993,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 120
+  changeTime: 130
   changeTimer: 0
   active: 0
   ReadMeText: 'If you want to trigger this via a timeline event you have to manually
@@ -5059,7 +5059,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 120
+  changeTime: 130
   changeTimer: 0
   active: 0
   ReadMeText: 'If you want to trigger this via a timeline event you have to manually
@@ -5083,7 +5083,7 @@ MonoBehaviour:
   ps: {fileID: 778760413}
   startLerpingOnStart: 1
   startLerpingOnTimelineEvent: 0
-  changeTime: 120
+  changeTime: 130
   overrideAllCurvesToLinear: 0
   lerpParametersForBursts:
   - burstIndexOnParticleSystem: 0
@@ -5397,7 +5397,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 120
+  changeTime: 130
   changeTimer: 0
   active: 0
 --- !u!114 &5410015329689055111
@@ -5461,6 +5461,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 120
+  changeTime: 130
   changeTimer: 0
   active: 0
