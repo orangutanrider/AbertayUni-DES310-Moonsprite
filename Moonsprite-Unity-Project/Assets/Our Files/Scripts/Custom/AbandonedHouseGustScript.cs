@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbandonedHouseGustScript : MonoBehaviour
+public class AbandonedHouseGustScript : MonoBehaviour, ITimelineEvent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Required References")]
+    public ParticleSystem ps;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Parameters")]
+    public float emissionDuration;
+
+    void ITimelineEvent.TimelineEvent()
     {
-        
+        GetComponent<ParticleSystem>().Play();
     }
 }
