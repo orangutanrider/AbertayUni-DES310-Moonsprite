@@ -7,6 +7,9 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
 {
     public DoorParameters doorParameters;
 
+    [Header("Required References")]
+    public AudioSource DoorOpenAudio;       // Audio source to be triggered when door(s) open
+
     [Header("Settings")]
     public GameObject destinationObject;
     public Vector2 exitDirection;
@@ -16,7 +19,6 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     public float cameraColliderDamping = 0.05f;
     [Space]
     [SerializeField] int interactionPriority = 0;
-    public AudioSource DoorOpenAudio;       // Audio source to be triggered when door(s) open
 
     int IInteractable.InteractionPriority 
     {

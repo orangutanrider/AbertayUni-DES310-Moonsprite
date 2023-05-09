@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerInventoryController : MonoBehaviour
 {
     public bool active = true;
-    [Space]
+
+    [Header("Required References")]
+    public AudioSource inventorySwapLeftAudioSource;  
+    public AudioSource inventorySwapRightAudioSource;
+
+    [Header("Parameters")]
     public KeyCode itemActionKey;
 
     int itemActionsCheckedIn = 0;
-
-    public AudioSource inventorySwapLeftAudioSource;    // Audio source for the inventory left on the hot bar
-    public AudioSource inventorySwapRightAudioSource;    // Audio source for the inventory Right on the hot bar
 
     void Update()
     {
