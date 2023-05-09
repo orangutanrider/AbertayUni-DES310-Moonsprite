@@ -47,7 +47,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 19b8ee7fe00447c4ca53c7a00dd39db4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 812ef62d5cf2a784680d758acfa3a0c3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -183,7 +183,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FadeFromBlack
-  m_Speed: 1
+  m_Speed: 0.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -638868082963621246}
@@ -196,7 +196,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f15cc4bc1d2b4554a85fb3605097bef6, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8ff07c6228e269048b3b46db5eef0b20, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Our Files/Main Scenes/Menu/Main Menu.unity
+    guid: ecc143a783434b644966b83c62f010bd
+  - enabled: 1
     path: Assets/Our Files/Main Scenes/MainOutdoors.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Our Files/Main Scenes/Menu/Main Menu.unity
-    guid: ecc143a783434b644966b83c62f010bd
+    path: Assets/Our Files/Main Scenes/Menu/Credits.unity
+    guid: 24115470102980c41b3f488674f2d80c
   - enabled: 1
     path: Assets/Our Files/Main Scenes/Menu/Settings Menu.unity
     guid: 731dc5ba9bf796a478278fe5772a918c
   - enabled: 1
     path: Assets/Our Files/Main Scenes/Menu/Sound Settings.unity
     guid: 4cf8fcae335a4164ba7ea7adfcdbb7c8
-  - enabled: 1
-    path: Assets/Our Files/Main Scenes/Menu/Credits.unity
-    guid: 24115470102980c41b3f488674f2d80c
   - enabled: 1
     path: Assets/Our Files/Main Scenes/Menu/Gameplay Settings.unity
     guid: 2f6c753c4a50f9444a3abe9022fed522
