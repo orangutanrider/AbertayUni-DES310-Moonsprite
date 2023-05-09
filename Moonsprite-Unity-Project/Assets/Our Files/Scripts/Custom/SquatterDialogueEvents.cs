@@ -6,10 +6,13 @@ public class SquatterDialogueEvents : MonoBehaviour, IDialogueEvent
 {
     [Header("Required References")]
     public NPCPatrolScript patrolScript;
+    [Space]
+    public Transform floorSpawnLocation;
+    public GameObject floorPrefab;
 
     void IDialogueEvent.DialogueEvent(TagList tagList)
     {
-        Debug.Log("E");
         patrolScript.StartFollowingNewSetViaIndex(0, NPCPatrolScript.NPCPatrolState.FollowingWaypointSet);
+        Instantiate(floorPrefab, floorSpawnLocation.position, transform.rotation);
     }
 }
