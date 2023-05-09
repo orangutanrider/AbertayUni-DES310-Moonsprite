@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 4.5
 --- !u!1 &2642825950574493268
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,11 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e458397ebb7986b47af95cba7b19842d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  printData: 0
   audioSource: {fileID: 4284971156281563095}
   surfaceLayerMask:
     serializedVersion: 2
-    m_Bits: 2147483647
-  footstepRate: 0.5
+    m_Bits: 1024
+  footstepRate: 0.7
   fallbackFootstep:
     surfaceTag: Fallback
     footstepSounds:
@@ -109,7 +110,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c4dafb621d53900418aa98f2e12047f5, type: 3}
     - {fileID: 8300000, guid: 22ce8ec92ac784d42a04e7e50555b649, type: 3}
   footstepSurfaceSounds:
-  - surfaceTag: ConcreteAudo
+  - surfaceTag: ConcreteAudioSurface
     footstepSounds:
     - {fileID: 8300000, guid: 1ba4645a57044b24d87c8f69beba4216, type: 3}
     - {fileID: 8300000, guid: 64d87f133b6baf54a870cc4b60e16778, type: 3}
@@ -117,7 +118,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: b3110ca5fbe876948a1bc11f3002daa3, type: 3}
     - {fileID: 8300000, guid: c4dafb621d53900418aa98f2e12047f5, type: 3}
     - {fileID: 8300000, guid: 22ce8ec92ac784d42a04e7e50555b649, type: 3}
-  - surfaceTag: GrassAudo
+  - surfaceTag: GrassAudioSurface
     footstepSounds:
     - {fileID: 8300000, guid: d9f485524eb55814783544d217c5ecc3, type: 3}
     - {fileID: 8300000, guid: 9d765b76f52c8e04f991c2407a2a1f7e, type: 3}
@@ -125,12 +126,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f1cb4eb3a61c654409842584530737cc, type: 3}
     - {fileID: 8300000, guid: cc2abea56ebe46b45a777ee155b37172, type: 3}
     - {fileID: 8300000, guid: 8134360512e34c0489725ec77ced3801, type: 3}
-  - surfaceTag: WoodenAudo
+  - surfaceTag: WoodenAudioSurface
     footstepSounds:
     - {fileID: 8300000, guid: 1730f4c00ea5c164293b358ecf1c59f7, type: 3}
     - {fileID: 8300000, guid: 86730e733c422914eae2ddf15de93d42, type: 3}
     - {fileID: 8300000, guid: 51022c7c800ac54468226fd515cae143, type: 3}
     - {fileID: 8300000, guid: 14f2eb4d5d7e98d42b7b176080b95b9b, type: 3}
+  activeSurfaces: []
 --- !u!82 &4284971156281563095
 AudioSource:
   m_ObjectHideFlags: 0
@@ -142,11 +144,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6899523960f735c49b9f07bfa3d20c2d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3c44508bddf66f44db419998570c520b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -412,6 +414,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   managerName: PlayerAudoManager
+  dialogue: 0
 --- !u!1 &4339019780498585484
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSpriteRenderersButton: 0
   spriteRenderers:
   - spriteRenderer: {fileID: 4339019780498585486}
     offset: 0

@@ -19,7 +19,9 @@ public class PlayerFootstepPlayer : MonoBehaviour
     public FootstepSurface fallbackFootstep;
     public FootstepSurface[] footstepSurfaceSounds;
 
-    List<string> activeSurfaces = new List<string>();
+    [Header("For Viewing Purposes")]
+    [SerializeField] List<string> activeSurfaces = new List<string>();
+
     Vector3 previousFootstepPosition = Vector3.zero;
 
     const string errorTag = "ERROR";
@@ -110,6 +112,9 @@ public class PlayerFootstepPlayer : MonoBehaviour
         if (surfaceLayerMask == (surfaceLayerMask | (1 << surfaceTrigger.gameObject.layer))) 
         {
             activeSurfaces.Add(surfaceTrigger.tag);
+
+            if(printData == false) { return; }
+            Debug.Log("Added: " + surfaceTrigger.tag);
         }
     }
 
@@ -121,6 +126,9 @@ public class PlayerFootstepPlayer : MonoBehaviour
             if (activeSurfaces.Contains(surfaceTrigger.tag) == true)
             {
                 activeSurfaces.Remove(surfaceTrigger.tag);
+
+                if (printData == false) { return; }
+                Debug.Log("Removed: " + surfaceTrigger.tag);
             }
         }
     }

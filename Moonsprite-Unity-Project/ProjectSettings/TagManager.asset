@@ -8,9 +8,10 @@ TagManager:
   - Debris Projectile
   - PlayerInteractionHighlighter
   - Squatter
-  - ConcreteAudio
-  - WoodenAudio
-  - GrassAudio
+  - SleepingCitizen
+  - ConcreteAudioSurface
+  - GrassAudioSurface
+  - WoodenAudioSurface
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - WeatherEffects
   - 
   - 
-  - 
+  - AudioMaps
   - 
   - 
   - 
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: InFront
     uniqueID: 1657064013
+    locked: 0
+  - name: CameraSortingLayer
+    uniqueID: 2976510959
     locked: 0
   - name: HUD
     uniqueID: 1192398389
