@@ -20,6 +20,8 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     [Space]
     [SerializeField] int interactionPriority = 0;
 
+    public AudioSource DoorOpeningAudio;
+
     int IInteractable.InteractionPriority 
     {
         get { return interactionPriority; }
