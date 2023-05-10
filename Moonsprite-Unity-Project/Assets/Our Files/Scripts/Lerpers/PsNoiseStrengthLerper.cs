@@ -47,7 +47,7 @@ public class PsNoiseStrengthLerper : MonoBehaviour, ITimelineEvent
         noise.strength = newNoiseStrength;
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if (startLerpingOnTimelineEvent == false)
         {

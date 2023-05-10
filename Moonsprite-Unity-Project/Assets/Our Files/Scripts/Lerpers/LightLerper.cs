@@ -53,7 +53,7 @@ public class LightLerper : MonoBehaviour, ITimelineEvent
         light2D.intensity = newIntensity;
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if (startLerpingOnTimelineEvent == false)
         {

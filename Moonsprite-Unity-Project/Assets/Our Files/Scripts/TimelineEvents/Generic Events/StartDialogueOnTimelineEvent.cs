@@ -6,7 +6,7 @@ public class StartDialogueOnTimelineEvent : MonoBehaviour, ITimelineEvent
 {
     public DialogueObject dialogueObject;
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         DialogueManager.instance.StartNewDialogue(dialogueObject, gameObject);
     }

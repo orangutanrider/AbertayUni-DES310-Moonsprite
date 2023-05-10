@@ -7,7 +7,7 @@ public class PlayParticleSystemOnTimelineEvent : MonoBehaviour, ITimelineEvent
     [Header("Required References")]
     public ParticleSystem ps;
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         ps.Play();
     }

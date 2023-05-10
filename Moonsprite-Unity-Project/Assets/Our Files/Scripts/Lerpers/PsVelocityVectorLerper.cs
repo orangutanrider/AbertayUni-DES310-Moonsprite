@@ -68,7 +68,7 @@ public class PsVelocityVectorLerper : MonoBehaviour, ITimelineEvent
         velocityOverLifetime.y = yVelocity;
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if (startLerpingOnTimelineEvent == false)
         {

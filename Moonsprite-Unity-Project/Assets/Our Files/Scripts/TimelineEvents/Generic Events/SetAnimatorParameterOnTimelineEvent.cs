@@ -11,7 +11,7 @@ public class SetAnimatorParameterOnTimelineEvent : MonoBehaviour, ITimelineEvent
     public string boolParameterName = "bool";
     public bool boolParameterValue = false;
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if(setBoolParameter == true)
         {

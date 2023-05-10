@@ -50,7 +50,7 @@ public class PsVelocityMultiplyLerper : MonoBehaviour, ITimelineEvent
         velocity.speedModifierMultiplier = newVelocityMultiply;
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if (startLerpingOnTimelineEvent == false)
         {
