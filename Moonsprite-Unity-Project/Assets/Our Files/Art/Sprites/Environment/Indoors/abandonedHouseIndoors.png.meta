@@ -1,0 +1,425 @@
+fileFormatVersion: 2
+guid: ba8ed264373ce0048a74f566e6e8414d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_44
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 333
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef515d15b4f91ce4e9d4cba3cf7a05df
+      internalID: -286070121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_46
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 333
+        width: 127
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632d168b51749934cb4894e10d4431bf
+      internalID: 549589543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_68
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 205
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b07d69061491b48aeea4dad31d2d72
+      internalID: -1516555342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_70
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 205
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059af98b37cbfda4a958c9b448e9a1a2
+      internalID: -1256916611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_77
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 141
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3ffeb15eaca4f468bd880b1464dee5
+      internalID: -1038915456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_79
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 141
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d42a0825f9c8f41acca1ba1dbd18e4
+      internalID: -1180641248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_85
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 137
+        width: 64
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfb8a132f07a9a469813331b26f386e
+      internalID: -1773818344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abandonedHouseIndoors_87
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 77
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b211d94dae3754889a2e6ea2c07f45
+      internalID: -575726234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      abandonedHouseIndoors_87: -575726234
+      abandonedHouseIndoors_59: -39085908
+      abandonedHouseIndoors_43: 709982859
+      abandonedHouseIndoors_35: -571700454
+      abandonedHouseIndoors_46: 549589543
+      abandonedHouseIndoors_85: -1773818344
+      abandonedHouseIndoors_37: -1245676505
+      abandonedHouseIndoors_86: -802624892
+      abandonedHouseIndoors_60: 971943856
+      abandonedHouseIndoors_30: 1618034534
+      abandonedHouseIndoors_1: -1748087419
+      abandonedHouseIndoors_83: 99084348
+      abandonedHouseIndoors_94: 1329886486
+      abandonedHouseIndoors_90: -1126982094
+      abandonedHouseIndoors_28: -1929417617
+      abandonedHouseIndoors_76: 1428992678
+      abandonedHouseIndoors_58: -1000944326
+      abandonedHouseIndoors_48: -398136613
+      abandonedHouseIndoors_24: 201829166
+      abandonedHouseIndoors_21: -1269862248
+      abandonedHouseIndoors_12: 1728563840
+      abandonedHouseIndoors_72: -1873930464
+      abandonedHouseIndoors_44: -286070121
+      abandonedHouseIndoors_11: 1841772897
+      abandonedHouseIndoors_61: -1574141593
+      abandonedHouseIndoors_73: -1369274641
+      abandonedHouseIndoors_16: 1522957154
+      abandonedHouseIndoors_13: 1680454963
+      abandonedHouseIndoors_39: 189480378
+      abandonedHouseIndoors_49: 1941469922
+      abandonedHouseIndoors_74: -1326436238
+      abandonedHouseIndoors_77: -1038915456
+      abandonedHouseIndoors_5: 2006488409
+      abandonedHouseIndoors_93: -1767354322
+      abandonedHouseIndoors_15: -1521203429
+      abandonedHouseIndoors_8: 2108051547
+      abandonedHouseIndoors_22: -1252613886
+      abandonedHouseIndoors_53: -239121201
+      abandonedHouseIndoors_40: -586137947
+      abandonedHouseIndoors_14: -334650733
+      abandonedHouseIndoors_47: -382442630
+      abandonedHouseIndoors_96: -1264680242
+      abandonedHouseIndoors_36: -1547843341
+      abandonedHouseIndoors_18: 244615261
+      abandonedHouseIndoors_66: -236653170
+      abandonedHouseIndoors_70: -1256916611
+      abandonedHouseIndoors_33: -1095113175
+      abandonedHouseIndoors_50: -441727627
+      abandonedHouseIndoors_62: 1460544353
+      abandonedHouseIndoors_78: -532566472
+      abandonedHouseIndoors_3: 950797885
+      abandonedHouseIndoors_10: -1221680203
+      abandonedHouseIndoors_64: 234722464
+      abandonedHouseIndoors_57: -344632186
+      abandonedHouseIndoors_84: -823580580
+      abandonedHouseIndoors_29: 1977224541
+      abandonedHouseIndoors_65: 921596856
+      abandonedHouseIndoors_82: 1918150111
+      abandonedHouseIndoors_45: -1689501895
+      abandonedHouseIndoors_20: -862671947
+      abandonedHouseIndoors_32: -1143661561
+      abandonedHouseIndoors_68: -1516555342
+      abandonedHouseIndoors_0: -196446727
+      abandonedHouseIndoors_54: -672954770
+      abandonedHouseIndoors_17: 1518047268
+      abandonedHouseIndoors_56: 231681001
+      abandonedHouseIndoors_79: -1180641248
+      abandonedHouseIndoors_4: -1176758395
+      abandonedHouseIndoors_38: -1303310695
+      abandonedHouseIndoors_51: 1406142054
+      abandonedHouseIndoors_69: 776356089
+      abandonedHouseIndoors_88: -421116171
+      abandonedHouseIndoors_41: 1015953705
+      abandonedHouseIndoors_42: -152478766
+      abandonedHouseIndoors_31: 1131299440
+      abandonedHouseIndoors_80: 86761161
+      abandonedHouseIndoors_67: 396105005
+      abandonedHouseIndoors_91: -1934030467
+      abandonedHouseIndoors_81: -1764704711
+      abandonedHouseIndoors_2: 1418452998
+      abandonedHouseIndoors_95: -978990567
+      abandonedHouseIndoors_55: -328773074
+      abandonedHouseIndoors_23: -1241880951
+      abandonedHouseIndoors_26: 1859351330
+      abandonedHouseIndoors_27: 716271787
+      abandonedHouseIndoors_92: -1619221601
+      abandonedHouseIndoors_25: 468335390
+      abandonedHouseIndoors_34: -1322231989
+      abandonedHouseIndoors_9: 2014444713
+      abandonedHouseIndoors_63: -1633143205
+      abandonedHouseIndoors_7: -1071108497
+      abandonedHouseIndoors_19: -564537743
+      abandonedHouseIndoors_6: -1406904984
+      abandonedHouseIndoors_71: 829786974
+      abandonedHouseIndoors_89: 167844641
+      abandonedHouseIndoors_52: 382447437
+      abandonedHouseIndoors_75: -1577284902
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

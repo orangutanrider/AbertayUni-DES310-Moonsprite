@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: 4bd793145db83924594159a5b5f9a79b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: libraryIndoors_21
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 277
+        width: 46
+        height: 133
+      alignment: 9
+      pivot: {x: 0.50000036, y: 0.115612976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2bfb08cf83597e4aa9ffd93878a33f4
+      internalID: 1363090854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: libraryIndoors_25
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 273
+        width: 272
+        height: 274
+      alignment: 9
+      pivot: {x: 0.50654244, y: 0.10707059}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df9f9c8455ff8941a2f3b73f4125d4a
+      internalID: -374223697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: libraryIndoors_35
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 155
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d389415e5677045b4946e5ce33a7a5
+      internalID: 299054309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: libraryIndoors_47
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 85
+        width: 172
+        height: 98
+      alignment: 9
+      pivot: {x: 0.4948269, y: 0.19130294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a451e67f962a52c4e8865797d54b3c68
+      internalID: -562721808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: libraryIndoors_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 84
+        width: 83
+        height: 351
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17552394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b649c8b4b484947aad3f2b09f09b02
+      internalID: 97390412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: libraryIndoors_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 85
+        width: 109
+        height: 70
+      alignment: 9
+      pivot: {x: 0.49258524, y: 0.4634339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da53763aae4d964a82913099062cb90
+      internalID: 235368363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      libraryIndoors_10: 715243341
+      libraryIndoors_48: 529189492
+      libraryIndoors_47: -562721808
+      libraryIndoors_8: -111454801
+      libraryIndoors_9: -837942939
+      libraryIndoors_7: 969257559
+      libraryIndoors_37: 1377542513
+      libraryIndoors_18: 970074379
+      libraryIndoors_38: 88006105
+      libraryIndoors_20: 1287710526
+      libraryIndoors_1: 235368363
+      libraryIndoors_29: -338588209
+      libraryIndoors_41: -1496669068
+      libraryIndoors_16: -1182549614
+      libraryIndoors_14: 1279220317
+      libraryIndoors_12: -1910136797
+      libraryIndoors_4: -623413747
+      libraryIndoors_26: -617402683
+      libraryIndoors_36: 883119254
+      libraryIndoors_35: 299054309
+      libraryIndoors_42: 1152226979
+      libraryIndoors_28: 462692330
+      libraryIndoors_5: -1216021986
+      libraryIndoors_19: -1275509620
+      libraryIndoors_17: -967075064
+      libraryIndoors_21: 1363090854
+      libraryIndoors_22: -1351212224
+      libraryIndoors_23: -651512560
+      libraryIndoors_40: 1727194471
+      libraryIndoors_30: -1826287804
+      libraryIndoors_43: 759381014
+      libraryIndoors_2: 145473868
+      libraryIndoors_50: 1627061247
+      libraryIndoors_11: 2037994490
+      libraryIndoors_45: -1005352053
+      libraryIndoors_13: -2053227701
+      libraryIndoors_6: 2105235198
+      libraryIndoors_3: -2069464805
+      libraryIndoors_25: -374223697
+      libraryIndoors_39: 524986711
+      libraryIndoors_32: -1273169494
+      libraryIndoors_44: 196634712
+      libraryIndoors_27: -174546991
+      libraryIndoors_46: -111367571
+      libraryIndoors_33: 89776861
+      libraryIndoors_31: -855981732
+      libraryIndoors_49: 58358874
+      libraryIndoors_24: 560060949
+      libraryIndoors_34: -1565909671
+      libraryIndoors_15: -37095594
+      libraryIndoors_0: 97390412
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
