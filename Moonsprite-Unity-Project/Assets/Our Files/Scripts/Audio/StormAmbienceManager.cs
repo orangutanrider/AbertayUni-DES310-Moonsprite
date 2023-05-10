@@ -37,8 +37,8 @@ public class StormAmbienceManager : MonoBehaviour
         public float fadeInTime = 1;
         public float fadeOutTime = 1;
         [Space]
-        public bool active = false;
-        public bool stopped = false;
+        [HideInInspector] public bool active = false;
+        [HideInInspector] public bool stopped = false;
 
         public StormAmbienceChannel(AudioMixer _mixer, string _volumeParameter, bool _active, bool _stopped = false)
         {
@@ -65,6 +65,15 @@ public class StormAmbienceManager : MonoBehaviour
             Debug.LogWarning("This will break if there's more than one in a scene at a time");
         }
         instance = this;
+
+        foreach (StormAmbienceChannel stormChannel in outdoorsAmbientChannels)
+        {
+            stormChannel.mixer.SetFloat(stormChannel.volumeParameterName, 0);
+        }
+        foreach (StormAmbienceChannel stormChannel in indoorsAmbientChannels)
+        {
+            stormChannel.mixer.SetFloat(stormChannel.volumeParameterName, 0);
+        }
     }
 
     void Update()
