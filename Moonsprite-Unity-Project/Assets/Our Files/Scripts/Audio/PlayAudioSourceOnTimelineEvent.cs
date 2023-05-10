@@ -7,7 +7,7 @@ public class PlayAudioSourceOnTimelineEvent : MonoBehaviour, ITimelineEvent
     [Header("Required References")]
     public AudioSource WoodcreakAudio;
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         WoodcreakAudio.Play();
     }
