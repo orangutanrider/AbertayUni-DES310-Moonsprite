@@ -21,6 +21,8 @@ public class PlayerInteractionController : MonoBehaviour
     public readonly KeyCode[] interactionKeys = new KeyCode[3] { KeyCode.G, KeyCode.KeypadEnter, KeyCode.Return };
     int interactingWithXScripts = 0;
 
+    public AudioSource ErrorAudio;
+
     // Update is called once per frame
     void Update()
     {
@@ -55,6 +57,7 @@ public class PlayerInteractionController : MonoBehaviour
 
         if(interactionInterfaces == null)
         {
+            ErrorAudio.Play();
             return;
         }
 
