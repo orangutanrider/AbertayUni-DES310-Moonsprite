@@ -99,7 +99,7 @@ MonoBehaviour:
   surfaceLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  footstepRate: 0.7
+  footstepRate: 0.8
   fallbackFootstep:
     surfaceTag: Fallback
     footstepSounds:
@@ -353,6 +353,7 @@ MonoBehaviour:
     m_Bits: 64
   enableGizmos: 0
   printData: 0
+  ErrorAudio: {fileID: 0}
 --- !u!70 &3134911668382450938
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

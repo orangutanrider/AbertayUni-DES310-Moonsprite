@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 0}
   interactionPriotiry: 1
+  CollectAudio: {fileID: 0}
 --- !u!114 &5842511223947104044
 MonoBehaviour:
   m_ObjectHideFlags: 0

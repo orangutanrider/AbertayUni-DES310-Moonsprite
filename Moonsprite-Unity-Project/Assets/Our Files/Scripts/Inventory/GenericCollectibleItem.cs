@@ -8,7 +8,7 @@ public class GenericCollectibleItem : MonoBehaviour, IInteractable
     [Header("Parameters")]
     public ItemData itemData;
     public int interactionPriotiry = 1;
-
+    public AudioSource CollectAudio;
     int IInteractable.InteractionPriority 
     {
         get { return interactionPriotiry; } 
@@ -24,6 +24,7 @@ public class GenericCollectibleItem : MonoBehaviour, IInteractable
 
     void Collect()
     {
+        CollectAudio.Play();
         Inventory.instance.Add(itemData);
         Destroy(gameObject);
     }
