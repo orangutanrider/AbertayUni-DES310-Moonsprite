@@ -6,7 +6,7 @@ public class SpawnPrefabOnTimelineEvent : MonoBehaviour, ITimelineEvent
 {
     public GameObject prefab;
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         Instantiate(prefab, transform.position, transform.rotation);
     }

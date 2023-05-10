@@ -56,7 +56,7 @@ public class PsTrailLifetimeLerper : MonoBehaviour, ITimelineEvent
         trails.lifetime = trailsLifetime;
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if (startLerpingOnTimelineEvent == false)
         {

@@ -77,7 +77,7 @@ public class GameEnder : MonoBehaviour, IInteractable, ITimelineEvent
         playerInteractionController.ExitInteraction();
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         lerpTimer = 0;
     }

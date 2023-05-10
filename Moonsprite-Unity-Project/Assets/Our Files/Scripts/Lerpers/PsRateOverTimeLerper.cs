@@ -50,7 +50,7 @@ public class PsRateOverTimeLerper : MonoBehaviour, ITimelineEvent
         emission.rateOverTime = newEmissionRate;
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if (startLerpingOnTimelineEvent == false)
         {

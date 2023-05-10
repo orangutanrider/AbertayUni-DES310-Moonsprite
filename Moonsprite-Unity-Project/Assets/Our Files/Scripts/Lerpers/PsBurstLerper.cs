@@ -138,7 +138,7 @@ public class PsBurstLerper : MonoBehaviour, ITimelineEvent
         }
     }
 
-    void ITimelineEvent.TimelineEvent()
+    void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         if (startLerpingOnTimelineEvent == false)
         {
