@@ -11,6 +11,8 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
     public AudioSource DoorOpenAudio;       // Audio source to be triggered when door(s) open
 
     [Header("Settings")]
+    public bool toIndoors = false;
+    [Space]
     public GameObject destinationObject;
     public Vector2 exitDirection;
     [Space]
@@ -37,7 +39,16 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
         DoorOpenAudio.Play();       // play Audio when door opens
         StartCoroutine(PlayerScreenTransitioner.instance.DoorTransition());
         StartCoroutine(WaitForFadeThenTeleport(PlayerScreenTransitioner.instance.doorTransitionTime));
-        
+
+        if(StormAmbienceManager.Instance == null) { return; }
+        if(destinationHasCameraCollider == true || toIndoors == true)
+        {
+            StormAmbienceManager.Instance.TransitionToIndoorsTrigger();
+        }
+        else
+        {
+            StormAmbienceManager.Instance.TransitionToOutdoorsTrigger();
+        }
     }
 
     IEnumerator WaitForFadeThenTeleport(float _doorTransitionTime)
@@ -76,9 +87,7 @@ public class DoorTeleporter : MonoBehaviour, IInteractable
 
         Gizmos.DrawWireCube(transform.position, new Vector3(gizmoSize, gizmoSize));
 
-        if(destinationObject ?? null) // you have to use this '??' thing to check if something is null cause unity overrides '!=' and '==' for game objects
-        {
-        }
+        if (destinationObject ?? null) { } // you have to use this '??' thing to check if something is null cause unity overrides '!=' and '==' for game objects
         else
         {
             return;
