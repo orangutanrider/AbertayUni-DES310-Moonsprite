@@ -139,6 +139,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -146,12 +158,12 @@ TextureImporter:
       name: busStop_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 89
-        width: 229
+        x: 62
+        y: 97
+        width: 135
         height: 198
       alignment: 9
-      pivot: {x: 0.2971977, y: 0.17320529}
+      pivot: {x: 0.50231254, y: 0.17928468}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,6 +171,27 @@ TextureImporter:
       bones: []
       spriteID: 5756d8f0415d8c2489479160c814080a
       internalID: 1238655721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: busStop_1
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 90
+        width: 68
+        height: 198
+      alignment: 9
+      pivot: {x: 0.3496132, y: 0.025777413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdd8d50a55b99144b1ae4bcf9381100
+      internalID: 1719382155
       vertices: []
       indices: 
       edges: []
@@ -175,6 +208,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       busStop_0: 1238655721
+      busStop_1: 1719382155
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
