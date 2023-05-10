@@ -20,6 +20,8 @@ public class SquatterScript : MonoBehaviour, IInteractable
     [Space]
     public Transform ambulanceExitPosition;
 
+    public AudioSource DebrisCollisionAudio; // <- audio source for debris
+
     bool debrisHasCollided = false;
 
     public void DebrisCollision()
@@ -37,8 +39,10 @@ public class SquatterScript : MonoBehaviour, IInteractable
         float duration = debrisCollisionShakeDuration * debrisCollisionShakeDistanceFalloffCurve.Evaluate(playerDistance);
         CinemachineScreenShaker.instance.ShakeCamera(amplitude, frequency, duration);
 
+        DebrisCollisionAudio.Play();  // <-play sudio
+
         Instantiate(debrisPilesPrefab, transform.position, transform.rotation);
-        squatterAnimator.SetBool("DebrisCollision", true);
+        squatterAnimator.SetBool("DebrisCollision", true);        
         Destroy(squatterDialogueGiver);
     }
 
