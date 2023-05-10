@@ -47,7 +47,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.28073502}
+  m_Offset: {x: 0, y: 0.25}
   serializedVersion: 2
   m_Radius: 0.780735
 --- !u!114 &7669486100708305509
@@ -77,6 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolScript: {fileID: 2290336290540838900}
+  floorSpawnLocation: {fileID: 0}
+  floorPrefab: {fileID: 0}
 --- !u!1 &6529944916226813871
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +119,7 @@ Transform:
   - {fileID: 4434490451587874469}
   - {fileID: 3672616421968049836}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6458620108831592457
 SpriteRenderer:
@@ -203,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSpriteRenderersButton: 0
   spriteRenderers:
   - spriteRenderer: {fileID: 6458620108831592457}
     offset: 0
@@ -223,7 +226,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21689606}
+  m_Offset: {x: 0, y: 0.43}
   m_Size: {x: 0.9170189, y: 1.5205765}
   m_Direction: 0
 --- !u!114 &4644960833420610918
@@ -293,7 +296,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.91}
+  m_Offset: {x: 0, y: 0.05}
   serializedVersion: 2
   m_Radius: 0.23630056
 --- !u!114 &5823449275616130461
@@ -343,7 +346,7 @@ MonoBehaviour:
   allWaitTimeValue: 1
   BUTTONSetAllInSelectedIndexToRandomWaitTime: 0
   allRandomWaitTimeValue: 0
-  animationsEnabled: 0
+  animationsEnabled: 1
   patrolState: 0
   waypointSets: []
 --- !u!1 &8232923705634516967
@@ -371,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8232923705634516967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.001, y: -0.984, z: 0}
+  m_LocalPosition: {x: -0.001, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
