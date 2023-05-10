@@ -139,6 +139,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -279,7 +291,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      libraryIndoors_10: 715243341
+      libraryIndoors_0: 97390412
       libraryIndoors_48: 529189492
       libraryIndoors_47: -562721808
       libraryIndoors_8: -111454801
@@ -329,7 +341,7 @@ TextureImporter:
       libraryIndoors_24: 560060949
       libraryIndoors_34: -1565909671
       libraryIndoors_15: -37095594
-      libraryIndoors_0: 97390412
+      libraryIndoors_10: 715243341
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
