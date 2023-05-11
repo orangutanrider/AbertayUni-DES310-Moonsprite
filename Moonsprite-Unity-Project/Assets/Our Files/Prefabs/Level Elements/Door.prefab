@@ -65,7 +65,7 @@ Transform:
   - {fileID: 2778088831369972070}
   - {fileID: 4459095062492291150}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &405483707070652081
 MonoBehaviour:
@@ -80,13 +80,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorParameters: {fileID: 11400000, guid: f1c73eb50c89719489a62bc800b2baf7, type: 2}
+  DoorOpenAudio: {fileID: 6830384350784491182}
+  toIndoors: 0
   destinationObject: {fileID: 1290528972140584789}
   exitDirection: {x: 0, y: -1}
   destinationHasCameraCollider: 0
   cameraCollider: {fileID: 0}
   cameraColliderDamping: 0
   interactionPriority: 0
-  DoorOpenAudio: {fileID: 6830384350784491182}
+  DoorOpeningAudio: {fileID: 0}
 --- !u!61 &7288338234058959512
 BoxCollider2D:
   m_ObjectHideFlags: 0
