@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1675183562876426967}
   - component: {fileID: 4368441092234816136}
   - component: {fileID: 5834488578873142048}
+  - component: {fileID: 4974284336860268289}
   m_Layer: 0
   m_Name: tree2
   m_TagString: Untagged
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSpriteRenderersButton: 0
   spriteRenderers:
   - spriteRenderer: {fileID: 4368441092234816136}
     offset: 0
@@ -104,3 +106,19 @@ MonoBehaviour:
   sortingPointOffset: 0
   displayGizmos: 0
   setSortingOrderButton: 0
+--- !u!58 &4974284336860268289
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840716478922938596}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.057436496}
+  serializedVersion: 2
+  m_Radius: 0.31444994
