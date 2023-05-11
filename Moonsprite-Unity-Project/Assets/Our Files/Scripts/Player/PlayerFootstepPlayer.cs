@@ -14,8 +14,10 @@ public class PlayerFootstepPlayer : MonoBehaviour
     public AudioSource audioSource;
 
     [Header("Parameters")]
-    public LayerMask surfaceLayerMask;
+    public bool useAnimEventsForFootstepRate = false;
     public float footstepRate = 0;
+    [Space]
+    public LayerMask surfaceLayerMask;
     public FootstepSurface fallbackFootstep;
     public FootstepSurface[] footstepSurfaceSounds;
 
@@ -36,8 +38,10 @@ public class PlayerFootstepPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (useAnimEventsForFootstepRate == true) { return; }
+
         // Error handling
-        if(footstepSurfaceSounds == null)
+        if (footstepSurfaceSounds == null)
         {
             if(printData == false) { return; }
             Debug.LogError("footstepSurfaceSounds list was null");
@@ -58,6 +62,15 @@ public class PlayerFootstepPlayer : MonoBehaviour
         }
 
         previousFootstepPosition = transform.position;
+        string surfaceTag = GetActiveSurfaceTagIndexZero();
+        FootstepSurface footstepSurface = GetFootstepSurfaceBySurfaceTag(surfaceTag);
+        PlayFootstepSound(footstepSurface);
+    }
+
+    public void PlayFootstepSoundAnimTrigger()
+    {
+        if(useAnimEventsForFootstepRate == false) { return; }
+
         string surfaceTag = GetActiveSurfaceTagIndexZero();
         FootstepSurface footstepSurface = GetFootstepSurfaceBySurfaceTag(surfaceTag);
         PlayFootstepSound(footstepSurface);

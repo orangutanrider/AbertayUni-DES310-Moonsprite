@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791523982960163417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.35, y: -1.71, z: 0}
+  m_LocalPosition: {x: 6.35, y: -0.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -131,12 +131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSpriteRenderersButton: 0
   spriteRenderers:
   - spriteRenderer: {fileID: 7081493767972161331}
     offset: 0
   movable: 0
   sortingPointOffset: 1.98
-  displayGizmos: 1
+  displayGizmos: 0
   setSortingOrderButton: 0
 --- !u!1 &2336506343753288453
 GameObject:
@@ -164,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2336506343753288453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.33, y: -1.75, z: 0}
+  m_LocalPosition: {x: 8.33, y: -0.6300011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,12 +236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSpriteRenderersButton: 0
   spriteRenderers:
   - spriteRenderer: {fileID: 807884052848445572}
     offset: 0
   movable: 0
   sortingPointOffset: 0.42
-  displayGizmos: 1
+  displayGizmos: 0
   setSortingOrderButton: 0
 --- !u!1 &3500240124587485145
 GameObject:
@@ -268,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3500240124587485145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.67, y: -1.58, z: 0}
+  m_LocalPosition: {x: -7.67, y: -0.4600011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -339,10 +341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765cc468b6554e1448ada7cced9b2c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSpriteRenderersButton: 0
   spriteRenderers:
   - spriteRenderer: {fileID: 1101062351221524865}
     offset: 0
   movable: 0
   sortingPointOffset: 1.44
-  displayGizmos: 1
+  displayGizmos: 0
   setSortingOrderButton: 0
