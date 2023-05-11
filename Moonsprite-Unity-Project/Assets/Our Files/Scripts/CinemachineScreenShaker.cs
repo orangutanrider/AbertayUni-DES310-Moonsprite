@@ -5,44 +5,71 @@ using Cinemachine;
 
 public class CinemachineScreenShaker : MonoBehaviour
 {
-    [HideInInspector] public static CinemachineScreenShaker instance;
+    public static CinemachineScreenShaker Instance
+    {
+        get
+        {
+            return instance;
+        }
+        private set
+        {
+            instance = value;
+        }
+    }
+    static CinemachineScreenShaker instance;
 
-    public AnimationCurve decayCurve;
+    [Header("Required References")]
+    public CinemachineImpulseListener impulseListener;
+    public CinemachineImpulseSource baseImpulseSource;
 
-    CinemachineBasicMultiChannelPerlin cinemachinePerlin;
+    [Header("Parameters")]
+    public float globalShakeForce = 1;
 
-    float shakeTime;
-    float shakeTimer = 0;
-    float amplitudeGain;
-    float frequencyGain;
+    CinemachineImpulseDefinition impulseDefinition;
 
     void Start()
     {
         instance = this;
-        cinemachinePerlin = GetComponent<CinemachineVirtualCamera>().AddCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        //cinemachinePerlin = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
-    public void ShakeCamera(float amplitude, float frequency, float time)
+    public void ShakeCamera(CinemachineImpulseSource impulseSource)
     {
-        shakeTime = time;
-        shakeTimer = time;
-        amplitudeGain = amplitude;
-        frequencyGain = frequency;
-        cinemachinePerlin.m_FrequencyGain = frequencyGain;
+        impulseSource.GenerateImpulseWithForce(globalShakeForce);
     }
 
-    void Update()
+    public void ShakeCameraFromScriptableObject(ScreenshakeParameters shakeParameters, CinemachineImpulseSource impulseSource)
     {
-        shakeTimer = shakeTimer - Time.deltaTime;
-        if (shakeTimer > 0)
-        {
-            float amplitude = decayCurve.Evaluate(shakeTimer / shakeTime) * amplitudeGain;
-            cinemachinePerlin.m_AmplitudeGain = amplitude;
-        }
-        else
-        {
-            cinemachinePerlin.m_AmplitudeGain = 0;
-        }
+        SetupShakeSettings(shakeParameters, impulseSource);
+        impulseSource.GenerateImpulseWithForce(shakeParameters.impactForce);
+    }
+
+    public void ShakeCameraFromScriptableObject(ScreenshakeParameters shakeParameters)
+    {
+        SetupShakeSettings(shakeParameters, baseImpulseSource);
+        baseImpulseSource.GenerateImpulseWithForce(shakeParameters.impactForce);
+    }
+
+    public void ShakeCameraFromScriptableObjectWithDistanceFalloff(ScreenshakeParameters shakeParameters, Vector3 origin)
+    {
+        SetupShakeSettings(shakeParameters, baseImpulseSource);
+
+        float distance = Vector2.Distance(PlayerStateMachine.instance.transform.position, origin);
+        float distanceFallOffValue = shakeParameters.distanceFallOffCurve.Evaluate(distance);
+        baseImpulseSource.GenerateImpulseWithForce(shakeParameters.impactForce * distanceFallOffValue);
+    }
+
+    void SetupShakeSettings(ScreenshakeParameters shakeParameters, CinemachineImpulseSource impulseSource)
+    {
+        impulseDefinition = impulseSource.m_ImpulseDefinition;
+
+        // source settings
+        impulseDefinition.m_ImpulseDuration = shakeParameters.impactTime;
+        impulseSource.m_DefaultVelocity = shakeParameters.defaultVelocity;
+        impulseDefinition.m_CustomImpulseShape = shakeParameters.impulseCurve;
+
+        // listener settings
+        impulseListener.m_ReactionSettings.m_AmplitudeGain = shakeParameters.listenerAmplitude;
+        impulseListener.m_ReactionSettings.m_FrequencyGain = shakeParameters.listenerFrequency;
+        impulseListener.m_ReactionSettings.m_Duration = shakeParameters.listenerDuration;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class SquatterScript : MonoBehaviour, IInteractable
 {
@@ -9,18 +10,12 @@ public class SquatterScript : MonoBehaviour, IInteractable
     public InteractableDialogueGiver squatterDialogueGiver;
     public GameObject debrisPilesPrefab;
     public Transform playerSceneObject;
+    public AudioSource DebrisCollisionAudio; // <- audio source for debris
 
     [Header("Parameters")]
     [SerializeField] int interactionPriority = -1;
-    [Space]
-    public float debrisCollisionShakeAmplitude;
-    public float debrisCollisionShakeFrequency;
-    public float debrisCollisionShakeDuration;
-    public AnimationCurve debrisCollisionShakeDistanceFalloffCurve;
-    [Space]
+    public ScreenshakeParameters screenshakeParameters;
     public Transform ambulanceExitPosition;
-
-    public AudioSource DebrisCollisionAudio; // <- audio source for debris
 
     bool debrisHasCollided = false;
 
@@ -33,11 +28,7 @@ public class SquatterScript : MonoBehaviour, IInteractable
         DevestationTracker.instance.ConfirmDevestationEventHappened(squatterInjuredEvent);
 
         // screenshake
-        float playerDistance = Vector3.Distance(transform.position, playerSceneObject.position);
-        float amplitude = debrisCollisionShakeAmplitude * debrisCollisionShakeDistanceFalloffCurve.Evaluate(playerDistance);
-        float frequency = debrisCollisionShakeFrequency * debrisCollisionShakeDistanceFalloffCurve.Evaluate(playerDistance);
-        float duration = debrisCollisionShakeDuration * debrisCollisionShakeDistanceFalloffCurve.Evaluate(playerDistance);
-        CinemachineScreenShaker.instance.ShakeCamera(amplitude, frequency, duration);
+        CinemachineScreenShaker.Instance.ShakeCameraFromScriptableObjectWithDistanceFalloff(screenshakeParameters, transform.position);
 
         DebrisCollisionAudio.Play();  // <-play sudio
 
