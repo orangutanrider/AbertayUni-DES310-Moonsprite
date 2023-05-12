@@ -6482,7 +6482,7 @@ GameObject:
   - component: {fileID: 7685043202877753374}
   - component: {fileID: 7685043202877753373}
   - component: {fileID: 8800443741021762189}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pause Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

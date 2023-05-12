@@ -37,13 +37,14 @@ public class ScreenBlurManager : MonoBehaviour
     }
     private float blurAmount = 0;
 
-    const string matBlurParameter = "BlurAmount";
+    const string matBlurParameter = "_BlurAmount";
 
     // Start is called before the first frame update
     void Start()
     {
         runtimeBlurMaterial = new Material(screenBlurMaterial);
         spriteRenderer.material = runtimeBlurMaterial;
+        instance = this;
     }
 
     public IEnumerator LerpBlur(float duration, float targetValue)

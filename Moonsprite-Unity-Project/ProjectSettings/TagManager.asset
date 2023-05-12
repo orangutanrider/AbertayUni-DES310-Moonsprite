@@ -12,6 +12,7 @@ TagManager:
   - ConcreteAudioSurface
   - GrassAudioSurface
   - WoodenAudioSurface
+  - AbandonedHouseFloorCollider
   layers:
   - Default
   - TransparentFX
@@ -55,17 +56,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: InFront
-    uniqueID: 1657064013
-    locked: 0
   - name: CameraSortingLayer
     uniqueID: 2976510959
     locked: 0
   - name: HUD
     uniqueID: 1192398389
-    locked: 0
-  - name: HUD spriteRenderers
-    uniqueID: 3814968661
     locked: 0
   - name: Menus
     uniqueID: 2088822939

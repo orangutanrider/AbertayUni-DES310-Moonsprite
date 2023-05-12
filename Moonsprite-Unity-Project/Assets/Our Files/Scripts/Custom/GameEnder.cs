@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEnder : MonoBehaviour, IInteractable, ITimelineEvent
+public class GameEnder : MonoBehaviour, IInteractable, ITimelineEvent, IConfirmationStep
 {
     [Header("Required References")]
+    public GameObject gameEndScreenPrefab;
     public ParticleSystem[] particleSystems;
     public UnityEngine.Rendering.Universal.Light2D[] lights;
 
@@ -14,12 +15,15 @@ public class GameEnder : MonoBehaviour, IInteractable, ITimelineEvent
     public float particleTriggerTime = 1;
     [Space]
     public DialogueObject dialogueOnInteract;
+    public GameObject[] setInactiveOnGameEnd;
 
     List<float> lightListMaxIntensitiesParralelList = new List<float>();
 
     float lerpTimer = -1;
     bool particlesActivated = false;
     bool dialogueTriggered = false;
+
+    PlayerInteractionController cachedPlayerInteractionController = null;
 
     int IInteractable.InteractionPriority
     {
@@ -66,10 +70,17 @@ public class GameEnder : MonoBehaviour, IInteractable, ITimelineEvent
 
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList activeItemTagList)
     {
-        if(particlesActivated == false || dialogueTriggered == true) 
+        cachedPlayerInteractionController = playerInteractionController;
+        if (particlesActivated == false) 
         {
             playerInteractionController.ExitInteraction();
             return; 
+        }
+
+        if (dialogueTriggered == true)
+        {
+            ConfirmationUIManger.Instance.AskForConfirmation(this);
+            return;
         }
 
         dialogueTriggered = true;
@@ -80,5 +91,22 @@ public class GameEnder : MonoBehaviour, IInteractable, ITimelineEvent
     void ITimelineEvent.TimelineEvent(int eventIndex)
     {
         lerpTimer = 0;
+    }
+
+    void IConfirmationStep.Confirm()
+    {
+        // end the game
+        Time.timeScale = 1;
+        StartCoroutine(ScreenBlurManager.Instance.LerpBlur(2f, 0.0066f));
+        foreach(GameObject gameObjectInArray in setInactiveOnGameEnd)
+        {
+            gameObjectInArray.SetActive(false);
+        }
+        Instantiate(gameEndScreenPrefab, transform.position, transform.rotation);
+    }
+
+    void IConfirmationStep.Return()
+    {
+        cachedPlayerInteractionController.ExitInteraction();
     }
 }

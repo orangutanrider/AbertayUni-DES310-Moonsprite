@@ -8,6 +8,7 @@ public class PlayerStateMachine : MonoBehaviour
     public PlayerMovement movement;
     public PlayerInteractionController interactionController;
     public PlayerInventoryController inventoryController;
+    public Animator anim;
 
     [Header("PlayerState")]
     public PlayerState playerState = PlayerState.NoState;
@@ -36,6 +37,8 @@ public class PlayerStateMachine : MonoBehaviour
             movement.active = false;
             interactionController.active = false;
             inventoryController.active = false;
+            anim.SetFloat("xInput", 0f);
+            anim.SetFloat("yInput", 0f);
             return;
         }
 
@@ -50,6 +53,8 @@ public class PlayerStateMachine : MonoBehaviour
                 movement.active = false;
                 interactionController.active = false;
                 inventoryController.active = false;
+                anim.SetFloat("xInput", 0f);
+                anim.SetFloat("yInput", 0f);
                 break;
         }
     }
