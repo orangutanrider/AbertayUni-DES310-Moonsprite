@@ -303,6 +303,7 @@ MonoBehaviour:
   movement: {fileID: 4339019779615691369}
   interactionController: {fileID: 989528950106796098}
   inventoryController: {fileID: 0}
+  anim: {fileID: 4339019780498585487}
   playerState: 0
 --- !u!114 &4339019779615691369
 MonoBehaviour:
