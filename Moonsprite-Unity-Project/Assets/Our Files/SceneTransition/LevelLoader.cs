@@ -7,6 +7,9 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1;
+
+    public AudioSource ButtonAudio;
+
     void Start()
     {
 
@@ -25,6 +28,7 @@ public class LevelLoader : MonoBehaviour
 
     public void StartTransition()
     {
+        PlayButtonAudio();
         transition.SetTrigger("TransitionStart");
         Invoke("LoadNextLevel", 1f);
         Debug.Log("pressed");
@@ -38,5 +42,9 @@ public class LevelLoader : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
+    }
+    public void PlayButtonAudio()
+    {
+        ButtonAudio.Play();
     }
 }
