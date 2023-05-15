@@ -18,14 +18,16 @@ public class GenericCollectibleItem : MonoBehaviour, IInteractable
     //========
     void IInteractable.InteractionEvent(PlayerInteractionController playerInteractionController, TagList tagList)
     {
+        CollectAudio.Play();
         playerInteractionController.ExitInteraction();
         Collect();
     }
 
     void Collect()
     {
-        CollectAudio.Play();
         Inventory.instance.Add(itemData);
+        DontDestroyOnLoad(CollectAudio);
         Destroy(gameObject);
+        
     }
 }

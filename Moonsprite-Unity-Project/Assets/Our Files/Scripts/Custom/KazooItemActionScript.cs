@@ -9,6 +9,8 @@ public class KazooItemActionScript : MonoBehaviour, IItemAction
 
     const string sleepingCitizenTag = "SleepingCitizen";
 
+    public AudioSource KazooSFX;
+
     void OnDrawGizmos()
     {
         if(gizmosEnabled == false) { return; }
@@ -18,6 +20,7 @@ public class KazooItemActionScript : MonoBehaviour, IItemAction
     void IItemAction.TriggerItemAction(PlayerInventoryController playerInventoryController)
     {
         // play kazoo sound here
+        KazooSFX.Play();
 
         playerInventoryController.ItemActionExit();
         RaycastHit2D[] soundCast = Physics2D.CircleCastAll(transform.position, soundRange, Vector2.zero);
