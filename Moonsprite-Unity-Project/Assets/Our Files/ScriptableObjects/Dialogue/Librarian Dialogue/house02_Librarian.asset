@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: house02_Librarian
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: a12a741bf10b57749b93a7496bfa4ab0, type: 2}
-  dialogueText: 'I have seen a scruffy dressed man hanging around the abandoned house
-    recently. I hope nothing happens to him.
+  dialogueText: 'I have seen a person experiencing homelesness there. I hope nothing
+    bad happens to him. You must  hurry if you want to go there, the wind is getting
+    quite strong!
 
 '
   nextDialogueObjects: []

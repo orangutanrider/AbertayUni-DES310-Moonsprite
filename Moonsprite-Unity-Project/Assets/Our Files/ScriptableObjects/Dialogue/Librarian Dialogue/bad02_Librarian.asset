@@ -17,11 +17,8 @@ MonoBehaviour:
     with?
 
 
-    1 - Cat
-
-    2 - Abandoned House'
+    1 - Abandoned House'
   nextDialogueObjects:
-  - {fileID: 11400000, guid: b1669ca7a6cbb4e47b8e04f7892bfd97, type: 2}
   - {fileID: 11400000, guid: 2206757d4f5a0d94fa4948cdc997ff17, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0

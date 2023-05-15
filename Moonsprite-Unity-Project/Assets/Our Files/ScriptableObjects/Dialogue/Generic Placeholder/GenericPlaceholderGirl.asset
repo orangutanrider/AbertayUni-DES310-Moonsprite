@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: GenericPlaceholderGirl
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: 1dd1c7b6717d9d44eb29b274d0c169ec, type: 2}
-  dialogueText: Hi, friend. My dialogue has not been implemented yet, but I'd love
-    to talk to you later. Why don't you check out the abandoned house on the North-Eastern
-    edge of the town?
+  dialogueText: Hi, friend. Why don't you check out the abandoned house on the North-Eastern
+    edge of the town? You must hurry the wind is getting worse.
   nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0

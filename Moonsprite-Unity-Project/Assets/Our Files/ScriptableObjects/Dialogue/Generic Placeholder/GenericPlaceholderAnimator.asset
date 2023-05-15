@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: GenericPlaceholderAnimator
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: 180688c9988e4b2449c3eb47b94486da, type: 2}
-  dialogueText: Hi, friend. My dialogue has not been implemented yet, but I'd love
-    to talk to you later. Why don't you check out the abandoned house on the North-Eastern
-    edge of the town?
+  dialogueText: Hi, dude. Can you hear that wind? I think it's gettig quite strong.
   nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0

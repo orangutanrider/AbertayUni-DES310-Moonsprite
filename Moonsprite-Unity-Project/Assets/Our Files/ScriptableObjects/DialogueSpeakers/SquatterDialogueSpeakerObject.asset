@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SquatterDialogueSpeakerObject
   m_EditorClassIdentifier: 
   speakerType: 1
-  nameText: Squatter
+  nameText: Olly
   avatarSprite: {fileID: 21300000, guid: 7c2489bb58a4956409cfb38cb2772d09, type: 3}
