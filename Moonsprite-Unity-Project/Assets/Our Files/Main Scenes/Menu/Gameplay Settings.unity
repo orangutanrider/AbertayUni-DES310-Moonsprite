@@ -2615,7 +2615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Moon Sprite Games 2023
+  m_text: Moon Sprite Studios 2023
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f33a0762b76ad943b60671d9224ab2c, type: 2}
   m_sharedMaterial: {fileID: -5132207303849105643, guid: 3f33a0762b76ad943b60671d9224ab2c, type: 2}
