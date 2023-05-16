@@ -22,7 +22,7 @@ public class FinalScreenScript : MonoBehaviour
     [TextArea(10, 100)]
     public string nearPerfectEndingDescriptionText = "null";
 
-    [Header("Squatter Injured")]
+    [Header("Squatter Injured, citizens woken")]
     public string squatterInjuredTitleText = "null";
     [TextArea(10, 100)]
     public string squatterInjuredDescriptionText = "null";
@@ -44,7 +44,7 @@ public class FinalScreenScript : MonoBehaviour
     {
         DevestationTracker.DevestationEventEntry squatterInjuredEntry = DevestationTracker.instance.GetDevestationEventByName(DevestationTracker.squatterInjuredLogName);
         DevestationTracker.DevestationEventEntry allCitizensWokenEntry = DevestationTracker.instance.GetDevestationEventByName(DevestationTracker.allCitizensWokenLogName);
-        int score = DevestationTracker.instance.score;
+        int score = DevestationTracker.instance.score * 10;
 
         scoreText.text = score.ToString();
 
@@ -64,24 +64,28 @@ public class FinalScreenScript : MonoBehaviour
             return;
         }
 
-        // squatter injured ending
-        if(squatterInjuredEntry.wasPrevented == false)
-        {
-            titleText.text = squatterInjuredTitleText;
-            descriptionText.text = squatterInjuredDescriptionText;
-            return;
-        }
-
-        // citizens sleeping ending
-        if(allCitizensWokenEntry.wasPrevented == false)
-        {
-            titleText.text = squatterInjuredTitleText;
-            descriptionText.text = squatterInjuredDescriptionText;
-            return;
-        }
-
         // full destruction ending
-        titleText.text = fullDestructionTitleText;
-        descriptionText.text = fullDestructionDescriptionText;
+        if (squatterInjuredEntry.wasPrevented == false && allCitizensWokenEntry.wasPrevented == false)
+        {
+
+            titleText.text = fullDestructionTitleText;
+            descriptionText.text = fullDestructionDescriptionText;
+        }
+
+        // citizens sleeping, squatter injured ending
+        if (allCitizensWokenEntry.wasPrevented == false)
+        {
+            titleText.text = squatterInjuredTitleText;
+            descriptionText.text = squatterInjuredDescriptionText;
+            return;
+        }
+
+        // squatter injured ending
+        if (squatterInjuredEntry.wasPrevented == false)
+        {
+            titleText.text = squatterInjuredTitleText;
+            descriptionText.text = squatterInjuredDescriptionText;
+            return;
+        }
     }
 }
