@@ -191,7 +191,6 @@ public class StormAmbienceManager : MonoBehaviour
         {
             // fade out and stop channel
             channel.stopped = true;
-            channel.active = false;
 
             IEnumerator fadeOutVolumeLerp = FadeMixerGroup.FadeMixerGroup01Volume(mixer, channel.volumeParameterName, 0, channel.fadeOutTime);
             StartCoroutine(fadeOutVolumeLerp);
@@ -231,6 +230,7 @@ public class StormAmbienceManager : MonoBehaviour
 
     void FadeActiveChannel(StormAmbienceChannel stormChannel, float targetVolume, AmbienceState[] states)
     {
+        if(stormChannel.active == false) { return; }
         if (stormChannel.proxy01Volume == stormChannel.proxy01Target || targetVolume <= stormChannel.proxy01Volume) 
         {
             IEnumerator volumeTargetFade = FadeMixerGroup.FadeMixerGroup01Volume(mixer, stormChannel.volumeParameterName, targetVolume, stateTransitionFadeDuration);
