@@ -70,6 +70,7 @@ public class FinalScreenScript : MonoBehaviour
 
             titleText.text = fullDestructionTitleText;
             descriptionText.text = fullDestructionDescriptionText;
+            return;
         }
 
         // citizens sleeping, squatter injured ending
