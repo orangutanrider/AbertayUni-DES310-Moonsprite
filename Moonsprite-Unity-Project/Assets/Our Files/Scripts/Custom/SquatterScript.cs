@@ -64,6 +64,7 @@ public class SquatterScript : MonoBehaviour, IInteractable
         PlayerCameraManager.instance.FreeCameraFromConfiner();
         _playerInteractionController.ExitInteraction();
         playerSceneObject.position = ambulanceExitPosition.position;
+        StormAmbienceManager.Instance.TransitionToOutdoorsTrigger();
         Destroy(gameObject);
     }
 }

@@ -171,7 +171,7 @@ public class CrossFadeLooper : MonoBehaviour
         float start = audioSource.volume;
         while (currentTime < duration)
         {
-            currentTime += Time.deltaTime;
+            currentTime += Time.unscaledDeltaTime;
             audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
             yield return null;
         }
@@ -187,7 +187,7 @@ public class CrossFadeLooper : MonoBehaviour
     IEnumerator QueAudioFadeIn(AudioSourceWithLoopPoints currentlyPlayingAudioSource, AudioSourceWithLoopPoints newAudioSource)
     {
         float currentFadeOutStart = currentlyPlayingAudioSource.audioSource.clip.length - currentlyPlayingAudioSource.fadeOutDuration - currentlyPlayingAudioSource.audioSource.time;
-        yield return new WaitForSeconds(currentFadeOutStart);
+        yield return new WaitForSecondsRealtime(currentFadeOutStart);
         StartCoroutine(QuePlayAudio(newAudioSource.audioSource, 0f));
         if (currentlyPlayingAudioSource.bakedFades == false)
         {
@@ -203,7 +203,7 @@ public class CrossFadeLooper : MonoBehaviour
     IEnumerator QueAudioFadeOut(AudioSourceWithLoopPoints currentlyPlayingAudioSource)
     {
         float currentFadeOutStart = currentlyPlayingAudioSource.audioSource.clip.length - currentlyPlayingAudioSource.fadeOutDuration - currentlyPlayingAudioSource.audioSource.time;
-        yield return new WaitForSeconds(currentFadeOutStart);
+        yield return new WaitForSecondsRealtime(currentFadeOutStart);
         if (currentlyPlayingAudioSource.bakedFades == false)
         {
             StartCoroutine(StartFade(currentlyPlayingAudioSource.audioSource, currentlyPlayingAudioSource.fadeOutDuration, 0));
@@ -213,7 +213,7 @@ public class CrossFadeLooper : MonoBehaviour
 
     IEnumerator QueNextAudioUpdate(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
 
         activeSourceIndex++;
         if (activeSourceIndex >= audioSourcesInLoop.Count)
@@ -228,7 +228,7 @@ public class CrossFadeLooper : MonoBehaviour
 
     IEnumerator QuePlayAudio(AudioSource audioSource, float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         audioSource.Play();
         yield break;
     }
