@@ -22,7 +22,6 @@ MonoBehaviour:
     2 - Not Good'
   nextDialogueObjects:
   - {fileID: 11400000, guid: 6990ff86bd3a9894f80645fe00a23e57, type: 2}
-  - {fileID: 11400000, guid: a966bfff291cca244911c00f40950815, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
   m_Name: cat02_Librarian
   m_EditorClassIdentifier: 
-  dialogueSpeaker: {fileID: 11400000, guid: a12a741bf10b57749b93a7496bfa4ab0, type: 2}
-  dialogueText: Have you seen Halle's cat?
-  nextDialogueObjects: []
+  dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
+  dialogueText: 'Will do.Thank you very much. '
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: a966bfff291cca244911c00f40950815, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:

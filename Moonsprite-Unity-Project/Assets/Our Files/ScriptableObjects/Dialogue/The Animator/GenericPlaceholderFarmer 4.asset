@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
+  m_Name: GenericPlaceholderFarmer 4
+  m_EditorClassIdentifier: 
+  dialogueSpeaker: {fileID: 11400000, guid: 180688c9988e4b2449c3eb47b94486da, type: 2}
+  dialogueText: His crops are at risk. If you're planning on staying in town, it
+    might be a good idea to stock up on food while you can
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: f91211061e7bf37458358a35657c13d2, type: 2}
+  triggerDialogueEventsOnDialogueGiver: 0
+  triggerDialogueEventsOnPlayer: 0
+  customTags:
+    tags: []

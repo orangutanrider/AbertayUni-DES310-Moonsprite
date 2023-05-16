@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // generic next dialogue input
-        if (Input.anyKeyDown == true)
+        if (Input.GetKeyDown(KeyCode.G))
         {
             NextDialogueObject();
         }
