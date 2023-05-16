@@ -81,7 +81,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1657064013
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4870,7 +4870,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 60
+  changeTime: 190
   changeTimer: 0
   active: 1
   ReadMeText: 'If you want to trigger this via a timeline event you have to manually
@@ -4931,7 +4931,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 60
+  changeTime: 190
   changeTimer: 0
   active: 1
   ReadMeText: 'If you want to trigger this via a timeline event you have to manually

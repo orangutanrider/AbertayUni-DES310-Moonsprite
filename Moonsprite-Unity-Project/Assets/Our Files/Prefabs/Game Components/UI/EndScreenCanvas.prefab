@@ -525,17 +525,73 @@ MonoBehaviour:
   titleText: {fileID: 5689156161966073289}
   descriptionText: {fileID: 4865465039758473336}
   scoreText: {fileID: 1114718854221423291}
-  perfectEndingScoreThreshold: 0
-  perfectEndingTitleText: null
-  perfectEndingDescriptionText: null
-  nearPerfectEndingTitleText: null
-  nearPerfectEndingDescriptionText: null
-  squatterInjuredTitleText: null
-  squatterInjuredDescriptionText: null
-  citizensSleepingTitleText: null
-  citizensSleepingDescriptionText: null
+  perfectEndingScoreThreshold: 550
+  perfectEndingTitleText: Local hero saves Brickmond from monster storm
+  perfectEndingDescriptionText: "Our news correspondent for Dundee reports that a
+    massive and unexpected storm has hit the river-side town of Brickmond. Minor
+    property damage occurred, and a building even collapsed, but luckily no people
+    were harmed.\n\nThanks to the valiant efforts of a single local that has quickly
+    become a town hero, the public were notified of the unexpected storm and they
+    even saved a man from the collapsed building. \n\nThe town are also furious that
+    they hadn't received any official notice of the storm, had the local not stepped
+    up to warn the town, it could've been a lot worse. And with such short notice
+    of the event, many were stressed out, having to frantically secure their homes.
+    The weather agency has received complaints, but we're yet to hear from them so
+    far."
+  nearPerfectEndingTitleText: Local resident saves Brickmond from an unexpected storm
+  nearPerfectEndingDescriptionText: 'Our news correspondent for Dundee reports that
+    a massive and unexpected storm has hit the river-side town of Brickmond. Minor
+    property damage occurred, and a building even collapsed, but luckily no people
+    were harmed.
+
+
+    Thanks to the valiant efforts of a single local, the public
+    were notified of the unexpected storm. This local even reportedly saved a man
+    from the collapsed building, some are calling them a hero. A lot of the town
+    are also furious that they hadn''t received any official notice of the storm,
+    had the local not stepped up to warn the town, it could''ve been a lot worse.
+    And with such short notice of the event, many were stressed out, having to frantically
+    secure their homes. The weather agency has received complaints, but we''re yet
+    to hear from them so far.'
+  squatterInjuredTitleText: Abandoned building collapses under highwinds in Brickmond
+  squatterInjuredDescriptionText: 'Unexpected high winds hit the town of Brickmond
+    in the night yesterday, causing the collapse of an abandoned building, injuring
+    one resident. Reportedly the locals of the town were only notified of the storm
+    by an indivual playing a kazoo outside in the highwinds and rain.
+
+
+    We''re
+    yet to find this individual and confirm the validity of this story, but no-matter
+    how far-feteched it may seem each town member tells it the same. We''re suspicious
+    that it may be be an elaborate prank to supply the town with a bit of publicity,
+    but we cannot confirm this. For some residents the kazoo blower is even a hero,
+    though this hero must''ve somehow missed the man under the rubble of the abandoned
+    building'
+  citizensSleepingTitleText: Citizens wake to destruction after suprise storm slams
+    the town
+  citizensSleepingDescriptionText: 'Unexpected high winds hit the town of Brickmond
+    in the night yesterday, causing the collapse of an abandoned building. The residents
+    recieved no warnings and woke to their TV antennas damaged, various structural
+    faults in their buildings, and some even lost power entirely
+
+
+    The locals
+    have been filing complaints to the weather agency, who have been slow to respond,
+    but the current story seems to be faulty equipment.'
   fullDestructionTitleText: Unexpected storm tears through Brickmond
-  fullDestructionDescriptionText: 'A storm '
+  fullDestructionDescriptionText: 'A storm, un-forecast by the weather agency, ripped
+    through Brickmond in the night yesterday. Residents woke to their TV antennas
+    damaged, various structural faults in their buildings, and some even lost power
+    entirely. An abandoned building even collapsed, hospitalizing a man.
+
+
+    Investigations
+    into why this storm seen no coverage have begun, with most leads currently pointing
+    towards faulty equipment. Luckily it was a fairly weak storm, had it been stronger
+    the river by the town could''ve conceivably burst its banks, flooding the town.
+    If a disaster of that magnitude were to hit with no warnings and no preparation,
+    it would undoubtedly have been devastating which has led some to believe that
+    the town is actually lucky for getting away with what they did.'
 --- !u!111 &3413471163374545738
 Animation:
   m_ObjectHideFlags: 0

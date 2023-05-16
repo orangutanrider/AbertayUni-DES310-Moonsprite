@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1748829323
 ParticleSystemRenderer:
@@ -79,7 +79,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1657064013
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4993,7 +4993,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 130
+  changeTime: 190
   changeTimer: 0
   active: 0
   ReadMeText: 'If you want to trigger this via a timeline event you have to manually
@@ -5059,7 +5059,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 130
+  changeTime: 190
   changeTimer: 0
   active: 0
   ReadMeText: 'If you want to trigger this via a timeline event you have to manually
@@ -5083,7 +5083,7 @@ MonoBehaviour:
   ps: {fileID: 778760413}
   startLerpingOnStart: 1
   startLerpingOnTimelineEvent: 0
-  changeTime: 130
+  changeTime: 190
   overrideAllCurvesToLinear: 0
   lerpParametersForBursts:
   - burstIndexOnParticleSystem: 0
@@ -5397,7 +5397,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 130
+  changeTime: 190
   changeTimer: 0
   active: 0
 --- !u!114 &5410015329689055111
@@ -5461,6 +5461,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 130
+  changeTime: 190
   changeTimer: 0
   active: 0

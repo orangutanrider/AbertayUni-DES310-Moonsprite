@@ -285,9 +285,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  changeTime: 120
+  changeTime: 210
   changeTimer: 0
   active: 0
-  ReadMeText: '(This is still to be polished)
-
-'
+  ReadMeText: e
