@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
   m_Name: bad01_Player
   m_EditorClassIdentifier: 
-  dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
-  dialogueText: "Sadly, I\u2019ve not been good"
-  nextDialogueObjects:
-  - {fileID: 11400000, guid: 4f9057c34e9744e46aee80f1d495c4e7, type: 2}
+  dialogueSpeaker: {fileID: 11400000, guid: a12a741bf10b57749b93a7496bfa4ab0, type: 2}
+  dialogueText: Ahh and warn him that it is not safe to stay in that house during
+    the storm since the winds are likely to make it colapse
+  nextDialogueObjects: []
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:

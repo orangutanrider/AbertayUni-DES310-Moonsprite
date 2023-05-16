@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: main02_Librarian
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: a12a741bf10b57749b93a7496bfa4ab0, type: 2}
-  dialogueText: Hello deary, is everything alright?
+  dialogueText: Hello deary. What can I help you find today?
   nextDialogueObjects:
   - {fileID: 11400000, guid: 123041854fc0b90409a9d773931d3a14, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0

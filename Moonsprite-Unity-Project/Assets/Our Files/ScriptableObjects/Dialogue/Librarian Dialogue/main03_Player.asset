@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: main03_Player
   m_EditorClassIdentifier: 
   dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
-  dialogueText: I just wanted to know how you were.
+  dialogueText: I'm looking for a book about storm preparation. Do you have anything
+    like that?
   nextDialogueObjects:
-  - {fileID: 11400000, guid: bd046a83f2d05744497847cf90f8f9f4, type: 2}
+  - {fileID: 11400000, guid: 6990ff86bd3a9894f80645fe00a23e57, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
+  m_Name: GenericPlaceholderFarmer 2
+  m_EditorClassIdentifier: 
+  dialogueSpeaker: {fileID: 11400000, guid: 1dd1c7b6717d9d44eb29b274d0c169ec, type: 2}
+  dialogueText: Not really. I've been having trouble finding out what to do to last
+    through the storm.
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: 2563e2e2709b32444b08e5f80e95a865, type: 2}
+  triggerDialogueEventsOnDialogueGiver: 0
+  triggerDialogueEventsOnPlayer: 0
+  customTags:
+    tags: []

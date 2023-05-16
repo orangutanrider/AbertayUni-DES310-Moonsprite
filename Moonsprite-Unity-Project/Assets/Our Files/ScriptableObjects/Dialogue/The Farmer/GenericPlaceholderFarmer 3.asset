@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
+  m_Name: GenericPlaceholderFarmer 3
+  m_EditorClassIdentifier: 
+  dialogueSpeaker: {fileID: 11400000, guid: 8ea5a225336d86f46a857cc4d9e593e3, type: 2}
+  dialogueText: Actually, there is. I want  a book that might have some helpful tips
+    on how to protect my crops during a storm. Problem is, I can not go to the library
+    right now to get it.
+  nextDialogueObjects:
+  - {fileID: 11400000, guid: 0a0e80ecbea8dea4d9356c8183f41f1a, type: 2}
+  triggerDialogueEventsOnDialogueGiver: 0
+  triggerDialogueEventsOnPlayer: 0
+  customTags:
+    tags: []

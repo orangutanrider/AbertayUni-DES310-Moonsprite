@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dd3120f9f497041b928cf28b7ebfdd, type: 3}
   m_Name: good02_Librarian
   m_EditorClassIdentifier: 
-  dialogueSpeaker: {fileID: 11400000, guid: a12a741bf10b57749b93a7496bfa4ab0, type: 2}
-  dialogueText: "That\u2019s great to hear, dearie. Anything else I can help you
-    with?\n\n1 - Cat\n2 - Abandoned House"
+  dialogueSpeaker: {fileID: 11400000, guid: 719d2d5949a85854d9cc2de5f577e2b3, type: 2}
+  dialogueText: Alright, thanks for letting me know. Do you have any other books
+    on storm preparation?
   nextDialogueObjects:
   - {fileID: 11400000, guid: b1669ca7a6cbb4e47b8e04f7892bfd97, type: 2}
-  - {fileID: 11400000, guid: 2206757d4f5a0d94fa4948cdc997ff17, type: 2}
   triggerDialogueEventsOnDialogueGiver: 0
   triggerDialogueEventsOnPlayer: 0
   customTags:
