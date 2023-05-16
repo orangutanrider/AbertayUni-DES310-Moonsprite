@@ -2782,10 +2782,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2376544754469470726, guid: 9de2c05941eabde4fa3096da04b63af2, type: 3}
-      propertyPath: m_Volume
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 2376544754469470731, guid: 9de2c05941eabde4fa3096da04b63af2, type: 3}
       propertyPath: m_Name
       value: MainMenuBackgroundAudio
