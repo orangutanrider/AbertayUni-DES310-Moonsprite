@@ -24,5 +24,7 @@ Our clients were people from the British Red Cross: William Spencer WilliamSpenc
 The brief we received from them can be found in .docs and you can find builds of the game we made in .builds. The .docs folder contains documents that we used and created as a team, for extended resources and individual portfolios, you will have to contact team members specifically.
 
 itch.io page: https://pinkorchid.itch.io/weather-ready-or-not
+
 trailer video: https://vimeo.com/827318432
+
 gameplay video: https://vimeo.com/827318968
