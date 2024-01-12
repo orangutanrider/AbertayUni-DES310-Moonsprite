@@ -22,3 +22,7 @@ Academic Tutor: Christos Michalakos c.michalakos@abertay.ac.uk
 Our clients were people from the British Red Cross: William Spencer WilliamSpencer@redcross.org.uk; Fran Thompson FrancesThompson@redcross.org.uk; Steven Raymond SteveRaymond@redcross.org.uk; Georgia Paton GeorgiaPaton@redcross.org.uk; Ahmet Rifat AhmetRifat@redcross.org.uk.
 
 The brief we received from them can be found in .docs and you can find builds of the game we made in .builds. The .docs folder contains documents that we used and created as a team, for extended resources and individual portfolios, you will have to contact team members specifically.
+
+itch.io page: https://pinkorchid.itch.io/weather-ready-or-not
+trailer video: https://vimeo.com/827318432
+gameplay video: https://vimeo.com/827318968
